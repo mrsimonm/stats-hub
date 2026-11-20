@@ -45,7 +45,7 @@ function getFile(url,kind){return fetch(url,{cache:"no-cache"}).then(function(r)
 GEO.loadCourse=function(url){
   var base=url.replace(/[^\/]*$/,"");
   return getFile(url,"json").then(function(C){
-    ["title","code","subtitle","intro","footer","testsCard","tests","apply"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
+    ["title","code","subtitle","intro","footer","testsCard","tests","apply","paths"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
     GEO.course.base=base;
     if(Array.isArray(C.planned))GEO.planned=C.planned;
     document.title=GEO.course.title;
@@ -702,6 +702,7 @@ function renderTestView(id){
   var st=testStats(ts),pct=st.stepsTot?Math.round(st.stepsDone/st.stepsTot*100):0;
   var h='<div class="row" style="margin-bottom:10px"><button class="ghost" data-go="home">◂ Back to all tests</button></div>';
   h+='<div class="hero"><h1>'+esc(ts.title)+'</h1><p class="lede">'+esc(ts.sub)+'</p></div>';
+  if(window.GEOPath)h+=GEOPath.cta(ts.id);
   h+='<div class="card"><b>Your readiness for '+esc(ts.title)+'</b>'
     +'<p style="margin:6px 0;color:var(--mute);font-size:.95rem">'+(st.stepsTot?st.stepsDone+' / '+st.stepsTot+' steps completed ('+pct+' %)':'No active lessons yet')+(st.starsTot?' · ⭐ '+st.stars+' / '+st.starsTot+' Mastery stars':'')+'</p>'
     +'<div class="bar"><i style="width:'+pct+'%"></i></div>';
@@ -732,6 +733,7 @@ function renderHome(){
   var next=GEO.topics.filter(function(t){return t.next})[0];
   var tq=0,tv=0;GEO.topics.forEach(function(t){tq+=t.Q.length;tv+=t.VOC.length});
   var h='<div class="hero"><h1>'+esc(GEO.course.title)+'</h1><p class="lede">'+esc(GEO.course.intro)+' '+tq+' questions and '+tv+' terms so far.</p></div>';
+  if(window.GEOPath)(GEO.course.paths||[]).forEach(function(p){h+=GEOPath.cta(p)});
   var L=lvOf(S.xp),dx=dayXP(),lastT=null,lm=/^(t\d+)(?:-([a-z]+))?$/.exec(S.last||"");if(lm&&GEO.byId[lm[1]])lastT=GEO.byId[lm[1]];
   var VN={learn:"Learn",cards:"cards",games:"Games",mock:"Mock test",review:"Review",sheet:"Cheat sheet",names:"names",vocab:"Vocabulary"};
   h+='<div class="card"><div class="goal"><div class="ring" style="--p:'+Math.min(100,Math.round(dx/GOAL*100))+'"><span>'+Math.min(100,Math.round(dx/GOAL*100))+'%</span></div><div><b>Today: '+dx+' / '+GOAL+' XP</b>'+(dx>=GOAL?' 🎯 goal done!':'')+'<br><span style="color:var(--mute);font-size:.92rem">Level '+(L.n+1)+': <b>'+lvName(L.n)+'</b> · '+(L.need-L.into)+' XP to level up · 🔥 '+streakNow()+' day streak</span></div></div>';
@@ -1111,7 +1113,7 @@ el("tabs").onclick=function(e){var b=e.target.closest(".tab");if(b)go(b.getAttri
 el("homebtn").onclick=function(){go("home")};
 function go(h){if(location.hash!=="#"+h)location.hash="#"+h;else show(h)}
 GEO.go=go;
-var ALLVIEWS=["home","test","exam","review","dict","start","apply","learn","mastery","cards","games","mock","sheet","names","vocab"];
+var ALLVIEWS=["home","test","exam","review","dict","start","apply","path","learn","mastery","cards","games","mock","sheet","names","vocab"];
 function showView(v){ALLVIEWS.forEach(function(n){el("v-"+n).hidden=n!==v});el("lessonnav").hidden=v!=="learn"}
 function show(h){
   h=h||"home";var m=/^(t\d+)(?:-([a-z]+))?$/.exec(h);
@@ -1125,6 +1127,12 @@ function show(h){
     if(v==="review")review();if(v==="start")progress();if(v==="games")gamesInit();if(v==="mastery")masteryInit();
     S.last=t.id+(v==="start"?"":"-"+v);save();
     contBar(t,v);
+    return;
+  }
+  var stm=/^study-([a-z0-9]+)$/.exec(h);
+  if(stm&&window.GEOPath&&(GEO.course.paths||[]).indexOf(stm[1])>=0){
+    CUR=null;document.body.setAttribute("data-topic","home");el("contbar").hidden=true;
+    drawTabs(null,"");showView("path");GEOPath.open(stm[1]);el("foot").innerHTML="";
     return;
   }
   var aps=/^ap-([a-z0-9]+)$/.exec(h)&&window.GEOApply&&GEOApply.setById(h.slice(3));

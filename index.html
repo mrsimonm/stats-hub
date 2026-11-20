@@ -322,6 +322,42 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 .ap-intro ul,.ap-intro ol{margin:6px 0;padding-left:20px}
 .ap-cap{font-size:.85rem;color:var(--mute);margin:8px 0 0}
 .ap-fxsec+.ap-fxsec{border-top:1px solid var(--line);margin-top:10px}
+.ap-nd{margin-top:12px}.ap-nd summary{font-size:.85rem;color:var(--mute);cursor:pointer}
+.ap-emb{margin-top:10px}
+/* ===== Study path (lib/path.js) ===== */
+.pt-cta{display:block;width:100%;text-align:left;border:0;border-radius:16px;background:var(--acc);color:var(--acc-ink);padding:16px 18px;margin:14px 0 6px;cursor:pointer}
+.pt-cta-go{display:block;font-family:var(--font-d);font-size:1.35rem;font-weight:700}
+.pt-cta-sub{display:block;font-size:.92rem;opacity:.9;margin-top:2px}
+.pt-cta-bar{display:block;height:6px;border-radius:99px;background:rgba(255,255,255,.3);margin-top:10px;overflow:hidden}.pt-cta-bar i{display:block;height:100%;width:0;background:var(--acc-ink)}
+.pt-head{margin-bottom:10px}
+.pt-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pt-unit{font-weight:700;font-size:.95rem}
+.pt-bars{display:flex;align-items:center;gap:10px;margin-top:8px}
+.pt-bar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}.pt-bar i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.pt-cnt{font-size:.85rem;color:var(--mute);white-space:nowrap}
+.pt-all{font-size:.82rem;color:var(--mute);margin:4px 0 0}
+.pt-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:10px}
+.pt-card h2{margin:2px 0 10px}
+.pt-kind{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--acc);font-weight:700;margin:0}
+.pt-note{font-size:.85rem;color:var(--mute);margin:10px 0 0}
+.pt-steps{padding-left:22px}.pt-st{margin-bottom:10px}.pt-st[hidden]{display:none}
+.pt-opts{display:grid;gap:8px}
+.pt-opt{text-align:left;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);border-radius:12px;padding:10px 12px;font:inherit}
+.pt-opt.good{border-color:var(--ok);background:var(--ok-soft)}.pt-opt.bad{border-color:var(--no);background:var(--no-soft)}
+.pt-why{margin:10px 0 0;font-size:.95rem}.pt-why.ok{color:var(--ok)}.pt-why.bad{color:var(--no)}
+.pt-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px;position:sticky;bottom:0;background:var(--bg);padding:10px 0;border-top:1px solid var(--line)}
+.pt-foot .pt-cont{flex:1;max-width:320px;margin-left:auto}
+.pt-cont[disabled]{opacity:.45;cursor:not-allowed}
+.pt-cont.pt-ready{animation:ptpulse 1s ease 2}
+@keyframes ptpulse{50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion: reduce){.pt-cont.pt-ready{animation:none}}
+.pt-win{text-align:center}.pt-big{font-size:2.6rem;margin:0}
+.pt-mu{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-top:8px}
+.pt-mu summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px}.pt-mu summary span{color:var(--mute);font-size:.9rem}
+.pt-mu ol{padding-left:18px;margin:8px 0}
+.pt-mi{border:0;background:none;color:var(--ink);text-align:left;padding:4px 0;font:inherit;font-size:.92rem;cursor:pointer}.pt-mi.done{color:var(--ok)}
+.pt-card table{border-collapse:collapse;font-size:.92rem;margin:8px 0}.pt-card td,.pt-card th{border:1px solid var(--line);padding:4px 10px}
+.pt-card .tw{overflow-x:auto}
 .top-in{position:relative}
 @media (prefers-reduced-motion: reduce){.bite,.toast,.pop,.shake,.confetti i{animation:none!important}}
 .tmbar{margin:10px 0 -4px}.tmbar .ghost{font-size:.85rem;padding:4px 10px}
@@ -398,6 +434,7 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 
 <section class="view" id="v-start" hidden></section>
 <section class="view" id="v-apply" hidden></section>
+<section class="view" id="v-path" hidden></section>
 
 <section class="view" id="v-learn" hidden>
   <div class="stepmeta"><span id="stepnum"></span><button class="ghost" id="fulltoggle" style="padding:2px 10px;font-size:.82rem">Show whole step</button></div>
@@ -501,6 +538,7 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 <script src="lib/lecture-lib.js"></script>
 <script src="lib/formulas.js"></script>
 <script src="lib/apply.js"></script>
+<script src="lib/path.js"></script>
 <script src="app.js"></script>
 <script>GEO.start();
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
