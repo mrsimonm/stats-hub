@@ -271,9 +271,9 @@ function quiz(host,ids,o){
     for(var n=0;n<qs.length;n++){if(answered[n]===undefined){missed.push(qs[n]);tally(qs[n],false);mark(qs[n],false)}}
     if(o.key){var pr=S.best[o.key];if(!pr||score/qs.length>pr.s/pr.n)S.best[o.key]={s:score,n:qs.length};save()}
     xp(20,"set finished");if(score===qs.length&&qs.length>=5)confetti();
-    var pct=Math.round(score/qs.length*100),pts=Math.round(score/qs.length*8*10)/10;
+    var pct=Math.round(score/qs.length*100);
     var h=(up?'<p><b>Time is up.</b> Unanswered questions count as missed.</p>':'')+'<div class="score">'+score+' / '+qs.length+'</div>';
-    if(o.points)h+='<p>That would be roughly <b>'+pts+' of 8 points</b> on the real test.</p>';
+    if(o.points)h+='<p>Score: <b>'+pct+' %</b>.</p>';
     if(o.exam)h+='<p><b>'+pct+' %</b>. On the course scale that is a <b>'+grade(pct)+'</b>.</p>';
     if(o.mixed){var keys=Object.keys(res);if(keys.length>1){h+='<div class="tw"><table><thead><tr><th>Lecture</th><th>Score</th></tr></thead><tbody>'+keys.map(function(k){var t=GEO.byId[k];return '<tr><td><b>L'+t.num+' '+esc(t.title)+'</b></td><td>'+res[k].s+' / '+res[k].n+'</td></tr>'}).join("")+'</tbody></table></div>'}}
     h+=missed.length?'<p>Missed, now in Review:</p><ul>'+missed.map(function(q){return '<li>'+(o.mixed?topicChip(q)+' ':'')+esc(q.q)+'<br><b>'+esc(q.o[0])+'</b></li>'}).join("")+'</ul>':'<p>No mistakes. Try another set.</p>';
@@ -314,7 +314,7 @@ function renderTopic(t){
   el("whoH").textContent=t.cards.who||"Which one am I?";
   renderCards(t);
   /* mock */
-  el("mockL").textContent="Like the real one: 7 questions, A/B/C/D, 5 minutes. A new random set each time, always with at least 2 questions on "+t.must+". Wrong answers go to Review.";
+  el("mockL").textContent="Quick timed check: 7 questions, A/B/C/D, 5 minutes. A new random set each time, always with at least 2 questions on "+t.must+". Wrong answers go to Review.";
   el("mockNote").textContent=t.mockNote||"The timed test only uses tested material. \"All questions\" also includes any extras.";
   el("quiz-mock").innerHTML="";
   /* sheet */

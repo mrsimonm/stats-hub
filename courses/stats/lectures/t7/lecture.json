@@ -170,33 +170,33 @@
     { "group": "Random Variables", "term": "Random variable (X)", "meaning": "A variable whose numerical value is determined by the outcome of a random experiment." },
     { "group": "Random Variables", "term": "Discrete random variable", "meaning": "A random variable with a finite or countably infinite number of possible values." },
     { "group": "Random Variables", "term": "Continuous random variable", "meaning": "A random variable that can take any value within one or more intervals (infinitely many values)." },
-    { "group": "Distributions & Moments", "term": "Probability function P(x)", "meaning": "For a discrete RV, P(x) = P(X = x), with 0 ≤ P(x) ≤ 1 and Σ P(x) = 1." },
-    { "group": "Distributions & Moments", "term": "Probability density function f(x)", "meaning": "For a continuous RV, the derivative f(x) = F'(x) with f(x) ≥ 0 and total integral 1." },
-    { "group": "Distributions & Moments", "term": "Distribution function F(x)", "meaning": "The cumulative probability F(x) = P(X ≤ x) for any real x." },
-    { "group": "Distributions & Moments", "term": "Expected value E(X)", "meaning": "The characteristic of the level (centre) of a distribution: Σ x·P(x) or ∫ x·f(x) dx." },
-    { "group": "Distributions & Moments", "term": "Variance Var(X)", "meaning": "A measure of spread around E(X), computed as E(X²) - [E(X)]²." },
-    { "group": "Distributions & Moments", "term": "Standard deviation S.D.(X)", "meaning": "The square root of the variance: √Var(X)." },
-    { "group": "Distributions & Moments", "term": "100·P% quantile (x_P)", "meaning": "The value x_P where F(x_P) = P(X < x_P) = P, separating the lower 100·P% of values." }
+    { "group": "Distributions & Moments", "term": "Probability function (P(x))", "meaning": "For a discrete RV, P(x) = P(X = x), with 0 ≤ P(x) ≤ 1 and Σ P(x) = 1." },
+    { "group": "Distributions & Moments", "term": "Probability density function (f(x))", "meaning": "For a continuous RV, the derivative f(x) = F'(x) with f(x) ≥ 0 and total integral 1." },
+    { "group": "Distributions & Moments", "term": "Distribution function (F(x))", "meaning": "The cumulative probability F(x) = P(X ≤ x) for any real x." },
+    { "group": "Distributions & Moments", "term": "Expected value (E(X))", "meaning": "The characteristic of the level (centre) of a distribution: Σ x·P(x) or ∫ x·f(x) dx." },
+    { "group": "Distributions & Moments", "term": "Variance (Var(X))", "meaning": "A measure of spread around E(X), computed as E(X²) - [E(X)]²." },
+    { "group": "Distributions & Moments", "term": "Standard deviation (S.D.(X))", "meaning": "The square root of the variance: √Var(X)." },
+    { "group": "Distributions & Moments", "term": "Quantile (x_P)", "meaning": "The 100·P% quantile x_P where F(x_P) = P(X < x_P) = P, separating the lower 100·P% of values." }
   ],
 
   "confusable": [
     ["Disjoint events", "Independent events", "Complementary events"],
     ["Classical probability", "Statistical probability", "Conditional probability"],
-    ["Probability function P(x)", "Probability density function f(x)", "Distribution function F(x)"],
+    ["Probability function (P(x))", "Probability density function (f(x))", "Distribution function (F(x))"],
     ["Discrete random variable", "Continuous random variable"]
   ],
 
   "facts": [
     [1, "A certain event E has probability {1|0|0.5|-1}."],
     [1, "Two events with an empty intersection A ∩ B = Ø are called {disjoint|independent|complementary|conditional}."],
-    [1, "For complementary events A and A', P(A) equals {1 - P(A')|P(A')|1 + P(A')|0}."],
+    [1, "For complementary events A and A', P(A) + P(A') always equals {1|0|0.5|2}."],
     [2, "The classical definition P(A) = m / n assumes all outcomes are {equally likely|independent|continuous|disjoint}."],
-    [2, "Two events A and B are independent when P(A|B) equals {P(A)|P(B)|0|1 - P(A)}."],
-    [2, "For any two events, P(A ∪ B) = P(A) + P(B) - {P(A ∩ B)|P(A)·P(B) only|P(A|B)|1}."],
-    [3, "For a continuous random variable, the probability P(X = x) at any single value is always {0|1|f(x)|F(x)}."],
-    [3, "The cumulative distribution function F(x) is defined as {P(X ≤ x)|P(X = x)|P(X > x)|f(x)}."],
-    [4, "For f(x) = 2x on 0 < x < 1, the distribution function on that interval is {x²|2x|x/2|2}."],
-    [5, "Variance is computed as E(X²) minus {[E(X)]²|E(X)|S.D.(X)|P(x)}."],
+    [2, "Two events A and B are {independent|disjoint|complementary|impossible} when P(A|B) = P(A)."],
+    [2, "For any two events, P(A ∪ B) = P(A) + P(B) minus the probability of their {intersection|union|complement|difference}."],
+    [3, "For a continuous random variable, the probability P(X = x) at any single value is always {0|1|0.5|-1}."],
+    [3, "The {cumulative|density|conditional|classical} distribution function F(x) is defined as P(X ≤ x)."],
+    [4, "For f(x) = 2x on 0 < x < 1, the probability P(1/3 < X ≤ 2/3) equals {1/3|2/3|4/9|1/9}."],
+    [5, "Variance Var(X) is computed as E(X²) minus the {square|square root|reciprocal|sum} of E(X)."],
     [5, "Standard deviation S.D.(X) is the {square root|square|reciprocal|derivative} of Var(X)."]
   ],
 

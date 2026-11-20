@@ -163,36 +163,36 @@
     { "group": "Sampling Methods", "term": "Cluster sampling", "meaning": "Dividing the population into clusters, randomly selecting some clusters, and surveying all elements in them." },
     { "group": "Sampling Methods", "term": "Multistage sampling", "meaning": "A combination of several sampling methods, often used in practice." },
     { "group": "Discrete Distributions", "term": "Bernoulli distribution", "meaning": "A single-trial binary distribution equivalent to Binomial with n = 1: Bi(1, π)." },
-    { "group": "Discrete Distributions", "term": "Binomial distribution Bi(n, π)", "meaning": "Models the number of successes in n independent trials, each with success probability π." },
-    { "group": "Discrete Distributions", "term": "Hypergeometric distribution Hy(N, M, n)", "meaning": "Models the number of successes in n dependent trials drawn without replacement from N elements (M successes)." },
-    { "group": "Discrete Distributions", "term": "Poisson distribution Po(λ)", "meaning": "Models the number of random independent occurrences in a continuous interval with average rate λ." },
-    { "group": "Continuous Distributions", "term": "Normal distribution N(μ, σ²)", "meaning": "The bell-shaped continuous distribution with mean μ and variance σ², modeling sums of many small independent effects." },
-    { "group": "Continuous Distributions", "term": "Standard normal distribution N(0, 1)", "meaning": "The special normal distribution Z with μ = 0 and σ² = 1, tabulated in Tables I and II." },
+    { "group": "Discrete Distributions", "term": "Binomial distribution", "meaning": "Bi(n, π): models the number of successes in n independent trials, each with success probability π." },
+    { "group": "Discrete Distributions", "term": "Hypergeometric distribution", "meaning": "Hy(N, M, n): models the number of successes in n dependent trials drawn without replacement from N elements (M successes)." },
+    { "group": "Discrete Distributions", "term": "Poisson distribution", "meaning": "Po(λ): models the number of random independent occurrences in a continuous interval with average rate λ." },
+    { "group": "Continuous Distributions", "term": "Normal distribution", "meaning": "N(μ, σ²): the bell-shaped continuous distribution with mean μ and variance σ², modeling sums of many small independent effects." },
+    { "group": "Continuous Distributions", "term": "Standard normal distribution", "meaning": "N(0, 1): the special normal distribution Z with μ = 0 and σ² = 1, tabulated in Tables I and II." },
     { "group": "Continuous Distributions", "term": "Standardization", "meaning": "Transforming X ~ N(μ, σ²) into Z = (X - μ) / σ ~ N(0, 1)." },
-    { "group": "Continuous Distributions", "term": "Chi-square distribution χ²(df)", "meaning": "A derived continuous distribution parameterized by degrees of freedom df." },
-    { "group": "Continuous Distributions", "term": "Student's t-distribution t(df)", "meaning": "A symmetric derived continuous distribution with parameter df; approaches N(0, 1) when df > 30." },
-    { "group": "Continuous Distributions", "term": "F-distribution F(df₁, df₂)", "meaning": "A derived continuous distribution with two degrees-of-freedom parameters df₁ and df₂." }
+    { "group": "Continuous Distributions", "term": "Chi-square distribution", "meaning": "χ²(df): a derived continuous distribution parameterized by degrees of freedom df." },
+    { "group": "Continuous Distributions", "term": "Student's t-distribution", "meaning": "t(df): a symmetric derived continuous distribution with parameter df; approaches N(0, 1) when df > 30." },
+    { "group": "Continuous Distributions", "term": "F-distribution", "meaning": "F(df₁, df₂): a derived continuous distribution with two degrees-of-freedom parameters df₁ and df₂." }
   ],
 
   "confusable": [
     ["Sampling with replacement", "Sampling without replacement"],
     ["Stratified sampling", "Cluster sampling", "Systematic random sampling"],
-    ["Binomial distribution Bi(n, π)", "Hypergeometric distribution Hy(N, M, n)", "Poisson distribution Po(λ)"],
-    ["Normal distribution N(μ, σ²)", "Standard normal distribution N(0, 1)"]
+    ["Binomial distribution", "Hypergeometric distribution", "Poisson distribution"],
+    ["Normal distribution", "Standard normal distribution"]
   ],
 
   "facts": [
     [1, "In {stratified|cluster|systematic|multistage} sampling, the population is divided into homogeneous groups and samples are taken from every group."],
     [1, "Sampling {without replacement|with replacement|systematically|by cluster} produces dependent random trials."],
-    [2, "For X ~ Bi(n, π), the expected value is {n·π|n·π·(1-π)|π|n/π}."],
-    [2, "We can approximate Hy(N, M, n) by Bi(n, M/N) when {n < 0.05·N|n > 30|π ≤ 0.1|df > 30}."],
-    [3, "For X ~ Po(λ), both E(X) and Var(X) equal {λ|λ²|√λ|1/λ}."],
-    [3, "Poisson Po(λ = n·π) approximates Bi(n, π) when π ≤ 0.1 and {n > 30|n < 0.05·N|π = 0.5|n = 1}."],
-    [4, "Standardizing X ~ N(μ, σ²) uses Z = {(X - μ) / σ|(X - μ) / σ²|(X + μ) / σ|(μ - X) / σ²}."],
-    [4, "For Z ~ N(0, 1), symmetry gives F(-z) = {1 - F(z)|-F(z)|F(z)|1 + F(z)}."],
-    [4, "To convert a standard normal quantile z_P back to X ~ N(μ, σ²), compute {μ + σ·z_P|μ + σ²·z_P|μ - σ·z_P|(z_P - μ)/σ}."],
-    [5, "Student's t(df) can be approximated by Z ~ N(0, 1) when {df > 30|df < 30|df = 1|π ≤ 0.1}."],
-    [5, "For F(df₁, df₂), the lower quantile f_(1-P)(df₁, df₂) equals {1 / f_P(df₂, df₁)|-f_P(df₁, df₂)|1 - f_P(df₁, df₂)|1 / f_P(df₁, df₂)}."]
+    [2, "For X ~ Bi(n, π), the distribution is symmetric when π equals {0.5|0.1|0.05|1.0}."],
+    [2, "We can approximate Hy(N, M, n) by Bi(n, M/N) when n is less than {0.05|0.50|0.25|0.95} times N."],
+    [3, "For a {Poisson|Binomial|Hypergeometric|Normal} random variable Po(λ), both E(X) and Var(X) equal λ."],
+    [3, "Poisson Po(λ = n·π) approximates Bi(n, π) when π ≤ 0.1 and n is greater than {30|5|10|100}."],
+    [4, "Standardizing X ~ N(μ, σ²) into Z = (X - μ) / σ divides by the {standard deviation|variance|mean|sample size}."],
+    [4, "For Z ~ N(0, 1), the mean is 0 and the variance equals {1|0|0.5|30}."],
+    [4, "To convert a standard normal quantile z_P back to X ~ N(μ, σ²), we compute μ + σ · z_P using the {standard deviation|variance|degrees of freedom|sample size} σ."],
+    [5, "Student's t(df) can be approximated by Z ~ N(0, 1) when df is greater than {30|5|10|1}."],
+    [5, "For F(df₁, df₂), the lower quantile f_(1-P)(df₁, df₂) equals the {reciprocal|negative|square|complement} of f_P(df₂, df₁)."]
   ],
 
   "cards": {
