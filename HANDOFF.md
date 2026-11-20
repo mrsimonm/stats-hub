@@ -10,7 +10,7 @@ A study web app for the statistics course **VŠE 4ST601** (Prague University of 
 - Repo: https://github.com/mrsimonm/stats-hub (public)
 - Project folder on this Mac: `/Users/simonmusel/Projects/stats-hub`
 - Works offline as an installable PWA (`sw.js`, cache `stats-hub-v1`).
-- Progress is saved locally in `localStorage` (`statsHub.v1`) and optionally synced to Firebase Firestore (`users/{uid}` in project `geo-hub-96426`) when signed in with Google.
+- Progress is saved locally in `localStorage` (`statsHub.v1`) and optionally synced to Firebase Firestore (`users/{uid}` in its own project `stats-hub-e516b`, separate from Geology Hub) when signed in with Google.
 
 ## Hard rules (summary; full list in AGENTS.md)
 
