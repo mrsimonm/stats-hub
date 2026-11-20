@@ -85,12 +85,32 @@ service cloud.firestore {
         && (!('mas' in state) || (state.mas is map && state.mas.size() <= 100));
     }
 
+    // Apply exercises progress (lib/apply.js): solved/missed parts, notes, current exercise per set
+    function isValidApply(ap) {
+      return ap is map
+        && ap.keys().hasOnly(['done', 'miss', 'notes', 'cur'])
+        && (!('done' in ap) || (ap.done is map && ap.done.size() <= 3000))
+        && (!('miss' in ap) || (ap.miss is map && ap.miss.size() <= 3000))
+        && (!('notes' in ap) || (ap.notes is map && ap.notes.size() <= 500))
+        && (!('cur' in ap) || (ap.cur is map && ap.cur.size() <= 50));
+    }
+
+    // Study path progress (lib/path.js): finished steps, current position per path
+    function isValidPath(pt) {
+      return pt is map
+        && pt.keys().hasOnly(['done', 'cur'])
+        && (!('done' in pt) || (pt.done is map && pt.done.size() <= 3000))
+        && (!('cur' in pt) || (pt.cur is map && pt.cur.size() <= 20));
+    }
+
     // Validate the entire user document on both create and update
     function isValidUserDoc(data) {
       return hasRequiredFields(['state', 'updatedAt'])
-        && hasOnlyAllowedFields(['state', 'updatedAt'])
+        && hasOnlyAllowedFields(['state', 'updatedAt', 'ap', 'pt'])
         && isValidStudyState(data.state)
-        && data.updatedAt is timestamp;
+        && data.updatedAt is timestamp
+        && (!('ap' in data) || isValidApply(data.ap))
+        && (!('pt' in data) || isValidPath(data.pt));
     }
 
     // ===============================================================
