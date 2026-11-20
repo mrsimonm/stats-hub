@@ -1,0 +1,211 @@
+{
+  "num": 9,
+  "id": "t9",
+  "title": "Sampling & Statistical Inference: Estimates",
+  "short": "Estimates & CIs",
+  "sub": "Lecture 9 · sampling distributions, estimators, point & interval estimates",
+  "blurb": "Population vs. sample, empirical vs. theoretical worlds, estimators vs. estimates, sampling error, two-sided confidence intervals for mean, proportion and count, and judging research hypotheses.",
+  "h1": "Essentials of Sampling & Statistical Inference: Estimates",
+  "lede": "How do we move from a single random sample to conclusions about an entire population? This lecture distinguishes the empirical and theoretical worlds, contrasts estimators with point estimates, and builds two-sided confidence intervals for means, proportions and population counts.",
+  "six": [
+    "**Descriptive statistics** summarizes a known data set with no generalization; **inferential statistics** draws conclusions about a population from a random sample.",
+    "A **census** (population survey) measures all N elements and computes exact parameters; a **sample survey** measures n elements and *estimates* them.",
+    "In the **theoretical world**, formulas assume conditions hold perfectly and statistics like X̄ are random variables; in the **empirical world**, we compute single numbers with uncertainty.",
+    "An **estimator** is a random variable (e.g., X̄, S², P), whereas a **point estimate** is the single number calculated from one sample (e.g., x̄, s², p).",
+    "A **100(1-α)% confidence interval** is built around a point estimate; 1-α is the approximate proportion of empirical intervals that cover the unknown parameter.",
+    "Increasing **confidence level (1-α)** widens the interval (less accurate), while increasing **sample size (n)** narrows it (more accurate)."
+  ],
+  "must": "Estimators vs. estimates & two-sided confidence intervals",
+  "foot": "Source: 4ST601 Lecture 9 slides (9-probability-distributions.txt: Essentials of Sampling and Statistical Inference: Estimates).",
+
+  "questions": [
+    {
+      "id": "t9-desc-vs-inf",
+      "q": "What is the key difference between descriptive statistics and inferential statistics?",
+      "h": "One stays with the observed data set; the other generalizes beyond it.",
+      "answer": "Descriptive statistics summarizes a data set with no generalization; inferential statistics draws general conclusions about a population from a random sample",
+      "wrong": ["Descriptive statistics uses probability distributions; inferential statistics only uses tables", "Descriptive statistics requires simple random sampling; inferential statistics requires a census", "Descriptive statistics is theoretical; inferential statistics has no uncertainty"],
+      "e": "Descriptive statistics organizes and summarizes a given data set without generalizing. Inferential statistics uses a random sample to draw conclusions about the population.",
+      "fol": true
+    },
+    {
+      "id": "t9-census-vs-sample",
+      "q": "Which of the following is a reason to conduct a sample survey instead of a population survey (census)?",
+      "h": "Think of destructive testing, cost, speed, and population size.",
+      "answer": "Some population surveys are impossible (e.g., automobile crash-tests), too large, too expensive, or too slow",
+      "wrong": ["A sample survey always gives exact population parameters without sampling error", "A census cannot be analyzed with descriptive statistics", "A sample survey does not require a clearly defined population"],
+      "e": "Sample surveys are used when populations are too large, when data are cheaper/easier to process, when more detail is needed, when testing is destructive (crash-tests), or when results are needed quickly (polls)."
+    },
+    {
+      "id": "t9-internet-poll",
+      "q": "Why is an internet questionnaire typically NOT justified for statistical inference?",
+      "h": "Check what justified statistical inference requires.",
+      "answer": "Justified statistical inference requires a random sample from a clearly defined population, which an internet questionnaire typically fails to provide",
+      "wrong": ["Internet questionnaires always have sample size n < 30", "Internet questionnaires are a form of census", "Statistical inference only works with postal questionnaires"],
+      "e": "Justified inference requires a random sample from a clearly defined population (in 4ST601, via simple random sampling), which self-selected internet questionnaires typically lack."
+    },
+    {
+      "id": "t9-two-worlds",
+      "q": "How do the 'empirical world' and the 'theoretical world' differ in inferential statistics?",
+      "h": "One deals with calculated numbers and uncertainty; the other with random variables and satisfied assumptions.",
+      "answer": "The empirical world contains calculated values from known data sets (with uncertainty about assumptions); the theoretical world contains random variables under satisfied assumptions",
+      "wrong": ["The empirical world uses random variables X̄ and S²; the theoretical world uses calculated x̄ and s²", "Descriptive statistics is carried out in the theoretical world", "In the empirical world, theoretical assumptions are always perfectly satisfied"],
+      "e": "Inferential statistics carries out practical analysis in the empirical world (calculated numbers, uncertainty about assumptions) using tools derived in the theoretical world (random variables, satisfied assumptions)."
+    },
+    {
+      "id": "t9-pop-vs-sampling-dist",
+      "q": "In the sampling distribution, why is the sample arithmetic mean X̄ a random variable?",
+      "h": "Compare drawing one sample vs. drawing 100 different random samples.",
+      "answer": "Because its value varies randomly from sample to sample, whereas any population parameter is constant",
+      "wrong": ["Because the population parameter changes every time a sample is drawn", "Because X̄ is always equal to the population mean E(X)", "Because n is always infinite"],
+      "e": "A population parameter is a constant, while a sample statistic like X̄ varies from sample to sample (e.g., 57.6 kg, 55.0 kg, 58.4 kg across samples of n = 5), making it a random variable."
+    },
+    {
+      "id": "t9-estimator-vs-estimate",
+      "q": "What is the difference between an estimator and a point estimate?",
+      "h": "One is a random variable; the other is a specific number.",
+      "answer": "An estimator (e.g., X̄) is a random variable; a point estimate (e.g., x̄) is the specific number calculated from a sample",
+      "wrong": ["An estimator is a single number; a point estimate is an interval", "An estimator is used only for proportions; an estimate is used only for means", "There is no difference; both terms mean the population parameter"],
+      "e": "An estimator (such as X̄, S², P) is a random variable before/across sampling, while a point estimate (x̄, s², p) is the single numerical value computed from an observed sample.",
+      "fol": true
+    },
+    {
+      "id": "t9-sampling-error",
+      "q": "What is sampling error?",
+      "h": "It explains why inferential conclusions always carry uncertainty.",
+      "answer": "The fact that a specific sample statistic calculated from one sample will differ from the population parameter being estimated",
+      "wrong": ["A mistake made when entering data into a spreadsheet", "Using a census instead of a sample survey", "The confidence level 1 - α"],
+      "e": "Sampling error is the natural difference between a sample statistic (calculated from one sample) and the true population parameter, meaning inferential results always contain uncertainty."
+    },
+    {
+      "id": "t9-ci-t-vs-z",
+      "q": "In 4ST601, when do we use Student's t-quantile t_{1-α/2}(n-1) instead of z_{1-α/2} in a two-sided confidence interval for the mean?",
+      "h": "Look at the two mean CI cases on Slide 26–28.",
+      "answer": "When the population is normally distributed and population variance σ² is unknown (for μ); z_{1-α/2} is used for E(X) when n is large enough (n > 30)",
+      "wrong": ["Always use t_{1-α/2} for proportions p and counts Np", "Use t_{1-α/2} only when n > 30 and σ² is known", "Use z_{1-α/2} when n = 5 and the population is normal"],
+      "e": "For μ under a normal population with unknown σ², the CI uses t_{1-α/2}(n - 1). For E(X) with a large random sample (classical textbooks: n > 30), it uses z_{1-α/2}.",
+      "fol": true
+    },
+    {
+      "id": "t9-conf-level-meaning",
+      "q": "In the 4ST601 seminar example (N = 87 female students, true E(X) = 54.828 kg), 100 random samples of size 5 produced 100 95% CIs and 94 covered 54.828 kg. What does this illustrate?",
+      "h": "Think about what 1 - α = 0.95 means across repeated samples.",
+      "answer": "Confidence level 1 - α is the approximate proportion of constructed empirical confidence intervals that cover the unknown population parameter",
+      "wrong": ["A single empirical CI has a 95% chance of changing its endpoints", "95% of the students in the population weigh between 43.759 and 54.641 kg", "If 94 out of 100 covered the mean, the formula must be wrong"],
+      "e": "The confidence level 1 - α (e.g., 0.95) is the approximate proportion of constructed empirical CIs that cover the true parameter. In practice we have only one CI, so it either covers it or does not."
+    },
+    {
+      "id": "t9-ci-width-conf",
+      "q": "Assuming nothing else changes, what happens to a confidence interval when the confidence level (1 - α) increases?",
+      "h": "Higher confidence requires a larger quantile z_{1-α/2}.",
+      "answer": "The interval becomes wider and accuracy decreases",
+      "wrong": ["The interval becomes narrower and accuracy increases", "The interval width stays the same", "The sample size n automatically increases"],
+      "e": "When 1 - α rises, α falls and z_{1-α/2} rises, so the interval widens and accuracy decreases.",
+      "fol": true
+    },
+    {
+      "id": "t9-ci-width-n",
+      "q": "Assuming nothing else changes, what happens to a confidence interval when the random sample size n increases?",
+      "h": "n is in the denominator inside √n.",
+      "answer": "The interval becomes narrower and accuracy increases",
+      "wrong": ["The interval becomes wider and accuracy decreases", "The confidence level 1 - α decreases", "The point estimate becomes biased"],
+      "e": "Because √n is in the denominator of the margin of error, increasing n shrinks the interval width and increases accuracy."
+    },
+    {
+      "id": "t9-max-error-delta",
+      "q": "What does Δ represent in the confidence interval notation (x̄ - Δ, x̄ + Δ)?",
+      "h": "It is half the total width of the two-sided confidence interval.",
+      "answer": "The maximum acceptable (sampling) error of the interval estimate",
+      "wrong": ["The population standard deviation σ", "The significance level α", "The population size N"],
+      "e": "Δ is the maximum acceptable (sampling) error of the interval estimate, representing the half-width around the point estimate x̄."
+    },
+    {
+      "id": "t9-delivery-ex",
+      "q": "In Example 1 (n = 400 items, x̄ = 116 mm, s = 4.081 mm), what is the 92% confidence interval for E(X) using z_{0.96} = 1.751?",
+      "h": "Compute x̄ ± z_{0.96} · (s / √n) = 116 ± 1.751 · (4.081 / 20).",
+      "answer": "(115.64, 116.36) mm",
+      "wrong": ["(114.25, 117.75) mm", "(115.96, 116.04) mm", "(111.92, 120.08) mm"],
+      "e": "With √400 = 20, the margin is 1.751 · (4.081 / 20) ≈ 0.36 mm, giving 116 ± 0.36 = (115.64, 116.36) mm."
+    },
+    {
+      "id": "t9-cans-ex",
+      "q": "In Example 2 (320 cans, 59 expired → p = 0.184), what is the 99.8% CI for the proportion of expired cans (z_{0.999} = 3.090)?",
+      "h": "Use p ± z_{0.999} · √(p(1-p)/n).",
+      "answer": "(0.117, 0.251), i.e., 11.7% to 25.1%",
+      "wrong": ["(0.150, 0.218), i.e., 15.0% to 21.8%", "(0.050, 0.318), i.e., 5.0% to 31.8%", "(0.174, 0.194), i.e., 17.4% to 19.4%"],
+      "e": "Using 0.184 ± 3.090·√(0.184·0.816/320) = 0.184 ± 0.067 gives (0.117, 0.251), or 11.7% to 25.1%."
+    },
+    {
+      "id": "t9-research-hyp",
+      "q": "When using a constructed confidence interval to judge a research hypothesis (e.g., p = 15% covered by (0.117, 0.251)), what rule MUST be followed?",
+      "h": "Timing matters: when must the hypothesis be formulated?",
+      "answer": "The research hypothesis must be formulated BEFORE any calculations are carried out (before drawing the random sample)",
+      "wrong": ["The research hypothesis should be chosen after seeing the confidence interval endpoints", "The research hypothesis is only valid if the interval excludes the hypothesized value", "One interval proves the hypothesis with 100% certainty"],
+      "e": "A research hypothesis must be formulated before drawing the sample and doing calculations. If the CI covers the hypothesized value (e.g., 0.15 in (0.117, 0.251)), it supports the hypothesis."
+    }
+  ],
+
+  "vocab": [
+    { "group": "Statistics & Surveys", "term": "Descriptive statistics", "meaning": "Methods for organizing and summarizing a given data set using tables, graphs and simple measures, with no generalization." },
+    { "group": "Statistics & Surveys", "term": "Inferential statistics", "meaning": "Methods for drawing general conclusions about a population (or data-generating process) from a random sample." },
+    { "group": "Statistics & Surveys", "term": "Population", "meaning": "The complete group of statistical elements of size N under study." },
+    { "group": "Statistics & Surveys", "term": "Sample", "meaning": "A subset of n elements selected from a population by a sampling procedure." },
+    { "group": "Statistics & Surveys", "term": "Population survey (census)", "meaning": "A survey performed on all N elements of the population so exact parameters can be calculated." },
+    { "group": "Statistics & Surveys", "term": "Sample survey", "meaning": "A survey performed on n elements selected from the population so parameters can only be estimated." },
+    { "group": "Two Worlds & Distributions", "term": "Empirical world", "meaning": "The world of known data sets and calculated descriptive numbers, where theoretical assumptions are uncertain." },
+    { "group": "Two Worlds & Distributions", "term": "Theoretical world", "meaning": "The world of random variables and probability distributions where theoretical assumptions are perfectly satisfied." },
+    { "group": "Two Worlds & Distributions", "term": "Population distribution", "meaning": "The distribution derived from all elements of the population, whose parameters are constants." },
+    { "group": "Two Worlds & Distributions", "term": "Sampling distribution", "meaning": "The probability distribution of a sample statistic (like X̄), which varies as a random variable from sample to sample." },
+    { "group": "Estimation", "term": "Estimator", "meaning": "A sample statistic viewed as a random variable used to estimate a population parameter (e.g., X̄, S², P)." },
+    { "group": "Estimation", "term": "Point estimate", "meaning": "A single numerical value calculated from one sample to estimate an unknown population parameter (e.g., x̄, s², p)." },
+    { "group": "Estimation", "term": "Interval estimate", "meaning": "A range of values constructed around a point estimate that is likely to cover the unknown population parameter." },
+    { "group": "Estimation", "term": "Sampling error", "meaning": "The difference between a sample statistic calculated from one sample and the true population parameter." },
+    { "group": "Confidence Intervals", "term": "Confidence level (1 - α)", "meaning": "The approximate proportion of constructed empirical confidence intervals that cover the unknown population parameter." },
+    { "group": "Confidence Intervals", "term": "Maximum acceptable error (Δ)", "meaning": "The half-width of a constructed two-sided confidence interval: (x̄ - Δ, x̄ + Δ)." }
+  ],
+
+  "confusable": [
+    ["Descriptive statistics", "Inferential statistics"],
+    ["Population survey (census)", "Sample survey"],
+    ["Population distribution", "Sampling distribution"],
+    ["Estimator", "Point estimate", "Interval estimate"],
+    ["Empirical world", "Theoretical world"]
+  ],
+
+  "facts": [
+    [1, "A survey performed on all N elements of a population is called a {census|sample survey|random sample|point estimate}."],
+    [1, "Descriptive statistics is carried out in the {empirical|theoretical|hypothetical|asymptotic} world with no generalization."],
+    [2, "In a population distribution, any population parameter is always {constant|a random variable|zero|unknown in a census}."],
+    [2, "An {estimator|estimate|interval|assumption} is a random variable (such as X̄), whereas a point {estimate|estimator|parameter|error} is a calculated number (such as x̄)."],
+    [2, "The difference between a sample statistic from one sample and the true population parameter is called {sampling error|confidence level|bias|standardization}."],
+    [3, "When the population is normal and σ² is unknown, the two-sided CI for μ uses Student's {t_(1-α/2)(n-1)|z_(1-α/2)|χ²|F} quantile."],
+    [3, "The most common confidence levels 1 - α are 0.90, 0.95 and {0.99|0.50|0.75|1.00}."],
+    [4, "Increasing the confidence level 1 - α makes the confidence interval {wider and less accurate|narrower and more accurate|unchanged|zero-width}."],
+    [4, "Increasing the random sample size n makes the confidence interval {narrower and more accurate|wider and less accurate|unchanged|biased}."],
+    [5, "When using a confidence interval to judge a research hypothesis, the hypothesis must be formulated {before|after|during|instead of} any calculations."]
+  ],
+
+  "sheet": [
+    [
+      "Parameters, Estimators & Point Estimates",
+      ["Population Parameter", "Estimator (Random Variable)", "Point Estimate (Calculated Value)"],
+      [
+        ["Expected value E(X)", "X̄", "x̄"],
+        ["Normal mean μ", "X̄", "x̄"],
+        ["Normal variance σ²", "S²", "s²"],
+        ["Population proportion p", "P", "p = n_j / n"],
+        ["Count in population N·p", "N · P", "N · p"]
+      ]
+    ],
+    [
+      "Two-Sided 100(1-α)% Empirical Confidence Intervals",
+      ["Parameter", "Conditions", "Empirical Interval Formula"],
+      [
+        ["μ", "Normal population, σ² unknown", "x̄ ± t_{1-α/2}(n-1) · (s / √n)"],
+        ["E(X)", "Large random sample (n > 30)", "x̄ ± z_{1-α/2} · (s / √n)"],
+        ["p", "Large random sample", "p ± z_{1-α/2} · √(p(1-p) / n)"],
+        ["N·p", "Large random sample, N known", "N · [ p ± z_{1-α/2} · √(p(1-p) / n) ]"]
+      ]
+    ]
+  ]
+}

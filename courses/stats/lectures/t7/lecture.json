@@ -1,0 +1,226 @@
+{
+  "num": 7,
+  "id": "t7",
+  "title": "Probability & Random Variables",
+  "short": "Probability & RVs",
+  "sub": "Lecture 7 · events, probability rules, random variables & moments",
+  "blurb": "Random experiments, classical and statistical probability, conditional probability, discrete and continuous random variables, distribution functions, expected value and variance.",
+  "h1": "Probability & Random Variables",
+  "lede": "Probability gives us a numerical way to reason about uncertainty. This lecture builds from basic events and probability rules to discrete and continuous random variables, their distribution functions, quantiles, expected value and variance.",
+  "six": [
+    "A **random event** A has probability 0 < P(A) < 1; a **certain event** E has P(E) = 1 and an **impossible event** Ø has P(Ø) = 0.",
+    "**Classical probability** is P(A) = m / n (requires equally likely outcomes); **statistical probability** approximates P(A) by relative frequency f / n as trials n grow.",
+    "Two events are **independent** when P(A|B) = P(A); **disjoint** events have A ∩ B = Ø and P(A ∪ B) = P(A) + P(B).",
+    "A **discrete** random variable uses probability function P(x) (sums to 1), while a **continuous** random variable uses density f(x) (integrates to 1, and P(X = x) = 0).",
+    "The **cumulative distribution function** F(x) = P(X ≤ x) works for both types: it is non-decreasing from 0 to 1 and gives range probabilities via F(x₂) - F(x₁).",
+    "**Expected value** E(X) measures the level (centre) of a distribution, while **variance** Var(X) = E(X²) - [E(X)]² and **standard deviation** S.D.(X) = √Var(X) measure its spread."
+  ],
+  "must": "Probability rules, F(x) & expected value / variance",
+  "foot": "Source: 4ST601 Lecture slides (7-time-series-seasonal.txt: Probability & Random Variables).",
+
+  "questions": [
+    {
+      "id": "t7-certain-impossible",
+      "q": "What are the probabilities of a certain event E and an impossible event Ø?",
+      "h": "One always happens under given conditions; the other can never happen.",
+      "answer": "P(E) = 1 and P(Ø) = 0",
+      "wrong": ["P(E) = 0 and P(Ø) = 1", "P(E) = 0.5 and P(Ø) = 0", "0 < P(E) < 1 and P(Ø) = 0"],
+      "e": "A certain event E occurs with probability 1 (100%), an impossible event Ø has probability 0, and a random event A has 0 < P(A) < 1.",
+      "fol": true
+    },
+    {
+      "id": "t7-disjoint-vs-comp",
+      "q": "Two events A and A' are complementary when:",
+      "h": "They cannot happen together AND together they cover all outcomes.",
+      "answer": "A ∩ A' = Ø and A ∪ A' = E, so P(A) + P(A') = 1",
+      "wrong": ["A ∩ A' ≠ Ø and P(A) + P(A') = 1", "P(A|A') = P(A) and P(A ∪ A') = 0", "A ∪ A' = Ø and P(A) = P(A')"],
+      "e": "Complementary events are disjoint (A ∩ A' = Ø) and together include all outcomes of the experiment (A ∪ A' = E), giving P(A) = 1 - P(A')."
+    },
+    {
+      "id": "t7-classical-def",
+      "q": "When can we use the classical definition of probability P(A) = m / n?",
+      "h": "Think about what we assume before running the random experiment.",
+      "answer": "When all n possible outcomes of the experiment are equally likely",
+      "wrong": ["Only after repeating the experiment at least 600 times", "Whenever the outcomes are continuous real numbers", "Only when the events are mutually exclusive"],
+      "e": "The classical definition P(A) = m / n assumes before the random experiment that all n possible outcomes are equally likely."
+    },
+    {
+      "id": "t7-casino-die",
+      "q": "A six-sided die is rolled 600 times in a casino and the number 6 falls 50 times. Using the statistical definition, what is the estimated probability of rolling a 6?",
+      "h": "Divide the number of occurrences f by the number of trials n.",
+      "answer": "50 / 600 ≈ 0.083 (about 8.3%), suggesting the die is not fair",
+      "wrong": ["1 / 6 ≈ 0.17 (about 17%), proving the die is fair", "50 / 100 = 0.50 (50%)", "6 / 600 = 0.01 (1%)"],
+      "e": "By the statistical (frequentist) definition, P(A) ≈ f / n = 50 / 600 ≈ 0.083 (8.3%), which differs from 1/6 ≈ 17% and indicates the die is not fair."
+    },
+    {
+      "id": "t7-independence",
+      "q": "Two events A and B are independent if and only if:",
+      "h": "Knowing B occurred does not change the probability of A.",
+      "answer": "P(A|B) = P(A) (or equivalently P(B|A) = P(B))",
+      "wrong": ["A ∩ B = Ø", "P(A ∪ B) = P(A) + P(B)", "P(A) + P(B) = 1"],
+      "e": "Independence means the occurrence of one event does not influence the probability of the other: P(A|B) = P(A) and P(B|A) = P(B).",
+      "fol": true
+    },
+    {
+      "id": "t7-die-cond",
+      "q": "Rolling a fair six-sided die once, A = {2, 4, 6} (even) and B = {4, 5, 6} (> 3). What is P(A|B) and are A and B independent?",
+      "h": "Restrict the outcomes to B = {4, 5, 6}, then see how many are even.",
+      "answer": "P(A|B) = 2/3 ≈ 0.67 ≠ P(A) = 0.5, so A and B are dependent",
+      "wrong": ["P(A|B) = 1/2 = 0.5 = P(A), so A and B are independent", "P(A|B) = 1/3 ≈ 0.33 ≠ P(A), so A and B are dependent", "P(A|B) = 2/6 = 0.33, so A and B are disjoint"],
+      "e": "Given B = {4, 5, 6} (3 outcomes), two outcomes are even (4 and 6), so P(A|B) = 2/3 ≈ 0.67 ≠ 0.5 = P(A). Therefore A and B are dependent."
+    },
+    {
+      "id": "t7-bank-alarms",
+      "q": "A bank has two independent alarm systems with detection probabilities P(A) = 0.9 and P(B) = 0.8. What is the probability that at least one detects a burglary?",
+      "h": "Use the general addition rule: P(A ∪ B) = P(A) + P(B) - P(A ∩ B).",
+      "answer": "0.98 (98%)",
+      "wrong": ["0.72 (72%)", "1.70 (170%)", "0.85 (85%)"],
+      "e": "Because A and B are independent, P(A ∩ B) = P(A)·P(B) = 0.9·0.8 = 0.72. Thus P(A ∪ B) = 0.9 + 0.8 - 0.72 = 0.98 (98%).",
+      "fol": true
+    },
+    {
+      "id": "t7-mult-dependent",
+      "q": "Which formula is the general multiplication rule for two dependent events A and B?",
+      "h": "One probability is multiplied by a conditional probability.",
+      "answer": "P(A ∩ B) = P(A) · P(B|A) = P(B) · P(A|B)",
+      "wrong": ["P(A ∩ B) = P(A) · P(B)", "P(A ∩ B) = P(A) + P(B)", "P(A ∩ B) = 0"],
+      "e": "For dependent events, P(A ∩ B) = P(A)·P(B|A) = P(B)·P(A|B). Only for independent events does this simplify to P(A)·P(B)."
+    },
+    {
+      "id": "t7-discrete-vs-cont",
+      "q": "What distinguishes a discrete random variable from a continuous random variable?",
+      "h": "Compare the set of possible values each can take.",
+      "answer": "A discrete RV has a finite or countably infinite number of values; a continuous RV can take any value within one or more intervals",
+      "wrong": ["A discrete RV can only take 0 or 1; a continuous RV takes any integer", "A discrete RV uses f(x); a continuous RV uses P(x)", "A discrete RV has F(+∞) = 1; a continuous RV has F(+∞) = ∞"],
+      "e": "A discrete RV has finite or countably infinite values, whereas a continuous RV can take any value within one or more intervals (infinitely many values)."
+    },
+    {
+      "id": "t7-cdf-def",
+      "q": "How is the cumulative distribution function F(x) defined for both discrete and continuous random variables?",
+      "h": "It accumulates probability up to and including x.",
+      "answer": "F(x) = P(X ≤ x) for x ∈ (-∞, +∞)",
+      "wrong": ["F(x) = P(X = x) for x ∈ (-∞, +∞)", "F(x) = P(X > x) for x ∈ (-∞, +∞)", "F(x) = dP(x)/dx for x ∈ (-∞, +∞)"],
+      "e": "For both discrete and continuous random variables, F(x) = P(X ≤ x), with 0 ≤ F(x) ≤ 1, F(-∞) = 0, and F(+∞) = 1.",
+      "fol": true
+    },
+    {
+      "id": "t7-cont-point-zero",
+      "q": "For a continuous random variable X, what is P(X = x) at any single point x?",
+      "h": "A single point has zero width under a density curve.",
+      "answer": "Always 0, so P(X < x) = P(X ≤ x)",
+      "wrong": ["Equal to the density f(x)", "Equal to the cumulative probability F(x)", "Always 1/n"],
+      "e": "For any continuous RV, P(X = x) = 0 for all x ∈ (-∞, +∞), which is why P(X < x) = P(X ≤ x)."
+    },
+    {
+      "id": "t7-siblings-prob",
+      "q": "For the siblings distribution P(0)=0.40, P(1)=0.35, P(2)=0.15, P(3)=0.07, P(4)=0.03, what is P(1 < X < 4)?",
+      "h": "Strict inequalities exclude 1 and 4.",
+      "answer": "0.22",
+      "wrong": ["0.57", "0.25", "0.90"],
+      "e": "The values strictly between 1 and 4 are x = 2 and x = 3, so P(1 < X < 4) = P(2) + P(3) = 0.15 + 0.07 = 0.22."
+    },
+    {
+      "id": "t7-pdf-integral",
+      "q": "Given the density f(x) = 2x for 0 < x < 1 (and 0 otherwise), what is F(x) for 0 < x < 1 and what is P(1/3 < X ≤ 2/3)?",
+      "h": "Integrate 2t from 0 to x to get F(x), then compute F(2/3) - F(1/3).",
+      "answer": "F(x) = x² and P(1/3 < X ≤ 2/3) = 4/9 - 1/9 = 1/3 (≈ 33%)",
+      "wrong": ["F(x) = 2x² and P(1/3 < X ≤ 2/3) = 2/3", "F(x) = x and P(1/3 < X ≤ 2/3) = 1/3", "F(x) = x² and P(1/3 < X ≤ 2/3) = 5/9"],
+      "e": "Integrating f(t) = 2t from 0 to x gives F(x) = x² for 0 < x < 1. Then F(2/3) - F(1/3) = (2/3)² - (1/3)² = 4/9 - 1/9 = 3/9 = 1/3."
+    },
+    {
+      "id": "t7-siblings-moments",
+      "q": "For the siblings distribution (x = 0..4 with P = 0.4, 0.35, 0.15, 0.07, 0.03), what are E(X) and Var(X)?",
+      "h": "E(X) = Σ x·P(x) and Var(X) = Σ x²·P(x) - [E(X)]².",
+      "answer": "E(X) = 0.98 and Var(X) = 1.0996",
+      "wrong": ["E(X) = 2.00 and Var(X) = 1.0996", "E(X) = 0.98 and Var(X) = 2.06", "E(X) = 1.0996 and Var(X) = 0.98"],
+      "e": "E(X) = 0(0.4)+1(0.35)+2(0.15)+3(0.07)+4(0.03) = 0.98. Var(X) = (0 + 0.35 + 0.60 + 0.63 + 0.48) - 0.98² = 2.06 - 0.9604 = 1.0996.",
+      "fol": true
+    },
+    {
+      "id": "t7-quantile-siblings",
+      "q": "Using the siblings distribution (F(0)=0.40 for 0≤x<1, F(1)=0.75 for 1≤x<2, F(2)=0.90 for 2≤x<3, F(3)=0.97 for 3≤x<4), what are the lower quartile x₀.₂₅ and 95% quantile x₀.₉₅?",
+      "h": "Find where F(x) first reaches or exceeds P.",
+      "answer": "x₀.₂₅ = 0 and x₀.₉₅ = 3",
+      "wrong": ["x₀.₂₅ = 1 and x₀.₉₅ = 4", "x₀.₂₅ = 0 and x₀.₉₅ = 4", "x₀.₂₅ = 1 and x₀.₉₅ = 3"],
+      "e": "At x = 0, F jumps to 0.40 (exceeding 0.25), so x₀.₂₅ = 0. At x = 3, F jumps from 0.90 to 0.97 (crossing 0.95), so x₀.₉₅ = 3."
+    },
+    {
+      "id": "t7-cont-quantile",
+      "q": "For the continuous RV with F(x) = x² on (0, 1), what is the lower quartile x₀.₂₅?",
+      "h": "Solve F(x₀.₂₅) = 0.25.",
+      "answer": "0.5",
+      "wrong": ["0.25", "0.0625", "0.75"],
+      "e": "From F(x₀.₂₅) = x² = 0.25 (on 0 < x < 1), taking the positive square root gives x₀.₂₅ = √0.25 = 0.5."
+    }
+  ],
+
+  "vocab": [
+    { "group": "Events & Probability", "term": "Experiment", "meaning": "A process that, when carried out, results in one of two or more possible outcomes." },
+    { "group": "Events & Probability", "term": "Random experiment", "meaning": "An experiment whose outcome cannot be predicted with certainty and can yield different outcomes under the same conditions." },
+    { "group": "Events & Probability", "term": "Outcome", "meaning": "A single particular result of an experiment." },
+    { "group": "Events & Probability", "term": "Event", "meaning": "A collection of one or more outcomes of an experiment, denoted by capital letters A, B, etc." },
+    { "group": "Events & Probability", "term": "Certain event (E)", "meaning": "An event guaranteed to occur under given conditions, with P(E) = 1." },
+    { "group": "Events & Probability", "term": "Impossible event (Ø)", "meaning": "An event that cannot occur under given conditions, with P(Ø) = 0." },
+    { "group": "Events & Probability", "term": "Disjoint events", "meaning": "Mutually exclusive events whose intersection is empty (A ∩ B = Ø)." },
+    { "group": "Events & Probability", "term": "Complementary events", "meaning": "Two disjoint events A and A' whose union is the certain event E, so P(A) + P(A') = 1." },
+    { "group": "Probability Rules", "term": "Classical probability", "meaning": "P(A) = m / n, assuming all n possible outcomes are equally likely before the experiment." },
+    { "group": "Probability Rules", "term": "Statistical probability", "meaning": "Estimating P(A) by the relative frequency f / n over a large number of repetitions n." },
+    { "group": "Probability Rules", "term": "Conditional probability", "meaning": "The probability P(A|B) that event A occurs given that event B has already occurred." },
+    { "group": "Probability Rules", "term": "Independent events", "meaning": "Events where the occurrence of one does not affect the probability of the other: P(A|B) = P(A)." },
+    { "group": "Random Variables", "term": "Random variable (X)", "meaning": "A variable whose numerical value is determined by the outcome of a random experiment." },
+    { "group": "Random Variables", "term": "Discrete random variable", "meaning": "A random variable with a finite or countably infinite number of possible values." },
+    { "group": "Random Variables", "term": "Continuous random variable", "meaning": "A random variable that can take any value within one or more intervals (infinitely many values)." },
+    { "group": "Distributions & Moments", "term": "Probability function P(x)", "meaning": "For a discrete RV, P(x) = P(X = x), with 0 ≤ P(x) ≤ 1 and Σ P(x) = 1." },
+    { "group": "Distributions & Moments", "term": "Probability density function f(x)", "meaning": "For a continuous RV, the derivative f(x) = F'(x) with f(x) ≥ 0 and total integral 1." },
+    { "group": "Distributions & Moments", "term": "Distribution function F(x)", "meaning": "The cumulative probability F(x) = P(X ≤ x) for any real x." },
+    { "group": "Distributions & Moments", "term": "Expected value E(X)", "meaning": "The characteristic of the level (centre) of a distribution: Σ x·P(x) or ∫ x·f(x) dx." },
+    { "group": "Distributions & Moments", "term": "Variance Var(X)", "meaning": "A measure of spread around E(X), computed as E(X²) - [E(X)]²." },
+    { "group": "Distributions & Moments", "term": "Standard deviation S.D.(X)", "meaning": "The square root of the variance: √Var(X)." },
+    { "group": "Distributions & Moments", "term": "100·P% quantile (x_P)", "meaning": "The value x_P where F(x_P) = P(X < x_P) = P, separating the lower 100·P% of values." }
+  ],
+
+  "confusable": [
+    ["Disjoint events", "Independent events", "Complementary events"],
+    ["Classical probability", "Statistical probability", "Conditional probability"],
+    ["Probability function P(x)", "Probability density function f(x)", "Distribution function F(x)"],
+    ["Discrete random variable", "Continuous random variable"]
+  ],
+
+  "facts": [
+    [1, "A certain event E has probability {1|0|0.5|-1}."],
+    [1, "Two events with an empty intersection A ∩ B = Ø are called {disjoint|independent|complementary|conditional}."],
+    [1, "For complementary events A and A', P(A) equals {1 - P(A')|P(A')|1 + P(A')|0}."],
+    [2, "The classical definition P(A) = m / n assumes all outcomes are {equally likely|independent|continuous|disjoint}."],
+    [2, "Two events A and B are independent when P(A|B) equals {P(A)|P(B)|0|1 - P(A)}."],
+    [2, "For any two events, P(A ∪ B) = P(A) + P(B) - {P(A ∩ B)|P(A)·P(B) only|P(A|B)|1}."],
+    [3, "For a continuous random variable, the probability P(X = x) at any single value is always {0|1|f(x)|F(x)}."],
+    [3, "The cumulative distribution function F(x) is defined as {P(X ≤ x)|P(X = x)|P(X > x)|f(x)}."],
+    [4, "For f(x) = 2x on 0 < x < 1, the distribution function on that interval is {x²|2x|x/2|2}."],
+    [5, "Variance is computed as E(X²) minus {[E(X)]²|E(X)|S.D.(X)|P(x)}."],
+    [5, "Standard deviation S.D.(X) is the {square root|square|reciprocal|derivative} of Var(X)."]
+  ],
+
+  "sheet": [
+    [
+      "Discrete vs. Continuous Random Variables",
+      ["Property", "Discrete RV", "Continuous RV"],
+      [
+        ["Possible values", "Finite or countably infinite", "Any value in interval(s)"],
+        ["Point probability", "P(x) = P(X = x), Σ P(x) = 1", "P(X = x) = 0; uses density f(x) ≥ 0, ∫ f(x) dx = 1"],
+        ["CDF F(x) = P(X ≤ x)", "Σ_{t ≤ x} P(t) (step function)", "∫_{-∞}^x f(t) dt (continuous)"],
+        ["Range P(x₁ < X ≤ x₂)", "Σ_{x₁ < x ≤ x₂} P(x) = F(x₂) - F(x₁)", "∫_{x₁}^{x₂} f(x) dx = F(x₂) - F(x₁)"],
+        ["Expected value E(X)", "Σ x · P(x)", "∫_{-∞}^{+∞} x · f(x) dx"],
+        ["Variance Var(X)", "Σ x² · P(x) - [E(X)]²", "∫_{-∞}^{+∞} x² · f(x) dx - [E(X)]²"]
+      ]
+    ],
+    [
+      "Probability Rules Summary",
+      ["Case", "Multiplication / Intersection", "Addition / Union"],
+      [
+        ["Disjoint events", "P(A ∩ B) = 0", "P(A ∪ B) = P(A) + P(B)"],
+        ["Independent events", "P(A ∩ B) = P(A) · P(B)", "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)"],
+        ["Dependent events", "P(A ∩ B) = P(A) · P(B|A) = P(B) · P(A|B)", "P(A ∪ B) = P(A) + P(B) - P(A ∩ B)"]
+      ]
+    ]
+  ]
+}
