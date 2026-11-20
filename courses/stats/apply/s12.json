@@ -1,0 +1,182 @@
+{
+  "seminar": 12,
+  "title": "Seminar 12 · Tests of dependence: contingency, ANOVA, correlation, regression, trend",
+  "source": "exercises/12A_hypothesis_testing_conttab_ANOVA_corranal_regline_lineartrend_after_seminars12_13_v2.3.docx + 12B_Data_after_seminars12_13_v2.0.xlsx",
+  "formulas": ["infdep", "dep"],
+  "intro": "<b>Same five steps as Seminar 11:</b> H0 and H1 → test statistic and its distribution → value of the test statistic → rejection region from the tables → conclusion in words. Data from the Excel file are shown as tables. Test statistics and critical values were calculated for this app (the file shows them as equations that could not be copied); every conclusion matches the one in the file.",
+  "exercises": [
+    { "id": "ctt1", "text": "During the efficiency verification of four methods (B1, B2, B3, B4) that were employed to increase the labour productivity (an increase being expressed by numbers from 1-lowest to 5-highest), 220 employees of a particular company were randomly selected from a population of all employees, the following data being collected:",
+      "table": { "head": ["Increase in productivity", "B1", "B2", "B3", "B4", "Total"], "rows": [["1", "7", "3", "13", "8", "31"], ["2", "16", "9", "19", "11", "55"], ["3", "18", "10", "16", "18", "62"], ["4", "10", "16", "9", "9", "44"], ["5", "8", "8", "6", "6", "28"], ["Total", "59", "46", "63", "52", "220"]] },
+      "after": "Assume all the expected frequencies to be large enough and at a 5 % significance level, carry out a statistical hypothesis test to judge if the increase in productivity depends on the method.",
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 15.312, "show": "15.312", "f": ["i-ctt", "c-exp"], "tol": 0.05 },
+        { "q": "Degrees of freedom", "ans": 12, "show": "(5 − 1)(4 − 1) = 12", "f": ["i-ctt"], "tol": 0 },
+        { "q": "Critical value χ²0.95(12)", "ans": 21.03, "show": "21.03", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: productivity increase depends on the method", "Do not reject H0: productivity increase and method are independent"], "right": 1, "model": "At a 5% significance level, the value of the test statistic is not inconsistent with H0 that the productivity increase and method are independent." }
+      ] },
+    { "id": "ctt2", "text": "The following contingency table contains data on the education of randomly selected readers of three different magazines (A, B, C). Assuming all the expected frequencies are large enough, at a 0.5% significance level run a statistical hypothesis test to judge whether the selection of a magazine depends on the education attained.",
+      "table": { "head": ["Education", "A", "B", "C", "Total"], "rows": [["Tertiary", "75", "75", "50", "200"], ["Secondary", "40", "70", "40", "150"], ["Elementary", "35", "5", "10", "50"], ["Total", "150", "150", "100", "400"]] },
+      "parts": [
+        { "q": "Expected frequency for Tertiary × A", "ans": 75, "show": "200 × 150 / 400 = 75", "f": ["c-exp"], "tol": 0.01 },
+        { "q": "Value of the test statistic g", "ans": 32.889, "show": "32.889", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.995(4)", "ans": 14.86, "show": "14.86", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: the selection of a magazine depends on education", "Do not reject H0: they are independent"], "right": 0, "model": "At a 0.5% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the selection of a magazine depends on the education attained." }
+      ] },
+    { "id": "ctt3", "text": "The data on the “Exercise_ctt3“ sheet are a random sample from the population of all people in a specific region in the Czech Republic. Use the data to carry out a statistical hypothesis test (at a 7% significance level, under the assumption of all expected frequencies being large enough) to judge whether the willingness to move to another city (1=strong agreement, 2=agreement, 3=I don’t care, 4=disagreement, 5=strong disagreement) depends on the gender (1=male, 2=female).",
+      "table": { "caption": "The 275 rows of the Excel sheet, counted into a contingency table:", "head": ["Willingness", "Male (1)", "Female (2)"], "rows": [["1", "4", "14"], ["2", "35", "23"], ["3", "15", "19"], ["4", "28", "39"], ["5", "48", "50"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 9.566, "show": "9.566", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.93(4)", "ans": 8.67, "show": "8.67", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: willingness to move depends on gender", "Do not reject H0: they are independent"], "right": 0, "model": "At a 7% significance level, the value of the test statistic is inconsistent with the null hypothesis in favour of the alternative hypothesis that the willingness to move to another city depends on the gender." }
+      ] },
+    { "id": "ctt4", "text": "A contingency table was constructed for a data set of 110 randomly selected university staff in the Czech Republic, the variables of interest being a teaching degree and the gender. In the contingency table below, the observed frequencies (upper ones) and some expected frequencies (expected in the case of independence) are available (you need to determine 4 missing expected frequencies). Round the results off to one decimal place. Assume all the expected frequencies to be large enough and run a statistical hypothesis test (at an 11% significance level) to assess if there is a relationship between gender and pedagogical degree.",
+      "table": { "caption": "Contingency table of Gender and Degree (observed / expected)", "head": ["", "Junior assistant", "Senior assistant", "Senior lecturer", "Professor", "Total"], "rows": [["Male", "5 / 6.3", "30 / 31.6", "15 / …", "8 / …", "58"], ["Female", "7 / 5.7", "30 / 28.4", "8 / …", "7 / …", "52"], ["Total", "12", "60", "23", "15", "110"]] },
+      "parts": [
+        { "q": "Expected frequency: Male × Senior lecturer", "ans": 12.1, "show": "12.1", "f": ["c-exp"], "tol": 0.05 },
+        { "q": "Expected frequency: Male × Professor", "ans": 7.9, "show": "7.9", "f": ["c-exp"], "tol": 0.05 },
+        { "q": "Expected frequency: Female × Senior lecturer", "ans": 10.9, "show": "10.9", "f": ["c-exp"], "tol": 0.05 },
+        { "q": "Expected frequency: Female × Professor", "ans": 7.1, "show": "7.1", "f": ["c-exp"], "tol": 0.05 },
+        { "q": "Value of the test statistic g", "ans": 2.21, "show": "2.21", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.89(3)", "ans": 6.03, "show": "6.03", "f": ["i-ctt"], "tol": 0.03 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: gender and degree are related", "Do not reject H0: gender and degree are independent"], "right": 1, "model": "At an 11% significance level, the value of the test statistic is not inconsistent with H0 that the gender and pedagogical degree are independent. Be careful with such a strong rounding as it may influence your results a lot!" }
+      ] },
+    { "id": "ctt5", "text": "The following contingency table contains data on the general knowledge of the European Union (1=I know nothing, 2=I know only a little, 3=I know quite a lot, 4=I know a lot) and the age of randomly selected respondents (1=the youngest, …, 5=the oldest) in Prague. Under the assumption of all expected frequencies being large enough, perform a statistical hypothesis test (at a 10% significance level) to judge if there is a relationship between the level of knowledge and age. Are the conditions for a justified employment of the test fulfilled?",
+      "table": { "head": ["Level of knowledge \\ Age", "1", "2", "3", "4", "5"], "rows": [["1", "2", "2", "4", "7", "6"], ["2", "23", "20", "13", "31", "40"], ["3", "27", "36", "50", "40", "50"], ["4", "10", "10", "12", "13", "14"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 14.708, "show": "14.708", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.90(12)", "ans": 18.55, "show": "18.55", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: knowledge depends on age", "Do not reject H0: knowledge and age are independent"], "right": 1 },
+        { "q": "Are the conditions for a justified employment of the test fulfilled?", "type": "text", "model": "At a 10% significance level, the value of the test statistic is not inconsistent with H0 that the level of knowledge and age are independent. Some of the expected frequencies are pretty low (the smallest is about 3.2), fulfilment of the conditions thus being very questionable, the test seems not to be justified." }
+      ] },
+    { "id": "ctt6", "text": "In the case of contingency tables with insufficiently occupied cells (low expected frequencies), it is often recommended to combine the categories. Use the contingency table from the previous exercise combining the first three age categories into “younger person“ and the remaining two into “older person“ categories. Explore how this action may influence the results of the independence test.",
+      "table": { "caption": "Table from ctt5 after combining the categories:", "head": ["Level of knowledge", "Younger (1–3)", "Older (4–5)"], "rows": [["1", "8", "13"], ["2", "56", "71"], ["3", "113", "90"], ["4", "32", "27"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 5.838, "show": "5.838", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.90(3)", "ans": 6.25, "show": "6.25", "f": ["i-ctt"], "tol": 0.03 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0", "Do not reject H0: knowledge and age are independent"], "right": 1, "model": "At a 10% significance level, the value of the test statistic is not inconsistent with H0 that the level of knowledge and age are independent." }
+      ] },
+    { "id": "ctt7", "text": "Assume the expected frequencies to be large enough and use a statistical hypothesis test (at a 3% significance level) to evaluate a research hypothesis about independence between gender and the preferred place to live using data of 514 randomly selected people.",
+      "table": { "head": ["Gender \\ Preferred place to live", "City", "Countryside"], "rows": [["Male", "110", "160"], ["Female", "146", "98"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 18.694, "show": "18.694", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.97(1)", "ans": 4.71, "show": "4.71", "f": ["i-ctt"], "tol": 0.03 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: gender and preferred place to live are dependent", "Do not reject H0: they are independent"], "right": 0, "model": "At a 3% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 about dependence between gender and preferred place to live." }
+      ] },
+    { "id": "ctt8", "text": "Assume the expected frequencies to be large enough and at an 8% significance level, judge whether there is the dependence of car and cottage ownership. In the table below there are the data (frequencies) obtained from 105 randomly selected households.",
+      "table": { "head": ["Car \\ Cottage", "yes", "no"], "rows": [["yes", "30", "35"], ["no", "5", "35"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 12.62, "show": "12.62", "f": ["i-ctt"], "tol": 0.05 },
+        { "q": "Critical value χ²0.92(1)", "ans": 3.07, "show": "3.07", "f": ["i-ctt"], "tol": 0.03 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: car and cottage ownership are dependent", "Do not reject H0: they are independent"], "right": 0, "model": "At an 8% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the ownership of a car and the ownership of a cottage are dependent." }
+      ] },
+    { "id": "at1", "text": "The marketing agency conducted a survey of annual household expenditure (per one household member) in a city. The survey was carried out in 31 randomly selected households (14 workers’ households, 11 other employees’ households, 6 other households). The survey results are shown in the table below:",
+      "table": { "head": ["Type of household", "Yearly expenditure per 1 member"], "rows": [["workers’ h.", "280, 345, 315, 270, 285, 348, 355, 280, 308, 345, 358, 313, 312, 317"], ["employees’ h.", "330, 334, 332, 328, 335, 337, 354, 340, 339, 360, 371"], ["other", "275, 308, 258, 275, 348, 313"]] },
+      "after": "At a 5% significance level, run a statistical hypothesis test to judge whether the expenditure depend on the type of household.",
+      "parts": [
+        { "q": "H0: μ1 = μ2 = μ3. What is H1?", "type": "choice", "options": ["non H0: at least one population mean differs", "μ1 ≠ μ2 ≠ μ3", "μ1 > μ2 > μ3"], "right": 0, "f": ["i-anova"], "model": "Note there are three populations (and their parameters) of interest. H1: non H0, i.e. at least one population mean differs, i.e. household expenditure and the type of household are dependent." },
+        { "q": "ssTR (between groups)", "ans": 8741.71, "show": "8741.7", "f": ["a-ss"], "tol": 5 },
+        { "q": "ssE (within groups)", "ans": 19109.97, "show": "19110.0", "f": ["a-ss"], "tol": 5 },
+        { "q": "Value of the test statistic f", "ans": 6.404, "show": "6.404", "f": ["i-anova"], "tol": 0.02 },
+        { "q": "Critical value f0.95(2, 28)", "ans": 3.34, "show": "3.34", "f": ["i-anova"], "tol": 0.02 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: expenditure depends on the type of household", "Do not reject H0"], "right": 0, "model": "At a 5% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the expenditures and the type of household are dependent." }
+      ] },
+    { "id": "at2", "text": "Suppose we have gained some information on expenditure from several randomly selected households of one, two, three and four members, examining the dependence of these expenditures on the number of household members. The table below indicates the results of one-way ANOVA in Excel. Use a statistical hypothesis test procedure at a 5% significance level to judge whether the mean expenditure values differ for the households with different numbers of members.",
+      "table": { "caption": "ANOVA", "head": ["Source of Variation", "SS", "df", "MS", "F", "P-value"], "rows": [["Between Groups", "3778.1875", "3", "1259.395833", "2.59", "0.1013"], ["Within Groups", "5835.75", "12", "486.3125", "", ""], ["Total", "9613.9375", "15", "", "", ""]] },
+      "parts": [
+        { "q": "Critical value f0.95(3, 12)", "ans": 3.49, "show": "3.49", "f": ["i-anova"], "tol": 0.02 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: mean expenditure differs", "Do not reject H0: expenditure and number of members are independent"], "right": 1, "model": "f = 2.59 < 3.49 (and P-value 0.1013 > 0.05): at a 5% significance level, the value of the test statistic is not inconsistent with H0 that the expenditures and the number of household members are independent." }
+      ] },
+    { "id": "at3", "text": "12 randomly selected typists participated in an experiment examining the differences between three brands of computer keyboards. The table below presents the numbers of words of the same text they could type in 10 minutes. At a 5% significance level, carry out a statistical hypothesis test to judge if the means of words typed on the keyboards of different brands differ.",
+      "table": { "head": ["Brand", "Number of words", "", "", ""], "rows": [["A", "77", "71", "74", "67"], ["B", "67", "62", "63", "57"], ["C", "63", "59", "59", "54"]] },
+      "parts": [
+        { "q": "ssTR (between groups)", "ans": 392.667, "show": "392.67", "f": ["a-ss"], "tol": 0.1 },
+        { "q": "ssE (within groups)", "ans": 146.25, "show": "146.25", "f": ["a-ss"], "tol": 0.1 },
+        { "q": "Value of the test statistic f", "ans": 12.082, "show": "12.082", "f": ["i-anova"], "tol": 0.02 },
+        { "q": "Critical value f0.95(2, 9)", "ans": 4.256, "show": "4.256", "f": ["i-anova"], "tol": 0.01 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: the means differ by keyboard brand", "Do not reject H0"], "right": 0, "model": "At a 5% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the means of words typed and the keyboard brand are dependent." }
+      ] },
+    { "id": "at4", "text": "There is a part of ANOVA table below. The results are based on travel data on several journeys (which may be considered as a random sample from all possible journeys), namely data about the travel time from place A to place B using three alternative routes.",
+      "table": { "head": ["Source of Variation", "SS", "df", "MS", "P-value"], "rows": [["Between Groups", "115.7333333", "2", "57.8666667", "0.0079"], ["Within Groups", "93.2000000", "12", "7.7666667", ""]] },
+      "after": "Use the above results to carry out a statistical hypothesis test (at a 5% significance level) of the independence between the travel time and the selected route.",
+      "parts": [
+        { "q": "Value of the test statistic f", "ans": 7.451, "show": "7.451", "f": ["i-anova"], "tol": 0.01 },
+        { "q": "Critical value f0.95(2, 12)", "ans": 3.885, "show": "3.885", "f": ["i-anova"], "tol": 0.01 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: travel time depends on the route", "Do not reject H0"], "right": 0, "model": "At a 5% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the travel time and the route used are dependent." }
+      ] },
+    { "id": "at5", "text": "When looking for an appropriate chocolate packaging technology, an experiment was done. 12 randomly selected employees of a chocolate factory who took part in it were randomly divided into 4 equal groups. Each group having tested a different technology, the number of packaged chocolates per hour was recorded. Fill in the missing values into the table below and perform a statistical hypothesis test (at a 5% significance level) to assess whether different technologies bring different results.",
+      "table": { "caption": "ANOVA", "head": ["Source of Variation", "SS", "df", "F"], "rows": [["Between Groups", "…", "…", "…"], ["Within Groups", "22.00", "8", ""], ["Total", "58.9167", "11", ""]] },
+      "parts": [
+        { "q": "SS between groups", "ans": 36.9167, "show": "36.9167", "f": ["a-ss"], "tol": 0.001 },
+        { "q": "df between groups", "ans": 3, "show": "3", "f": ["i-anova"], "tol": 0 },
+        { "q": "F", "ans": 4.475, "show": "4.475", "f": ["i-anova"], "tol": 0.01 },
+        { "q": "Critical value f0.95(3, 8)", "ans": 4.066, "show": "4.066", "f": ["i-anova"], "tol": 0.01 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: technologies bring different results", "Do not reject H0"], "right": 0, "model": "At a 5% significance level, the value of the test statistic is inconsistent with the null hypothesis in favour of the alternative hypothesis that the number of packaged chocolates per hour and the packaging technology are dependent." }
+      ] },
+    { "id": "cort1", "text": "There are data about the results (in points) of 8 randomly chosen students in two mid-term tests on the “Exercise_cor1“ sheet. At a 4% significance level, carry out a hypothesis test to explore a research hypothesis that the points gained in test1 and points gained in test2 are linearly independent.",
+      "table": { "head": ["test1", "80", "50", "36", "58", "72", "60", "56", "68"], "rows": [["test2", "65", "60", "35", "39", "48", "44", "48", "61"]] },
+      "parts": [
+        { "q": "Correlation coefficient r", "ans": 0.6264, "show": "0.6264", "f": ["r-r"], "tol": 0.002 },
+        { "q": "Value of the test statistic t", "ans": 1.968, "show": "1.968", "f": ["i-corr"], "tol": 0.01 },
+        { "q": "Critical value t0.98(6)", "ans": 2.612, "show": "2.612", "f": ["i-corr"], "tol": 0.003 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: the points are correlated", "Do not reject H0: the points are linearly independent"], "right": 1, "model": "H0: ρXY = 0, H1: ρXY ≠ 0. At a 4% significance level, the value of the test statistic is not inconsistent with H0 that the points gained in test1 and points gained in test2 are linearly independent." }
+      ] },
+    { "id": "cort2", "text": "There are data on randomly selected countries (a random sample from the population of all countries) – namely the number of private cars, GDP in dollars and the number of kilometres travelled by trains and buses (all counted relative to one inhabitant) – on the “Exercise_cor2“ sheet. For each pair of variables, perform a statistical hypothesis test to judge, whether the variables are correlated.",
+      "table": { "head": ["Cars", "GDP", "Trains & buses"], "rowHead": false, "rows": [["0.27", "7.7", "2.6"], ["0.3", "9.8", "1.6"], ["0.28", "11", "1.9"], ["0.24", "7.1", "2.2"], ["0.33", "8.8", "1.5"], ["0.35", "10.4", "1.7"], ["0.08", "3.4", "0.7"], ["0.34", "9.8", "2"], ["0.2", "3.8", "0.3"], ["0.3", "4.6", "1.8"], ["0.43", "9.8", "0.8"], ["0.3", "9.4", "1.5"], ["0.28", "9.8", "1.7"], ["0.1", "1.8", "0.9"], ["0.18", "4", "1.3"], ["0.34", "10.6", "1.7"], ["0.32", "13.3", "2"], ["0.014", "1.2", "0.1"], ["0.27", "5.5", "1.6"]] },
+      "parts": [
+        { "q": "Cars and GDP: correlation coefficient r", "ans": 0.83, "show": "0.830", "f": ["r-r"], "tol": 0.003 },
+        { "q": "Cars and GDP: value of the test statistic t", "ans": 6.135, "show": "6.135", "f": ["i-corr"], "tol": 0.02 },
+        { "q": "Cars and trains & buses: value of the test statistic t", "ans": 2.842, "show": "2.842 (r = 0.568)", "f": ["i-corr"], "tol": 0.02 },
+        { "q": "GDP and trains & buses: value of the test statistic t", "ans": 3.295, "show": "3.295 (r = 0.624)", "f": ["i-corr"], "tol": 0.02 },
+        { "q": "Conclusion at a 5% significance level (critical value t0.975(17) = 2.110)", "type": "choice", "options": ["All three pairs are correlated (reject H0 each time)", "Only cars and GDP are correlated", "No pair is correlated"], "right": 0, "model": "All three values |t| are at least 2.110, so for each pair the value of the test statistic is inconsistent with H0 in favour of H1 that the variables are correlated.", "note": "The seminar file gives no significance level or result here; 5 % is assumed and the results were calculated for this app." }
+      ] },
+    { "id": "rlt1", "text": "“Exercise_rlt1“ sheet contains data on 13 chosen students’ test preparation times (in minutes) and the scores (in points) they achieved in the test. The data are assumed to be a realization of the data-generating process: Yi = β0 + β1·xi + εi",
+      "table": { "head": ["Preparation time", "160", "160", "162", "163", "161", "170", "172", "177", "179", "178", "182", "184", "183"], "rows": [["Achieved score", "57", "55", "59", "60", "52", "67", "69", "74", "75", "76", "78", "80", "87"]] },
+      "parts": [
+        { "q": "a) Estimate the parameters of a regression line model of the achieved score’s dependence on the preparation time. b1 =", "ans": 1.1339, "show": "1.1339", "f": ["r-b"], "tol": 0.002 },
+        { "q": "a) b0 =", "ans": -126.204, "show": "-126.204", "f": ["r-b"], "tol": 0.3 },
+        { "q": "b) Judge the quality of the regression model using the coefficient of determination. r² =", "ans": 0.9494, "show": "0.9494", "f": ["r-r2"], "tol": 0.002 },
+        { "q": "b) What does r² tell us?", "type": "text", "model": "About 94.9 % of the variability of the achieved scores is explained by the regression line (by the preparation time). The model fits the data very well.", "note": "Interpretation worded for this app." },
+        { "q": "c) At a 1% significance level, test the slope. s(b1) from Excel = 0.0790. Value of the test statistic t", "ans": 14.36, "show": "14.36", "f": ["i-slope"], "tol": 0.05 },
+        { "q": "c) Critical value t0.995(11)", "ans": 3.106, "show": "3.106", "f": ["i-slope"], "tol": 0.003 },
+        { "q": "c) Conclusion", "type": "choice", "options": ["Reject H0: preparation time and points are linearly dependent", "Do not reject H0: no linear relationship"], "right": 0, "model": "H0: β1 = 0, H1: β1 ≠ 0. At a 1% significance level the value of the test statistic is inconsistent with H0 in favour of H1 that the preparation time and achieved points are linearly dependent." },
+        { "q": "d) Using the estimated model, estimate the mean score achieved by the students who spent 182 minutes preparing for the test.", "ans": 80.16, "show": "80.16 points", "f": ["r-line"], "tol": 0.15 }
+      ] },
+    { "id": "rlt2", "text": "There are data about 13 students’ heights (in cms) and weights (in kgs) on the “Exercise_rlt2“ sheet. The data are assumed to be a realization of the data-generating process: Yi = β0 + β1·xi + εi",
+      "table": { "head": ["Height", "180", "197", "205", "202", "180", "160", "183", "185", "183", "150", "170", "190", "170"], "rows": [["Weight", "72", "86", "81", "85", "71", "63", "71", "73", "72", "55", "65", "75", "67"]] },
+      "parts": [
+        { "q": "a) Use the regression line to express the dependence of a student’s weight on his/her height. b1 =", "ans": 0.526, "show": "0.526", "f": ["r-b"], "tol": 0.002 },
+        { "q": "a) b0 =", "ans": -23.319, "show": "-23.319", "f": ["r-b"], "tol": 0.1 },
+        { "q": "b) At a 2% significance level, test the slope. s(b1) from Excel = 0.0442. Value of the test statistic t", "ans": 11.916, "show": "11.92", "f": ["i-slope"], "tol": 0.06 },
+        { "q": "b) Critical value t0.99(11)", "ans": 2.718, "show": "2.718", "f": ["i-slope"], "tol": 0.003 },
+        { "q": "c) Judge the quality of the estimated regression model by an appropriate coefficient. r² =", "ans": 0.9281, "show": "0.9281", "f": ["r-r2"], "tol": 0.002 },
+        { "q": "d) Suggest a causal interpretation of the estimated slope.", "type": "text", "model": "On the basis of the estimated model, we estimate that if the height of a student increases by 1 cm, the weight increases by 0.526 kgs on average. Note that this is a completely different interpretation than in the descriptive regression analysis: causal interpretation." },
+        { "q": "g) Estimate the mean weight of 180-cm-tall students.", "ans": 71.39, "show": "71.39 kg", "f": ["r-line"], "tol": 0.1 }
+      ] },
+    { "id": "rlt3", "text": "Use a statistical hypothesis test to judge (at a 12% significance level) whether the price of a flat depends on its area if you know that for a data set of 20 flats the regression line’s estimated slope b1 = 13.802 and its standard error s(b1) = 4.354. The data are assumed to be a realization of the data-generating process: Yi = β0 + β1·xi + εi",
+      "parts": [
+        { "q": "Value of the test statistic t", "ans": 3.17, "show": "3.170", "f": ["i-slope"], "tol": 0.005 },
+        { "q": "Critical value t0.94(18)", "ans": 1.632, "show": "1.632", "f": ["i-slope"], "tol": 0.005 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: price and area are linearly dependent", "Do not reject H0"], "right": 0, "model": "At a 12% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that price of flat and its area are linearly dependent." }
+      ] },
+    { "id": "rlt4", "text": "There are 2004 data on the value of the production (in millions of CZK) and investments (in hundreds of thousands of CZK) of 12 selected private companies on the “Exercise_rlt4“ sheet. The data are assumed to be a realization of the data-generating process: Yi = β0 + β1·xi + εi",
+      "table": { "head": ["Value of production", "52.8", "48.4", "54.2", "50", "54.9", "53.9", "53.1", "52.4", "53", "52.9", "53.1", "60.1"], "rows": [["Investments", "16.3", "16.8", "18.5", "16.3", "17.9", "17.4", "16.1", "16.2", "17", "16.7", "17.5", "19.1"]] },
+      "parts": [
+        { "q": "a) Construct a regression line model of the dependence of a company’s production value on its investments. b1 =", "ans": 2.1622, "show": "2.162", "f": ["r-b"], "tol": 0.003, "note": "Calculated for this app (the seminar file prints no result for rlt4)." },
+        { "q": "a) b0 =", "ans": 16.151, "show": "16.151", "f": ["r-b"], "tol": 0.05 },
+        { "q": "b) Suggest a factual interpretation of the estimated slope.", "type": "text", "model": "We estimate that if a company’s investments increase by 1 (i.e. by 100,000 CZK), its production value increases by 2.162 million CZK on average.", "note": "Interpretation worded for this app, following the rlt2 model answer." },
+        { "q": "c) At a 14% significance level, test the slope. s(b1) from Excel = 0.6165. Value of the test statistic t", "ans": 3.507, "show": "3.507", "f": ["i-slope"], "tol": 0.01 },
+        { "q": "c) Critical value t0.93(10)", "ans": 1.603, "show": "1.603", "f": ["i-slope"], "tol": 0.005 },
+        { "q": "c) Conclusion", "type": "choice", "options": ["Reject H0: production value and investments are linearly dependent", "Do not reject H0"], "right": 0 },
+        { "q": "d) Use the model to estimate the mean production value of companies with investments of 16.5 (100,000s CZK).", "ans": 51.83, "show": "51.83 million CZK", "f": ["r-line"], "tol": 0.05 }
+      ] },
+    { "id": "ts_ltt1", "text": "“Exercise_ts_ltt1“ sheet contains data on annual Czech Republic exports (in millions of CZK, regular prices) in the period 1996–2006. This time series is assumed to be a realization of the data-generating process: Yt = β0 + β1·t + εt",
+      "table": { "head": ["t", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "rows": [["export", "601680", "709261", "834228", "908754", "1121098", "1268148", "1254861", "1370929", "1722655", "1868586", "2143999"]] },
+      "parts": [
+        { "q": "a) Model this time series using the linear trend function. b1 =", "ans": 146111.72, "show": "146111.7", "f": ["i-dgp"], "tol": 50 },
+        { "q": "a) b0 =", "ans": 378256.87, "show": "378256.9", "f": ["i-dgp"], "tol": 300 },
+        { "q": "b) At a 6% significance level, test the slope. s(b1) from Excel = 9550.19. Value of the test statistic t", "ans": 15.299, "show": "15.30", "f": ["i-slope"], "tol": 0.05 },
+        { "q": "b) Critical value t0.97(9)", "ans": 2.15, "show": "2.150", "f": ["i-slope"], "tol": 0.005 },
+        { "q": "b) Conclusion", "type": "choice", "options": ["Reject H0: the slope differs from zero (not a constant trend)", "Do not reject H0: constant trend"], "right": 0, "model": "At a 6% significance level, the value of the test statistic is inconsistent with H0 (that the data-generating process is the constant trend) in favour of H1 that the slope β1 differs from zero." }
+      ] }
+  ]
+}

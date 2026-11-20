@@ -5,7 +5,41 @@
   "intro": "Every lecture and practice of Statistics (4ST601) at VŠE Prague, organised by exam phase: Test 1, Test 2, and Test 3 (Final Exam).",
   "footer": "Built from the 4ST601 lecture slides and seminar exercises (VŠE Prague).",
   "testsCard": false,
-  "apply": { "t7": "apply/t7.json" },
+  "apply": [
+    {
+      "id": "s8",
+      "title": "Seminar 8 · Probability and random variables",
+      "file": "apply/s8.json",
+      "topic": "t7",
+      "test": "test2"
+    },
+    {
+      "id": "s9",
+      "title": "Seminar 9 · Probability distributions",
+      "file": "apply/s9.json",
+      "topic": "t8",
+      "test": "test2"
+    },
+    {
+      "id": "s10",
+      "title": "Seminar 10 · Point and interval estimates",
+      "file": "apply/s10.json",
+      "topic": "t9",
+      "test": "test2"
+    },
+    {
+      "id": "s11",
+      "title": "Seminar 11 · Hypothesis tests: mean, proportion, goodness of fit",
+      "file": "apply/s11.json",
+      "test": "test2"
+    },
+    {
+      "id": "s12",
+      "title": "Seminar 12 · Tests of dependence: contingency, ANOVA, correlation, regression, trend",
+      "file": "apply/s12.json",
+      "test": "test2"
+    }
+  ],
   "lectures": [
     "lectures/t7",
     "lectures/t8",
@@ -19,12 +53,36 @@
       "badge": "Mid-term 1 · Done (13 Nov)",
       "lectures": [],
       "planned": [
-        { "n": 1, "title": "Data preparation & basic operations", "sub": "Slides & exercises ready if you want to add them for Final Exam review." },
-        { "n": 2, "title": "Frequency tables, quantiles & central tendency", "sub": "Slides, exercises & transcript ready." },
-        { "n": 3, "title": "Central tendency & variation", "sub": "Slides, exercises & transcripts ready." },
-        { "n": 4, "title": "Contingency tables & ANOVA", "sub": "Slides, exercises & transcript ready." },
-        { "n": 5, "title": "Correlation & regression analysis", "sub": "Slides & exercises ready." },
-        { "n": 6, "title": "Time series: means, dynamics, indices & trends", "sub": "Slides, exercises & transcripts ready." }
+        {
+          "n": 1,
+          "title": "Data preparation & basic operations",
+          "sub": "Slides & exercises ready if you want to add them for Final Exam review."
+        },
+        {
+          "n": 2,
+          "title": "Frequency tables, quantiles & central tendency",
+          "sub": "Slides, exercises & transcript ready."
+        },
+        {
+          "n": 3,
+          "title": "Central tendency & variation",
+          "sub": "Slides, exercises & transcripts ready."
+        },
+        {
+          "n": 4,
+          "title": "Contingency tables & ANOVA",
+          "sub": "Slides, exercises & transcript ready."
+        },
+        {
+          "n": 5,
+          "title": "Correlation & regression analysis",
+          "sub": "Slides & exercises ready."
+        },
+        {
+          "n": 6,
+          "title": "Time series: means, dynamics, indices & trends",
+          "sub": "Slides, exercises & transcripts ready."
+        }
       ]
     },
     {
@@ -32,10 +90,22 @@
       "title": "Test 2 · Mid-term 2",
       "sub": "Probability, distributions, estimates & hypothesis testing (18 Dec · Seminar 12).",
       "badge": "Up next · 18 Dec",
-      "lectures": ["t7", "t8", "t9"],
+      "lectures": [
+        "t7",
+        "t8",
+        "t9"
+      ],
       "planned": [
-        { "n": 11, "title": "Hypothesis tests: mean, proportion & goodness-of-fit", "sub": "Seminar 11 (11 Dec) · Exercises ready; slides added after lecture." },
-        { "n": 12, "title": "Hypothesis tests: contingency, ANOVA & correlation", "sub": "Seminar 12 (18 Dec) · Exercises ready; slides added after lecture." }
+        {
+          "n": 11,
+          "title": "Hypothesis tests: mean, proportion & goodness-of-fit",
+          "sub": "Seminar 11 (11 Dec) · Real exercises ready above in ✏️ Practise. Lesson comes after the lecture."
+        },
+        {
+          "n": 12,
+          "title": "Hypothesis tests: contingency, ANOVA & correlation",
+          "sub": "Seminar 12 (18 Dec) · Real exercises ready above in ✏️ Practise. Lesson comes after the lecture."
+        }
       ]
     },
     {
@@ -45,7 +115,11 @@
       "badge": "Final Exam",
       "all": true,
       "planned": [
-        { "n": 13, "title": "Index numbers", "sub": "Seminar 13 (21 Dec) · Exercises ready; slides added after lecture." }
+        {
+          "n": 13,
+          "title": "Index numbers",
+          "sub": "Seminar 13 (21 Dec) · Exercises ready; slides added after lecture."
+        }
       ]
     }
   ]

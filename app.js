@@ -711,6 +711,7 @@ function renderTestView(id){
     h+='<p style="margin:8px 0 0;color:var(--mute);font-size:.92rem">Add lecture data for this test to unlock lessons, Mastery, and mock tests.</p>';
   }
   h+='</div>';
+  if(window.GEOApply)h+=GEOApply.testBlock(ts.id);
   h+='<h2 style="margin-top:20px">Topics in '+esc(ts.title)+'</h2><div class="tiles">';
   h+=st.list.map(topicTile).join("");
   h+=(ts.planned||[]).map(function(p){return '<div class="tile planned"><span class="tn">Topic '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("");
@@ -1124,6 +1125,13 @@ function show(h){
     if(v==="review")review();if(v==="start")progress();if(v==="games")gamesInit();if(v==="mastery")masteryInit();
     S.last=t.id+(v==="start"?"":"-"+v);save();
     contBar(t,v);
+    return;
+  }
+  var aps=/^ap-([a-z0-9]+)$/.exec(h)&&window.GEOApply&&GEOApply.setById(h.slice(3));
+  if(aps){
+    if(aps.topic&&GEO.byId[aps.topic]){location.replace("#"+aps.topic+"-apply");return}
+    CUR=null;document.body.setAttribute("data-topic","home");el("contbar").hidden=true;
+    drawTabs(null,"");showView("apply");window.scrollTo(0,0);GEOApply.openSet(aps.id);el("foot").innerHTML="";
     return;
   }
   if(h.indexOf("test-")===0){

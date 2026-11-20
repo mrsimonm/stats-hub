@@ -1,0 +1,127 @@
+{
+  "seminar": 9,
+  "title": "Seminar 9 · Probability distributions",
+  "source": "exercises/9_Exercises_probability_distributions_after_seminar9_v2.15.docx",
+  "formulas": "dist",
+  "intro": "<b>From the seminar file: before any calculation, decide</b><ul><li><b>Random event A</b> and its probability P(A)</li><li><b>Random variable X</b>: what you count or measure</li><li><b>Distribution and parameters</b>, e.g. X ~ Bi(6, 0.5)</li></ul>Always finish with a worded conclusion. Use the statistical tables in ∑ Formulas for Φ(z) and quantiles.",
+  "exercises": [
+    { "id": "pd1", "text": "The chosen random experiment is coin tossing. What is the probability that in 6 tosses heads will fall more often than tails?",
+      "parts": [
+        { "q": "Which distribution does X (the number of heads in 6 tosses) have?", "type": "choice", "options": ["Bi(6, 0.5)", "Po(3)", "Hy(6, 3, 6)", "N(3, 1.5)"], "right": 0, "f": ["d-bi"], "model": "Event A: the head falls in one toss, P(A) = 0.5. X = number of heads in 6 tosses, X ~ Bi(6, 0.5)." },
+        { "q": "Probability that heads fall more often than tails (at least 4 times)", "ans": 0.34375, "show": "0.344", "f": ["d-bi"], "model": "The probability that in 6 tosses heads will fall more often than tails is approximately 34.4 %." }
+      ] },
+    { "id": "pd2", "text": "Experience shows that an auditor may expect formal mistakes in 2 % of tax documents in a large company. If the auditor randomly selects 20 documents (assuming the possibility of one document being selected more than once), what is the probability that among them will be",
+      "parts": [
+        { "q": "a) just two with mistakes,", "ans": 0.0528, "show": "0.0528", "f": ["d-bi"] },
+        { "q": "b) none with mistakes,", "ans": 0.6676, "show": "0.6676", "f": ["d-bi"] },
+        { "q": "c) at most two with mistakes?", "ans": 0.9929, "show": "0.9929", "f": ["d-bi"] }
+      ] },
+    { "id": "pd3", "text": "According to a survey, illegal software runs on 27 % of computers in company CORKA. If we randomly select 10 computers (on the basis of ID numbers, i.e. one computer may be selected more than once), what is the probability that the number of computers with illegal software among them will not be higher than 4?",
+      "parts": [ { "q": "Probability", "ans": 0.896317, "show": "0.896317", "f": ["d-bi"] } ] },
+    { "id": "pd4", "text": "There are 5 defective products in the shipment of 100 products. What is the probability that in a random sample of 10 products will be a) no defective products, b) 2 defective products, c) 5 defective products? For all options (a, b, c), first consider sampling with replacement (A) and then sampling without replacement (B).",
+      "parts": [
+        { "q": "(A) with replacement · a) no defective products", "ans": 0.598737, "show": "0.598737", "f": ["d-bi"] },
+        { "q": "(A) with replacement · b) 2 defective products", "ans": 0.074635, "show": "0.074635", "f": ["d-bi"] },
+        { "q": "(A) with replacement · c) 5 defective products", "ans": 0.000061, "show": "0.000061", "f": ["d-bi"], "tol": 0.000002 },
+        { "q": "(B) without replacement · a) no defective products", "ans": 0.583752, "show": "0.583752", "f": ["d-hy"] },
+        { "q": "(B) without replacement · b) 2 defective products", "ans": 0.070219, "show": "0.070219", "f": ["d-hy"] },
+        { "q": "(B) without replacement · c) 5 defective products", "ans": 0.000003, "show": "0.000003", "f": ["d-hy"], "tol": 0.000001 }
+      ] },
+    { "id": "pd5", "text": "During the quality control procedure we accept only the products that have one of their dimensions between 26 and 27 millimetres. The dimension has the normal distribution with parameters μ = 26.4 mm and σ = 0.2 mm. What is the probability that the dimension of a randomly selected product will be in the required interval?",
+      "parts": [ { "q": "Probability", "ans": 0.9759, "show": "0.9759", "f": ["d-n-int", "d-z"] } ] },
+    { "id": "pd6", "text": "The random variable X has a normal distribution with the expected value 8 and variance 25. Determine the median and lower and upper quartiles of this random variable X.",
+      "parts": [
+        { "q": "Median", "ans": 8, "show": "8", "f": ["d-n-q"] },
+        { "q": "Lower quartile", "ans": 4.6, "show": "4.6", "f": ["d-n-q", "d-phi"], "tol": 0.05 },
+        { "q": "Upper quartile", "ans": 11.4, "show": "11.4", "f": ["d-n-q"], "tol": 0.05 }
+      ] },
+    { "id": "pd7", "text": "Consider a company producing plasterboard. Their weekly production has a normal distribution with parameters μ = 140,000 m² and σ = 6,000 m². What is the probability that during one randomly chosen week the production will be",
+      "parts": [
+        { "q": "a) higher than 152,000 m²,", "ans": 0.02275, "show": "0.02275", "f": ["d-n-F", "d-phi"] },
+        { "q": "b) lower than 134,000 m²,", "ans": 0.15866, "show": "0.15866", "f": ["d-n-F", "d-phi"] },
+        { "q": "c) higher than 140,000 m²,", "ans": 0.5, "show": "0.5", "f": ["d-n-F"] },
+        { "q": "d) higher than 137,600 m² and lower than 142,400 m²,", "ans": 0.31084, "show": "0.31084", "f": ["d-n-int"] },
+        { "q": "e) lower than 128,000 m² or higher than 149,000 m².", "ans": 0.08956, "show": "0.08956", "f": ["d-n-F", "d-phi"] }
+      ] },
+    { "id": "pd8", "text": "A steel tube maker received an order for 3,000mm long tubes. There is a randomly occurring error in the production. This error has a normal distribution with parameters μ = 0 mm and σ = 5 mm. What is the probability that a randomly selected tube will be longer than 3010 mm?",
+      "parts": [ { "q": "Probability", "ans": 0.02275, "show": "0.02275", "f": ["d-n-F", "d-phi"] } ] },
+    { "id": "pd9", "text": "The weight of the coffee portion is a random variable with a normal distribution with the expected value of 7 grams and a standard deviation of 0.5 gram. Determine",
+      "parts": [
+        { "q": "a) the probability that a randomly selected portion will weigh less than 6 grams.", "ans": 0.02275, "show": "0.02275", "f": ["d-n-F", "d-phi"] },
+        { "q": "b) A weight that is exceeded by 10 % of coffee portions.", "ans": 7.641, "show": "7.641 g", "f": ["d-n-q"] }
+      ] },
+    { "id": "pd10", "text": "Time spent with the doctor is a random variable with a normal distribution. The expected value of this variable is 25 minutes and the standard deviation is 10 minutes. What is the probability that a randomly selected patient will spend more than 40 minutes with the doctor?",
+      "parts": [ { "q": "Probability", "ans": 0.066807, "show": "0.066807", "f": ["d-n-F", "d-phi"] } ] },
+    { "id": "pd11", "text": "There are 4 defective floppy disks in a pack of 100. We will randomly select 8 floppy disks for saving data. What is the probability that we will not succeed in storing the data on at least one of them?",
+      "parts": [ { "q": "Probability", "ans": 0.287428, "show": "0.287428", "f": ["d-hy"] } ] },
+    { "id": "pd12", "text": "There are 14 boys and 21 girls in the class. The teacher assigns homework to 6 randomly selected pupils. What is the probability that there will be 4 girls among them?",
+      "parts": [ { "q": "Probability", "ans": 0.33554, "show": "0.33554", "f": ["d-hy"] } ] },
+    { "id": "pd13", "text": "There are 52 spawners (female fish) and 48 milters (male fish) in the aquarium. We will buy 8 fish randomly selected by the shopkeeper from this aquarium. What is the probability that we will bring home 4 pairs (F+M)?",
+      "parts": [ { "q": "Probability", "ans": 0.28308, "show": "0.28308", "f": ["d-hy"] } ] },
+    { "id": "pd14", "text": "In a factory shopfloor, 10 fluorescent bulbs need to be installed. They will be randomly selected from a warehouse where 30 fluorescent bulbs are stored, 5 of them, unfortunately, being faulty. What is the probability that only working (i.e. not faulty) bulbs will be selected (to be installed)?",
+      "parts": [ { "q": "Probability", "ans": 0.109, "show": "0.109", "f": ["d-hy"] } ] },
+    { "id": "pd15", "text": "There are 48 coffee bags of the top quality and 2 coffee bags of lower quality in the shipment. They are distributed between three coffee roasters directly from the airport. The first one receives 50 %, second 30 % and third 20 % of the shipment. What is the probability that the two lower quality bags will be delivered to the second roaster (assuming random distributions of coffee bags between the roasters)?",
+      "parts": [ { "q": "Probability", "ans": 0.086, "show": "0.086", "f": ["d-hy"] } ] },
+    { "id": "pd16", "text": "There is one misprint on 10 book pages on average.",
+      "parts": [
+        { "q": "a) How many misprints can we expect in the whole book with 450 pages?", "ans": 45, "show": "45", "f": ["d-po-m"] },
+        { "q": "b) What is the probability that there will be 2 misprints on 5 randomly selected pages?", "ans": 0.075816, "show": "0.075816", "f": ["d-po"] },
+        { "q": "c) What is the probability that there will be less than 5 misprints on 30 randomly selected pages?", "ans": 0.815263, "show": "0.815263", "f": ["d-po"] }
+      ] },
+    { "id": "pd17", "text": "A textile factory produces fabric in 100-metre rolls. On average, there is one defect within the length of each 40 metres. What is the probability that",
+      "parts": [
+        { "q": "a) there will be 80 metres without a defect in a randomly selected roll,", "ans": 0.135335, "show": "0.135335", "f": ["d-po"] },
+        { "q": "b) there will be 4 defects in a randomly selected roll?", "ans": 0.133602, "show": "0.133602", "f": ["d-po"] }
+      ] },
+    { "id": "pd18", "text": "12 electrons per minute radiate energy from a radioactive substance on average. Determine the probability that during the next second 2 electrons at the most will radiate.",
+      "parts": [ { "q": "Probability", "ans": 0.998852, "show": "0.998852", "f": ["d-po"] } ] },
+    { "id": "pd19", "text": "Do exercise (pd2) for 100 selected documents. (Clue: use approximation by the Poisson distribution) [pd2: an auditor may expect formal mistakes in 2 % of tax documents; what is the probability that among the selected documents will be a) just two with mistakes, b) none with mistakes, c) at most two with mistakes?]",
+      "parts": [
+        { "q": "a) just two with mistakes", "ans": 0.2707, "show": "0.2707", "f": ["d-po"] },
+        { "q": "b) none with mistakes", "ans": 0.1353, "show": "0.1353", "f": ["d-po"] },
+        { "q": "c) at most two with mistakes", "ans": 0.6767, "show": "0.6767", "f": ["d-po"] }
+      ] },
+    { "id": "pd20", "text": "The probability of producing a faulty product is 5 %. Determine the probability that among 80 randomly selected products will be: a) just (i.e. exactly) four faulty products, b) at least two faulty products.",
+      "parts": [
+        { "q": "a) exactly four faulty, using the binomial distribution", "ans": 0.2004, "show": "0.2004", "f": ["d-bi"] },
+        { "q": "a) exactly four faulty, using the Poisson distribution", "ans": 0.1954, "show": "0.1954", "f": ["d-po"] },
+        { "q": "b) at least two faulty, using the binomial distribution", "ans": 0.914, "show": "0.914", "f": ["d-bi"] },
+        { "q": "b) at least two faulty, using the Poisson distribution", "ans": 0.9084, "show": "0.9084", "f": ["d-po"] }
+      ] },
+    { "id": "pd21", "text": "A PBX switchboard connected on average 30 telephone calls an hour. What is the probability that nobody calls during a randomly selected two-minute period?",
+      "parts": [ { "q": "Probability", "ans": 0.368, "show": "0.368", "f": ["d-po"] } ] },
+    { "id": "pd22", "text": "For parameters N = 50, M = 2 and n = 5, compare the probabilities P(0) and P(2) using hypergeometric, binomial and Poisson distributions. (Clue: use approximations…).",
+      "parts": [
+        { "q": "P(0), hypergeometric", "ans": 0.808163, "show": "0.808163", "f": ["d-hy"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "P(2), hypergeometric", "ans": 0.008163, "show": "0.008163", "f": ["d-hy"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "P(0), binomial approximation", "ans": 0.815373, "show": "0.815373", "f": ["d-bi"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "P(2), binomial approximation", "ans": 0.014156, "show": "0.014156", "f": ["d-bi"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "P(0), Poisson approximation", "ans": 0.818731, "show": "0.818731", "f": ["d-po"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "P(2), Poisson approximation", "ans": 0.016375, "show": "0.016375", "f": ["d-po"], "note": "Answer calculated for this app (the seminar file prints none)." }
+      ] },
+    { "id": "pd23", "text": "Let a random variable X have the t-distribution. Determine its:",
+      "parts": [
+        { "q": "a) 90% quantile for 15 degrees of freedom", "ans": 1.341, "show": "1.341", "f": ["d-t"], "tol": 0.001 },
+        { "q": "b) 5% quantile for 10 degrees of freedom", "ans": -1.812, "show": "-1.812", "f": ["d-t"], "tol": 0.001, "hint": "Not quite. Low quantiles of t are negative: t0.05 = -t0.95." },
+        { "q": "c) 99.5% quantile for 50 degrees of freedom. (Clue: use approximation by the standard normal distribution, slide 49 in Lecture8)", "ans": 2.576, "show": "2.576", "f": ["d-t"], "tol": 0.001 }
+      ] },
+    { "id": "pd24", "text": "Let a random variable X have the t-distribution with 12 degrees of freedom. Find the value x if you know that P(-x < X < x)=0.95. (Hint: t-distribution is symmetric around zero; draw a picture…)",
+      "parts": [ { "q": "x", "ans": 2.179, "show": "2.179", "f": ["d-t"], "tol": 0.001 } ] },
+    { "id": "pd25", "text": "Let a random variable X have the χ² distribution with 4 degrees of freedom. Find the following quantiles:",
+      "parts": [
+        { "q": "a) χ²0.99(4)", "ans": 13.3, "show": "13.3", "f": ["d-chi"], "tol": 0.05 },
+        { "q": "b) χ²0.95(4)", "ans": 9.49, "show": "9.49", "f": ["d-chi"], "tol": 0.01 }
+      ] },
+    { "id": "pd26", "text": "Let a random variable X have the χ² distribution with 15 degrees of freedom. Find the following quantiles:",
+      "parts": [
+        { "q": "a) χ²0.99(15)", "ans": 30.6, "show": "30.6", "f": ["d-chi"], "tol": 0.05 },
+        { "q": "b) χ²0.95(15)", "ans": 25, "show": "25", "f": ["d-chi"], "tol": 0.05 }
+      ] },
+    { "id": "pd27", "text": "Let a random variable X have the F-distribution. Determine its:",
+      "parts": [
+        { "q": "a) 95% quantile for 5 and 20 degrees of freedom,", "ans": 2.711, "show": "2.711", "f": ["d-F"], "tol": 0.001 },
+        { "q": "b) 95% quantile for 8 and 9 degrees of freedom,", "ans": 3.23, "show": "3.230", "f": ["d-F"], "tol": 0.001 },
+        { "q": "c) 95% quantile for 9 and 8 degrees of freedom.", "ans": 3.388, "show": "3.388", "f": ["d-F"], "tol": 0.001 }
+      ] }
+  ]
+}

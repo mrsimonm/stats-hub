@@ -1,0 +1,98 @@
+{
+  "seminar": 11,
+  "title": "Seminar 11 · Hypothesis tests: mean, proportion, goodness of fit",
+  "source": "exercises/11_Exercises_hypothesis_testing_parameters_gof_test_after_seminar11_v2.1.docx",
+  "formulas": "hyp",
+  "intro": "<b>From the seminar file: always decide first</b> the research hypothesis, population, variable and parameter of interest, the significance level and the sample statistics. <b>Then the same five steps every time:</b><ol><li>State H0 and H1</li><li>Recognise the test statistic and its distribution</li><li>Calculate the value of the test statistic</li><li>Form the rejection region (quantiles from the tables)</li><li>Give a conclusion in words</li></ol>Test statistics and critical values below were calculated for this app (the file shows them as equations that could not be copied); every conclusion matches the one in the file.",
+  "exercises": [
+    { "id": "hyp1", "text": "Ecological activists stand against the construction of a new factory in a region that is already affected by industrial activities. They suppose that one of the effects of unhealthy living conditions is a low childbirth weight in the region. Is it worth using the low birth weight as an argument against the construction of the factory? They know that the birth weight in healthy populations is a random variable having the expected value of 3,500 g. They want to gain support for their claim by a sample of 50 randomly selected babies born during the previous year in the region that is already affected by industrial activities. For these 50 randomly selected babies the mean childbirth weight of 3,310 g and the sample standard deviation of weight of 500 g were measured. Assuming the random sample size to be large enough, at a 1% significance level, run a statistical hypothesis test to judge a hypothesis that the mean childbirth weight in the region that is already affected by industrial activities is the same as in healthy populations.",
+      "parts": [
+        { "q": "1 · H0: E(X) = 3,500 g. Which alternative hypothesis H1?", "type": "choice", "options": ["E(X) < 3,500 g", "E(X) > 3,500 g", "E(X) ≠ 3,500 g"], "right": 0, "f": ["h-W"], "model": "H1: E(X) < 3,500 g (mean birth weight in the affected region is lower than in healthy populations)." },
+        { "q": "2–3 · Value of the test statistic z", "ans": -2.687, "show": "-2.687", "f": ["h-z"], "tol": 0.01 },
+        { "q": "4 · Critical value (boundary of the rejection region)", "ans": -2.326, "show": "-2.326, W = {z ≤ -2.326}", "f": ["h-W"], "tol": 0.005, "hint": "Not quite. Left-tailed test at α = 0.01: the boundary is -z0.99." },
+        { "q": "5 · Conclusion", "type": "choice", "options": ["The value of the test statistic is inconsistent with H0 in favour of H1 (reject H0)", "The value of the test statistic is not inconsistent with H0 (do not reject H0)"], "right": 0, "model": "At a 1% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the mean birth weight in the region that is already affected by industrial activities is lower than in healthy populations." }
+      ] },
+    { "id": "hyp2", "text": "After changing the packaging machine, the producer wants to check whether the required package weight (250 g) is met. 15 packages having been randomly selected, it was found out that their mean weight was 250.47 g, the sample standard deviation of weight being 12.282 g. We consider the packages’ weight to be a random variable with the normal distribution. The producer doesn’t want the weight to be higher than that required (Hint: use > in H1). Run a statistical hypothesis test at 2% significance level. What is the conclusion?",
+      "parts": [
+        { "q": "2–3 · Value of the test statistic t", "ans": 0.148, "show": "0.148", "f": ["h-t"], "tol": 0.005 },
+        { "q": "4 · Critical value", "ans": 2.264, "show": "2.264, W = {t ≥ 2.264}", "f": ["h-W"], "tol": 0.005, "hint": "Not quite. Right-tailed t-test, α = 0.02, df = 14: t0.98(14)." },
+        { "q": "5 · Conclusion", "type": "choice", "options": ["The value of the test statistic is inconsistent with H0 in favour of H1 (reject H0)", "The value of the test statistic is not inconsistent with H0 (do not reject H0)"], "right": 1, "model": "At a 2% significance level, the value of the test statistic is not inconsistent with H0 that the mean weight of packages after changing the packaging machine is as required." }
+      ] },
+    { "id": "hyp3", "text": "We have the following random sample (nine values) of measured water temperature (in °C) available: 21.0, 21.7, 20.5, 22.6, 23.6, 22.5, 23.0, 22.4, 21.3. Let’s assume that the water temperature is a random variable with a normal distribution. At an 8% significance level, test the hypothesis that, generally, the mean water temperature is 22.0 °C.",
+      "parts": [
+        { "q": "Sample mean (°C)", "ans": 22.0667, "show": "22.067", "tol": 0.002 },
+        { "q": "Sample standard deviation s (°C)", "ans": 1.0075, "show": "1.0075", "tol": 0.002 },
+        { "q": "Value of the test statistic t", "ans": 0.199, "show": "0.199", "f": ["h-t"], "tol": 0.005 },
+        { "q": "Critical value (two-tailed test)", "ans": 2.004, "show": "2.004, W = {|t| ≥ 2.004}", "f": ["h-W"], "tol": 0.005, "hint": "Not quite. Two-tailed, α = 0.08, df = 8: t0.96(8)." },
+        { "q": "Conclusion", "type": "choice", "options": ["The value of the test statistic is inconsistent with H0 in favour of H1 (reject H0)", "The value of the test statistic is not inconsistent with H0 (do not reject H0)"], "right": 1, "model": "At an 8% significance level, the value of the test statistic is not inconsistent with H0 that, generally, the mean water temperature is 22.0 °C." }
+      ] },
+    { "id": "hyp4", "text": "A small town factory employing workers – commuters from surrounding villages – has recently reduced the production. A transport company is worried about a potential decline in the mean number of passengers per one bus. Therefore, a survey was conducted on 40 randomly selected buses with the following results:",
+      "table": { "head": ["Number of passengers in one bus", "25", "28", "29", "34", "35", "38", "40", "42", "45"], "rows": [["Number of occurrences", "2", "4", "7", "10", "6", "5", "3", "2", "1"]] },
+      "after": "Under comparable conditions, the mean number of passengers in one bus in previous years was 36. If the number of passengers drops, the transport company will have to reduce the number of its buses. Assume the random sample size to be large enough. Are the data consistent with a hypothesis that the mean number of passengers after the factory reduced its production is the same as before the reduction?",
+      "parts": [
+        { "q": "H0: E(X) = 36. Which alternative hypothesis H1?", "type": "choice", "options": ["E(X) < 36", "E(X) > 36", "E(X) ≠ 36"], "right": 0, "f": ["h-W"], "model": "The company worries about a decline, so H1: E(X) < 36." },
+        { "q": "Sample mean", "ans": 33.85, "show": "33.85 passengers", "tol": 0.01 },
+        { "q": "Sample standard deviation s", "ans": 4.8651, "show": "4.865", "tol": 0.005 },
+        { "q": "Value of the test statistic z", "ans": -2.795, "show": "-2.795", "f": ["h-z"], "tol": 0.01 },
+        { "q": "Conclusion at a 5% significance level (critical value -1.645)", "type": "choice", "options": ["The value of the test statistic is inconsistent with H0 in favour of H1 (reject H0)", "The value of the test statistic is not inconsistent with H0 (do not reject H0)"], "right": 0, "model": "z = -2.795 ≤ -1.645: the data are inconsistent with H0 in favour of H1 that the mean number of passengers has dropped.", "note": "The seminar file gives no significance level for this exercise; 5 % is assumed here." }
+      ] },
+    { "id": "hyp5", "text": "Having randomly selected 50 representatives of a certain profession and evaluated the wages they earn, we calculated the mean (27,934 CZK) and sample standard deviation (4,396 CZK) of their wages. Assume the random sample size to be large enough and use a statistical hypothesis test to judge the statement that the mean wage of all members of that profession is equal to 28,306 CZK (ie. use a two-tailed test). a) Run the test at a 6% significance level. b) Run the test at an 80% significance level. (IMPORTANT NOTE for task b): this is just a didactical/educational example of selection of the significance level, leading to super-large rejection region! In the theoretical world, such a test would have huge probability of type 1 error. The critical values are very close to zero; therefore, even a value of the test statistic being very close to zero may “easily” fall into the rejection region. Practically, such a statistical hypothesis test is, of course, useless! ;-))",
+      "parts": [
+        { "q": "Value of the test statistic z", "ans": -0.598, "show": "-0.598", "f": ["h-z"], "tol": 0.005 },
+        { "q": "a) Critical value at 6 % (two-tailed)", "ans": 1.881, "show": "1.881, W = {|z| ≥ 1.881}", "f": ["h-W"], "tol": 0.005 },
+        { "q": "a) Conclusion at 6 %", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 1, "model": "|z| = 0.598 < 1.881: at a 6% significance level the value of the test statistic is not inconsistent with H0 that the mean wage is 28,306 CZK." },
+        { "q": "b) Critical value at 80 % (two-tailed)", "ans": 0.253, "show": "0.253, W = {|z| ≥ 0.253}", "f": ["h-W"], "tol": 0.003 },
+        { "q": "b) Conclusion at 80 %", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 0, "model": "|z| = 0.598 ≥ 0.253: at an 80% significance level H0 is rejected. This shows why such a high significance level is useless in practice." }
+      ] },
+    { "id": "hyp6", "text": "A travel agency arranges holiday tours tailored to their customers’ wishes. Recent experience indicates that country X is a favourite destination for 30 % of the customers. Due to the current unstable political situation in country X, the travel agency worries that the popularity of this destination is in decline. Out of 150 randomly selected customers, 38 have chosen country X this year. Does this information support the hypothesis of the decline in country X’s popularity? Assuming the random sample size is large enough, carry out the test at a 2.4% significance level.",
+      "parts": [
+        { "q": "H0: π = 0.3. Which alternative hypothesis H1?", "type": "choice", "options": ["π < 0.3", "π > 0.3", "π ≠ 0.3"], "right": 0, "f": ["h-W"] },
+        { "q": "Value of the test statistic z", "ans": -1.247, "show": "-1.247", "f": ["h-p"], "tol": 0.01 },
+        { "q": "Critical value", "ans": -1.977, "show": "-1.977, W = {z ≤ -1.977}", "f": ["h-W"], "tol": 0.005 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 1, "model": "At the 2.4% significance level, the value of the test statistic is not inconsistent with H0 that country X’s popularity is the same as in recent years." }
+      ] },
+    { "id": "hyp7", "text": "Thanks to long-term statistics, it is known that the likelihood of a boy being born is 0.5142. In one month in the history, the portion of new-born boys in a group of randomly selected babies was only 0.492. Since it happened in the aftermath of an environmental catastrophy, it would be interesting to know whether the difference is statistically significant (IMPORTANT NOTE: “statistically significant” is just a label, those words tell nothing about practical significance, or practical importance). Assume the random sample size to be large enough and using a 9% significance level, carry out a statistical hypothesis test if the number of new-born babies in the random sample was: a) 250, b) 1,500. Compare the results!",
+      "parts": [
+        { "q": "a) n = 250 · value of the test statistic z", "ans": -0.702, "show": "-0.702", "f": ["h-p"], "tol": 0.01 },
+        { "q": "Critical value (two-tailed, α = 0.09)", "ans": 1.695, "show": "1.695, W = {|z| ≥ 1.695}", "f": ["h-W"], "tol": 0.005 },
+        { "q": "a) Conclusion", "type": "choice", "options": ["The difference is statistically significant (reject H0)", "The difference is not statistically significant (do not reject H0)"], "right": 1 },
+        { "q": "b) n = 1,500 · value of the test statistic z", "ans": -1.72, "show": "-1.720", "f": ["h-p"], "tol": 0.01 },
+        { "q": "b) Conclusion", "type": "choice", "options": ["The difference is statistically significant (reject H0)", "The difference is not statistically significant (do not reject H0)"], "right": 0 },
+        { "q": "Compare the results!", "type": "text", "model": "a) The value of the test statistic is not inconsistent with H0, the difference is not statistically significant. b) The value of the test statistic is inconsistent with H0 in favour of H1, the difference is statistically significant. The same difference (0.492 vs 0.5142) becomes significant with the bigger sample." }
+      ] },
+    { "id": "hyp8", "text": "In past, 33 % of respondents considered hypermarkets their favourite shopping venues. In anticipation of another increase in the popularity of hypermarkets, a retail chain ran a statistical hypothesis test in order to assess this expectation. Having randomly chosen 250 shoppers, it was found out that 93 of them preferred hypermarkets. Assume the random sample size to be large enough. Is the result of the retail chain survey consistent with the above-mentioned expectation? Use a significance level of 0.3 %.",
+      "parts": [
+        { "q": "H0: π = 0.33. Which alternative hypothesis H1?", "type": "choice", "options": ["π > 0.33", "π < 0.33", "π ≠ 0.33"], "right": 0, "f": ["h-W"] },
+        { "q": "Value of the test statistic z", "ans": 1.412, "show": "1.412", "f": ["h-p"], "tol": 0.01 },
+        { "q": "Critical value", "ans": 2.748, "show": "2.748, W = {z ≥ 2.748}", "f": ["h-W"], "tol": 0.01 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 1, "model": "At a 0.3% significance level, the value of the test statistic is not inconsistent with H0 that for 33 % of shoppers hypermarkets are their favourite shopping venues." }
+      ] },
+    { "id": "gft1", "text": "Use the results from a sample of 200 randomly selected respondents (3rd column in the table below) to test an assumption (2nd column) about the popularity of particular retail outlets. Assume the random sample size and hypothesized occupancy of all the categories to be large enough. Carry out the statistical hypothesis test at a 5% significance level.",
+      "table": { "head": ["Retail outlet", "Assumed percentage (%) of preferences", "Number of preferences"], "rows": [["Supermarket", "52", "100"], ["Shopping centre", "18", "48"], ["Department store", "13", "30"], ["Hypermarket", "3", "4"], ["Convenience store", "3", "2"], ["Others", "11", "16"]] },
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 9.739, "show": "9.739", "f": ["h-gof"], "tol": 0.02 },
+        { "q": "Critical value χ²0.95(5)", "ans": 11.1, "show": "11.1, W0.05 = {g ≥ 11.1}", "f": ["d-chi", "h-gof"], "tol": 0.05 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 1, "model": "At a 5% significance level, the value of the test statistic is not inconsistent with H0 that the popularity of outlets is as assumed." }
+      ] },
+    { "id": "gft2", "text": "Out of 200 randomly selected customers, 51 found the soap in red boxes the best, 74 preferred that in white boxes, 30 liked that in blue and 45 in green boxes the most. At an 11% significance level, judge if the colour of soap boxes (assuming it is the only difference between the soaps) is an important factor influencing customers’ behaviour. (Clue: If the colour wasn´t an important factor, the proportions/frequencies would be the same…) Assume the random sample size and all π0,j to be large enough.",
+      "parts": [
+        { "q": "Expected frequency n′j in each category", "ans": 50, "show": "50", "f": ["h-gof"], "tol": 0 },
+        { "q": "Value of the test statistic g", "ans": 20.04, "show": "20.04", "f": ["h-gof"], "tol": 0.02 },
+        { "q": "Critical value χ²0.89(3)", "ans": 6.03, "show": "6.03", "f": ["h-gof"], "tol": 0.02 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0: colour is an important factor", "Do not reject H0: colour does not matter"], "right": 0, "model": "At an 11% significance level, the value of the test statistic is inconsistent with H0 in favour of H1 that the colour is an important factor influencing customers’ behaviour." }
+      ] },
+    { "id": "gft3", "text": "After performing a sample survey, the following information about the random sample was obtained:",
+      "table": { "head": ["Completed education:", "elementary", "secondary", "tertiary"], "rows": [["Number of people", "12", "66", "22"]] },
+      "after": "At a 3% significance level, judge a hypothesis that there are 20 % people with elementary education, 60 % people with secondary education and 20 % people with tertiary education in the population. Assume the random sample size and all π0,j to be large enough.",
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 4, "show": "4.0", "f": ["h-gof"], "tol": 0.01 },
+        { "q": "Critical value χ²0.97(2)", "ans": 7.01, "show": "7.01", "f": ["h-gof"], "tol": 0.03 },
+        { "q": "Conclusion", "type": "choice", "options": ["Reject H0", "Do not reject H0"], "right": 1, "model": "At a 3% significance level, the value of the test statistic is not inconsistent with H0 that there are 20 % people with elementary education, 60 % people with secondary education and 20 % people with tertiary education in the population." }
+      ] },
+    { "id": "gft4", "text": "When surveying working conditions and management in a manufacturing company, a questionnaire was sent to randomly selected employees. At the end of the survey period, 200 questionnaires were returned to the personnel department, 120 being completed by workers, 37 by clerical and technical staff, 32 by junior (lower) executives and 11 by senior (top) executives. Is there a statistically significant (IMPORTANT NOTE: “statistically significant” is just a label, those words tell nothing about practical significance, or practical importance!!) difference between the distribution of job positions in the random sample and in the whole company which employs 55 % of workers, 22 % of clerical and technical staff, 18 % of junior and 5 % of senior executives? Assume the random sample size and hypothesized occupancy of all the categories to be large enough.",
+      "parts": [
+        { "q": "Value of the test statistic g", "ans": 2.567, "show": "2.567", "f": ["h-gof"], "tol": 0.01 },
+        { "q": "Conclusion at a 5% significance level (critical value χ²0.95(3) = 7.81)", "type": "choice", "options": ["The difference is statistically significant (reject H0)", "The difference is not statistically significant (do not reject H0)"], "right": 1, "model": "g = 2.567 < 7.81: the value of the test statistic is not inconsistent with H0 that job positions in the sample are distributed as in the whole company.", "note": "The seminar file gives neither a result nor a significance level here; 5 % is assumed and the result was calculated for this app." }
+      ] }
+  ]
+}

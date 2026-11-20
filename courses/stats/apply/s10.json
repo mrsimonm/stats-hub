@@ -1,0 +1,89 @@
+{
+  "seminar": 10,
+  "title": "Seminar 10 · Point and interval estimates",
+  "source": "exercises/10_Exercises_point_and_interval_estimates_after_seminar10_v2.2.docx",
+  "formulas": "est",
+  "intro": "<b>From the seminar file: before any calculation, determine</b><ul><li><b>Population of interest</b> (e.g. all working days)</li><li><b>Variable of interest</b> (e.g. the number of needed photocopies)</li><li><b>Parameter of interest</b> (e.g. the mean daily need)</li></ul>Always finish with a verbal formulation of the interval. Quantiles z and t are in the statistical tables in ∑ Formulas.",
+  "exercises": [
+    { "id": "est1", "text": "Company Canard wants to get information about the daily need for photocopies. The survey conducted in similar companies has shown that the need for photocopies during the working day is a random variable with a normal distribution. Construct a two-sided 95% confidence interval for the mean daily need for photocopies if you know that in the last 20 working days (which may be considered as a random sample of all working days) the mean daily need has been 1,200 photocopies, the sample standard deviation equalling 200 photocopies per day.",
+      "parts": [
+        { "q": "Lower limit", "ans": 1106.4, "show": "1106", "f": ["e-ci-t"], "tol": 1 },
+        { "q": "Upper limit", "ans": 1293.6, "show": "1294", "f": ["e-ci-t"], "tol": 1 },
+        { "q": "Verbal formulation", "type": "text", "model": "A two-sided 95% confidence interval for the mean daily need for photocopies constructed on the basis of a given random sample of 20 days is (1106, 1294) photocopies." }
+      ] },
+    { "id": "est2", "text": "During an audit in a manufacturing company, 50 accounting documents were randomly selected from the set of 2,000 items. In the 50 documents, an average accounting error of 24.84 CZK occurred with the sample standard deviation of 72.6 CZK. Find the point estimate for an average accounting error (per one document) in the whole set of 2,000 documents.",
+      "parts": [ { "q": "Point estimate (CZK)", "ans": 24.84, "show": "24.84 CZK", "f": ["e-pt-mean"] } ] },
+    { "id": "est3", "text": "From the population of 10,000 automatically packaged bags of biscuits, 1 % of bags were randomly selected, their mean weight of 151.8 g and sample standard deviation of weight 4.8 g having been found. Assuming the random sample size to be large enough, construct a two-sided 99% confidence interval for the mean weight of all the bags.",
+      "parts": [
+        { "q": "Lower limit (g)", "ans": 150.6, "show": "150.6 g", "f": ["e-ci-z"], "tol": 0.1 },
+        { "q": "Upper limit (g)", "ans": 153, "show": "153 g", "f": ["e-ci-z"], "tol": 0.1 }
+      ] },
+    { "id": "est4", "text": "A hypermarket wants to increase the quality of its customer service by reducing the waiting time at cash desks. 10 customers were randomly selected and their waiting time (in seconds) was measured: 50, 65, 30, 45, 45, 35, 55, 70, 65, 50. Let’s assume that the waiting time is normally distributed. Construct a two-sided 84% confidence interval for the mean waiting time of all customers.",
+      "parts": [
+        { "q": "Lower limit (seconds)", "ans": 44.7, "show": "44.7 s", "f": ["e-ci-t"], "tol": 0.1 },
+        { "q": "Upper limit (seconds)", "ans": 57.3, "show": "57.3 s", "f": ["e-ci-t"], "tol": 0.1 }
+      ] },
+    { "id": "est5", "text": "We are interested in the lifespan of lightbulbs that are delivered by a supplier. For 50 bulbs randomly selected from a despatched shipment, the mean lifespan (997.08 hours) and the sample standard deviation of lifespan (104.709 hours) were calculated. Assume the random sample size to be large enough and use these results to calculate a two-sided 98.4% confidence interval for an expected value of the lightbulb lifespan in the shipment.",
+      "parts": [
+        { "q": "Lower limit (hours)", "ans": 961.407, "show": "961.407 h", "f": ["e-ci-z"], "tol": 0.1 },
+        { "q": "Upper limit (hours)", "ans": 1032.753, "show": "1032.753 h", "f": ["e-ci-z"], "tol": 0.1 }
+      ] },
+    { "id": "est6", "text": "When testing the petrol consumption of a specific type of car driving at 90 kilometres per hour, the following values for 20 randomly selected cars were gained (in litres per 100 km): 6.5, 6.8, 6.7, 6, 5.6, 6.6, 5.5, 6.4, 5.5, 6.5, 6.3, 6.2, 6.3, 5.9, 5.8, 6.4, 6.5, 6.3, 5.7, 6.1",
+      "parts": [
+        { "q": "a) Calculate a point extimate of an expected value of consumption of all the cars of that type.", "ans": 6.18, "show": "6.18 l/100 km", "f": ["e-pt-mean"], "tol": 0.005 },
+        { "q": "b) Assuming the consumption is normally distributed, calculate a 92% two-sided confidence interval for mean consumption. Lower limit", "ans": 6.015, "show": "6.015", "f": ["e-ci-t"], "tol": 0.005 },
+        { "q": "b) Upper limit", "ans": 6.345, "show": "6.345", "f": ["e-ci-t"], "tol": 0.005 }
+      ] },
+    { "id": "est7", "text": "50 newborn babies were randomly selected in a hospital. Their mean childbirth weight was 3496.08 g, the sample standard deviation of their weight being 502.688 g. The mean age of their mothers was 25.38 years and the sample standard deviation of mothers’ age 4.522 years.",
+      "parts": [
+        { "q": "a) Assuming the random sample size to be large enough, construct a 99.6% two-sided confidence interval for the mean childbirth weight of all newborn babies in that hospital. Lower limit (g)", "ans": 3291.481, "show": "3291.481 g", "f": ["e-ci-z"], "tol": 0.5 },
+        { "q": "a) Upper limit (g)", "ans": 3700.679, "show": "3700.679 g", "f": ["e-ci-z"], "tol": 0.5 },
+        { "q": "b) Assuming the random sample size to be large enough, calculate a 97.6% two-sided confidence interval for the mean mother’s age of all mothers in that hospital. Lower limit (years)", "ans": 23.937, "show": "23.937", "f": ["e-ci-z"], "tol": 0.01 },
+        { "q": "b) Upper limit (years)", "ans": 26.823, "show": "26.823", "f": ["e-ci-z"], "tol": 0.01 }
+      ] },
+    { "id": "est8", "text": "A dressmaker wants to know something about the age of her customers. She has randomly selected 50 customers and found out that their mean age was 36 years and the sample standard deviation of their age was 12 years. Assume the random sample size to be large enough and construct a 4% two-sided confidence interval for the mean age of all the customers. (IMPORTANT NOTE: this is just a didactical/educational example of selection of the confidence level, leading to super-narrow confidence interval! The resulting confidence interval almost “equals” the point estimate, maximum acceptable error of the estimate is close to zero, the width of the interval is close to zero. Practically, such a constructed confidence interval is, of course, useless! ;-))",
+      "parts": [
+        { "q": "Lower limit (years)", "ans": 35.915, "show": "35.915", "f": ["e-ci-z"], "tol": 0.005 },
+        { "q": "Upper limit (years)", "ans": 36.085, "show": "36.085", "f": ["e-ci-z"], "tol": 0.005 }
+      ] },
+    { "id": "est9", "text": "We have found out that among 25 randomly selected women graduates the mean wage was 12,494 CZK and the sample standard deviation was 995 CZK.",
+      "parts": [
+        { "q": "a) Consider the wages of women graduates to be a normally distributed random variable. Construct a 90% two-sided confidence interval for the mean wage of women graduates. Lower limit (CZK)", "ans": 12154, "show": "12154", "f": ["e-ci-t"], "tol": 1 },
+        { "q": "a) Upper limit (CZK)", "ans": 12834, "show": "12834", "f": ["e-ci-t"], "tol": 1 },
+        { "q": "b) Assuming the random sample size to be large enough, determine another 90% two-sided confidence interval for the situation when the mean wage of 12,494 CZK and the sample standard deviation of wages of 995 CZK was calculated from the random sample of 100 women graduates. Lower limit (CZK)", "ans": 12330, "show": "12330", "f": ["e-ci-z"], "tol": 1 },
+        { "q": "b) Upper limit (CZK)", "ans": 12658, "show": "12658", "f": ["e-ci-z"], "tol": 1 },
+        { "q": "What happened to the accuracy of the estimate (i.e. to the width of the constructed interval)?", "type": "text", "model": "With the bigger sample (100 instead of 25), the interval is narrower: about 328 CZK wide instead of 680 CZK. The estimate is more accurate.", "note": "The seminar file gives the two intervals; the comparison was worded for this app." }
+      ] },
+    { "id": "est10", "text": "The municipality wants to know the opinion of inhabitants about the planned construction of an underground car park in the historical city centre. In the opinion poll, the respondents could decide whether they agree with the plan using only “Yes“ or “No“ replies. 280 out of 500 randomly selected respondents said “Yes“.",
+      "parts": [
+        { "q": "a) Assuming the random sample size to be large enough, calculate a 80% confidence interval for the proportion of all inhabitants who agree with the car park construction. Lower limit", "ans": 0.532, "show": "0.532 (53.2 %)", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "a) Upper limit", "ans": 0.588, "show": "0.588 (58.8 %)", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "b) Assuming the random sample size to be large enough, calculate a 99.4% confidence interval for the proportion of all inhabitants who agree with the car park construction. Lower limit", "ans": 0.499, "show": "0.499 (49.9 %)", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "b) Upper limit", "ans": 0.621, "show": "0.621 (62.1 %)", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "Compare it (width and accuracy) with the interval constructed in task a).", "type": "text", "model": "The 99.4% interval (0.499, 0.621) is much wider than the 80% interval (0.532, 0.588): a higher confidence level means a wider interval, so the estimate is less accurate.", "note": "The seminar file gives the two intervals; the comparison was worded for this app." }
+      ] },
+    { "id": "est11", "text": "Out of 750 randomly polled inhabitants of a city (with the population of 15,000), 210 showed their interest in a new public service facility. Assume the random sample size to be large enough and at a 86% confidence level:",
+      "parts": [
+        { "q": "a) construct a two-sided confidence interval for the proportion of inhabitants interested in the new service in the whole city. Lower limit", "ans": 0.256, "show": "0.256", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "a) Upper limit", "ans": 0.304, "show": "0.304", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "b) construct a two-sided confidence interval for the number of inhabitants interested in the new service in the whole city. Lower limit", "ans": 3840, "show": "3840 inhabitants", "f": ["e-ci-N"], "tol": 10 },
+        { "q": "b) Upper limit", "ans": 4560, "show": "4560 inhabitants", "f": ["e-ci-N"], "tol": 10 }
+      ] },
+    { "id": "est12", "text": "We are the manufacturer for whom the quality of products has always been of utmost importance. That’s why we were buying the components from OZ Ltd, a reliable supplier. We made only 5 % of faulty products on average at that time. However, the contractor’s relationships got worse and we had to change the supplier. Having done that, the quality assurance department found 16 defective products in a batch of 250 new products (which may be considered a random sample from the population of all newly manufactured products). Assume the random sample size to be large enough and construct a two-sided 96.2% confidence interval for the proportion of faulty products with the new supplier and use it to judge whether the quality of our products has changed with the new supplier.",
+      "parts": [
+        { "q": "Lower limit", "ans": 0.032, "show": "0.032", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "Upper limit", "ans": 0.096, "show": "0.096", "f": ["e-ci-p"], "tol": 0.001 },
+        { "q": "Has the quality changed with the new supplier?", "type": "choice", "options": ["The results are not inconsistent with the hypothesis that the quality has not changed (5 % lies inside the interval)", "The quality has clearly got worse (the interval lies above 5 %)", "The quality has clearly got better (the interval lies below 5 %)"], "right": 0, "model": "(0.032, 0.096) contains 0.05, so the results are not inconsistent with a hypothesis that the quality has not changed." }
+      ] },
+    { "id": "est13", "text": "In market research in a region, 742 households were randomly selected. 160 of them showed interest in buying a newly launched product. Assume the random sample size to be large enough and calculate (at a 88% confidence level) a two-sided confidence interval for the proportion of households interested in buying the product in the whole region.",
+      "parts": [
+        { "q": "Lower limit", "ans": 0.1922, "show": "0.1922", "f": ["e-ci-p"], "tol": 0.0005 },
+        { "q": "Upper limit", "ans": 0.2391, "show": "0.2391", "f": ["e-ci-p"], "tol": 0.0005 }
+      ] },
+    { "id": "est14", "text": "A travel agency organizes holiday tours tailored to its customers wishes. Recent years’ experience indicates that country X is a popular destination for 30 % of customers. Due to the current unstable political situation in the country, the travel agency worries whether the popularity of this destination isn’t in decline. Out of 150 randomly selected customers this year, 38 have chosen country X. Assuming the random sample size is large enough, construct a 93.2% two-sided confidence interval for the proportion of holidaymakers who are interested in travelling to country X.",
+      "parts": [
+        { "q": "Lower limit", "ans": 0.1885, "show": "0.1885", "f": ["e-ci-p"], "tol": 0.0005 },
+        { "q": "Upper limit", "ans": 0.3181, "show": "0.3181", "f": ["e-ci-p"], "tol": 0.0005 }
+      ] }
+  ]
+}
