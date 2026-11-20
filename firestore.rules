@@ -1,0 +1,118 @@
+rules_version = '2';
+
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: users
+// Document ID: {userId} (must match Firebase Auth request.auth.uid)
+// Fields:
+//   - state: map (required) - User's study progress object:
+//       - review: list (optional, max 2000 items) - Question IDs queued for review
+//       - tp: map (optional, max 100 entries) - Topic step completion progress
+//       - best: map (optional, max 100 entries) - Best quiz/mock scores
+//       - xp: number (optional, >= 0, <= 10000000) - Total experience points
+//       - day: map (optional, keys: d [string <= 20], xp [number >= 0, <= 1000000])
+//       - streak: map (optional, keys: last [string <= 20], n [number >= 0, <= 100000])
+//       - games: map (optional, max 100 entries) - Mini-game stats
+//       - full: bool (optional) - Full-course mode toggle
+//       - last: string (optional, <= 100 chars) - Last visited route/hash
+//       - mas: map (optional, max 100 entries) - Mastery check tracking
+//   - updatedAt: timestamp (required) - Server/client update timestamp
+//
+// ===============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Check if the request is from an authenticated user
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if the authenticated user owns the document by document ID
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Validate that all required top-level fields are present
+    function hasRequiredFields(fields) {
+      return request.resource.data.keys().hasAll(fields);
+    }
+
+    // Validate that no unexpected top-level fields are present
+    function hasOnlyAllowedFields(fields) {
+      return request.resource.data.keys().hasOnly(fields);
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    // Validate daily goal progress sub-map: { d: string, xp: number }
+    function isValidDayMap(day) {
+      return day is map
+        && day.keys().hasOnly(['d', 'xp'])
+        && (!('d' in day) || (day.d is string && day.d.size() <= 20))
+        && (!('xp' in day) || (day.xp is number && day.xp >= 0 && day.xp <= 1000000));
+    }
+
+    // Validate streak sub-map: { last: string, n: number }
+    function isValidStreakMap(streak) {
+      return streak is map
+        && streak.keys().hasOnly(['last', 'n'])
+        && (!('last' in streak) || (streak.last is string && streak.last.size() <= 20))
+        && (!('n' in streak) || (streak.n is number && streak.n >= 0 && streak.n <= 100000));
+    }
+
+    // Validate the study progress `state` map structure, types, and size bounds
+    function isValidStudyState(state) {
+      return state is map
+        && state.keys().hasOnly(['review', 'tp', 'best', 'xp', 'day', 'streak', 'games', 'full', 'last', 'mas'])
+        && (!('review' in state) || (state.review is list && state.review.size() <= 2000))
+        && (!('tp' in state) || (state.tp is map && state.tp.size() <= 100))
+        && (!('best' in state) || (state.best is map && state.best.size() <= 100))
+        && (!('xp' in state) || (state.xp is number && state.xp >= 0 && state.xp <= 10000000))
+        && (!('day' in state) || isValidDayMap(state.day))
+        && (!('streak' in state) || isValidStreakMap(state.streak))
+        && (!('games' in state) || (state.games is map && state.games.size() <= 100))
+        && (!('full' in state) || state.full is bool)
+        && (!('last' in state) || (state.last is string && state.last.size() <= 100))
+        && (!('mas' in state) || (state.mas is map && state.mas.size() <= 100));
+    }
+
+    // Validate the entire user document on both create and update
+    function isValidUserDoc(data) {
+      return hasRequiredFields(['state', 'updatedAt'])
+        && hasOnlyAllowedFields(['state', 'updatedAt'])
+        && isValidStudyState(data.state)
+        && data.updatedAt is timestamp;
+    }
+
+    // ===============================================================
+    // Collection Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      // Users can only read their own document; collection listing is strictly disabled
+      allow get: if isOwner(userId);
+      allow list: if false;
+
+      // Users can create or update only their own document with valid schema and bounds
+      allow create: if isOwner(userId) && isValidUserDoc(request.resource.data);
+      allow update: if isOwner(userId) && isValidUserDoc(request.resource.data);
+
+      // Users can delete only their own document
+      allow delete: if isOwner(userId);
+    }
+
+    // Default deny all other collections, subcollections, and operations
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,816 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+2
+*two types of relationships:
+*deterministic (functional) dependence – in
+sciences and mathematics
+*one value of the first variable unambiguously
+corresponds to one value of the other variable (no
+randomness, no uncertainty)
+*statistical (probabilistic) – in business and
+economics
+*one value of the first variable may correspond
+to several values of the other variable
+*described by regression and correlation analysis
+=== SLIDE 3 ===
+*regression analysis:
+*describes unilateral dependencies
+*cause: independent (explanatory) variable X
+*consequence: dependent variable Y
+*describes the course (shape) of (any) relationship
+by a mathematical function
+*correlation analysis:
+*describes mutual dependencies
+*variables X and Y are “equal”
+*focuses on the strength (and direction) of a linear
+relationship only
+3
+=== SLIDE 4 ===
+*simple: two quantitative variables
+*multiple: more than 2 quantitative vars.
+*to study a linear relationship (direction
+and strength) between quantitative
+variables in the analyzed data set
+4
+=== SLIDE 5 ===
+*Pearson’s correlation coefficient
+*it measures/expresses/describes the strength
+(and direction) of the linear relationship
+between two variables in the analyzed data
+set
+
+xy x y
+s
+xy
+r r r
+    
+yx xy
+ss
+ 
+  2 2 2 2
+x x y y
+xy
+*sxy is so-called covariance
+-1;1
+- ;+
+xys xy x y     
+*for each statistical element (each i) in the data
+set we have the value of variable X and the
+value of variable Y: xi, yi, i = 1, 2, …, n
+5
+=== SLIDE 6 ===
+*when equal to +1, it means a perfect positive
+linear dependence (positive correlation)
+between the two variables
+*points in the scatterplot lie on (the same) line
+with a positive slope
+*when equal to -1, it means a perfect negative
+linear dependence (negative correlation)
+*points in the scatterplot lie on the line with a
+negative slope
+6
+*when equal to 0, it signals no linear dependence
+(no correlation, linear independence)
+*the closer the absolute value of r to 1, the
+stronger the linear relationship!
+=== SLIDE 7 ===
+*
+…be careful about its interpretation
+(only for linear relationships)…
+7
+=== SLIDE 8 ===
+*
+…be careful about its interpretation
+(small data sets)…; always construct a
+scatterplot!
+r = 0.81
+r = 0.81
+r = 0.81 r = 0.81
+8
+=== SLIDE 9 ===
+*Example 1) We have a data set of 165
+former 4ST601 students. Describe the
+direction and strength of the linear
+relationship between
+*a) age (X) and semester (Y)
+*b) the number of excellent grades (X)
+and the semester (Y)
+*c) age (X) and weight (Y)
+9
+=== SLIDE 10 ===
+*Example 1a) age (X) and semester (Y) (or
+age [Y] and semester [X])
+*Data_Lecture4.xlsx, sheet“Correlation1”
+10
+=== SLIDE 11 ===
+*Example 1a) age (X) and semester (Y)
+   
+xy x y . . .r .
+
+64 36 20 16 3 15 0 46
+2 2 2 2
+ 
+409 31 20 16 11 35 3 15
+ 
+     2 2
+x x y y
+. . . .
+11
+*There is an intermediate positive linear relationship
+between age and the semester in the data set.
+*Higher values of age tend to correspond with higher
+values of the semester (and vice versa) in this data set.
+=== SLIDE 12 ===
+*Example 1b) the number of excellent grades (X)
+and the semester (Y)
+
+xy x yr .
+
+03
+ 
+  2 2 2 2
+x x y y
+*There is a weak positive correlation between exc. grds.
+and the semester in the analyzed data set.
+*Higher values of exc. grds. tend to correspond with
+higher values of the semester (and vice versa) in this
+data set.
+12
+=== SLIDE 13 ===
+*Example 1c) age (X) and weight (Y)
+
+xy x yr .
+
+0 23
+ 
+  2 2 2 2
+x x y y
+*There is a very weak positive linear relationship
+between age and weight in the data set.
+*Higher values of the age tend to correspond with
+higher values of weight (and vice versa) in this data
+set.
+13
+=== SLIDE 14 ===
+*Example 1c) linear independence!
+female:
+0 06r .
+0 23r .
+male:
+0 049r .
+14
+=== SLIDE 15 ===
+*to describe/explore the relationship
+between the dependent (response, Y)
+variable and one or more explanatory
+(independent, X) variables in the analyzed
+data set
+*to construct/find the“best” function
+capturing the form (shape) of the
+relationship of interest in the analyzed
+data set
+15
+=== SLIDE 16 ===
+*regression function: mathematical
+function with parameters calculated from
+the values in the analyzed data set
+*summarizes information about the
+relationship between the values of the
+dependent and explanatory variable(s) in
+the analyzed data set
+16
+=== SLIDE 17 ===
+*regression line:
+ˆy b b x
+0 1
+(ŷ and x are y-axis and x-axis coordinates of a point in
+the coordinate system)
+*p = 2 regression parameters: b0, b1
+*k = 1 explanatory variable X
+*useful when studying linear relationship
+*b0 is the intercept (with y-axis) and b1 is the
+slope of the regression line
+*is increasing when b1 > 0
+*is decreasing when b1 < 0
+17
+*b1 = 0 (or very close to zero) shows linear
+independence
+=== SLIDE 18 ===
+18
+*Quadratic regression function:
+ˆy b b x b x  2
+0 1 2
+*p = 3 regression parameters: b0, b1, b2
+*k = 2 regressors (variable X and squared
+variable X)
+*b0 is the intercept (with y-axis)
+*is convex when b2 > 0
+*is concave when b2 < 0
+=== SLIDE 19 ===
+19
+*regression plane:
+ˆy b b x b x  0 1 1 2 2
+*p = 3 regression parameters: b0, b1, b2
+*b1 and b2 are called partial regr. parameters
+*k = 2 explanatory variables (X1 and X2)
+=== SLIDE 20 ===
+*simple regression
+*dependent variable Y
+*one explanatory variable X (or one regressor
+–> some transformation of X, e.g. 1/X, X2
+…)
+*multiple regression
+*dependent variable Y
+*k explanatory variables X1, X2, …, Xk (or
+regressors)
+20
+=== SLIDE 21 ===
+*simple regression
+*regression line
+*quadratic regression function (in a factual
+sense; one explanatory variable X)
+21
+*multiple regression
+*regression plane (k = 2 explanatory
+variables X1 and X2)
+*quadratic regression function (in a
+mathematical sense; k = 2 regressors X
+and X2)
+=== SLIDE 22 ===
+*regression line:
+ˆy b b x
+0 1
+*in practice we work with a data set of n
+statistical elements; index i refers to the
+position of a statistical element in the
+analyzed data set; i = 1, 2, …, n
+*i.e. we have n data points (xi, yi); xi is the
+value of variable X for the i-th statistical
+element and yi is the value of variable Y
+for the i-th statistical element (i-th
+observation)
+22
+=== SLIDE 23 ===
+*regression line:
+ˆy b b x
+0 1
+*values xi and yi are used for the calculation
+of regression parameters (b0, b1), which
+represent the summarized information about
+the analyzed data set; formulas derived by
+the so-called method of least squares (MLS):
+*slope
+
+xy x y
+s
+bb
+xy
+  
+1 2
+yx
+2 2
+
+xx
+s
+x
+*intercept
+0 1 yxb y b x y b x   
+23
+=== SLIDE 24 ===
+*Example 2) We have a data set of nine
+male students from the 2014 summer
+semester.
+*A) hypothesis (idea, thought): older male
+students tend to weigh more than younger
+male ones, this relationship being linear (a
+positive linear relationship) in this data set
+*B) hypothesis (idea, thought): age and
+weight (in kgs) are linearly independent in
+this data set
+24
+=== SLIDE 25 ===
+*Example 2) We have a data set of nine male
+4ST601 students from the 2014 summer
+semester. Construct a regression line to express
+the linear relationship between age (X) and
+weight (Y, in kgs) in this data set.
+25
+=== SLIDE 26 ===
+*Example 2)
+
+xy x y
+bb
+  
+1 2
+yx
+2 2
+
+xx
+s
+xy
+s
+x
+ 
+1456.11 20.22 71.78 0.774
+2
+414.89 20.22
+
+b y b x
+0 1
+71.78 0.774 20.22 56.13
+ 
+ˆ 56.13 0.774y x 
+26
+=== SLIDE 27 ===
+*Example 2) The calculated regression
+parameters (b0, b1) may be also found with Data
+Analysis ToolPak in Excel (MLS applied there):
+Calculated
+Parameter
+Value of
+Standard
+Value of
+Test
+P-value
+Error
+Statistic
+Intercept b0
+Slope b1 Lecture11 Lecture11 Lecture11
+27
+=== SLIDE 28 ===
+*Example 2) the constructed (calculated)
+regression line expressing relationship between
+age and weight in the analyzed data set:
+ˆ 56.13 0.774y x 
+*Interpretation of b1: The
+age of one student higher
+by 1 year than the age of
+another student in the
+analyzed data set
+approximately/typically
+corresponds to the weight
+higher by 0.774 kgs.
+28
+=== SLIDE 29 ===
+*employing index i (i = 1, 2, …, n) in the
+constructed regression line, we may write for
+every value of the explanatory variable X in the
+analyzed data set:
+ˆ 56.13 0.774i iy x 
+*ŷi is the value on the
+constructed regression
+line (y-axis coordinate)
+corresponding to the
+value xi; fitted value
+*e.g. for the first student
+in the analyzed data set:
+ˆ 56.13 0.774 56.13 0.774 26 76.25 kgsy x  29
+1 1
+=== SLIDE 30 ===
+*constructed regression line:
+ˆ 56.13 0.774y x 
+*ŷ is the value on the constructed regression line
+corresponding to a “new” value x (the“new”
+value of explanatory variable X, even not
+included in the analyzed data set); the so-called
+“prediction” (or “interpolation”
+, or
+“extrapolation”)
+30
+=== SLIDE 31 ===
+*constructed regression line:
+ˆ 56.13 0.774y x 
+*Imagine that a new 23-year old 4ST601 male student
+(x = 23) joined the class: on the basis of the constructed
+regression line, we predict the weight of this student
+to be 73.93 kgs.
+y   
+ˆ 56.13 0.774 23 73.93 kgs
+*Note: the true
+weight of the new
+student may differ a lot
+from our prediction!
+31
+=== SLIDE 32 ===
+*The prediction should be carried out only in
+“closeness” to the values of explanatory variable X,
+which were used to construct the regression line.
+*the relationship between X and Y may be very different
+when being“far” from the data used for the
+construction of the regression line…
+? ?
+32
+=== SLIDE 33 ===
+*the residual (ei) for the i-th statistical element in the
+analyzed data set is the difference between (empirical)
+value yi and corresponding value on the constructed
+regression function ŷi:
+ˆ
+i i ie y y
+*residuals may be understood as an “error” of the
+constructed regression function
+*generally, smaller residuals correspond with the regression
+function“better” fitting the data
+*deterministic (functional, perfect) relationship: all the
+residuals equal to 0 (no error); e.g. all data points in
+scatterplot lie on the same regression line
+33
+=== SLIDE 34 ===
+*note that:
+ˆ
+i i iy y e
+n
+
+i
+
+1
+e b
+ 
+i
+0 (MLS, 0)
+0
+*Example 2)
+    
+ˆ 56.13 0.774
+y y e x e
+i i i i i
+   
+56.13 0.774
+weight age e
+i i i
+34
+=== SLIDE 35 ===
+*Example 2) The residual for the first (i = 1) student
+in the analyzed data set:
+e y y  
+ˆ 80 76.25 3.75
+1 1 1
+35
+=== SLIDE 36 ===
+*the method of least squares finds the best
+regression line (with b0 and b1) fitting the
+analyzed data: the sum of squared residuals
+(error sum of squares, ssE) is the lowest possible
+n n
+ss e y y
+E i i i
+  
+2 2
+ˆ( ) ... minimal
+i i
+ 
+1 1
+*changing the calculated parameters anyhow would
+always lead to an increase of ssE (i.e. to worse
+regression line)
+36
+=== SLIDE 37 ===
+*Example 2)
+37
+ss e
+ 2
+459.48n
+E i
+i
+
+1
+=== SLIDE 38 ===
+*you already know the variance:
+s
+n
+
+2 1
+i
+
+
+
+( )
+yy
+i
+2
+y
+n
+*we can name the numerator as a total
+sum of squares:
+n
+ss y y
+T i
+ 
+( )
+i
+
+1
+2
+38
+=== SLIDE 39 ===
+*total sum of squares (total variation of
+values yi in the analyzed data set) can be
+expressed as:
+T R Ess ss ss 
+*where ssR is the regression sum of squares
+n
+ˆ
+ss y y
+R i
+ 
+ 2
+i
+
+1
+*and ssE is the error sum of squares
+n n
+39
+ss e y y
+E i i i
+  
+2 2
+ˆ( )
+i i
+ 
+1 1
+=== SLIDE 40 ===
+*total sum of squares can be expressed as:
+ 
+ss ss ss
+T R E
+n n n
+      
+ˆ ˆ( ) ( )
+y y y y y y
+i i i i
+ 22 2
+i i i
+  
+1 1 1
+*recall one-way ANOVA
+ 
+ss ss ss
+T TR E
+n nk k k
+j j
+      
+     2 2 2
+x x n x x x x
+ji j j ji j
+    
+1 1 1 1 1
+j i j j i
+*remember decomposition of variance
+40
+k k
+2 2
+
+ 
+n x x s n
+( )
+j j jx j
+2 2 2
+j j
+ 
+1 1
+s s s
+   
+x x jx k k
+j
+ n n
+j j
+j j
+ 
+1 1
+=== SLIDE 41 ===
+*i.e. we split the total variation (ssT) of the
+values of the variable Y into two parts
+T R Ess ss ss 
+*ssR represents part of Y-values variation
+which was explained by the constructed
+regression function
+*ssE represents part of Y-values variation
+which was not explained by the constructed
+regression function (i.e. an error of the
+constructed reg. f.)
+41
+=== SLIDE 42 ===
+*high ssR and low ssE: small residuals;
+data points in the scatterplot are close
+to the constructed regression function
+*low ssR and high ssE: high residuals;
+data points in the scatterplot are far
+from the constructed regression
+function
+42
+=== SLIDE 43 ===
+*ssR = ssT and ssE = 0: all residuals equal
+to 0 (no error); all data points in the
+scatterplot lie on the constructed
+regression function; deterministic
+(functional, perfect) relationship
+*ssR = 0 and ssE = ssT : no variation of the
+variable Y’s values explained by the
+constructed regression function; the
+only non-zero regression parameter is
+ˆ
+the intercept b0; iyy
+for every i
+43
+=== SLIDE 44 ===
+*Example 2)
+T R Ess ss ss 
+44 491.56 32.07 459.48
+
+=== SLIDE 45 ===
+*Example 2) Calculated sums of squares may be
+also found with Data Analysis ToolPak in Excel:
+Degrees of
+freedom
+Sums of
+Squares
+Mean
+Squares
+Value of
+Test
+Statistic
+Significance
+F
+Regression ssR
+Residual ssE
+Total ssT
+45
+=== SLIDE 46 ===
+*coefficient of determination r2
+represents the portion of variation of the
+values of the variable Y explained by the
+constructed regression function
+ss
+2 R
+r
+
+ss
+T
+*minimum = 0 (no variation explained)
+*maximum = 1 (100 % of variation explained,
+deterministic relationship)
+46
+=== SLIDE 47 ===
+*coefficient of determination r2 generally increases
+with the addition of more explanatory variables or
+regressors (i.e. with more regression parameters p)
+*adjusted coefficient of determination
+2 2
+  
+r r
+ADJ
+1 (1 ) n
+
+1
+
+np
+*may increase, decrease or stay the same after
+the addition of more explanatory variables
+*takes into consideration the number of regression
+parameters (p)
+*has to be used (instead of r2) to compare alternate
+constructed regression functions with a different
+number of regression parameters; the higher the
+better
+47
+=== SLIDE 48 ===
+*Example 2)
+ss
+r
+2 32.07 0.065
+R
+
+ss
+491.56
+T
+*By the constructed regression line we
+explained only 6.5 % of the weight
+variation in the analyzed data set.
+2 2
+n
+ 
+1 9 11 (1 ) 1 (1 0.065) 0.06892
+r r
+     
+ADJ
+np
+ 
+48
+=== SLIDE 49 ===
+*Example 2) The coefficient of
+determination and adjusted coefficient of
+determination may be also found with
+Data Analysis ToolPak in Excel:
+49
+=== SLIDE 50 ===
+*quadratic regression function:
+ˆy b b x b x  
+2
+0 1 2
+*values xi, squared xi and yi are used for
+the calculation of regression parameters;
+formulas derived by the method of least
+squares (in 4ST601 only with Excel)
+50
+=== SLIDE 51 ===
+*Example 3) We have a data set of nine
+male students from the 2014 summer
+semester.
+*hypothesis (idea, thought): older male
+students tend to weigh less to a certain
+age and then they weigh more than
+younger male students, this relationship
+being quadratic (and convex) in this data
+set
+51
+=== SLIDE 52 ===
+*Example 3) We have a data set of nine male students
+from the 2014 summer semester. Construct a quadratic
+regression function to express the relationship between
+age (X) and weight (Y, in kgs) in this data set.
+ˆ 141.63 7.23 0.18y x x  
+2
+52
+=== SLIDE 53 ===
+*Example 2) and Example 3)
+ˆ 141.63 7.23 0.18y x x  ˆ 56.13 0.774y x 
+2
+2 2
+ADJ,line ADJ,quad0.068 0.21r r  
+*Regression line fits better for the analyzed data
+set.
+53
+=== SLIDE 54 ===
+*regression plane:
+ˆy b b x b x  
+0 1 1 2 2
+*values x1,i, x2,i and yi are used for the
+calculation of regression parameters;
+formulas derived by the method of least
+squares (in 4ST601 only with Excel)
+54
+=== SLIDE 55 ===
+*Example 4) We have a data set of nine
+male students from the summer semester
+2014.
+*hypothesis (idea, thought):
+*1) older male students with (any) given
+55
+number of excellent grades tend to weigh
+more than younger male students with the
+same number of excellent grades
+*2) male students with more excellent grades
+of (any) given age tend to weigh more than
+male students of the same age with less
+excellent grades
+*3) the relationships (1) and (2) are linear
+*(1) and (2) and (3) => regression plane
+=== SLIDE 56 ===
+*Example 4) We have a data set of nine male
+4ST601 students from the summer semester
+2014. Construct a regression plane to express
+the relationship between age (X1), number of
+excellent grades (X2) and weight (Y, in kgs) in
+this data set.
+ˆ 68.93 0.37 2.01y x x  
+1 2
+*Interpretation of b1: The age of
+one student higher by 1 year
+than that of another student
+with the same number of
+excellent grades in the analyzed
+data set approx./typically
+corresponds to the weight
+higher by 0.37 kgs.
+56
+=== SLIDE 57 ===
+*both the regression line and correlation analysis
+deal with linear relationships
+*there are some numerical interconnections
+between them:
+*the absolute value of the correlation coefficient
+equals the square root of the coefficient of
+determination (sign of r is the same as that of b1)
+2
+liner r
+*r may be used for the
+calculation of b1
+57
+s s
+b r
+xy y
+ 1 2
+s s
+x x
+=== SLIDE 58 ===
+*mainly in the case of small data sets, be careful
+with all the results as they may be very different
+if only one observation is removed from the
+analysis (so-called influential observation)
+ˆ 56.13 0.774y x ˆ 85.38 0.75y x 
+58
+=== SLIDE 59 ===
+Any questions? 
+59

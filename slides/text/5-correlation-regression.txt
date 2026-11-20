@@ -1,0 +1,921 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*Time series: series of values (i.e. numbers)
+of a specific variable
+*The values are unambiguously organized in
+time from past to present.
+*value in time t: yt
+*time variable t = 1, 2, …, n, denoting time;
+n denotes the length of a time series
+*time series: y1, y2, y3, …, yn-1, yn
+2
+=== SLIDE 3 ===
+*Time series in “Data_Lecture5.xlsx”
+3
+=== SLIDE 4 ===
+*a plot showing the development of a time
+series; traditionally a line chart (not
+scatterplot) to stress the time series’
+development
+*time variable t on
+x-axis and values yt
+on y-axis
+4
+=== SLIDE 5 ===
+5
+=== SLIDE 6 ===
+*1) according to the decisive time period:
+stock vs. flow time series
+*stock (point) time series:
+*indicator’s value refers to a specific time point
+(e.g. the number of employees
+in a company on the first day in a month, the
+level of supplies at the end of a year,…)
+*indicator’s value is not influenced by the
+observation period (the level of supplies at: the
+end of every year vs. the end of each month)
+*we can’t add up their values (it makes
+no sense)
+6
+=== SLIDE 7 ===
+*1) according to the decisive time period:
+stock vs. flow time series
+*flow (interval) time series:
+*indicator’s value refers to a specific time
+7
+interval (e.g. quarterly GDP, monthly
+number of marriages, …)
+*indicator’s value is influenced by the
+observation period (monthly number of
+marriages < quarterly n. of. m.)
+*we can add up their values (number of
+marriages: Jan+Feb+Mar=Q1)
+=== SLIDE 8 ===
+*2) according to the length of
+observation period
+*long term t.s.: one-year (or longer)
+observation period
+*short term t.s.: observation period
+shorter than one year (quarterly time
+series, monthly t.s., daily t.s,…)
+8
+=== SLIDE 9 ===
+y
+
+n
+
+t
+
+1
+n
+y
+t
+*A) flow time series: simple arithmetic mean
+*B) stock time series:
+*equal lengths of the intervals between each
+consecutive pair of values: simple chronological mean
+n
+
+1
+1 1
+ 
+y y y
+1
+
+t n
+2 2
+t
+
+2
+n
+
+1
+*not all equal lengths of the intervals between each
+consecutive pair of values: weighted chronological
+mean
+y
+
+9
+
+ 
+1 2
+y y y y
+2 3 1
+yyd d d
+
+  
+n n
+...
+1 2 1
+2 2 2
+n
+
+
+y d d d
+  
+...
+1 2 1
+n
+
+where d1 is the length of the interval (i.e. the time distance)
+between y1 and y2 etc.
+=== SLIDE 10 ===
+*Example 1) Calculate the mean number
+of students present at the beginning of
+seminars during the semester.
+Seminar No. No. of students
+1 18
+3 16
+9 12
+11 17
+10
+=== SLIDE 11 ===
+*Example 1) Stock time series, unequal lengths
+between each consecutive pair of values: weighted
+chronological mean.
+Seminar No. t yt
+“partial” ar. mean
+Time distance
+(d), in days Product
+1 1 18
+(18+16)/2=17 d1 = 14 17·14=238
+3 2 16
+14 d2 = 42 588
+9 3 12
+14.5 d3 = 14 203
+11 4 = n 17
+Sum(total) 70 1,029
+11
+=== SLIDE 12 ===
+*Example 1) Calculate the mean number of
+students present at the beginning of
+seminars during the semester.
+
+ 
+1 2
+y y y y
+2 3 1
+yyd d d
+
+  
+n n
+1 2 1
+n
+
+... 1029
+  
+2 2 2 14 7 students
+y .d d d
+  
+... 70
+1 2 1
+n
+
+*In the period from 1st to 11th seminar, the
+mean number of students present at the
+beginning of seminars was 14.7 students.
+12
+=== SLIDE 13 ===
+*basic characteristics of time series’
+development
+*1st differences
+
+  
+t t ty y , t , ,...,n
+
+1 23
+*if they are equal (or very similar): there is
+a linear trend in the analyzed time series
+*if they are equal (or very close) to zero:
+there is a constant trend in the analyzed
+time series
+*express how much the value in time t is
+higher (+) or lower (-) than the previous
+value (in time t-1)
+13
+=== SLIDE 14 ===
+*mean 1st difference
+*simple arithmetic mean of 1st differences
+n
+
+
+t
+   
+   
+...
+ 
+t n n
+2 2 3 1
+  
+n n
+ 
+1 1
+( ) ( ) ... ( ) ( )
+        
+y y y y y y y y y y
+2 1 3 2 1 2 1 1
+  
+n n n n n
+ 
+n n
+ 
+1 1
+*express the mean inter-period change
+of the time series values during the analyzed
+time period
+*weakness: may be expressed only using the
+first and the last value of the analyzed t.s.
+14
+=== SLIDE 15 ===
+15
+*growth coefficients
+yk t n
+ t
+, 2,3,...,t
+y
+t
+1
+*if they are equal (or very similar): there is an
+exponential trend in the analyzed time series
+*if they are equal (or very close) to one: there is
+a constant trend in the analyzed t.s.
+*express relatively (i.e. by quotient) if (and how
+much) the value in time t is higher (>1) or lower
+(<1) than the previous value (in time t-1)
+*interpreted in the form of growth rates: gt = kt- 1
+*when multiplied by 100 => expressed
+in percent
+=== SLIDE 16 ===
+*mean growth coefficient
+*simple geometric mean of growth coefficients
+
+y
+y y y y
+k k k k k
+3 1
+
+n n
+1 2 1
+n n n
+     
+n
+
+1
+
+2 3 1
+... ...
+
+n n
+y y y y y
+1 2 2 1 1
+n n
+ 
+*express the mean inter-period relative change
+of the time series during the whole period
+*interpreted in the form of the mean growth
+rate:
+1
+gk
+*weakness: may be expressed only using the first
+and the last value of the analyzed t.s.
+16
+=== SLIDE 17 ===
+*Example 2) Calculate the 1st differences, growth
+coefficients and their means for the time series of
+mean weights of 4ST601 students present at selected
+seminars in several of the past semesters. Also,
+calculate the mean growth coefficient for the period
+from 2015 summer semester to 2018 winter semester.
+17
+=== SLIDE 18 ===
+*Example 2) e.g. summer 2015 (t = 3):
+   
+yy
+3 3 2
+64.9 62.3 2.6 kgs
+
+k y y
+/ 64.9 / 62.3 1.042
+3 3 2
+*The mean of weight in summer 2015 was higher by
+2.6 kgs than in winter 2014, which is equivalent to an
+inter-semester increase by 4.2 %.
+*e.g. summer 2016 (t = 5):
+ 
+5 53.7 kgs 0.946k
+*The mean of weight in summer 2016 was lower by
+5.4 % than in winter 2015, which represents an
+inter-semester decrease by 3.7 kgs.
+18
+=== SLIDE 19 ===
+*Example 2) mean 1st difference and the mean growth
+coefficient, period from summer 2014 (t = 1) to
+summer 2019 (t = 11), n = 11:
+nyy y y
+  
+
+  
+1 11 1 63.3 64.5 0.12 kgs
+n
+ 
+1 11 1 10
+y y
+n
+n
+
+ 
+1 11 1
+
+11 10
+y y
+1 1
+63.3 0.998
+64.5
+k
+*In the period from summer 2014 to summer 2019, there was
+a mean inter-semester decrease of 0.12 kgs in the mean
+weight of students, which was a 0.2% relative mean
+inter-semester decrease in the mean weight of students.
+19
+=== SLIDE 20 ===
+y 
+64.4 kgs
+  
+0.12 kgs
+20
+
+y
+64.4 kgs
+
+k
+0.998
+=== SLIDE 21 ===
+*Example 2) (mean 1st difference and) the mean
+growth coefficient, period from summer 2015 (t = 1)
+to winter 2018 (t = 8), n = 8:
+k
+y y
+n
+n
+
+ 
+1 81
+
+8 7
+y y
+1 1
+65.9 1.002
+64.9
+*In the period from summer 2015 to winter 2018, there was a
+0.2% relative mean inter-semester increase in the mean
+weight of students.
+21
+=== SLIDE 22 ===
+22
+*comparison of time series dynamics
+using the series of indices of two types:
+*1) base indices– base period is fixed
+t
+yI I I I
+
+...
+t t t
+/1 2/1 3/ 2 / 1
+y
+1
+*2) chain indices– base period is moving
+y I
+I
+t t
+/1
+ tt
+/1
+y I
+t t
+ 
+1 1/1
+*The period in the numerator is called a
+current period and the one in the
+denominator is often called a base period
+(or reference period).
+=== SLIDE 23 ===
+*the value of a time series in each time
+interval in relation to that in the
+preceding time interval = chain indices
+y
+t
+y
+1996
+y
+2003
+I
+t
+
+I
+
+I
+
+t
+
+1
+1996
+1995
+2003
+2002
+y
+t
+
+1
+y
+1995
+y
+2002
+*the value of a time series in each time
+interval in relation to that in the fixed
+base period = (fixed) base indices
+t
+y y yI I I
+1996 2003
+  t
+/1 1996 2000 2003 2000
+23
+y y y
+1 2000 2000
+=== SLIDE 24 ===
+*chain index in the t-th period is given
+by the quotient of two successive base
+indices:
+I
+t
+1
+I
+tt
+
+1
+I
+t
+
+11
+*base index in the t-th period is
+obtained by multiplying successive
+chain indices:
+   
+1 2 1 3 2 1 2003 2000 2001 2000 2002 2001 2003 2002...t t tI I I I I I I I
+
+24
+=== SLIDE 25 ===
+*Example 3) Calculate the chain indices,
+base indices with the base in summer
+2014 (t = 1) and base indices with the
+base in winter 2016 (t = 6) for the time
+series of the mean weights of 4ST601
+students present at selected seminars in
+some past semesters.
+25
+=== SLIDE 26 ===
+*Example 3)
+26
+=== SLIDE 27 ===
+*Example 3) Chain index for winter 2015 (t = 4):
+y
+4
+I
+4/3
+
+67.3 1.038
+y
+3
+64.9
+y
+4
+I
+4/3
+I y
+41 1
+ 
+I
+31
+y
+3
+1.043 1.038
+1.005
+y
+1
+*The mean weight of 4ST601 students in winter
+2015 was higher than the mean weight of those in
+summer 2015 by 3.8 %.
+27
+=== SLIDE 28 ===
+*Example 3) Base index for winter 2016 (t = 6) with
+the base in summer 2014 (t = 1) :
+y
+6
+I
+6/1
+
+57.5 0.890
+64.5
+y
+1
+y y yy y
+I I I I I I
+3 5 62 4
+         
+6/1 2 1 3 2 4/3 5/4 6/5
+y y y y y
+1 2 3 4 5
+0.965 1.042 1.038 0.946 0.903 0.890
+   
+*The mean weight of 4ST601 students in winter
+2016 was lower than the mean weight of those in
+summer 2014 by 11 %.
+28
+=== SLIDE 29 ===
+I
+4/6
+*Example 3) Base index for winter 2015 (t = 4) with
+the base in winter 2016 (t = 6) :
+y
+4
+
+y
+6
+67.3 1.172
+57.5
+I
+4/6
+I
+I I I
+ 
+4/1
+2 1 3 2 4/3
+  
+1 1 1.172
+I I I I I I I I
+     
+0.946 0.903
+6/1 2 1 3 2 4/3 5/4 6/5 5/4 6/5
+*The mean weight of 4ST601 students in winter
+2015 was higher than the mean weight of those in
+winter 2016 by 17.2 %.
+29
+=== SLIDE 30 ===
+*time series may contain one or more
+of the four following components: trt,
+ct, st and et
+*a trend component is the main long-
+term movement in a time series
+*trend component value in time t: trt
+*may increase, decrease, or may be
+constant
+*its form may be linear or non-linear
+30
+=== SLIDE 31 ===
+*a cyclical component refers to repetitive
+movements (“waves”) in the analyzed time
+series with periods greater than one year
+*cyclical component value in time t: ct
+*increasing and decreasing phases alternate
+*sometimes are considered as part of the
+trend component
+31
+=== SLIDE 32 ===
+*a seasonal component represents repetitive
+movements (“waves”) around the trend with
+periods of one year or less
+*seasonal component value in time t: st
+*regular and repeating (e.g. during each year,
+or week)
+*caused mainly by seasonal effects but
+sometimes also by human activities
+*cannot occur in long-term time series
+*trt, ct and st together are called the
+deterministic component
+32
+=== SLIDE 33 ===
+33
+=== SLIDE 34 ===
+*additive decomposition
+   
+t t t t ty tr s c e
+*values of all components
+t n n
+ 
+1,2,3,..., 1,
+are in the same units
+as the analyzed time series
+*if the variation of time
+series (e.g. the seasonal
+component) is constant
+in time
+34
+=== SLIDE 35 ===
+*additive decomposition
+   
+y tr s c e
+1 1 1 1 1
+   
+y tr s c e
+2 2 2 2 2
+   
+y tr s c e
+3 3 3 3 3
+...
+   
+y tr s c e
+    
+n n n n n
+1 1 1 1 1
+   
+y tr s c e
+n n n n n
+35
+=== SLIDE 36 ===
+*multiplicative dec.
+t t t t ty tr s c e   
+*only the value of trt is in the same units
+as the analyzed time series (values yt), the
+others are dimensionless (expressed
+relatively)
+*if the variation of time series (e.g. the
+seasonal component) changes in time
+36
+=== SLIDE 37 ===
+37
+*irregular (error, random, residual)
+component
+*irregular component value in time t: et
+*remains when (after) the three previous
+components have been isolated and removed
+*represents random variations in a time series
+caused by non-systematic factors influencing
+time series development (e.g. measurement
+errors)
+*residuals et:
+t t t t te y tr s c   
+/ ( )t t t t te y tr s c  
+=== SLIDE 38 ===
+*to describe main historical movements
+in a time series
+*to eliminate the effect of a trend
+in a time series for isolating periodic
+components (cyclical and seasonal)
+*to perform forecasting (prediction) of a
+time series development in future (for
+future time periods): predictive time
+series analysis
+38
+=== SLIDE 39 ===
+39
+*basic approaches: trend functions and
+smoothing (adaptive) methods
+*trend functions
+*special case of regression functions, where
+time variable t is used as an explanatory
+variable; deterministic trend functions
+*calculated parameters remain the same for
+the whole time series
+*linear trend, quadratic trend, exponential
+trend, etc.
+*constant trend
+=== SLIDE 40 ===
+40
+*smoothing (adaptive) methods
+*do not assume stability of trend parameters
+in time
+*calculated values of the trend component
+are adapting to changes in the development
+of time series
+*moving averages, exponential smoothing, …
+*useful when trend functions cannot be
+reasonably used (complex time series
+development)
+=== SLIDE 41 ===
+*trend and irregular components only
+t t ty tr e
+t t ty tr e
+41
+=== SLIDE 42 ===
+*linear trend
+ttr b b t
+0 1
+*to calculate the parameters: least squares method
+(MLS); see the formulas for a regression line
+*increasing (b1 > 0) or decreasing (b1 < 0)
+*constant trend
+ttr b
+0
+*p = 1; MLS:
+b y y n
+0
+
+/n
+t
+t
+
+1
+*time series oscillates around it’s ar. mean
+2
+42
+*quadratic trend (MLS; in 4ST601 only with
+Data Analysis in Excel)
+ttr b b t b t  0 1 2
+*convex (b2 > 0) or concave (b2 < 0)
+=== SLIDE 43 ===
+*linear trend (for t = 1, 2, …, n)
+ttr b b t
+0 1
+0 1t t t ty tr e b b t e    
+t t t te y tr y b b t    
+0 1
+43
+=== SLIDE 44 ===
+*graphical analysis
+*factual interpretation of time series
+developments
+*statistical methods
+*coefficient of determination r2 and an
+adjusted coefficient of determination
+r2
+ADJ (the same as in regression)
+*if a time series has different than a
+constant trend, r2 has no factual
+interpretation!
+44
+=== SLIDE 45 ===
+*Example 4) Construct trend functions
+(constant, linear, quadratic) for time
+series of the mean number of excellent
+grades and the mean weight of 4ST601
+students in past semesters. Select the
+best-fitting trend function using an
+adjusted coefficient of determination.
+45
+=== SLIDE 46 ===
+*Example 4)
+46
+=== SLIDE 47 ===
+*Example 4)
+Number of excellent
+grades:
+ttr b
+0 3.3 exc.g.
+ttr b b t
+  
+0 1
+t
+2.5 0.1
+
+Weight:
+ttr b
+0 64.4 kgs
+ttr b b t
+  
+0 1
+63.7 0.1
+
+t
+47
+=== SLIDE 48 ===
+*Example 4) Time plots with constructed
+trend functions for the mean number of
+excellent grades:
+48
+=== SLIDE 49 ===
+*Example 4)
+Mean number of excellent grades Mean weight
+Trend
+form Calculated trend function r2
+ADJ Calculated trend function r2
+ADJ
+Constant ttr b 0 3.3 exc.g.
+0.00 ttr b
+0 64.4 kgs
+0.00
+Linear 2.5 0.1
+ttr t 0.24 63.7 0.1
+ttr t
+-0.09
+Quadratic 2.8 0.03
+ttr t
+  
+63.7 0.1
+ttr t
+  
+0.18   2
+0.014
+2
+t
+ 
+0.0016
+t
+-0.23
+Linear trend fits best for the time series of the mean
+49
+number of exc. grds. Constant trend fits best for the
+time series of the mean weight.
+=== SLIDE 50 ===
+*Example 4) Interpretation of the
+calculated slope (b1) of a linear trend:
+2.5 0.1
+ttr t
+*In the period from summer 2015 to summer
+2019, the mean number of excellent grades
+increased approximately by 0.1 every semester
+in comparison with the previous semester.
+50
+=== SLIDE 51 ===
+*the aim is to predict (forecast, guess) the
+future development (i.e. future values) of
+the analyzed time series
+*in 4ST601 only point-predictions
+*predicted value of a time series in time t: ŷt
+*statistical and factual
+approach at the same time!
+?
+*bear in mind: conditions
+may change (be careful)
+51
+=== SLIDE 52 ===
+*simple approach using measures of dynamics
+*assumption: inter-period changes in future will
+be the same as the mean inter-period change in
+the past
+*(deterministic) trend functions
+*trend from the past is“prolonged” to the future
+*assumption: there will be the same trend in the
+analyzed time series in the future as in the past
+*exponential smoothing
+*very good method for short-term predictions
+*useful if trend functions cannot be reasonably
+used (complex time series development)
+52
+=== SLIDE 53 ===
+*Example 5) Predict the mean number of
+excellent grades in winter 2019 (t = 12),
+summer 2020 (t = 13) and winter 2020
+(t = 14) using simple approach and the
+linear trend constructed in Example 4.
+53
+=== SLIDE 54 ===
+k
+10
+*Example 5) Simple approach:
+*the last value of a time series: y11 = 4.5 exc.
+grds.
+*mean growth coefficient:
+4.5 1.052
+2.7
+*predictions:
+*winter 2019 (t = 12):
+y y k  
+ˆ 4.5 1.052 4.734 exc.gr.
+12 11
+*We predict the mean of excellent grades in winter
+2019 to be close to 4.734.
+2
+*summer 2020 (t = 13):
+y y k y k   
+ˆ ˆ 4.980 exc.gr.
+13 11 12
+*winter 2020 (t = 14):
+3
+y y k y k   
+ˆ ˆ 5.239 exc.gr.
+14 11 13
+54
+=== SLIDE 55 ===
+*Example 5) Simple approach:
+*Are the calculated predictions reasonable?
+55
+=== SLIDE 56 ===
+2.5 0.1
+ttr t
+*Example 5) Linear trend:
+*assumption:
+t t ty tr e
+*predictions:
+*winter 2019 (t = 12):
+y tr   
+ˆ 2.5 0.1 12 3.7 exc.gr.
+12 12
+*We predict the mean of excellent grades in winter
+2019 to be close to 3.7.
+*summer 2020 (t = 13):
+y tr   
+ˆ 2.5 0.1 13 3.8 exc.gr.
+13 13
+*winter 2020 (t = 14):
+y tr   
+ˆ 2.5 0.1 14 3.9 exc.gr.
+14 14
+56
+=== SLIDE 57 ===
+*Example 5) Constructed linear trend:
+*Are the calculated predictions reasonable?
+57
+=== SLIDE 58 ===
+Any questions? 
+58

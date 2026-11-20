@@ -1,0 +1,1252 @@
+
+=== SLIDE 1 ===
+Prague University of Economics and Business
+FACULTY OF INFORMATICS AND STATISTICS
+Department of Statistics and Probability
+STATISTICS
+FORMULAS FOR 4ST601
+Version 3.54
+Last Update: January 2024
+KSTP, VŠE 2024
+=== SLIDE 2 ===
+Descriptive statistics
+k k
+n
+j
+p n n p
+j j j
+   
+n
+j j
+ 
+1 1
+1
+x
+  
+x x
+...
+(1) (2) ( )
+n
+x x x h h x x
+
+P
+
+, (
+0 1 )( )
+P P h h h
+   
+          
+( ) h n P
+   
+( 1
+( ) ( )
+)
+1
+
+1 2
+j , , ..., k
+x
+
+1 2 i , , ..., n
+x
+
+n
+k
+
+x
+i
+
+xn
+jj
+k
+i
+
+j
+
+1 1
+x
+
+k
+x x p
+ 
+n
+j
+
+ 1
+j j
+n
+j
+j
+
+1
+k
+
+j
+
+1
+xn
+jj
+k
+k
+x x p
+ 
+j j
+j
+
+ 1
+n
+j
+j
+
+1
+max min 0.75 0.25qr x x r x x   
+n
+n n
+ 
+2
+
+2
+( )
+2
+xx
+i
+ 
+x x
+i i
+2 2 2 21
+i
+
+   
+i i
+ 
+1 1
+s s x x
+x x
+n n n
+        
+k k k
+2 2
+ 
+2
+  
+( )
+x x n x n x n
+j j j j j jk
+1 1 12 2 2 2 2
+  
+j j j
+   
+s x x p s x x
+
+( )
+x j j xk k k
+j
+
+1
+          
+  
+n n n
+j j j
+  
+1 1 1
+j j j
+k k
+ 
+ 
+2 2
+x p x p
+( )
+j j j j
+j j
+ 
+1 1
+k k
+ 
+2 2
+
+s n x x n
+( )
+jx j j j k k
+1 12 2 2 2 2
+j j
+ 
+s s s       
+x jx x j
+ 
+s p x x p
+( )
+jx j j jk k
+j j
+ 
+1 1
+ 
+n n
+j j
+j j
+ 
+1 1
+2
+x xs s
+n n
+ 
+2 2
+ 
+( ) ( )
+x x x x
+i i
+n
+2 2 21 1
+i i
+ 
+s s s s
+   
+x
+  
+n n n
+1 1 1
+s
+( )imad median x x 
+x
+v
+
+x
+x
+1
+=== SLIDE 3 ===
+Descriptive analysis of dependence
+Contingency table (r x c)
+c r c r
+n nn
+         
+ij ji
+.
+.
+n n n n p p p p p
+i ij j ij ij i ij j ij
+. . . .
+n n n   
+1 1 1 1
+j i j i
+n p n p
+ij ij ij ij
+p p
+   
+i| j j|i
+n p n p
+. j . j i. i.
+
+
+n n n n
+
+( )r c
+i. . j ij ij
+n g
+ 
+ij
+
+
+n n 
+1 1
+i j ij
+gC m m
+  
+val
+0, ( 1) /
+
+gn
+V
+val
+g
+ 
+nm
+
+( 1)
+0,1
+m = min (r,c)
+2
+One-way analysis of variance
+k
+n
+j
+k
+k
+n
+ss x x
+T ji
+ 2
+  = ssTR + ssE  2
+j
+ss x x n
+TR j j
+   2
+ss x x
+ 
+E ji j
+j i
+
+11
+j
+
+1
+j i
+
+11
+ss
+2 TR
+r
+
+ss
+T
+Correlation analysis
+
+xy x y
+r r r
+   
+yx xy
+ 
+  2 2 2 2
+x x y y
+s
+xy
+ss
+xy
+Regression analysis
+ˆy b b x Regresssion line 0 1
+ˆ , 1,2,...,
+0 1
+i iy b b x i n  
+xy x yb b 
+s
+xy
+    
+1 0 12
+yx
+b y b x
+2 2
+
+xx
+s
+x
+Quadratic regression function 2
+ˆy b b x b x   2
+0 1 2
+ˆ , 1,2,...,
+i i iy b b x b x i n   
+0 1 2
+Regression plane 0 1 1 2 2
+ˆy b b x b x   ˆ , 1,2,...,
+i i iy b b x b x i n   
+0 1 1, 2 2,
+Residuals ˆ ˆ , 1,2,...,
+i i i i i ie y y y y e i n    
+n
+n
+n n
+ss y y
+T i
+   2
+( )
+2
+ˆ
+ss y y
+R i
+  2 2
+ss e y y
+E i i i
+  
+ˆ( )
+i
+
+1
+i
+
+1
+i i
+ 
+1 1
+T R Ess ss ss 
+r
+ss
+2 R
+
+2 2
+  
+r r
+ADJ
+1 (1 ) n
+
+1
+
+np
+ss
+T
+2
+=== SLIDE 4 ===
+Descriptive time series analysis and predictions
+y
+
+n
+n
+
+y
+ 1
+1 1
+
+ 
+1 2
+y y y y
+ 
+
+t
+y y y
+1
+t n
+  
+...
+1
+2 2
+t
+
+
+ 2 3 1
+yyd d d
+n n
+1 2 1
+t
+
+2
+2 2 2
+n
+
+y
+
+n
+n
+
+1
+y d d d
+  
+...
+1 2 1
+n
+
+t
+= yt - yt-1
+1
+n
+ 
+ 
+
+
+yy
+n
+1
+t
+n n
+ 
+1 1
+t
+
+2
+k y
+t
+
+t
+y
+t
+1
+k
+n
+
+1
+y
+ n n
+k
+k
+k
+
+1
+2...
+3
+n
+y
+1
+t
+yI I I I
+
+...
+t t t
+/1 2/1 3/ 2 / 1
+y
+1
+y I
+I
+t t
+/1
+ 
+tt
+/1
+y I
+t t
+ 
+1 1/1
+Time series decomposition
+t t t t ty tr s c e    t t t t ty tr s c e   
+Trend functions
+n
+Constant trend 0 0
+tr b t n b y n
+t t
+   
+, 1,2,..., /
+t
+
+1
+ttr b b t t n  
+Linear trend 0 1, 1,2,...,
+Quadratic trend 2
+ttr b bt b t t 0 1 2 , 1,2,...,
+n   
+Predictions ˆ , 1, 2,...
+t ty tr t n n   
+Moving averages
+        
+y y y y y
+1 1... ...
+m p y tr
+   
+21 t p t t t t p
+t t
+m
+                    
+y y y y y y y y y y
+1 1 1 1 1 1... ... ... ...
+t p t t t t p t p t t t t p
+
+m p y tr
+  
+2
+m m
+t t
+2
+Simple approach to seasonal component
+n
+j
+
+sd
+i
+
+t t t ts e y tr   1
+j
+
+
+( )
+se
+ij ij
+s
+
+j
+
+1
+sd
+j
+n
+j
+n
+j
+
+si
+i
+
+/t t t ts e y tr 1
+j
+
+
+( )
+se
+ij ij
+sd sd
+ 
+j
+j
+s
+s
+n
+j
+si si
+ 
+j
+j s
+
+j
+
+1
+si
+j
+Regression approach to seasonal component (linear trend, length of seasonality 4)
+*
+0 1 1 1 2 2 3 3 4 4 0 0t t t t ty tr s e b b t sd x sd x sd x sd x e b b a           
+*
+0 1 1 1 2 2 3 3t t t t ty tr s e b b t a x a x a x e        
+a
+
+a a a
+1 2 3
+ 1 2 3
+j jsd a a, j , ,   4sd a
+4
+Predictions 0 1ˆ , 1, 2,..., 1,2,3,4
+t t t jy tr s b b t sd t n n j         
+3
+=== SLIDE 5 ===
+Probability and random variables
+Probability theory
+m
+PA
+()
+( ) 1 ( )P A P A
+n
+( ) ( ) ( )( )P A B P A P B P A B    
+Disjoint events ( ) ( ) ( )P A B P A P B   
+Independent events ( ) ( ) ( ) ( )P A P A| B P B P B| A  ( ) ( ) ( )P A B P A P B
+Dependent events ( ) ( ) ( | ) ( ) ( | )P A B P A P B A P B P A B    
+Random variables (random variable X; the value of this random variable x)
+Discrete random variables
+P x 
+( ) ( )P x P X x   ( ) 1
+F x P X x P t
+ ( ) ( )( )
+  
+x
+
+tx
+P x X x F x F x P x
+1 2 2 1( ) ( ) ( ) ( )
+     
+
+x x x
+1 2
+E X x P x
+( ) ( ) 
+x
+Var X E X E X x P x x P x 
+2
+22 2( ) ( ) ( )
+   
+          ( ) ( )S.D. X Var X
+x x
+Continuous random variables
+( ) ( )
+f x F x 1
+
+x
+)
+dx
+(
+f ( )( ) ( )
+x
+F x P X x f t dt
+   
+
+
+
+x
+ 2
+P x X x F x F x f x dx     
+1 2 2( ) ( ) ( )
+1
+x
+1
+x P )
+P
+, 0 1
+( PF x P 
+
+( ) ( )E X xf x dx
+ 
+
+ 
+ 
+2
+22 2( )       
+   
+( ) ( )Var X E X E X x f x dx xf x dx
+     ( ) ( )S.D. X Var X
+ 
+4
+=== SLIDE 6 ===
+The most important probability distributions
+Probability distributions of discrete random variables
+Binomial distribution: X ~ Bi(n,)
+
+n
+Px
+( ) (1 )x n x
+ 
+ 
+x = 0, 1, 2, ..., n, 0 1
+x
+( ) ( ) 1E X n Var X n    
+ 
+Poisson distribution: X ~ Po()
+P x e
+
+ 
+x
+() !
+ x = 0, 1, ... ,  > 0
+x
+( ) ( ) E X Var X  
+Hypergeometric distribution: X ~ Hy(N,M,n)
+
+M
+
+
+N
+
+M
+
+
+
+
+
+
+x
+
+
+n
+
+x
+
+P )
+(, max(0, - + ),...,min( , )x M N n M n
+x
+
+
+N
+
+
+
+
+n
+
+M
+M M N n
+ 
+
+E
+X
+)
+n
+Var X n
+  
+( ( ) 1 1
+N
+N N N
+ 
+
+, n > 0, N ≥ n, M ≤ N
+Probability distributions of continuous random variables
+Standard normal distribution: Z ~ N(0,1), X ~ N(,
+2)
+X
+
+Z 
+x
+
+
+z 
+ z   
+
+
+( ) 0 ( ) 1E Z Var Z 
+
+( ) 1 ( )z z    1P Pz z
+
+Normal distribution: X ~ N(,
+2) -  x   -  µ   
+2
+( ) ( ) E X Var X  
+F x z 
+( ) ( ) x
+ 
+ 
+    P Px z
+
+1 2( ) x xX
+1 2
+P x X x P  
+         1 2 2 1( ) ( ) ( )P z Z z z z    
+  
+2 > 0
+Chi-square distribution: G ~ 2(df) 0
+g 
+ 
+t-distribution (Student’s distribution): T ~ t(df)     1 ( ) ( ) P Pt t df t df
+1
+F-distribution (Fisher – Snedecor d.): F ~ F(df1, df2) 0
+f  1 2
+
+P
+f df ,df f df ,df
+( ) ( )
+1 2 1
+P
+5
+=== SLIDE 7 ===
+Statistical inference: point and interval parameter estimates
+Calculated point population parameter estimates
+Population mean (expected value)
+Normal distribution in population; X ~ N(,
+2): = ˆ
+
+x
+General distribution in population: ()ˆ
+E X x
+Population variance
+Normal distribution in population; X ~ N(,
+n
+ˆ
+Population proportion = j
+ 
+p
+n
+Count in population N Np 
+2): 2 2ˆ
+ 
+s
+Constructed (empirical) interval population parameter estimates
+(confidence level 1 - )
+Population mean (expected value)
+Normal distribution in population, population variance 2 unknown, two-sided confidence
+interval for parameter μ:
+ 
+s s
+x t ,x t
+  
+1 2 1 2/ /
+   
+T ~ t(n – 1)
+n n
+General distribution in population, Var(X) unknown (but finite), random sample size assumed
+to be large enough, two-sided confidence interval for parameter E(X):
+ 
+s s
+x z ,x z
+  
+1 2 1 2/ /
+   
+n n
+Population proportion
+Random sample size assumed to be large enough, two-sided confidence int. for parameter :
+  
+(1 ) (1 )
+p p p pp z , p z
+  
+/ /
+1 2 1 2
+    
+n n
+Count in population
+Random sample size assumed to be large enough, N known, two-sided confidence interval for
+parameter N:
+  
+(1 ) (1 )
+p p p pN p z , p z
+  
+/ /
+1 2 1 2
+     
+n n
+6
+=== SLIDE 8 ===
+Statistical inference: statistical hypothesis tests
+Statistical hypothesis tests of population parameters
+Population mean (expected value); normal distribution in population, 
+2 unknown
+H0 H1 Test statistic Value of test statistic Rejection region
+ = 0  > 0
+ < 0
+  0
+Population mean (expected value); general distribution in population, Var(X) unknown
+(but finite), random sample size assumed to be large enough
+H0 H1 
+
+XT n
+0
+ 
+S
+Assuming H0 is true:
+T ~ t(n – 1)
+E(X)= 0 X) > 0
+X < 0
+X  0
+x
+
+
+0
+t n
+ 
+s
+Wα
+={t; t  t1–}
+Wα
+={t; t  –t1–}
+Wα
+={t; t  t1–/2}
+Test statistic Value of test statistic Rejection region
+
+
+XZ n
+0
+ 
+S
+Assuming H0 is true:
+Z ≈ N(0,1)
+x
+
+
+0
+ 
+z n
+s
+Wα
+={z; z  z1–}
+Wα
+={z; z  –z1–}
+Wα
+={z; z  z1–/2}
+Population proportionrandom sample size assumed to be large enough
+H0 H1 Test statistic Value of test statistic Rejection region
+ = 0  > 0
+ < 0
+  0
+P
+
+
+0
+Z
+
+
+ 
+0 0(1 )
+n
+Assuming H0 is true:
+Z ≈ N(0,1)
+z
+
+p
+
+
+0
+
+ 
+0 0(1 )
+n
+Wα
+={z; z  z1–}
+Wα
+={z; z  –z1–}
+Wα
+={z; z  z1–/2}
+Statistical hypothesis test of distribution in population
+Chi-square goodness-of-fit test (random sample size and 0,j assumed to be large enough
+
+
+0,j jnn
+H0 and H1 Test statistic Value of test statistic Rejection region
+H0: j = 0,j
+(j = 1, .., k)
+H1: non H0
+G
+Assuming H0 is true:
+G ≈ 2(k – 1)
+g
+
+k
+
+
+( )
+2
+nn
+j j
+ Wα
+={g; g  2
+
+
+1
+n
+j j
+1-}
+7
+=== SLIDE 9 ===
+Inferential analysis of dependence, inferential time series analysis
+Contingency table (r x c) (all expected frequencies assumed to be large enough
+H0 H1 Test statistic Value of test statistic Rejection region
+Variables are
+independent
+non H0 G
+Assuming H0 is true:
+G ≈ 2((r - 1)(c - 1))
+g
+
+
+( )r c
+nn
+
+
+ij ij
+
+ 
+1 1
+n
+i j ij
+2
+Wα ={g; g ≥ 2
+1-}
+One-way analysis of variance
+H0 and H1 Test statistic Value of test statistic Rejection region
+H0: 1 = 2 =
+H1: non H0
+…
+=k
+F
+Assuming H0 is true:
+F ~ F(k – 1, n – k)
+ss
+TR
+k
+
+f ss
+
+E
+1
+nk
+
+Wα
+={f; f  f1-α}
+Correlation analysis
+H0 H1 Test statistic Value of test statistic Rejection region
+ρXY = 0 ρXY  0 T
+t
+rn
+
+2
+
+1
+2
+
+r
+Wα
+={t; t  t1–/2}
+Assuming H0 is true:
+T ~ t(n –2)
+Regression line (p = 2), data-generating process:
+i i iY x i n      
+0 1 1,2,...,
+Hypothesis test of slope (t-test of slope), s(b1) only from Excel
+H0 H1 Test statistic Value of test statistic Rejection region
+1 = 0 1  0 T
+t
+sb b
+1
+1()
+Wα
+={t; t  t1–/2}
+Assuming H0 is true:
+T ~ t(n –p)
+Linear trend (p = 2), data-generating process:
+t tY t t n      
+0 1 1,2,...,
+Hypothesis test of slope (t-test of slope), s(b1) only from Excel
+H0 H1 Test statistic Value of test statistic Rejection region
+1 = 0 1  0 T
+t
+sb b
+1
+1()
+Wα
+={t; t  t1–/2}
+Assuming H0 is true:
+T ~ t(n –p)
+8
+=== SLIDE 10 ===
+Index number analysis
+All totals:
+c
+
+i
+1
+Q = pq IQ Ip Iq
+1
+pIp p p p
+  
+1 0
+p
+0
+1
+qIq q q q
+  
+1 0
+q
+0
+Homogeneous commodities , ,
+q Q p
+ 
+Q
+ 
+q
+
+    
+1 0 1
+(Σ) q Iq q q
+Iq q
+q q
+  
+0 0
+1
+Iq
+
+      
+1 1 1 0 1
+(Σ) Q p q IQ Q Q
+IQ Q
+Q p q Q
+   
+0 0 0 0
+1
+IQ
+
+Q
+1
+  
+Q p q Q
+1 1 1 1
+q qp p
+1 11 1
+ 
+   
+Ip Q p q Q
+p
+0
+  
+0 0 0 0
+q q
+  
+0 0
+Q
+0
+p
+0
+1
+  
+QIQ Q Q QQ
+1 0
+0
+Δ( q
+ 0
+q
+)
+
+ 
+q
+1
+
+( Q
+Q
+)
+
+ 0
+ 
+Q
+1
+     
+p q p q
+1 1 0 0
+p p p
+1 0
+ 
+q q
+1 0
+Heterogeneous commodities
+()
+L p q Ip p q Ip Q
+    
+ 
+1 0 0 0 0
+Ip p q p q Q
+()
+P p q p q Q
+    
+   1 1 1 1 1
+0 0 0 0 0
+Ip p q Q
+pq
+  
+01
+1 1 1
+Ip Ip
+( ) ( ) ( )F L PIp Ip Ip
+()
+L p q Iq p q Iq Q
+    
+ 
+0 1 0 0 0
+Iq p q p q Q
+()
+P pq p q Q
+  
+  
+   11 1 1 1
+0 0 0 0 0
+Iq p q Q
+pq
+  
+10
+1 1 1
+Iq Iq
+( ) ( ) ( )F L PIq Iq Iq
+9
+=== SLIDE 11 ===
+Selected Excel functions
+What Excel function Lecture Symbol
+Frequency of a qualitative variables’ level COUNTIF() n
+1 j
+Frequencies of quantitative variables’ values FREQUENCY() n
+1 j
+Sum (total) SUM() 1 
+Quantile PERCENTILE.INC() x
+1 P
+Median MEDIAN() 1 x
+Mode MODE.MULT() 2 ˆ
+x
+Simple arithmetic mean AVERAGE() 2 x
+Variance (from raw data set) VAR.P() 2 2
+s
+x
+Standard deviation (from raw data set) STDEV.P() 2
+s
+x
+Sample variance (from raw data set) VAR.S() 2 2
+s
+Sample standard variation (from raw data set) STDEV.S() 2 s
+Pearson’s correlation coefficient CORREL() 4 r
+Probability function for X with binomial distribution BINOM.DIST() 8 P(x)
+Probability function for X with hypergeometric distribution HYPGEOM.DIST() 8 P(x)
+Probability function for X with Poisson distribution POISSON.DIST() 8 P(x)
+Cumulative distribution function for Z NORM.S.DIST() Quantiles for Z NORM.S.INV() Cumulative distribution function for X with normal
+distribution NORM.DIST() 8 F(x)
+Quantiles for X with normal distribution NORM.INV() Quantiles for T with t-distribution T.INV() Quantiles for G with chi-squared distribution CHISQ.INV() Quantiles for F with F-distribution F.INV() p-value for the test of independence in the contingency table CHISQ.TEST() 
+8 ()z
+z
+8 P
+x
+8 P
+t
+8 P
+11 8 2
+P
+f
+8 P
+p-value
+10

@@ -1,0 +1,970 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*probability is a specific way of thinking
+reflecting the fact that some things may
+happen (occur) with higher or lower
+“maybe” (i.e. uncertainty)
+*even probability (as a phenomenon of
+human thinking) has its own “building
+blocks” and rules
+2
+=== SLIDE 3 ===
+*experiment– process that (having been
+carried out) results in one of two or more
+possible outcomes
+*e.g. tossing a fair 6-sided die (six possible
+outcomes)
+*outcome– a particular result of an
+experiment
+*e.g. number 6 falls
+*random experiment (random trial) – its
+outcome cannot be predicted with
+certainty; under the same conditions, it
+results in different outcome(s)
+3
+=== SLIDE 4 ===
+*event– collection of one or more of the
+outcomes of an experiment
+*capital letters: A, B, …
+*A– number 6 falls in one toss: favourable
+outcome is only 6
+*A– number lower than 4 falls in one toss:
+favourable outcomes are 1, 2, 3
+*probability– numerical measure of the
+likelihood that a specific event will occur
+*P(A), P(B), …
+4
+=== SLIDE 5 ===
+*certain event: under given conditions is
+certain to occur with the probability equal to
+unity
+*E, P(E) = 1 (i.e. 100 %)
+*impossible event: under given conditions
+cannot occur; has a zero probability
+*Ø, P(Ø) = 0
+*random event: will occur with a certain
+probability between zero and unity (it may
+occur or not); it is a result of a random
+experiment
+*A, B, …; 0 < P(A) < 1
+5
+=== SLIDE 6 ===
+*if event C is given by the collection (i.e. is
+composed) of all outcomes that are
+common to both events A and B, then C is
+the intersection of these events: B
+C 
+
+A
+6
+=== SLIDE 7 ===
+*if event C is given by the collection of all
+outcomes that belong either to A or to B
+or to both A and B (i.e. at least one of
+them), then C is the union of these
+events:
+C 
+
+A
+B
+7
+=== SLIDE 8 ===
+*if the intersection of two events is empty
+(cannot occur, it’s an impossible event),
+they are said to be disjoint (or mutually
+exclusive)
+AB  
+*two events taken together including all
+the outcomes of the experiment are called
+complementary events
+A A A A E
+    
+P A P A P A P A
+   
+( ) 1 ( ) ( ) ( ) 1
+8
+=== SLIDE 9 ===
+*Using the relations already described, how would
+you express the following situation (the red
+area)? The area inside the left circle represents
+random event A, the area inside the right circle
+represents random event B…
+9
+=== SLIDE 10 ===
+10
+*classical definition of event A’s probability:
+m
+P
+(
+A
+)
+n
+*m- the number of outcomes favourable to A
+*n– the total number of outcomes for the experiment
+*probability of an occurrence of event A is the
+quotient of the number of ways event A can
+occur and the total number of possible outcomes
+*we can assume (before the random experiment!)
+that all possible outcomes of the experiment are
+equally likely
+=== SLIDE 11 ===
+*Example 1) Rolling a fair six-sided die
+(once), calculate the probability that the
+number 6 falls in one trial (one roll).
+m
+P
+(
+A
+)
+n
+11
+=== SLIDE 12 ===
+*Example 1)
+*random experiment – rolling a fair six-sided die
+*possible outcomes ... 1, 2, 3, 4, 5, 6; n = 6
+*random event A– number six falls in one roll
+*outcomes favourable to A ... 6; m = 1
+m
+PA
+1( ) 0.176
+
+n
+*Answer: The probability that in one roll of a fair six-
+sided die the number six falls is approximately 17 %.
+12
+=== SLIDE 13 ===
+*statistical (frequentist, relative-frequency)
+definition
+*if the assumption for the classical definition
+isn’t fulfilled
+*with the rising number of repetitions of an
+experiment (= the higher, the better), the
+probability of event A’s occurrence may be
+estimated by the proportion of times it occurs
+f
+P
+( () f
+A
+)
+ lim
+PA
+
+n 
+
+n
+n
+*f- the number of occurences of event A during n
+random trials
+13
+=== SLIDE 14 ===
+*Example 2) Rolling a six-sided die in a
+casino 600 times, the number six has
+fallen 50 times. Is the die fair?
+14
+=== SLIDE 15 ===
+*Example 2)
+*random experiment – rolling a six-sided die
+*number of random trials: n = 600
+*random event A– number 6 falls in one roll
+*number of ocurrences of event A during 600 trials: f = 50
+PA
+50( ) 0.083600
+*Answer: The probability that in one roll of a six-sided die
+the number six falls is approximately 8.3 %. It seems the
+die is not fair.
+15
+=== SLIDE 16 ===
+*conditional probability = the probability
+that event A will occur given that another
+event B has already occurred: P(A|B)
+*independence: two events A and B are
+said to be independent if the occurrence
+of one doesn’t influence the probability of
+the occurrence of the other: P(A|B) =P(A)
+or P(B|A)=P(B)
+16
+=== SLIDE 17 ===
+*Example 3) Rolling a fair six-sided die
+(once), we observe the following events:
+*A– even number falls … 2, 4, 6;
+P(A)=3/6=0.5 (i.e. 50 %)
+*B– number higher than 3 falls … 4, 5, 6;
+P(B)=3/6=0.5 (i.e. 50 %)
+*Calculate the conditional probabilities
+P(A|B) and P(B|A) and decide if the two
+events are dependent or independent.
+17
+=== SLIDE 18 ===
+*Example 3)
+*P(A|B) – probability that an even number
+falls given that a number higher than 3 has
+(already) fallen
+P A B P A  
+2( | ) 0.67 0.5 ( )3
+*P(B|A) – probability that a number higher
+than 3 falls given that an even number has
+(already) fallen
+P B A P B  
+2( | ) 0.67 0.5 ( )3
+18
+*Answer: Events A and B are dependent.
+=== SLIDE 19 ===
+*1) disjoint events
+P
+A
+ B
+(
+)
+0
+A
+P 
+
+B
+)
+
+P
+(
+A
+)
+P
+(
+( B
+)
+19
+=== SLIDE 20 ===
+20
+*2) events having an intersection
+*A) independent events
+*general multiplication rule
+( ) ( ) ( )P A B P A P B  
+*general addition rule
+A
+
+B
+
+P
+A
+
+P
+B
+
+P
+A
+P 
+( B
+)
+(
+)
+(
+)
+(
+)
+=== SLIDE 21 ===
+*2) events having an intersection
+*B) dependent events
+*general multiplication rule
+( ) ( ) ( | ) ( ) ( | )P A B P A P B A P B P A B    
+*general addition rule
+A
+
+B
+
+P
+A
+
+P
+B
+
+P
+A
+P 
+( B
+)
+(
+)
+(
+)
+(
+)
+21
+=== SLIDE 22 ===
+*Example 4) A bank has two independent
+alarm systems. The first one is 90 percent
+and the other one 80 percent efficient.
+What is the probability that at least one
+will detect a burglary?
+A
+P 
+
+B
+)
+
+P
+(
+A
+)
+
+P
+(
+B
+)
+
+P
+(
+A
+( B
+)
+22
+=== SLIDE 23 ===
+*Example 4)
+*A– 1st system detects a burglary; P(A)=0.9
+*B– 2nd system detects a burglary; P(B)=0.8
+P A B P A P B P A B
+( ) ( ) ( ) ( )
+     
+    
+P A P B P A P B
+( ) ( ) ( ) ( )
+    
+0.9 0.8 0.9 0.8 0.98
+*Answer: The probability that at least one system
+will detect a burglary is 98 %.
+23
+=== SLIDE 24 ===
+*random variable is a variable whose
+value is determined by the outcome
+of a random experiment
+*depending upon randomness, it may get
+different values; we do not know its
+specific value before the random
+experiment (random trial)
+*notation: capital letters from the end
+of the alphabet– X, Y, …
+*values of RV: x, y, …, x1, y1, …
+24
+=== SLIDE 25 ===
+*discrete RV – has either finite (i.e. limited)
+or countably infinite (e.g. the number
+of computers produced in the world during
+a time interval) number of values
+*continuous RV - can have any value within
+one or more intervals (i.e. the number of its
+possible values is infinite)
+*similar to quantitative statistical variables in
+descriptive statistics (Lecture1, slide 17)
+25
+=== SLIDE 26 ===
+*notation: random variable“X”
+, the value
+of this variable“x”
+*the probability distribution of a random
+variable can be described by two functions:
+*discrete RV
+*probability function P(x)
+*(cumulative) distribution function F(x)
+*continuous RV
+*probability density function f(x)
+*(cumulative) distribution function F(x)
+26
+=== SLIDE 27 ===
+*definition: P(x) = P(X=x); i.e. the probability
+function in point x is the probability that
+variable X gets the value x
+*it must satisfy the following conditions:
+0 
+ x
+P 
+(
+)
+1
+P 1
+(
+x
+)
+x
+*the probability that the value of X will be
+within a certain range:
+
+
+x
+
+x
+2
+P
+(
+x
+)
+P
+( 2
+x
+
+X
+
+x
+1
+)
+
+*“numerically” the same as relative
+x
+1
+frequencies (pj; in descriptive statistics)
+27
+=== SLIDE 28 ===
+*definition:
+( ) ( ), ( , );F x P X x x    
+i.e. the distribution function in point x is the
+probability that variable X gets the value less
+than or equal to x
+*it has the following properties:
+0 
+ x
+F 1
+(
+)
+1
+F
+ F
+)
+
+,0
+(
+
+(
+)
+*non-decreasing function, continuous from the right
+*to be calculated from P(x):
+(
+F )
+x
+)
+
+
+P
+(
+t
+t
+
+x
+)
+28
+*the probability that the value of X will be within
+a certain range:
+P
+
+X
+
+)
+
+F
+(
+)
+F
+(
+( 1
+x
+x
+x
+1 x
+2
+2
+*“numerically” the same as cumulative relative
+frequencies (in descriptive statistics)
+=== SLIDE 29 ===
+*Example 1a) The random variable X -
+“the number
+of siblings of a randomly chosen person in
+a certain territory”
+- has the following probability
+distribution:
+x 0 1 2 3 4
+P(x) 0.4 0.35 0.15 0.07 0.03
+29
+*Calculate the probability that the number of siblings
+of a randomly chosen person is:
+*a) lower than 3,
+*b) equal to 2 at the most,
+*c) 3 at least,
+*d) higher than 1 and lower than 4.
+*Identify the distribution function (using a written
+form and a graph).
+=== SLIDE 30 ===
+30
+*Example 1a)
+*X– number of siblings of a randomly chosen
+person in a certain territory
+*a) The probability that the number of siblings of a
+randomly chosen person (i.e. random variable X)
+is lower than 3:
+P X P X P X P X
+       
+( 3) ( 0) ( 1) ( 2)
+      
+P P P
+(0) (1) (2) 0.4 0.35 0.15 0.9
+*Answer: The probability that the number of
+siblings of a randomly chosen person is lower than
+3 is 90 %.
+=== SLIDE 31 ===
+*Example 1a)
+*b) equal to 2 at the most
+( 2) (0) (1) (2) 0.4 0.35 0.15 0.9P X P P P       
+*c) 3 at least
+P X P P
+( 3) (3) (4) 0.07 0.03 0.1
+      
+    
+PX
+1 ( 3) 1 0.9
+*d) higher than 1 and lower than 4
+(1 4) (2) (3) 0.15 0.07 0.22P X P P      31
+=== SLIDE 32 ===
+*Example 1a)
+*Identify the distribution function (using a written
+form and a graph).
+ 
+0.00 for 0
+
+x
+
+  
+0.40 for 0 1
+x
+  
+0.75 for1 2
+x
+Fx
+() 0.90 for 2 3
+  
+x
+  
+0.97 for 3 4
+x
+ 
+1.00 for 4
+x
+32
+=== SLIDE 33 ===
+*definition:
+( ) ( ), ( , );F x P X x x    
+i.e. the distribution function in point x is the
+probability that variable X gets the value less
+than or equal to x (i.e. just the same as for
+discrete random variables)
+*it has the following properties:
+0 
+ x
+F 1
+(
+)
+1
+F
+ F
+(
+)
+
+,0
+(
+
+)
+*it is continuous and rising for all real values x
+in those points where a derivation exists
+*to calculate it from f(x):
+x
+33
+F )
+(
+x
+)
+
+
+f
+(
+t
+dt
+
+
+*the probability that the value of X will be
+within a certain range:
+X
+P
+
+
+)
+
+F
+(
+)
+F
+(
+( 1
+x
+x
+x
+1 x
+2
+2
+)
+=== SLIDE 34 ===
+*probability density function f(x) is the
+derivation of distribution function F(x):
+
+( ) ( ) dF x
+()
+ 
+f x F x dx
+*it must satisfy the following two
+conditions:
+( ) 0 ( , )f x x    
+f
+( dx
+x
+)
+
+
+34
+*the probability that the value of X will be
+within a certain range:
+x
+2
+1 2 2 1( ) ( ) ( ) ( )
+P x X x F x F x f x dx     
+x
+1
+1
+=== SLIDE 35 ===
+35
+=== SLIDE 36 ===
+Discrete Continuous
+x
+F )
+x
+)
+
+
+P
+(
+t
+
+( 
+(
+)
+F )
+x
+f
+(
+t
+t
+
+x
+dt
+
+
+
+P 1
+( 
+x
+)
+f
+( dx
+x
+)
+1
+x
+
+
+P
+( 2
+x
+
+X
+
+x
+1
+)
+
+x
+1
+
+
+x
+
+x
+2
+P
+(
+x
+)
+x
+2
+1 2( ) ( )
+P x X x f x dx   
+x
+1
+36
+=== SLIDE 37 ===
+*Example 2a) Let
+( ) 2 for 0 1f x x x  
+be the probability density function of a
+random variable X.
+a) Identify the distribution function.
+b) Calculate the probability that X takes
+a value between 1/3 and 2/3.
+37
+=== SLIDE 38 ===
+*Example 2a)
+a) Identify the distribution function.
+x
+2 2 2
+   
+x x x t xF x f t dt f t dt tdt x
+         
+  
+0
+( ) ( ) ( ) 2 2 22 2 2
+2
+
+0 0 0
+   
+ 
+0.00 for 0
+x
+2
+F x x x
+  
+( ) for 0 1
+ 
+1.00 for 1
+x
+38
+=== SLIDE 39 ===
+*Example 2a)
+b) Calculate the probability that X takes
+a value between 1/3 and 2/3.
+1 2 2 1( ) ( ) ( )P x X x F x F x   
+2 21 2 2 1 2 1 4 1 1 0.33
+P X F F                                   
+3 3 3 3 3 3 9 9 3
+Answer: The probability that random variable
+X takes a value between 1/3 and 2/3 is
+approximately 33 %.
+39
+=== SLIDE 40 ===
+*the probability that continuous random
+variable X takes a single value is always
+zero:
+( ) 0 ( , )P X x x    
+*note that:
+( ) ( )P X x P X x  
+40
+*the definition of 100·P% quantile xP:
+()PF x P
+P X x  
+( )P
+*100·P% quantile– 100·P % of a random
+variable’s values are lower and the rest
+(i.e. 100·(1-P) %) is higher
+=== SLIDE 41 ===
+*they gather information about the probability
+distribution of a random variable into several
+numerical measures (numbers)
+*they describe basic properties of the
+probability distribution of a random variable
+*similar to measures of central tendency and
+measures of variation in the descriptive statistics
+41
+=== SLIDE 42 ===
+*a characteristic of the level (position)
+of distribution: an expected value
+*discrete variable:
+E X x P x 
+( ) ( )
+x
+*similar to the weighted arithmetic mean using
+relative frequencies (in the descriptive
+statistics)
+*continuous variable:
+
+( ) ( )E X x f x dx
+ 
+
+42
+=== SLIDE 43 ===
+43
+*a characteristic of the variation of distribution:
+variance (it measures the spread of X’s values
+around E(X))
+2( ) ( ) ( )Var X E X E X 
+ 2
+*discrete variable:
+Var X x P x x P x 
+2
+2( ) ( ) ( )
+      
+x x
+*similar to the computational formula of variance using
+relative frequencies (in the descriptive statistics)
+*continuous variable:
+ 
+ 
+2
+2( ) ( ) ( )Var X x f x dx x f x dx
+       
+=== SLIDE 44 ===
+*standard deviation is defined as a square
+root of the variance:
+. .( ) ( )S D X Var X
+44
+=== SLIDE 45 ===
+Descriptive statistics Discrete RV Continuous RV
+k
+x x p
+ 
+j j
+j
+
+1
+E X x P x  ( ) ( )
+x
+
+( ) ( )E X x f x dx
+ 
+
+2 2 2
+xs x x
+2( ) ( ) ( )Var X E X E X 
+ 2
+2
+x xs s
+. .( ) ( )S D X Var X
+45
+=== SLIDE 46 ===
+*Example 1b) The random variable X-
+“the
+number of siblings of a randomly chosen
+person in a certain territory”
+- has the
+following probability distribution:
+x 0 1 2 3 4
+P(x) 0.4 0.35 0.15 0.07 0.03
+*Calculate the expected value and variance.
+*Determine the lower quartile and 95%
+quantile.
+46
+=== SLIDE 47 ===
+*Example 1b)
+*Calculate the expected value and variance.
+E X x P x            
+( ) ( ) 0 0.4 1 0.35 2 0.15 3 0.07 4 0.03 0.98 sibl.
+x
+2
+Var X x P x x P x x P x 
+( ) ( ) ( ) ( ) 0.98
+  
+2 2 2
+         
+x x x
+2 2 2 2 2 2
+           
+0 0.4 1 0.35 2 0.15 3 0.07 4 0.03 0.98 1.0996
+47
+=== SLIDE 48 ===
+*Example 1b)
+*Determine the lower quartile and 95%
+quantile.
+ 
+0.00 for 0
+x
+  
+0.40 for 0 1
+x
+  
+0.75 for1 2
+x
+Fx
+() 0.90 for 2 3
+  
+x
+  
+0.97 for 3 4
+x
+x 
+0.25 0 siblings
+x 
+0.95 3 siblings
+ 
+1.00 for 4
+x
+48
+=== SLIDE 49 ===
+*Example 2b) Let
+( ) 2 for 0 1f x x x  
+be the probability density function of a
+random variable X.
+*Calculate the expected value and variance.
+*Determine the lower quartile.
+49
+=== SLIDE 50 ===
+*Example 2b)
+*Calculate the expected value and variance.
+1
+
+1 1 3 3 3
+   
+E X x f x dx x f x dx x xdx
+            
+  
+x
+1 0 2
+( ) ( ) ( ) 2 2 23 3 3 3
+
+0 0 0
+   
+ 
+2 2
+1
+Var X x f x dx x f x dx x f x dx
+  
+2 2
+  
+2
+( ) ( ) ( ) ( ) 3
+         
+ 
+ 
+0
+1
+1 4 4 4
+   
+4 4 1 0 4 12 2 2
+           
+
+2
+x
+x xdx
+9 4 9 4 4 9 18
+0 0
+   
+50
+=== SLIDE 51 ===
+*Example 2b)
+*Determine the lower quartile.
+1) Definition of quantile
+0.25( ) ( ) 0.25PF x P F x  
+2) Knowledge of F(x)
+2 2
+0.25 0.25( ) ( )F x x F x x  
+2
+ 
+x
+0.25
+0.25
+x
+0.25
+ 
+0.25 0.5
+51
+=== SLIDE 52 ===
+Any questions? 
+52

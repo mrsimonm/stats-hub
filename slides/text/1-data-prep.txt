@@ -1,0 +1,531 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+2
+*Course: 4ST601 - Statistics
+*Lecturer: Karel Helman
+*office: NB 367A
+*consultation hours: Thursday 11:00-12:00
+and 14:30-15:30
+*e-mail: helmank@vse.cz
+*mobile phone: +420 607 290 402
+*General course rules– excuses etc., see
+the document “4ST601_general_rules”
+*Student guidelines, see the document
+“4ST601_student_guidelines”
+=== SLIDE 3 ===
+L1 L2
+L3
+L4
+L5
+S1 S2
+S3
+S4
+S5
+*4-10 hours studying per week is needed… 
+3
+=== SLIDE 4 ===
+*About the course…
+*basics of statistical analysis
+*limited number of sessions
+*don’t forget to see the syllabus at InSIS
+*software: Microsoft Excel
+*language: English (with the exception of
+consultations, e-mails and after-class
+questions that may be asked in Czech as
+well…)
+4
+=== SLIDE 5 ===
+*Required:
+*WEISS, N. A., Elementary Statistics
+(8th Edition). US: Addison-Wesley, 2012.
+*Recommended (Chapter 14 - time series
+and index numbers):
+*McCLAVE, BENSON, SINCICH, Statistics for
+Business and Economics. Pearson, 2013.
+5
+=== SLIDE 6 ===
+*You are allowed to use official formulas (v3.54)
+and tables (v3) for both mid-term and final
+tests.
+*If the formulas or tables are modified in any
+way, they may be confiscated.
+*All electronic devices (mobile phones,
+watches, earpods, …) are strictly forbidden
+during the tests; you will have to place them in
+a designated area for the duration of the test.
+6
+=== SLIDE 7 ===
+*the final test is done without
+computer: you need to bring a
+calculator to all the oncoming classes
+(lectures and seminars) and then to all
+the tests
+*A calculator with a combination number
+function /nCr/ is recommended.
+7
+=== SLIDE 8 ===
+*Two mid-term tests– maximum 20 points each
+(at least 16 pts in total needed to take the final
+test)
+*exercises, calculations, interpretations of results, no theory
+*one attempt only!
+*Final test – maximum 60 points
+*three exercises, each worth 10 points
+*five questions, each worth -2 or 0 or 4 points
+*five statements, each worth -2, or 0, or 2 points
+*possible to be taken only in person in the terms published in InSIS
+*Total: maximum 100 points
+8
+=== SLIDE 9 ===
+*90 - 100 points: mark 1
+*75 - 89 points: mark 2
+*60 – 74 points: mark 3
+*40 – 59 points: mark 4+ (possible only once!)
+*0 – 39 points: mark 4
+9
+=== SLIDE 10 ===
+* Lecture 1, 25.9. – general information, introduction, descriptive statistics (frequency tables
+and quantiles)
+* L. 2, 2.10. - descriptive statistics (measures of central tendency, measures of variation)
+* L. 3, 9.10. – descriptive statistics (statistical graphs/charts), contingency table, ANOVA
+* L. 4, 16.10. – descriptive correlation and regression analysis (regression line, quadratic
+regression function, regression plane)
+* L. 5, 23.10. – descriptive time series analysis: means, measures of dynamics, indices, trend
+functions
+* L. 6, 30.10. - descriptive time series analysis: moving averages, seasonal component
+* 6.11. - the innovation week 
+* L. 7, 13.11. – basics of probability theory, random variables and their distributions;
+* L. 8, 20.11. - the most important probability distributions
+* L. 9, 27.11. – essentials of sampling and statistical inference: estimates
+* L. 10, 4.12.– statistical inference: tests (expected value/population mean, population
+proportion, goodness-of-fit test)
+* L. 11, 11.12. - statistical inference: tests (contingency tables, ANOVA, correlation
+analysis, regression line/simple linear regression model, linear trend)
+* L. 12, 18.12. – index numbers analysis
+10* L. 13, Monday 21 December, (hopefully) NB A, 9:15- final test information, questions
+=== SLIDE 11 ===
+*1) /singular/ the science of data, which
+involves collecting, organizing, summarizing and
+analyzing information
+*2) /plural/ facts or data (either numerical and
+non-numerical) organized and summarized so as
+to provide useful information about a particular
+object (element), event or process
+*synonyms: measures, characteristics, …
+11
+=== SLIDE 12 ===
+*Mathematical statistics: development, derivation and proofs of
+statistical theorems, formulas and rules
+*Applied statistics:
+*Descriptive statistics /singular/ – methods
+for organizing and summarizing information
+(with the use of tables, graphs and simple
+measures); the aim is to describe properties
+of a data set; no generalization!
+*Inferential statistics /singular/ – the aim is to draw
+general conclusions about the population based on
+information obtained from a random sample (data set)
+12
+=== SLIDE 13 ===
+*Observation: each individual piece of data
+*Data set: collection of observations (data),
+usually presented in tabular form, where
+each row represents a statistical element and
+each column represents a statistical variable
+*Statistical element: generally any object;
+e.g. person, town, firm, etc. …
+*Data set size (n): number of statistical
+elements in a data set
+13
+=== SLIDE 14 ===
+*Data set: information gathered at selected
+4ST601 seminars over the past few semesters
+*Statistical element: a student of 4ST601
+*Data set size: n = 165
+14
+=== SLIDE 15 ===
+*Statistical variable: a characteristic that varies
+from one object (statistical element) to another
+*e.g. for humans: height, weight, number of siblings,
+gender, eye colour, etc. …
+15
+=== SLIDE 16 ===
+Statistical Variables
+Quantitative Qualitative
+Discrete Continuous
+*…more detailed classification is also possible…
+16
+=== SLIDE 17 ===
+*Quantitative: its values are numbers resulting
+from counts or measurements
+*Discrete– its possible values form a countable set (most
+often finite, theoretically also countably infinite;
+typically only integer numbers)
+*for humans, e.g. number of siblings, number of children, …
+*Continuous– its possible values form some interval of
+numbers; may have any value within a certain range;
+number of its possible values is infinite
+*for humans, e.g. height, monthly salary, …
+17
+=== SLIDE 18 ===
+*Qualitative: its “values” (levels, categories,
+classes) are expressible in words; they yield
+non-numerical information
+*may be used to subdivide the whole data set
+into categories (groups); sometimes called
+categorical variable
+*for humans, e.g. eye colour, level of education, …
+18
+=== SLIDE 19 ===
+19
+*Statistical variables:
+*First letter of a name: Karel -> k
+*Faculty: Faculty of Informatics and Statistics -> 4
+*Gender: male -> m
+*Number of excellent grades (up-to-now)
+*Age (in years)
+*Weight (in kgs)
+*Semester of studies
+*Opinion on (difficulty of) statistics
+(intermediate/difficult/very_difficult)
+*Academic semester (when the data were collected)
+=== SLIDE 20 ===
+*Descriptive statistics /singular/: consists
+of methods for organizing and summarizing
+information; it’s purpose is to describe (express,
+reveal) the properties of a data set; no
+generalization!
+*Raw data: recorded in the sequence in which the
+data were observed and before they are further
+processed
+*Arranged data: data arranged in descending (or
+ascending) order (of magnitudes)
+* ascending data:
+x x x  20 (1) (2) ( )... n
+=== SLIDE 21 ===
+*Number of excellent grades of 15 students
+from summer 2019
+21
+=== SLIDE 22 ===
+*Frequency: how many times a particular distinct
+level occurs in the data set
+*notation: nj, where j = 1, 2, …, k, where k is the number of distinct
+levels of a qualitative variable (i.e. the number of categories or
+classes) in the data set
+
+nn
+j
+,where n is the data set size
+k
+*it holds: 
+j
+
+1
+*Relative frequency: ratio (or %) of the frequency
+to the total number of observations
+k
+*notation: it holds:
+n
+j
+p
+
+
+j
+22 1
+n
+j
+
+p
+j
+
+1
+=== SLIDE 23 ===
+*(relative) Frequency distribution table:
+listing (table) of distinct levels and their
+(relative) frequencies
+Levels xj Frequencies nj Relative freq. pj
+x1 n1 p1
+x2 n2 p2
+… … …
+xk nk pk
+Sum k
+
+
+nn
+j
+k
+
+p
+j
+
+1
+(or 100 %)
+j
+
+1
+j
+
+1
+23
+=== SLIDE 24 ===
+*Frequency distribution table for variable
+“Gender” (sheet “gender_frequency”)
+24
+=== SLIDE 25 ===
+*Pie chart: a disk divided into
+wedge-shaped pieces proportional
+to the relative frequencies of the
+qualitative data
+*Bar plot: displays the distinct
+levels of the qualitative data on a
+horizontal axis and the relative
+frequencies (or frequencies or %)
+of those levels on a vertical axis
+25
+=== SLIDE 26 ===
+*Pie chart and bar plot for variable
+“Gender” (sheet “gender_frequency”)
+26
+=== SLIDE 27 ===
+*in the case of a low number of distinct values, each
+of these values represents one class; we first group
+the observations into classes (categories, bins)
+*in the case of a high number of distinct values, we
+group the observations into class limits; each class
+consists of a range of values, i.e. an interval
+including all values that fall within lower and upper
+limit of the class
+*Limit grouping: e.g. 30-39, 40-49, 50-59, …
+*similar to class limits are class cutpoints
+*Cutpoint grouping: e.g. 30-under 40, 40-under 50, …
+27
+=== SLIDE 28 ===
+* IN ADDITION, CUMULATIVE FREQUENCIES AND CUM. RELATIVE FREQS. MAY BE CALCULATED
+Values xj
+(classes or
+class limits)
+Frequencies,
+nj
+Relative
+frequencies, pj
+Cumulative nj Cumulative pj
+lowest n1 p1 n1 p1
+… n2 p2 n1 + n2 p1 + p2
+… … … n1 + n2 + n3 p1 + p2 + p3
+… … … … …
+highest nk pk
+k
+
+j
+
+1
+
+nn
+j
+k
+
+j
+
+1
+p
+j
+
+1
+Sum
+k
+
+j
+
+1
+
+1
+
+nn
+j
+k
+
+j
+
+1
+p
+j
+(or 100 %)
+x x
+28
+=== SLIDE 29 ===
+*Cumulative frequency: sum of frequencies of all
+values less than or equal to the value (or the
+upper limit of a particular class limit) for which is
+the cumulative frequency calculated
+*Choosing the number of class limits (i.e. intervals)
+and the width of class limits is somewhat
+subjective; there’s no strict rule
+*the aim is to get information about the (shape of)
+distribution in the analyzed data set
+29
+=== SLIDE 30 ===
+*Frequency distribution table for variable
+“Age” (sheet “age_frequency”)
+30
+=== SLIDE 31 ===
+*Interval frequency distribution table for
+variable “Weight” (sheet “weight_frequency”)
+31
+=== SLIDE 32 ===
+*Frequency polygon: line chart;
+displays the values of quantitative
+data on a horizontal axis and the
+frequencies (or rel. fr., or %) of
+those values on a vertical axis
+*Frequency histogram: bar chart
+with no spaces between bars;
+similar to the polygon but with
+class limits on a horizontal axis
+32
+=== SLIDE 33 ===
+*Frequency polygon for variable “Age” and frequency
+histogram for variable “Weight” (sheets “age_frequency”
+and “weight_frequency_Excel2013”)
+33
+=== SLIDE 34 ===
+*Frequency histogram for variable “Weight” (sheet
+“weight_frequency_Excel2016”)
+*Insert Statistic Chart –> Histogram (only with frequencies nj)
+34
+=== SLIDE 35 ===
+*quantiles
+*used to describe the (shape of) distribution of a
+quantitative variable
+*each quantile is the value that divides ascending
+data into two parts
+*P·100% (P-percent) quantile
+*notation: x
+P
+(0 < P < 1)
+*P·100 % of values xi are lower (or equal); i = 1,2,…,n
+*(1–P)·100 % of values xi are higher (or equal)
+35
+=== SLIDE 36 ===
+*Percentiles
+0.01 0.02 0.03 0.99, , ,... ,x x x x
+*99 values dividing an ascending data into 100 equal
+parts
+*Deciles
+0.1 0.2 0.3 0.9, , ,.... ,x x x x
+*9 values dividing ascending data into 10 equal parts
+*Quartiles
+0.25 0.5 0.75,,x x x
+*3 values dividing ascending data into 4 equal parts
+36
+=== SLIDE 37 ===
+*Median
+*Notation:
+0.5xx
+*50% quantile
+*Middle value of ascending data
+*Divides the bottom 50 % of values from the top 50 %
+*Lower quartile , upper quartile
+0.25x 0.75x
+37
+=== SLIDE 38 ===
+*problem arises when quantile x
+P
+is between
+two values in ascending data (eg. median in
+the case of even data set size)
+*to calculate the quantile x
+P
+in ascending
+data using linear interpolation approach:
+P h h hx x h h x x             
+( ) ( ) ( )( )( )
+*various definitions of h (position of the quantile);
+Excel function PERCENTILE.INC() uses
+( 1) 1h n P   
+38
+=== SLIDE 39 ===
+P h h hx x h h x x             
+( ) ( ) ( )( )( )
+*floor function h
+: the highest integer
+number less than or equal to h
+3.19 3 3.19 4         
+*ceiling function h
+: the lowest integer
+number higher than or equal to h
+3.19 4 3.19 3         
+39
+=== SLIDE 40 ===
+*Number of excellent grades of 15 students
+from summer 2019
+*to calculate the position of the median
+(50% quantile; P=0.5):
+( 1) 1 (15 1) 0.5 1 8h n P        
+*to calculate the median:
+8 8, 8 8       h h hx x h h x x x x x                  
+0.5 (8) (8) (8)( ) ( ) ( )( )( ) (8 8)( )
+40
+   
+5 0 0 5 ex.g.
+=== SLIDE 41 ===
+*Number of excellent grades of 15 students
+from summer 2019
+*position of the lower quartile (25% quantile;
+P=0.25):
+( 1) 1 (15 1) 0.25 1 4.5h n P        
+*the lower quartile:
+4.5 4, 4.5 5       
+h h hx x h h x x x x x                  
+0.25 (4) (5) (4)( ) ( ) ( )( )( ) (4.5 4)( )
+    
+3 0.5 (3 3) 3 ex.g.
+41
+=== SLIDE 42 ===
+*Number of excellent grades of 15 students
+from summer 2019
+*position of the upper quartile (75% quantile,
+P=0.75):
+( 1) 1 (15 1) 0.75 1 11.5h n P        
+*the upper quartile:
+11.5 11, 11.5 12       
+h h hx x h h x x x x x                  
+0.75 (11) (12) (11)( ) ( ) ( )( )( ) (11.5 11)( )
+    
+5 0.5 (6 5) 5.5 ex.g.
+…a quantile may be imaginary (in the data
+set non-existing) number!
+42
+=== SLIDE 43 ===
+*Number of excellent grades of 15 students
+from summer 2019
+*position of the 90% quantile (P=0.9):
+( 1) 1 (15 1) 0.9 1 13.6h n P        
+*90% quantile:
+13.6 13, 13.6 14       
+0.9 (13) (14) (13)( ) ( ) ( )( )( ) (13.6 13)( )
+h h hx x h h x x x x x                  
+    
+6 0.6 (6 6) 6 ex.g.
+43
+=== SLIDE 44 ===
+*Frequency distribution table for variable
+“Age” (sheet “age_frequency”)
+x 
+0.1 18 years
+x 
+0.5 20 years
+x 
+0.95 23 years
+44
+=== SLIDE 45 ===
+*Interval frequency distribution table for
+variable “Weight” (sheet “weight_frequency”)
+Median is in
+the interval
+60-71 kgs
+45
+=== SLIDE 46 ===
+Any questions? 
+46

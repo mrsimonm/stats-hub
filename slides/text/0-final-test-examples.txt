@@ -1,0 +1,347 @@
+
+=== SLIDE 1 ===
+These are examples of multiple choice questions (MCQ) and true/false statements which MAY appear
+in the final test.
+Every question and statement in any final test version is created in such a way that the (correct)
+answer is either to be found in lecture presentations or it was provided during the respective
+lecture (so you should have it in your lecture notes).
+A) MC QUESTIONS
+1. 2. The consumer price index (in the Czech Republic) is:
+A. the Laspeyres price index,
+B. the Fisher price index,
+C. the Paasche price index.
+The correlation coefficient between X and Y variables has the value of “-0.95”. Then we may say
+that:
+A. B. C. the regression line describing the dependence of Y on X is increasing,
+the correlation coefficient cannot have such a value,
+the regression line describing the dependence of Y on X is decreasing.
+3. A two-sided confidence interval for the population mean – in the case of the normal distribution in
+the population and a unknown population variance:
+A. B. C. has the width proportionally equal to the sample size,
+is symmetrical around the sample arithmetic mean,
+is independent of the sample variance.
+4. We have two events A and B for which the following holds: P(A∩B) = P(A)·P(B). We may say for
+certain (i.e. without any doubts) that:
+A. at least one of the events is a certain one,
+B. they are disjoint events,
+C. they are independent events.
+5. The inflation rate is:
+A. an absolute increase in the price index,
+B. a change in consumer basket expressed relatively,
+C. a percentage (i.e. relative) increase in the (consumer) price index.
+6. Running a statistical hypothesis test, p-value equal to 0.035 was obtained. According to this result,
+the test statistic value is:
+A. B. inconsistent with H0 at significance levels 0.01 and 0.05,
+inconsistent with H0 at the 0.01 significance level and not inconsistent with H0 at the 0.05
+significance level,
+C. inconsistent with H0 at the 0.05 significance level and not inconsistent with H0 at the 0.01
+significance level.
+=== SLIDE 2 ===
+7. The sum of individual values’ deviations from the arithmetic mean is:
+A. always a positive number,
+B. always equal to zero,
+C. influenced by the presence of extreme values (outliers) in the data set (i.e. is different in the
+presence of extreme values and different in the absence of extreme values).
+8. The coefficient of determination in regression analysis can be (in the case of a regression line;
+dependent variable Y and explanatory variable X) calculated as:
+A. B. C. a square root of the correlation coefficient (of variables Y and X),
+the absolute value of the correlation coefficient (of variables Y and X),
+the square of the correlation coefficient (of variables Y and X).
+9. The significance level of a statistical hypothesis test is:
+A. equal to the p-value,
+B. C. the probability that the value of a test statistic is inconsistent with a true null hypothesis,
+the probability that the value of a test statistic is inconsistent with a false null hypothesis.
+10. The probability of the occurrence of one event is 0.2 and that of another one 0.5. The probability of
+their intersection is 0.3. These events are:
+A. B. not disjoint and are dependent,
+not disjoint and are independent,
+C. disjoint.
+11. The consumer price index:
+A. covers the prices of all foodstuffs, but it does not cover the prices of electricity and water,
+B. is a characteristic of price level changes in the household consumption,
+C. is the Paasche price index in the Czech Republic.
+12. The test of equality of several population means (analysis of variance; ANOVA) may help decide:
+A. B. C. which firm has a higher variance in wages,
+whether a quantitative variable depends on some factor,
+which regression function in the given situation is the best.
+13. The centred moving average:
+A. B. C. can be calculated as a simple arithmetic mean of two successive moving averages,
+is calculated when the window’s length m is an odd number,
+characterizes seasonality in time series.
+14. The variance of wages in company A is higher than in company B. In which of them is the wage
+coefficient of variation higher?
+A. In company A.
+B. In company B.
+C. It cannot be (surely/generally) decided since some important information is missing.
+15. You want to compare the mean travel time from place A to place B using three different routes. If
+relevant assumptions are satisfied (each of the methods below needs specific assumptions to be
+satisfied), you will use:
+A. the test of population means’ equality in the analysis of variance,
+B. the test of independence in a contingency table,
+C. the test of linear independence in correlation analysis.
+=== SLIDE 3 ===
+16. Find a mistake in the following calculation of a two-sided 95% confidence interval for the
+proportion of women in a certain city if there were 20 % of women in a random sample of 1000
+persons (random sample size is assumed to be large enough).
+  
+0.2 0.8 0.2 0.80.2 1.645 , 0.2 1.6451000 1000
+    
+A. Part of the calculation is missing,
+B. the square root should be only in the numerator,
+C. there is a wrong value of the quantile.
+17. If it is true for random events A and B that      P A B P A P B ,   then the random events A and
+B:
+A. B. are not disjoint and are independent,
+are not disjoint and are dependent,
+C. are disjoint.
+18. The coefficient of determination in regression analysis:
+A. may take any value from the interval 1;1
+,
+B. is a quotient of dependent variables’ variation explained by the regression function and a total
+sum of squares,
+C. is a quotient of the regression sum of squares and an error sum of squares.
+19. The variance calculated from different negative numbers is:
+A. negative,
+B. positive,
+C. equal to zero.
+20. A two-sided confidence interval was determined. Using the same data, if we decrease the confidence
+level, we will obtain:
+A. a narrower confidence interval,
+B. a wider confidence interval,
+C. the confidence interval of the same width as the original confidence interval.
+21. Seasonally adjusted time series may contain:
+A. only the trend component,
+B. only the seasonal and irregular (error) components,
+C. trend, cyclical and irregular (error) components.
+22. The correlation coefficient may take any value from the following interval only (i.e. it cannot be of
+any other value):
+A. 01, ,
+B.  11,
+,
+C. 11,
+.
+23. When performing a two-tailed statistical hypothesis test, what will happen with the size of the
+rejection region, if we decrease the significance level from 5 % to 1 %?
+A. B. C. The size of the rejection region will not change (i.e. it will remain the same).
+The size of the rejection region will increase (i.e. it will cover a larger part of the x axis).
+The size of the rejection region will decrease (i.e. it will cover a smaller part of the x axis).
+=== SLIDE 4 ===
+24. The power of a (statistical hypothesis) test expresses:
+A. B. C. the probability of type II error,
+the probability that the value of a test statistic is inconsistent with a true null hypothesis,
+the probability that the value of a test statistic is inconsistent with a false null hypothesis.
+25. Analysis of variance (ANOVA) is a method that may be used to:
+A. B. C. calculate the variance in the case we know the coefficient of variation,
+judge the relationship between a factor and some quantitative variable,
+decide which trend function is the best for smoothing a time series.
+26. The correlation coefficient between variables X (horizontal axis) and Y (vertical axis) calculated
+from 10 values (points in the picture below) equals to 0.8. What conclusion will you make?
+A. According to the value of the correlation coefficient and
+the distribution of points in the picture, there is a strong
+positive linear relationship between X and Y.
+B. According to the value of the correlation coefficient and
+the distribution of points in the picture, there is a strong
+negative linear relationship between X and Y.
+C. There is a mistake in the calculation; the sign of the
+correlation coefficient does not fit the distribution of points
+in the picture.
+27. The hypergeometric distribution is appropriate to be used in the case of:
+A. sampling with replacement,
+B. sampling without replacement,
+C. a continuous random variable.
+28. The mean growth coefficient of a time series is defined as:
+A. B. C. the geometric mean of individual growth coefficients,
+the arithmetic mean of individual growth coefficients,
+the chronological mean of individual growth coefficients.
+29. We need to compare the price of a product which is being sold in 4 shops in the current period
+with its price in the base period. To express the overall change in the price (for all 4 shops
+together) we will use:
+A. a composite price index,
+B. the Paasche price index,
+C. the Laspeyres price index.
+30. The width of a two-sided confidence interval for the expected value (population mean) in the case
+of a general distribution in the population and a random sample size assumed to be large enough:
+A. B. C. decreases with increasing random sample size (assuming nothing else changes),
+does not depend on the sample variance,
+is lower (i.e. CI is narrower) for the confidence level of 99 % than for that of 95 % (assuming
+nothing else changes).
+31. The test criterion G for the test of independence in the contingency table may take:
+A. only the value from the interval (0,1),
+B. only any non-negative value
+C. any value from the set of real numbers.
+=== SLIDE 5 ===
+32. Two insignificant variables were removed from a regression function with four explanatory
+variables (and thus only two remained). When comparing the coefficients of determination of the
+original function (4 variables) and the new function (2 variables), we may say that:
+A. the coefficient of determination of the new function may be higher than the original one, if the
+removed variables were not important,
+B. the coefficient of determination of the new regression function cannot be higher than the
+original one,
+C. no general conclusion about the relation between the two coefficients of determination can be
+made.
+33. The distribution function of a random variable may take:
+A. any positive value,
+B. any non-negative value,
+C. only values from the interval <0, 1>.
+34. An adjusted coefficient of determination (in multiple regression):
+A. B. can never be lower than zero,
+is used to compare the quality of (different) regression functions with different numbers of
+parameters,
+C. is used in a statistical hypothesis test when assessing the significance of the regression slope.
+35. For filtering out the seasonal component from a quarterly time series of GDP is the best option to
+use:
+A. centred moving averages when the time series length is an even number and simple moving
+averages when it is an odd number,
+B. centred moving averages,
+C. simple moving averages.
+36. The probability density function is:
+A. B. C. a function describing the probability distribution of a discrete random variable,
+a different name for the distribution function,
+a function describing the probability distribution of a continuous random variable.
+37. We test a hypothesis about the independence of two variables in a contingency table
+( 3 and 4)r c  at 5% significance level, assuming all expected frequencies to be large
+enough. The test statistic value was calculated to be negative ( 12.34
+g ). The conclusion is:
+A. B. C. we cannot decide as there is obviously mistake in the calculation of the test statistic value,
+the value of the test statistic is not inconsistent with the null hypothesis,
+the value of the test statistic is inconsistent with the null hypothesis.
+38. The relationship between a lightbulb’s lifespan and its price is being analysed. Prices (in CZK) and
+lifespans (in hours) of 20 bulbs have been assembled. When examining the dependence, you will
+use:
+A. the Pearson’s contingency coefficient,
+B. the correlation coefficient,
+C. the coefficient of determination in analysis of variance (ANOVA).
+39. The probability of an event complementary to event A is:
+A. zero,
+B. unity,
+C. the A-event probability complement to the unity.
+=== SLIDE 6 ===
+40. The significance level is the probability that:
+A. B. C. the value of a test statistic is inconsistent with a true null hypothesis,
+the value of a test statistic is not inconsistent with a true null hypothesis,
+the value of a test statistic is inconsistent with a false null hypothesis.
+41. A factor in ANOVA:
+A. can be either a qualitative or quantitative variable,
+B. cannot be a qualitative variable,
+C. cannot be a quantitative variable.
+42. The variable study programme is:
+A. quantitative continuous,
+B. quantitative discrete,
+C. qualitative.
+43. The method of least squares may be used for:
+A. C. assessing a regression model’s quality,
+B. calculating the regression parameters,
+expressing variations in pieces of land sizes.
+44. We may transform a monthly flow time series into a quarterly time series by:
+A. B. C. the calculation of the totals for 3 months,
+the calculation of the totals for 4 months,
+selecting every 3rd value from the monthly time series.
+=== SLIDE 7 ===
+B) T/F STATEMENTS
+1. By substituting a specific value of an explanatory variable into the equation of a constructed
+regression function, we will get a prediction of the dependent variable’s value.
+2. 3. The mean first difference in any time series is equal to the arithmetic mean of time series values.
+A stronger relationship between two variables in a contingency table is manifested in higher “g”
+,
+which is used when calculating the values of the contingency coefficients.
+4. Chi-square goodness-of-fit test is based on the comparison of an analysed variable’s means in
+particular groups.
+5. We may use the probability density function f(x) to determine the probability that the continuous
+random variable X will take a specified value from a certain interval.
+6. In the case of the independence of qualitative variables, the observed frequencies nij in the
+contingency table are equal to the product of marginal frequencies (in row i and column j) divided
+by the data set size n.
+7. In a descriptive correlation analysis, a zero value of the calculated correlation coefficient signals
+no dependence between two quantitative variables in the analysed data set.
+8. 9. The binomial distribution is always non-symmetrical.
+The value of a test statistic calculated in the analysis of variance is compared with a quantile of the
+F-distribution (Fisher-Snedecor distribution quantile).
+10. A two-times (maximum acceptable) sampling error of the two-sided confidence interval is the width
+of this interval.
+11. The mean growth coefficient of a time series may never be lower than 1.
+12. After increasing all the values in a data set by the same constant (number), the value of median
+(calculated from these values) will change.
+13. The error sum of squares (in regression analysis) is defined as a total of the squared deviations
+of the dependent variable empirical values from the values on a regression function.
+14. The value of the test statistic G (ie. g), which is used when assessing independence in a contingency
+table, is always non-negative (i.e. either zero or positive).
+15. The probability of the union of two disjoint random events is only sometimes (i.e. not always)
+equal to the sum of individual probabilities of those events.
+16. A high variation of values in a data set increases the relevance of their arithmetic mean (i.e. we may
+have better idea about the magnitudes of all the values in the analysed data set knowing the value of
+the arithmetic mean).
+17. The chronological mean is used when analysing flow time series.
+18. The expected frequencies calculated in individual cells of a contingency table correspond
+to the hypothesis about the independence of the two analysed variables.
+19. If the first value in a time series is equal to its last value, the mean first difference of this time series
+is equal to zero.
+20. Cumulative relative frequencies of a discrete quantitative statistical variable may be (directly, ie.
+without any other calculations) used to determine the values of quantiles for this variable in the
+analysed data set.
+21. The inflation rate is a change in the price index expressed absolutely (i.e. by the absolute difference).
+22. The probability of type I error is always higher than the probability of type II error.
+23. The criterion for the decision whether to use composite or aggregate indices
+is homogeneity/heterogeneity of the analysed commodities.
+24. In a chi-square goodness-of-fit test, we assess (test) the equality (conjunction) of the observed
+and theoretical frequencies (probabilities).
+25. If the calculated value of a test statistic (in a statistical hypothesis test) falls into the rejection
+region, it is marked as inconsistent with the null hypothesis.
+26. Possible x values of a discrete random variable X are 1, 2 and 3, so it is possible that E(X) = 1.5.
+27. The degrees of freedom associated with the within-group variation (ssE) in the analysis of variance
+depend on the number of groups.
+28. For a justified use of the goodness-of-fit test, we must have the analysed data set split into number
+of categories being large enough.
+=== SLIDE 8 ===
+29. The calculated point estimate of an unknown population parameter is the calculated value of an
+appropriate random variable called an “estimator”
+.
+30. The median of a random variable with t-distribution (Student’s distribution) may take any value
+(i.e. it can be negative, positive or equal to zero).
+31. When running the chi-square goodness-of-fit test, we assess (test) the conjunction between
+theoretical and empirical frequencies.
+32. The calculated slope (i.e. b1) of a regression line characterizes the strength of the relationship
+between the two variables.
+33. The confidence level of an interval estimate is (in the 4ST601 course) denoted as .
+34. The rejection region for the test of independence in the contingency table may be (according to the
+form of an alternative hypothesis) either left-tailed, right-tailed, or two-tailed.
+35. The standard deviation calculated from the values in a data set is in some “squares” of units in
+which are the values in the data set.
+36. To smooth the daily time series of the number of car accidents from the seasonal component, we
+will use centred moving averages.
+37. The conclusion (at a given significance level) of a statistical hypothesis test made on the basis of
+the p-value approach is the same as the conclusion made at the basis of a comparison of the test
+statistic value with the critical value(s).
+38. The error sum of squares (in regression analysis; ssE) is defined as a sum of squared differences
+between the empirical values of the dependent variable and the values on the constructed
+regression function.
+39. The inflation rate is a change in the structure of the consumer basket expressed relatively.
+40. The coefficient of variation may always take only the values from 0 to 1.
+41. For two independent random events, the probability of their intersection is given by the sum of
+their individual probabilities.
+42. In a population survey, all elements in the population are studied.
+43. The simple arithmetic mean of growth coefficients is a proper way to calculate the mean growth
+coefficient.
+44. In a descriptive analysis of variance, the coefficient of determination is calculated as a quotient of
+treatment sum of squares and total sum of squares.
+45. The binomial distribution is appropriate in the case of dependent random trials.
+46. The Laspeyres price index uses the knowledge of quantities from the base period.
+47. A goodness-of-fit test is based on the conjunction of expected (theoretical) and empirical
+(observed) frequencies in particular categories (groups).
+48. Extensive variables can be always summarized in total.
+49. We may get an idea about the independence of variables in a contingency table by dividing the
+observed frequencies by the total data set size.
+50. If the first value in a time series is the same as the last one, the mean first difference of such a time
+series is equal to zero.
+51. If we add a constant (the same number) to all values in the data set, their variance increases by this
+constant.
+52. The probability of intersection of two independent events is the product of their (individual)
+probabilities.
+53. The Fisher index is the arithmetic mean of Laspeyres and Paasche indices.
+54. A quotient of the treatment sum of squares and the error sum of squares is the coefficient of
+determination.
+55. The median of the t-distribution (Student’s distribution) is always equal to zero.
+56. There may be a seasonal component in an annual time series.
+57. When calculating the aggregate Laspeyres price index, we may use the weighted arithmetic mean of
+simple price indices with production values from the current period used as weights.
+58. An assumption of the goodness-of-fit test to be justified is that we have large enough number of
+categories available.

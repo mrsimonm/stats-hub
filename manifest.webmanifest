@@ -1,0 +1,15 @@
+{
+  "name": "Statistics Hub",
+  "short_name": "Stats Hub",
+  "description": "Study hub for VŠE Statistics (4ST601): lessons, flashcards, mock tests and mastery.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10161A",
+  "theme_color": "#10161A",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

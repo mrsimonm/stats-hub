@@ -1,0 +1,765 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*A procedure for which each possible sample of a
+given size is equally likely (i.e. has the same
+probability) to be the one obtained (selected).
+*example of a population: deck of N = 32 cards
+*example of a (random) sample: n (randomly)
+selected cards
+*the best from the theoretical point of view
+*the way of sampling when every combination of n
+elements has an equal probability of being
+selected
+2
+=== SLIDE 3 ===
+3
+*with replacement:
+*element (member) of the population can be
+selected more than once
+*probabilities of random events in different trials
+remain the same (independent events,
+independent random trials)
+*without replacement:
+*element (member) of the population can be
+selected at most once
+*probabilities in different trials differ (dependent
+events, dependent random trials)
+=== SLIDE 4 ===
+*systematic random sampling
+*only one element is selected randomly; further
+elements are drawn systematically using a
+constant skip method
+*e.g. only every 10th element is selected
+*stratified sampling
+*population is divided into subpopulations (strata)
+*elements of each stratum should be homogeneous
+relative to the characteristic of the population under
+consideration (e.g. gender, age, social class, …)
+*sampling is done from each stratum
+4
+=== SLIDE 5 ===
+*cluster sampling:
+*population is divided into groups (clusters)
+*some clusters are selected by simple
+random sampling
+5
+*all elements in the selected clusters are
+then used in the survey
+*less reliable than stratified sampling
+*multistage sampling: combination of
+several sampling methods; often used in
+practice
+=== SLIDE 6 ===
+*Inferential statistics /singular/ – the aim is
+to draw general conclusions about the
+population (or a data-generating proces)
+based on information obtained from a
+random sample
+6
+*Lecture9, Lecture10, Lecture11
+*4ST601: random sample obtained with
+simple random sampling
+*random sample should be representative,
+i.e. reflecting as closely as possible all
+relevant features of a population (e.g.
+structure of gender, level of education, etc.)
+=== SLIDE 7 ===
+7
+*a discrete random variable– has either finite
+(i.e. limited) or countably infinite number
+of values
+*Bernoulli (alternative) distribution
+*in fact binomial distribution with n = 1
+*binomial distribution
+*hypergeometric distribution
+*Poisson distribution
+A Bi 1,
+   
+=== SLIDE 8 ===
+*X~Bi(n,)
+*binomial experiment satisfies the following
+conditions:
+*the given random experiment (random trial)
+is repeated n times under identical conditions
+*each random trial results in one of just two
+possible outcomes:
+*success (event A’s occurrence) with probability
+P(A)=
+*failure (event A does not occur) with
+probability 1-
+*random trials are independent (when
+sampling with replacement is performed)
+8
+=== SLIDE 9 ===
+*random variable X represents the number
+of occurrences of event A (i.e. the number
+of successes) in n random trials
+(x = 0, 1, 2, …, n)
+*binomial distribution has two parameters
+*n– number of independent random trials
+*
+– probability of the occurrence of event A
+in one random trial
+*if  = 0.5, the distribution is symmetric (check
+this using “Distributions_for_students.docx”)
+9
+=== SLIDE 10 ===
+*possible values of X:
+0,1, 2, ...,x n
+*probability function:
+
+
+P
+( 
+x
+)
+ )
+
+n
+
+x
+
+1(
+n
+x
+
+
+x
+
+*parameters:
+and , 0, 0 1 n n   
+*expected value:
+
+()E X n
+*variance:
+( ) (1 )Var X n 
+10
+=== SLIDE 11 ===
+*combination number
+*usually symbol “nCr” on a calculator
+*number of ways of selecting x unordered
+outcomes from n possibilities
+
+n n
+!
+
+
+
+
+x x n x
+!( )!
+*“n!” is a n-factorial
+*5! = 5·4·3·2·1 = 120
+*1! = 1
+*0! = 1
+11
+=== SLIDE 12 ===
+*Example 1) Three cards were drawn
+(returning one before drawing the other,
+ie. with sampling with replacement;
+independent random trials) randomly from
+a deck of 32 playing cards. Calculate the
+probability that just one of the cards drawn
+is an ace. There are 4 aces in the deck of
+32 cards.
+12
+=== SLIDE 13 ===
+*Example 1)
+*random event A: an ace is drawn in one random
+trial
+*probability of A: P(A) =  = 4/32 = 1/8 (= 0.125)
+*number of independent random trials: n = 3
+*random variable X: number of aces drawn in 3
+independent random trials
+X Bi
+1(3, )8
+13
+=== SLIDE 14 ===
+*Example 1)
+*…just one of the cards drawn is an ace…
+
+n
+P X x P x
+( ) ( ) (1 )x n x
+   
+ 
+x
+1 3 1 1 2
+
+       
+P X P
+3 1 1 1 7( 1) (1) 1 3 0.2871 8 8 8 8
+                    
+
+ace not ace not ace
+not ace ace not ace
+( ) ( ) ( )P A P A P A 
+not ace not ace ace
+14
+=== SLIDE 15 ===
+*Example 1)
+*Answer: The probability that just one of the three
+cards drawn is an ace, in the case of sampling
+with replacement, is approximately 28.7 %.
+*Note: e.g., the probability that at least two of
+the cards drawn are aces
+15 ( 2) (2) (3)P X P P  
+=== SLIDE 16 ===
+16
+*X~Hy(N,M,n)
+*trials are dependent (when sampling without
+replacement is performed)
+*has three parameters
+*N– total number of elements in the population
+(population size)
+*M– number of successes in the population
+(the number of elements with a property of
+interest in the population)
+*n– number of random trials (random sample size)
+*random variable X represents the number
+of successes in n trials (i.e. the number
+of elements with a property of interest
+in the random sample)
+=== SLIDE 17 ===
+*possible values of X:
+max(0, - + ),...,min( , )x M N n M n
+*probability function:
+
+M
+
+
+x
+
+
+M
+
+
+
+
+
+x
+
+P )
+(
+x
+
+
+N
+
+
+n
+
+N
+
+
+
+
+
+n
+*parameters:
+, and , 0, ,N M n n N n M N  
+*expected value:
+M
+E
+(
+X
+)
+n
+N
+*variance:
+17
+M M N n
+ 
+
+Var X n
+  
+( ) 1 1
+N N N
+ 
+=== SLIDE 18 ===
+*under certain conditions, the hypergeometric
+distribution may be approximated
+by the binomial distribution:
+*if n<0.05N, we may use the binomial
+distribution with parameters n and =M/N
+instead (=as an approximation)
+of the hypergeometric distribution
+( , , ) ( , )M
+
+Hy N M n Bi n N
+18
+=== SLIDE 19 ===
+*Example 2) Three cards were drawn
+(without returning one before drawing the
+other, ie. with sampling without
+replacement; dependent random trials)
+randomly from a deck of 32 playing cards.
+Calculate the probability that just one of
+the cards drawn is an ace. There are 4 aces
+in the deck of 32 cards.
+19
+=== SLIDE 20 ===
+*Example 2)
+*population size: N = 32
+*property of interest: the card is an ace
+*number of aces in the population: M = 4
+*number of dependent random trials: n = 3
+*random variable X: number of aces drawn in 3
+dependent random trials
+X Hy
+(32,4,3)
+20
+=== SLIDE 21 ===
+*Example 2)
+*…just one of the cards drawn is an ace…
+P X x P x
+( ) ( )
+  
+M N M
+      
+x n x
+   
+N
+
+n
+    
+4 32 4 28
+4
+
+    
+    
+1 3 1 2( 1) (1) 0.30532 32
+P X P
+   
+         
+3 3
+21
+=== SLIDE 22 ===
+*Example 2)
+*Answer: The probability that just one of the
+three cards drawn is an ace, in the case of
+sampling without replacement, is approximately
+30.5 %.
+*Note: e.g., the probability that at most two of
+the cards drawn are aces
+( 2) (0) (1) (2)P X P P P   22
+=== SLIDE 23 ===
+*X~Po(l)
+*applied to experiments with random and
+independent occurrences
+*has one parameter
+*l– average number of occurrences in certain
+interval (continuous measure of time, space,
+volume, etc.)
+*random variable X represents the number
+of occurrences in an interval
+23
+=== SLIDE 24 ===
+*possible values of X:
+x 
+0,1, ...
+*probability function:
+P x e
+
+l l
+x
+
+() !
+x
+*“e” is the Euler’s number (“ex” on a calculator)
+*parameter:
+, 0 ll
+*expected value:
+*variance:
+
+( ) Var X l
+
+()EX l
+24
+=== SLIDE 25 ===
+*under certain conditions, the binomial
+distribution may be approximated by the
+Poisson distribution:
+*if  ≤ 0.1 and n > 30, we may use the Poisson
+distribution with l= n· instead (= as an
+approximation) of the binomial distribution
+*e.g.
+(40,0.05) (2)Bi Po
+x 0 1 2 5 10
+P(x) Binomial 0.12851 0.27055 0.27767 0.03415 0.00002
+P(x) Poisson 0.13534 0.27067 0.27067 0.03609 0.00004
+25
+=== SLIDE 26 ===
+*Example 3) The average number of buses
+that arrive at the bus stop in an hourly
+interval is 15. Calculate the probability
+that within 4 minutes no bus arrives…
+26
+=== SLIDE 27 ===
+*Example 3)
+*simple proportion
+Average number of buses per… …a time interval.
+15 1 hour = 60 minutes
+l 4 minutes
+l l l    
+4 4 4 1
+15 60
+*average number of buses that arrive at a bus stop
+within a 4-minute interval: l= 1
+*random variable X: number of buses that arrive at
+a bus stop within a 4-minute interval
+27
+X Po(1)
+=== SLIDE 28 ===
+*Example 3)
+*
+…within 4 minutes no bus arrives…
+P X x P x e
+
+l l
+x
+  
+( ) ( ) !
+x
+0
+P X P e
+1 1 1( 0) (0) 0.368 0.3680! 1
+   
+28
+=== SLIDE 29 ===
+*Example 3)
+*Answer: The probability that within a 4-minute
+interval no bus arrives is approximately 36.8 %.
+*Note: e.g., the probability that at least two
+buses arrive within a 4-minute interval
+( 2) (2) (3) ... 1 ( 2) 1 ( 1) 1 (0) (1)P X P P P X P X P P            
+()PA 1 ( )PA
+29
+=== SLIDE 30 ===
+*continuous random variable - can have any
+value within one or more intervals (i.e. the
+number of its possible values is infinite)
+*normal distribution
+*standard normal distribution
+*log-normal distribution
+*derived distributions:
+*chi-square distribution
+*t-distribution (Student’s distribution)
+*F-distribution (Fisher–Snedecor distribution)
+*…and many others…
+30
+=== SLIDE 31 ===
+31
+*X~N(m,s2)
+*the most important and the most widely used of
+all probability distributions
+*a large number of phenomena are normally
+distributed either exactly or approximately
+*generally used when the source of a random
+variable’s variation is the total of a large
+number of small independent effects
+*useful for approximating other distributions
+*see some Galton Board video :-)
+(https://www.youtube.com/watch?v=EvHiee7gs9Y)
+=== SLIDE 32 ===
+*possible values of X:
+x   
+*probability density function:
+*( is a circular constant)
+1
+
+f x e
+() 2
+s
+
+x
+
+( )
+2
+m
+2
+2
+s
+*parameters:
+2 2and , , 0m s m s     
+*expected value:
+
+()EX m
+*variance:
+2
+
+()Var X s
+*100·P% quantile xP:
+P Px zms
+32
+=== SLIDE 33 ===
+distribution function F(x)
+probability density
+function f(x)
+33
+=== SLIDE 34 ===
+probability density
+function f(x)
+34
+=== SLIDE 35 ===
+*as the calculation of the cumulative
+distribution function F(x) for a random
+variable X~N(m,s2) is complicated
+x
+( ) ( )
+F x f t dt
+ 
+
+we define a new random variable Z; this
+transformation of X is called
+standardization:
+X
+
+Z m
+
+s
+35
+=== SLIDE 36 ===
+*Z~N(0,1)
+*special case of the normal distribution
+*any normal variable X may be transformed
+into a standardized normal variable Z
+*values of the cumulative distribution function
+F(z) and quantiles zP can be found in special
+statistical tables (or computed using statistical
+software)
+*F(z) in Table I.
+*zP in Table II.
+36
+=== SLIDE 37 ===
+*cumulative distribution function F(z):
+*to be found in statistical tables (i.e. we are
+familiar with it…), table I.
+*due to the symmetry around zero:
+( ) 1 ( )z zF F  
+*parameters:
+2 2and , 0, 1m s m s 
+*expected value:
+EZ
+  0
+*variance:
+( ) 1Var Z
+*100·P% quantile zP:
+*to be found in statistical tables (i.e. we are
+familiar with it…); table II.
+
+*due to the symmetry around zero: 1P Pz z
+
+37
+=== SLIDE 38 ===
+*standardization of the value x:
+x
+
+z m
+
+s
+X~N(m,s2) Z~N(0,1)
+Distribution
+function ( ) ( )F x P X x  F  
+( ) ( )z P Z z
+In table I.
+Quantiles
+z
+P Px zms P
+In table II.
+38
+=== SLIDE 39 ===
+x
+
+z m
+
+s
+*standardization of the value x:
+*calculations of probabilities:
+( ) ( ) ( ) ( )xP X x F x z P Z zmF F
+        
+s
+( ) 1 ( ) 1 ( )P X x P X x zF
+      Table I.
+1 2( ) x xX
+1 2
+P x X x P m mm
+         
+s s s
+39
+1 2 2 1( ) ( ) ( )P z Z z z zF F    
+=== SLIDE 40 ===
+*Example 4) A random variable Z has
+the standard normal distribution. Calculate
+the following probabilities and quantiles:
+*a) P(Z<0)
+*b) P(Z>2)
+*c) P(Z=0)
+*d) P(-1<Z<1)
+*e) z0.975
+*f) z0.05
+40
+=== SLIDE 41 ===
+Table I.
+*Example 4)
+*a) P(Z<0) = 0.5 (50 %)
+*b)
+P Z P Z
+F      
+( 2) 1 ( 2) 1 (2) 1 0.97725 0.02275
+P A P A
+
+( ) 1 ( ) *Answer: Probability that the random variable Z
+with a standard normal distribution takes a
+value higher than 2 is approximately 2.275 %.
+(2.275 %)
+41
+=== SLIDE 42 ===
+*Example 4)
+*c) P(Z=0) = 0 (as Z is a continuous RV)
+*d)
+Table I.
+P Z F F F F F           
+( 1 1) (1) ( 1) (1) (1 (1)) 2 (1) 1
+ 
+2 0.84134 1 0.683 (68.3 %)
+( ) 1 ( )z zF F  
+*Answer: The probability that the random
+variable Z with a standard normal
+distribution takes a value higher than -1
+and lower than 1 is approximately 68.3 %.
+42
+=== SLIDE 43 ===
+*Example 4)
+*e)
+z .
+0 975 1 96
+.
+Table II.
+Answer: 97.5% quantile
+of the random variable
+Z with a standard
+normal distribution is
+approximately 1.96.
+*
+*f)
+    
+z z z .
+0 05 1 0 05 0 95 1 645
+
+. . .
+
+1P Pz z
+
+43
+=== SLIDE 44 ===
+*Example 5) A random variable X has a
+normal distribution with m=10 and s2=25.
+Calculate the following probabilities
+and quantiles:
+*a) P(X<5)
+*b) P(X>20)
+*c) P(X=5 or X=10 or X=15)
+*d) P(9<X<11)
+*e) x0.975
+*f) x0.05
+44
+=== SLIDE 45 ===
+*Example 5)
+*a)
+
+P X P Z P Z F F
+         
+5 10( 5) ( ) ( 1) ( 1) 1 (1) 0.15925
+Standardization
+x
+
+z m
+
+s
+*Answer: The probability that the random
+variable X with a normal distribution with
+m=10 and s2=25 takes a value lower than 5 is
+After the standardization similar to example 4!
+approximately 15.9 %.
+45
+=== SLIDE 46 ===
+*Example 5)
+*b)
+
+P X P X P Z P Z
+          
+20 10( 20) 1 ( 20) 1 ( ) 1 ( 2)25
+  
+F
+1 (2) 1 0.977 0.023 (2.3 %)
+*c) P(X=5 or X=10 or X=15) = 0 (as X is a
+continuous random variable)
+46
+=== SLIDE 47 ===
+*Example 5)
+*d)
+ 
+P X P Z P Z
+9 10 11 10 1 1(9 11) ( ) ( )5 5
+         
+25 25
+1 1( ) ( ) (0.2) (1 (0.2)) 2 (0.2) 15 5
+        
+F F F F F
+2 0.57926 1 0.159
+ 
+*Answer: The probability that the random
+variable X with a normal distribution with
+m=10 and s2=25 takes a value higher than 9
+and lower than 11 is approximately 15.9 %.
+47
+=== SLIDE 48 ===
+*Example 5)
+*e)
+P Px zms
+x z . .ms    
+0 975 0 975 10 25 1 96 19 8
+. .
+*Answer: 97.5% quantile of the random
+variable X with a normal distribution with
+m=10 and s2=25 is approximately 19.8.
+*f)
+0 05 0 05 0 95( ) 10 25 1 645 1 776. . .
+x z z . .m s m s        
+48
+=== SLIDE 49 ===
+*Chi-square distribution G~c2(df)
+*parameter df is called the (number of) degrees of
+freedom
+*t-distribution (Student’s) T~t(df)
+*parameter df is called the (number of) degrees of
+freedom
+*due to the symmetry around zero, it holds for 100·P%
+quantile:
+
+1( ) ( ) P Pt df t df
+*if df is assumed to be large enough (in classical
+textbooks: df > 30), the t-distribution may be
+approximated by the standard normal distribution:
+( ) P Pdft z
+49
+=== SLIDE 50 ===
+*F-distribution (Fisher-Snedecor) F~F(df1, df2)
+*parameters df1 and df2 are called the (numbers
+of) degrees of freedom
+*for quantiles, it holds:
+1
+
+P
+1 2
+f df df f df df
+( , ) ( , )
+1 2 1
+P
+50
+=== SLIDE 51 ===
+Any questions? 
+51

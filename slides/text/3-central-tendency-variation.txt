@@ -1,0 +1,609 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*visualization is a useful and efficient
+way how to describe/present properties
+of a data set
+*types of graphs (according to the used
+visual feature):
+*line charts: polygon, time series plot
+*bar charts: bar plot, histogram
+*charts with dots (points): scatterplot
+*special charts: pie chart, box-plot
+2
+=== SLIDE 3 ===
+*types of graphs (according to the type
+of analyzed variable/s/):
+*one qualitative var.: pie chart, bar chart
+*two qualitative var.: stacked bar chart
+*one quantitative var.: polygon,
+histogram, box plot
+*two quantitative var.: scatterplot, time
+series plot
+3
+=== SLIDE 4 ===
+*very efficient and popular way of presenting
+a quantitative variable values’ distribution in
+the analyzed data set
+*Data_Lecture3.xlsx (sheet“Box_plot_Excel2013”)
+x 
+max 13 exc.gr.
+x 
+0.75 5 exc.gr.
+x 
+3 exc.gr.
+4
+x 
+0.25 2 exc.gr.
+x 
+min 0 exc.gr.
+=== SLIDE 5 ===
+*Data_Lecture3.xlsx (sheet“Box_plot_Excel2016”)
+outliers
+x 
+max 13 exc.gr.
+max, 0.75min( 1.5 ) 9.5
+qx x r   
+
+8 exc.gr.
+x 
+0.75 5 exc.gr.
+x 
+3 exc.gr.
+x 
+0.25 2 exc.gr.
+min, 0.25max( 1.5 ) 0 exc.gr.qx x r  
+x
+3.3 exc.gr.
+5
+=== SLIDE 6 ===
+*Distribution of variable“number of excellent
+grades” in the analyzed data set
+6
+=== SLIDE 7 ===
+*Data_Lecture3.xlsx (sheet“Box_plot_Excel2013”)
+*multiple box plots: comparison of level and absolute
+variation of quantitative variables values’ in the
+analyzed data set
+7
+=== SLIDE 8 ===
+*When using/presenting/studying charts, always
+be sure what (and in what units) is on the axes!
+*Are the numbers of males and females different
+in the analyzed data set?
+8
+=== SLIDE 9 ===
+*description, examination and
+evaluation of dependencies
+(relationships, associations) between
+two (or more) statistical variables
+*depending on the primary goal of the
+analysis we may distinguish:
+*descriptive analysis
+*inferential analysis
+*predictive analysis
+*causal analysis
+9
+=== SLIDE 10 ===
+*Descriptive analysis
+*the aim is to describe relationships
+between statistical variables in the
+analyzed data set; no generalization!
+*Inferential analysis (see Lecture11)
+*the aim is to draw generalizing
+conclusions (about population or data-
+generating process) using confidence
+intervals or statistical hypothesis tests
+10
+=== SLIDE 11 ===
+*Predictive analysis (see Lecture4, L5, L6)
+*the aim is to predict (forecast)
+*in regression analysis: values of dependent variable
+for“new” (not being in the analyzed data set)
+values of explanatory variables
+*in time series analysis: future values of a time series
+*Causal analysis (see Lecture11)
+*the aim is to draw causal conclusions; to judge an
+impact (effect, influence) of one variable on
+another
+*in regression analysis: factual interpretation of
+estimated (partial) regression coefficients;
+answering a question“What happens with variable Y
+if variable X increases about one unit?”
+11
+=== SLIDE 12 ===
+*from factual perspective, we may
+distinguish two types of relationship:
+*unilateral: in the analysis, one variable represents
+the cause and the other represents the
+consequence (e.g. relationship between the height
+and weight of a man)
+*mutual: in the analysis the variables are “equal”;
+it’s not clear which is the cause and which is the
+consequence (e.g. relationship between the
+weight of a man and the amount of his fat)
+12
+=== SLIDE 13 ===
+*two qualitative variables:
+the contingency table
+*one qualitative and one quantitative variable
+(or two quantitative ones when one of them
+may get only few values):
+one-way analysis of variance (one-way ANOVA)
+*two quantitative variables: simple regression
+analysis, correlation analysis
+*more than two quantitative variables: multiple
+regression analysis, correlation analysis
+13
+=== SLIDE 14 ===
+*let r be the number of categories of the row variable and
+c the number of categories of the column variable
+*indices: i = 1, 2, …, r; j = 1, 2, …, c
+Variable 2
+Total
+Variable 1
+Category 1 Category 2 … Category c
+Category 1 n11 n12… n1c n1.
+Category 2 n21
+nij… ni.
+… …
+Category r nr1… nrc nr.
+Total n.1 n
+.j n
+.c n
+*if you divide the whole table by n, you’ll get
+the contingency table with relative frequencies
+14
+=== SLIDE 15 ===
+*observed (empirical) frequencies: nij
+*number of elements in the data set with
+i-th category of the row variable and
+j–th category of the column variable
+*marginal frequencies:
+*sum of observed fr. in row i: ni.
+*sum of observed fr. in column j: n
+.j
+15
+=== SLIDE 16 ===
+*expected (hypothetical) frequencies:
+*would be in the contingency table in the case
+of independence between the two qual. var.
+
+n
+ij
+
+nn
+..i j
+n
+*if you divide the whole table by n: pij, pi., p.j,
+
+
+..ij i jp p p
+(see Lecture7: for independent events )
+( ) ( ) ( )P A B P A P B  
+*conditional relative frequencies:
+*sum of every column = 1 (100 %):
+p
+i| j
+n p
+ij ij
+ 
+n p
+. j . j
+16
+*sum of every row = 1 (100 %):
+p
+j|i
+n p
+ij ij
+ 
+n p
+i. i.
+=== SLIDE 17 ===
+*Example 1) We have a data set of 150 past
+4ST601 students. Judge a hypothesis about
+independence (i.e. no relationship) between
+gender and opinions on the difficultness of
+statistics in this data set. Judge the strength
+of their relationship.
+Gender Intermediate Opinion Difficult Total
+Very difficult
+Female 12 36 32 80
+Male 20 23 27 70
+Total 32 59 59 150
+17
+=== SLIDE 18 ===
+*Example 1)
+*Statistical elements: past students of 4ST601
+*Qualitative variable 1: gender (female/male; r = 2;
+i = 1, 2)
+*Qualitative variable 2: opinion on the difficultness of
+statistics (intermediate/difficult/very difficult; c = 3;
+j = 1, 2 ,3)
+18
+=== SLIDE 19 ===
+*Example 1)
+*the whole contingency table divided by n = 150,
+now showing relative frequencies
+Gender Intermediate Opinion Difficult Total
+Very difficult
+Female 0.08 0.24 0.21 0.53
+Male 0.13 0.15 0.18 0.47
+Total 0.21 0.39 0.39 1.00
+19
+=== SLIDE 20 ===
+*Example 1)
+*each row of the contingency table divided by
+frequency in “Total” column (n1. = 80, n2. = 70 and
+n = 150) now showing gender-conditioned relative
+frequencies
+Gender Intermediate Opinion Difficult Total
+Very difficult
+Female 0.15 0.45 0.40 1.00
+Male 0.29 0.33 0.39 1.00
+Total 0.21 0.39 0.39 1.00
+*it seems that distribution of opinions for males and
+females differs in this data set
+20
+=== SLIDE 21 ===
+Total 1.00 1.00 1.00 1.00
+*it seems that distribution of gender for different
+opinions differs in this data set
+21
+*Example 1)
+*each row of the contingency table divided by
+frequency in “Total” row (n.1 = 32, n.2 = 59, n.3 = 59
+and n = 150) now showing opinion-conditioned
+relative frequencies
+Gender Intermediate Opinion Difficult Total
+Very difficult
+Female 0.38 0.61 0.54 0.53
+Male 0.63 0.39 0.46 0.47
+=== SLIDE 22 ===
+*Example 1)
+*visualisation with stacked bar charts
+22
+=== SLIDE 23 ===
+*to express the strength of the relationship
+(dependence)
+*Cramér’s contingency coefficient:
+g
+V
+ 
+val
+0,1
+nm
+
+( 1)
+*Pearson’s contingency coefficient:
+gC m m
+  
+val
+0, ( 1) /
+
+gn
+min( , )m r c
+23
+*the higher the coefficient, the stronger the
+relationship
+*e.g. Vval = 0 means no relationship, Vval = 1 means
+a solid (the strongest possible) relationship
+=== SLIDE 24 ===
+*for the values of contingency
+coefficients calculation of a value g is
+needed:
+2
+g
+
+
+( )r c
+nn
+
+
+ij ij
+
+ 
+1 1
+n
+i j ij
+*Example 1)
+4 64g .
+24
+=== SLIDE 25 ===
+*Example 1)
+min( , ) min(2,3) 2m r c  
+V
+
+val
+g
+4.64 0.176
+nm
+  
+( 1) 150 (2 1)
+g
+C
+val
+
+4.64 0.173
+gn
+ 
+4.64 150
+Relationship
+between
+gender and
+opinions on the
+difficultness of
+statistics in the
+analyzed data
+set is rather
+weak.
+25
+*Note: interpretation of values of these coefficients as
+strength of some relationship (very weak, weak,
+intermediate, strong, very strong) is always subjective.
+=== SLIDE 26 ===
+*to analyze the dependence (relationship) between
+one qualitative and one quantitative variable (or
+two quantitative ones when one of them may get
+only few values)
+*we consider one variable (usually qualitative) to be
+a factor (e.g. level of education, type of car, …)
+operating at different levels (treatments)
+*we split the data set (values of quantitative variable X)
+into k groups according to these levels (treatments)
+*the second variable X has to be quantitative (so that
+the calculation of arith. means etc. can be made)
+26
+=== SLIDE 27 ===
+27
+*may be used:
+*to assess differences between arithmetic
+means of values of a quantitative variable
+divided into k groups according to a factor
+*to judge the relationship between
+a qualitative (or quantitative) factor and
+a quantitative variable X in the analyzed
+data set
+=== SLIDE 28 ===
+*Example 2) We have a data set of 165 past 4ST601
+students. Judge a hypothesis about independence (i.e. no
+relationship) between gender and number of excellent
+grades in this data set. Judge the strength of their
+relationship.
+*Statistical elements: past students of 4ST601
+*Factor (qualitative variable): gender (male/female;
+k = 2; j = 1, 2)
+*Quantitative variable X: number of excellent grades
+*n1 = 78 (number of males), n2 = 87 (number of females)
+28
+=== SLIDE 29 ===
+*you already know the variance:
+n
+
+i
+
+1
+(
+x
+i
+
+x
+)
+2
+s
+2
+x
+
+n
+*if we use indices j for the j-th group
+(treatment; j = 1, 2, …, k) and i for
+the i-th observation (in each of the
+groups), then we can name the
+numerator as a total sum of squares:
+k
+n
+j
+ss x x
+29  2
+T ji
+ j i
+
+11
+=== SLIDE 30 ===
+30
+*total sum of squares can be expressed as:
+T TR Ess ss ss 
+*where ssTR is the treatment sum of squares
+k
+ss n x x
+TR j j
+ 
+ 2
+j
+
+1
+*and ssE is the error sum of squares
+k
+n
+j
+ss x x
+ 
+E ji j
+ 2
+j i
+
+11
+is the arithmetic mean of variable X
+in the j-th group (treatment), xji are individual
+values and nj are group frequencies
+*where xj
+=== SLIDE 31 ===
+*Example 2) Data_Lecture3.xlsx (sheet“ANOVA_ss”)
+Tss 
+7.16 933.29
+k
+n
+j
+ss x x
+T ji
+ 
+ 2
+j i
+
+11
+31
+=== SLIDE 32 ===
+*it is convenient to construct the
+one-way ANOVA table (using Data
+Analysis ToolPak in Excel):
+Source of
+variation
+Sum of
+squares
+Degrees of
+freedom
+Mean
+squares
+Value of test
+statistic
+Between
+Groups
+(Treatments)
+ssTR Lecture11 Lecture11 Lecture11
+Within
+Groups
+(Error)
+ssE Lecture11 Lecture11
+Total ssT Lecture11
+32
+=== SLIDE 33 ===
+*Example 2) Data_Lecture3.xlsx (sheet
+“ANOVA_ss_DA”)
+33
+=== SLIDE 34 ===
+*total sum of squares can be expressed as:
+ 
+ss ss ss
+T TR E
+n nk k k
+j j
+      
+     2 2 2
+x x n x x x x
+ji j j ji j
+    
+1 1 1 1 1
+j i j j i
+*remember the decomposition of variance
+k k
+2 2
+
+ 
+n x x s n
+( )
+j j jx j
+2 2 2
+j j
+ 
+1 1
+s s s
+   
+x x jx k k
+j
+ 
+n n
+j j
+j j
+ 
+1 1
+34
+=== SLIDE 35 ===
+*i.e. we split the total variation (ssT) of
+values of variable X into two parts
+T TR Ess ss ss 
+*ssTR represents the part called between
+groups variation, i.e. the part of the
+variable X’s values variation which can be
+explained by the (different levels of) factor
+*ssE represents the part called within
+groups variation, i.e. the part expressing
+the rest of variable X’s values variation
+35
+=== SLIDE 36 ===
+*high ssTR and low ssE: the dependence
+between X and the factor is considerable
+(is strong) in the analyzed data set
+*low ssTR and high ssE: the dependence
+between X and the factor is not
+considerable (is weak) in the analyzed
+data set
+36
+=== SLIDE 37 ===
+*ssTR = ssT and ssE = 0: the strongest
+dependence, no within-groups variation
+(all values in each of the groups are
+equal)
+*ssTR = 0 and high ssE = ssT : no
+dependence at all (i.e. independence),
+no between-groups variation (all group
+arithmetic means are equal)
+37
+=== SLIDE 38 ===
+*Example 2) Data_Lecture3.xlsx (sheet
+“ANOVA_ss”)
+Very low ssTR and very
+high ssE: the relationship
+between number of
+excellent grades and
+gender is very weak in
+the analyzed data set.
+38
+=== SLIDE 39 ===
+*Example 2) Data_Lecture3.xlsx (sheet
+“ANOVA_visual1”)
+39 1 23.08 exc.gr. 3.49 exc.gr.x x
+=== SLIDE 40 ===
+*Example 2) Data_Lecture3.xlsx (sheet
+“ANOVA_visual2”)
+40
+=== SLIDE 41 ===
+*coefficient of determination is a
+measure that expresses how strong the
+relationship (dependence) is in the
+analyzed data set
+ss
+TR
+2 01
+ 
+r ,
+ss
+T
+*precisely: it is the proportion of variable
+X’s values variation explained by the factor
+(100·r2 %)
+*r2 = 0: independence
+*r2 = 1: total (the strongest) dependence
+41
+=== SLIDE 42 ===
+*Example 2)
+42
+ss .
+r .
+2 7 16 0 0076
+TR
+ss .
+940 45
+T
+*Only 0.76 % of number of excellent grades values’
+variation is explained by gender in the analyzed
+data set.
+*It seems that relationship between number of
+excellent grades and gender is very very weak
+(almost independence) in the analyzed data set.
+*Note: interpretation of value of r2 as strength of a
+relationship (very weak, weak, intermediate, strong,
+very strong) is always subjective.
+=== SLIDE 43 ===
+Any questions? 
+43

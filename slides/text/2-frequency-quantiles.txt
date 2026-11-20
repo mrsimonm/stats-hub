@@ -1,0 +1,1013 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*Descriptive statistics /singular/ - a science;
+statistical methods for description of properties
+of a data set: frequency distribution tables,
+graphs, quantiles, descriptive statistics
+/plural/, …
+*Descriptive statistics /plural/- measures
+(characteristics, numbers) calculated from
+quantitative data
+2
+=== SLIDE 3 ===
+*Four different properties of a frequency
+distribution (ie of a distribution of quantitative
+variables’ values in a data set) may be studied:
+*Level (position, central tendency)
+*Variability (variation, dispersion)
+*Skewness
+*Kurtosis
+3
+=== SLIDE 4 ===
+*Distributions of two quantitative variables have
+different level if the variables’ values tend to have
+different magnitudes (different position on the x axis).
+*Data_Lecture2.xlsx: variables“number of excellent
+grades” and “age” have different level
+4
+=== SLIDE 5 ===
+*Data_Lecture2.xlsx: weights of males and females
+have different level
+5
+=== SLIDE 6 ===
+*Measures (characteristics, numbers) calculated
+from quantitative data.
+*They bear information about properties of
+a (frequency) distribution
+6
+*Level (position, central tendency): information
+about position of a polygon/histogram on x axis
+*Variability: information about a shape of
+a polygon/histogram
+*Information about properties of a distribution
+is efficiently“summarized” into several
+numbers.
+=== SLIDE 7 ===
+*Level: measures of central tendency
+(measures of center)
+*Mode
+ˆ
+x
+*Median
+0.5xx
+*Arithmetic mean
+x
+*Variability: measures of variation (measures
+of variability, measures of dispersion)
+*Meas. of absolute variation
+2 2
+, , , , , ,q x xr r s s s s mad
+*Measure of relative variation
+v
+x
+7
+=== SLIDE 8 ===
+*Mode
+*Any value that occurs with the greatest frequency
+*Notation:
+ˆ
+x
+*Median
+x
+*Both are concrete values, not directly affected by
+the magnitude of all the values of a given variable
+(in a given data set).
+*The median is useful mainly in the case when there
+are extreme values (outliers) in the data set.
+*Not influenced by outliers, i.e. it is robust (not sensitive to
+outliers).
+8
+=== SLIDE 9 ===
+*Data_Lecture2.xlsx (sheet“outliers”)
+ˆ2 ex.g. 2 ex.g.x x 
+Value“12” is an outlier
+(extreme value)
+x 
+59 kgs
+Value“100” (kilograms)
+is an outlier
+9
+=== SLIDE 10 ===
+*Means (averages):
+*arithmetic, harmonic, geometric
+*They are defined as a function of all the values
+in a data set.
+*They are useful mainly in the case when there
+are no extreme values (outliers) in the data set.
+*Influenced by outliers, i.e. they are sensitive (not
+robust); problematic mainly in the case of a small
+data set size n.
+10
+=== SLIDE 11 ===
+11
+*Arithmetic mean (or often just “mean”)
+*Used in the case when it makes sense to calculate
+the sum of values.
+*From raw data or arranged data – simple
+arithmetic mean:
+n
+
+i
+
+1
+x
+i
+x
+
+n
+*From frequency tables– weighted arit. mean:
+k
+
+j
+
+1
+xn
+jj
+k
+x x p x
+ 
+
+j j k
+j
+
+1
+
+j
+
+1
+n
+j
+=== SLIDE 12 ===
+*Data_Lecture2.xlsx (sheet“simple_ar_mean”)
+15
+
+x
+i
+i
+x x x x x x x x x x x x x x x
+1 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+x              
+  
+15 15
+             
+ 
+1 3 2 2 12 2 2 2 2 2 6 6 3 3 4 52 3.467 exc. grades
+15 15
+15
+
+x
+i
+i
+x
+ 
+1 968 64.533 kgs
+15 15
+12
+=== SLIDE 13 ===
+*Data_Lecture2.xlsx (sheet “weighted_ar_mean”)
+x
+6
+
+xn
+jj
+j
+
+1
+               
+   
+6
+1 1 2 7 3 3 4 1 6 2 12 1 1 14 9 4 12 12 52 3.467 exc.gr.
+
+1 7 3 1 2 1 15 15
+    
+j
+
+1
+n
+j
+6
+x x p
+     
+j j
+0.067 0.933 0.6 0.267 0.8 0.8 3.467 excellent grades
+j
+
+1
+13
+=== SLIDE 14 ===
+x
+j
+*Arithmetic mean (or often just “mean”)
+*In the case when only the class (group)
+means are known ( x
+for the whole data
+set is calculated as weighted arithmetic
+mean of group ar. means ):
+k
+k
+
+j
+
+x x p
+ 1
+x
+
+j j
+k
+j
+
+1
+
+j
+
+1
+xn
+jj
+n
+j
+14
+*where k is number of groups
+=== SLIDE 15 ===
+15
+*Data_Lecture2.xlsx (sheet “weighted_ar_mean”)
+x
+2
+
+xn
+jj
+j
+
+1
+  
+  
+2
+2.571 7 4.25 8 52 3.467 exc.gr.
+
+7 8 15
+
+j
+
+1
+n
+j
+2
+x x p
+    j j
+2.571 0.467 4.25 0.533 3.467 excellent grades
+j
+
+1
+=== SLIDE 16 ===
+*Properties of arithmetic mean:
+*The sum of the deviations of individual values from their
+arithmetic mean is zero.
+n
+
+i
+
+1
+( ) 0
+xx
+
+i
+*The arithmetic mean of a constant (several equal values) is
+equal to this constant.
+* e.g. if all the values equal to 2,
+we may say that the constant is 2
+and write c = 2
+16
+cc
+=== SLIDE 17 ===
+*Properties of arithmetic mean:
+* If we add a constant (the same number) to every value in a data set,
+their arithmetic mean x
+also increases by this constant.
+n
+
+i
+
+1
+
+( )
+xc
+i
+
+xc
+n
++2
+* If we multiply every value in a data set by a constant, their arithmetic
+mean x
+is also multiplied by this constant.
+n
+
+i
+
+1
+
+cx
+i
+
+cx
+n
+17
+·2
+=== SLIDE 18 ===
+*Which descriptive statistic (which measure)
+is better for description of the level?
+x x
+ 
+3.3 exc.gr. 20.2 years
+x x
+ 
+3 exc.gr. 20 years
+18
+=== SLIDE 19 ===
+*Which descriptive statistic (which measure)
+is better for description of the level?
+*Arithmetic mean: + uses all values,
+- sensitive
+to outliers (problematic mainly in the case of
+small data sets)
+*Median: - just one value (or mean of two
+values), + robust (not influenced by outliers)
+19
+=== SLIDE 20 ===
+*For educational purposes may be histogram
+simplified into (represented by) a curve
+20
+=== SLIDE 21 ===
+21
+Symmetric distribution:
+xx
+=== SLIDE 22 ===
+*Level (position): measures of central
+tendency
+*Variability: measures of variation
+(dispersion)
+*Skewness
+*Kurtosis
+22
+=== SLIDE 23 ===
+*Two data sets with the same mean (median, or
+mode) may differ in other aspects.
+higher
+variation
+the same level
+
+
+x
+x
+
+6 exc.gr.
+
+6 exc.gr.
+lower
+variation
+23
+=== SLIDE 24 ===
+24
+*They express:
+*the (amount of) spread of values in a data set
+*how much the values in a data set tend to vary
+*how far the values in a data
+set tend to be from an
+arithmetic mean (or median)
+calculated from these values
+* in this sense: higher variation =>
+lower relevance of arithmetic
+mean
+=== SLIDE 25 ===
+*Measures of absolute variation:
+*in the same (or similar) units as the statistical variable that is
+analyzed
+*do not allow comparison of the magnitude of variation for
+variables with a different level (assuming only positive values:
+higher level => higher measures of absolute variation)
+*Measures of relative variation:
+*measure variation in relation to the level of the variable that is
+analyzed
+*dimensionless numbers
+*assuming only positive values: allow comparison of the magnitude
+of variation for any variables (even with different units)
+25
+=== SLIDE 26 ===
+*range
+max minr x x 
+*the simplest one
+*advantages: easy to calculate, easy interpretation
+*disadvantages: extreme sensitivity to outliers,
+tells nothing about variation within a minimum and
+maximum value (i.e. “inside” an ascending data)
+*interquartile range
+qr x x 
+0.75 0.25
+*it “contains” 50 % of values concentrated around
+the middle/median (e.g. in the case of salaries’
+distribution, this is more valuable information than
+that given by the mean)
+*interdecile range, interpercentile range
+26
+=== SLIDE 27 ===
+*variance = arithmetic mean of squared
+deviations of individual values xi from their
+ar. mean (“definition” formula)
+n
+x
+
+(
+x
+
+x
+i
+)
+2
+i
+
+1
+s
+2
+x
+
+n
+*computational formula:
+n n
+2
+ 
+x x
+i i
+2 2 2 1 1
+i i
+ 
+s x x
+   
+   
+x
+n n
+   
+2
+*when working with raw data or arranged data
+27
+=== SLIDE 28 ===
+*Data_Lecture2.xlsx (sheet“Variance”)
+s
+n
+
+2 1
+i
+
+
+x
+2
+
+xx
+i
+( )107.73 7.18
+n
+15
+s
+n
+
+2 1
+i
+
+
+x
+28
+2
+
+xx
+i
+( ) 3251.73 216.78
+n
+15
+=== SLIDE 29 ===
+*Data_Lecture2.xlsx (sheet“Variance”)
+s
+n
+
+2 1
+i
+
+
+x
+2
+
+xx
+i
+( )107.73 7.18
+n
+15
+29
+2
+n n
+2
+ 
+x x
+        
+i i
+i i
+ 
+s x x
+2 2 2 21 1 288 3.467 19.2 12.02 7.18
+x
+n n
+   
+15
+=== SLIDE 30 ===
+Input data structure
+Raw data or arranged data
+Frequencies
+(absolute
+weights)
+Frequency
+distribution
+table (weights)
+30
+Relative
+frequencies
+(relative
+weights)
+“definition”
+formula Computational formula
+s
+n
+
+2 1
+i
+
+
+x
+2
+
+( )
+xx
+i
+n
+s x x
+   
+   
+2
+n n
+2
+ 
+x x
+i i
+2 2 2 1 1
+i i
+ 
+x
+n n
+   
+2
+k
+
+j
+
+1
+2
+
+( )
+x x n
+j j
+s
+
+x k
+
+j
+
+1
+n
+j
+   
+2
+k k
+2
+ 
+x n x n
+j j j j
+2 2 2
+j j
+ 
+1 1
+s x x
+x k k
+       
+ 
+n n
+j j
+j j
+ 
+1 1
+k
+k k
+2 2
+s x x p
+x j j
+ 2 2 2 2 2
+( )
+s x x x p x p
+    ( )
+x j j j j
+j
+
+1
+j j
+ 
+1 1
+=== SLIDE 31 ===
+*Data_Lecture2.xlsx (sheet“weighted_ar_mean”)
+*Slide 29:
+n
+
+
+( )
+xx
+i
+2
+2 2 21
+i
+
+  
+s x x
+x
+n
+7.18
+31
+*Calculate the variance of number of excellent grades in
+summer 2015 using the knowledge of frequencies (nj)
+and relative frequencies (pj), i.e. using 4 other formulas.
+=== SLIDE 32 ===
+32
+*variance
+*advantage: all the values in the data set are
+used
+*disadvantage: it has no factual interpretation
+(expressed in non-existing units: some squares
+of the original units)
+*disadvantage: influenced by outliers, i.e. it is
+sensitive (not robust); problematic mainly in
+the case of a small data set (small data set
+size n).
+=== SLIDE 33 ===
+*In the case when only the class (group)
+x
+descriptive statistics (group arithmetic means ,
+j
+group variances 2
+s
+jx
+and group frequencies /nj/ or
+relative freguencies /pj/) are known:
+decomposition of the variance into within-group
+variation (=mean of group variances) and
+between-group variation (=variance of group
+means) must be used for the calculation of
+(overall) variance in the whole data set
+2
+s
+x
+33
+=== SLIDE 34 ===
+*variance’s decomposition (k is number of groups
+into which was the whole data set of size n divided)
+k k
+ 
+2 2
+
+s n x x n
+( )
+jx j j j
+2 2 2
+j j
+ 
+1 1
+s s s
+   
+x jx x k k
+j
+ 
+n n
+j j
+j j
+ 
+1 1
+within-group variation (weighted
+arithmetic mean of group variances)
+between-group variation
+(variance of group ar. means)
+34
+k k
+2 2 2
+s s p x x p
+   
+( )
+x jx j j j
+j j
+ 
+1 1
+=== SLIDE 35 ===
+*Data_Lecture2.xlsx (sheet“weighted_ar_mean”)
+k k
+ 
+2 2
+
+s n x x n
+jx j j j
+2 2
+2 2 2
+j j
+ 
+1 1
+s s s      
+( ) 1 959 7 10 438 8 (2.571-3.467) 7 (4.25-3.467) 8 6 481 0 701 7 18
+. .
+     
+. . .
+x jx x k k
+j
+15 15
+ 
+n n
+j j
+j j
+ 
+1 1
+Slide 15
+k k
+2 2 2 2 2
+         
+s s p x x p . . . . . .
+ 
+x jx j j j
+( ) 1 959 0 467 10 438 0 533 (2.571-3.467) 0 467 (4.25-3.467) 0 533
+j j
+ 
+1 1
+6 481 0 701 7 18
+
+. . .
+35
+=== SLIDE 36 ===
+*variance – properties:
+*is non-negative (i.e. ≥ 0)
+*the variance calculated from a constant (several equal
+values) is equal to zero (i.e. there is no variation at all)
+2 2 2
+xs x x  
+    
+(4 4 4) / 3 2.000
+2
+
+4 4 0
+36
+=== SLIDE 37 ===
+*variance – properties:
+*if a constant is added to each of the values xi, their variance
+remains the same (i.e absolute variation doesn’t change)
+2 2 2 2
+original: 5.667 2.333 0.222
+s x x
+  
+x
+all the values increased by 2 : 2 2 2 2
+s x x
+  
+x
+19 4.333 0.222
+37
+=== SLIDE 38 ===
+*variance – properties:
+*if all the values xi are multiplied by a constant, their
+variance is multiplied by the square of this constant
+(i.e. absolute variation changes proportionally)
+2 2 2 2
+original: 5.667 2.333 0.222
+s x x
+  
+x
+all the values multiplied by 2 : 2 2 2 2 2
+s x x
+    
+x
+22.667 4.667 0.889 2 0.222
+38
+=== SLIDE 39 ===
+*standard deviation = square root of the
+variance
+n
+
+2 1
+i
+
+s s
+ 
+x x
+2
+
+( )
+xx
+i
+n
+*advantage: is in the same units as original
+values -> it has some factual intepretation:
+approximately tells that majority (>50 %) of
+values does not differ from their ar. mean for
+more than the magnitude of standard deviation
+39
+*disadvantages: it is still a measure of absolute
+variation; sensitive to outliers
+=== SLIDE 40 ===
+*Data_Lecture2.xls:
+*Excellent grades 2015:
+x xs s
+2 7.18 2.68 exc. grades
+*the majority of values in the data set is in the interval
+(3.467 2.68,3.467 2.68) (0.79,6.15) exc. gr.  
+*Data_Lecture2.xls:
+*Weight 2018:
+x xs s
+2 216.78 14.72 kgs
+*majority of values in the data set is in the interval
+  
+(64.533 14.72,64.533 14.72) (49.81,79.26) kgs
+40
+=== SLIDE 41 ===
+*sample variance
+*better statistical properties than the variance (will
+be used in the 2nd half of the semester)
+*many statistical software compute this one
+n
+
+2
+
+( )
+xx
+i
+n
+2 21
+i
+
+ 
+s s
+n n
+ 
+1 1
+x
+*sample standard deviation = positive square
+root of the sample variance (will be used in the 2nd
+half of the semester)
+n
+
+2 1
+i
+
+s s
+ 
+
+( )
+xx
+i
+2
+41
+n
+
+1
+=== SLIDE 42 ===
+42
+*Median absolute deviation (from median ( )imad median x x 
+*advantages: is in the same units as original
+values; robust (not influenced by outliers)
+*disadvantage: it is still measure of absolute
+variation
+x):
+=== SLIDE 43 ===
+*Data_Lecture2.xlsx (sheet“mad”)
+mad
+1 exc.grade(s)
+8mad kgs
+43
+=== SLIDE 44 ===
+*Which descriptive statistic (which measure)
+is better for description of the variation?
+standard
+deviation square root of variance
+variance arithmetic
+mean
+of squared
+deviations of
+individual
+values xi from
+their
+arithmetic
+mean
+deviations of
+mad median of absolute
+individual
+values xi from
+their
+median
+44
+=== SLIDE 45 ===
+*Which descriptive statistic (which measure) is
+better for description of the variation?
+*Standard deviation: + uses all values,
+- sensitive
+to outliers (problematic mainly in the case of
+small data sets)
+*mad: - just one value (or mean of two values),
++ robust (not influenced by outliers)
+45
+=== SLIDE 46 ===
+*relative variation– useful to compare
+variation of more data sets (more
+quantitative variables) with different levels
+(even different units of measurements)
+*coefficient of variation
+*quotient of standard deviation and mean
+*dimensionless number
+s
+x
+v
+x
+
+*100·vx-> sometimes interpreted in %
+x
+46
+=== SLIDE 47 ===
+*Data_Lecture2.xlsx (sheet“Coef_of_variation”)
+*Excellent grades 2015:
+v
+2.68 0.773
+3.467x
+*Weight 2018:
+v
+14.72 0.228
+64.533x
+47
+=== SLIDE 48 ===
+*useful mainly for variables with positive
+values only
+*unfortunately:
+s
+x
+    
+0 ( , )
+x
+ 
+( , )
+
+v
+x
+*can’t be calculated if:
+x 
+0
+48
+=== SLIDE 49 ===
+*coefficient of variation’s properties
+*when calculated from a constant, the
+coefficient of variation is equal to zero
+s
+v
+  
+0 0x
+xc
+*if all values xi are multiplied by a constant,
+the coefficient of variation does not change
+x
+
+s c s s
+x new x old x old
+, , ,
+   
+v v
+x new x old
+, ,
+
+x c x x
+new old old
+49
+=== SLIDE 50 ===
+*coefficient of variation’s properties
+(assuming only non-negative values)
+*if a constant is added to each of the values
+xi, the coefficient decreases
+s
+x
+   
+x
+*if a constant is subtracted from each of the
+v
+x
+values xi, the coefficient increases
+s
+x
+   
+x
+v
+x
+50
+=== SLIDE 51 ===
+Any questions? 
+51

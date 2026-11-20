@@ -1,0 +1,704 @@
+
+=== SLIDE 1 ===
+1
+=== SLIDE 2 ===
+*basic approaches: trend functions and
+smoothing (adaptive) methods
+*smoothing (adaptive) methods
+*moving averages: different approach to the
+calculation of a trend component’s value (trt)
+than the trend functions
+*exponential smoothing: method for short-term
+predictions
+*useful when trend functions cannot be
+reasonably used (complex/complicated time
+series development)
+2
+=== SLIDE 3 ===
+*time series values are used to calculate
+averages (means) from them
+*the result is a smoothed time series of those
+averages representing the trend component
+*simple moving average
+*weighted moving average
+*centred moving average
+3
+=== SLIDE 4 ===
+*widely used in finance, economics,…
+*we calculate the trend component separately in
+short segments (“windows”) of a time series by
+some type of the mean (average)
+*we move forward with the window (starting at the
+beginning of a time series) through the time series
+by excluding the first value (in the window) and
+adding the next one
+*window’s length (length of a moving segment) m:
+*odd number: m = 2p + 1, p = 1, 2, 3, …
+*even number: m = 2p
+4
+=== SLIDE 5 ===
+5
+*selection of m
+*subjective in the case of a time series without a
+seasonal component
+*the stronger smoothing we want, the higher m
+we should select
+*in the case of a seasonal component in a time
+series, we should select m equal to the length
+of seasonality s (or 2s, 3s etc.)
+*quarterly time series (Q1, Q2, Q3, Q4; s = 4): m = 4
+*monthly time series (M1, M2, …, M12; s = 12): m = 12
+*daily time series (Mo, Tu, …, Su; s = 7): m = 7
+=== SLIDE 6 ===
+6
+*simple moving average (in time t)
+*window’s length m is an odd number
+*m = 2p + 1, p = 1, 2, 3, …
+*the higher m, the smoother the resulting time series
+*simple arithmetic mean of p values before time t, yt
+and p values after time t
+        
+y y y y y
+1 1... ...t p t t t t p
+y tr
+
+t t
+m
+*all used values have the same weights; e.g. for m = 5
+the following weight system is used:
+1 1,1,1,1,1
+ 
+5
+=== SLIDE 7 ===
+*Example 1) In the table below, there is
+a time series of a company’s share price
+(in CZK) for 12 consecutive working days.
+Smooth the time series by moving averages
+of length 3 and 7.
+Day (t) Price Day (t) Price
+1 472 7 475
+2 469 8 491
+3 464 9 505
+4 471 10 502
+5 474 11 504
+7
+6 471 12 510
+=== SLIDE 8 ===
+Day
+(t) Price Simple m.a. (m=3) 1 472
+2 469
+y tr y y y   
+2 2 1 2 3( ) / 3
+  
+(472 469 464) / 3 468.3 CZK
+3 464
+3 3 2 3 4( ) / 3 468 CZKy tr y y y   
+4 471
+y tr
+4 4469.7 CZK
+5 474 472.0 6 471 473.3 7 475 479.0 8 491 490.3 9 505 499.3 10 502 503.7
+11 504 505.3
+8
+12 510
+Simple m.a. (m=7)
+y tr y y y y y
+      
+(
+4 4 1 2 3 4 5
+
+yy
+6 7
+) / 7 470.9 CZK
+473.6
+478.7
+484.1
+488.9
+494.0
+=== SLIDE 9 ===
+*Example 1)
+9
+=== SLIDE 10 ===
+*centred moving average (in time t)
+*window’s length m is an even number
+*m = 2p, p = 1, 2, 3, …
+*weighted arithmetic mean of p values before time t, yt and p values
+after time t
+y tr y y y y y y y
+          
+1 2 ... 2 2 2 ... 2
+t t t p t p t t t t p t p
+2
+ 1 1 1 1
+       
+m
+           
+y y y y y y y y y y
+... ... ... ...
+         
+1 1 1 1 1 1
+t p t t t t p t p t t t t p
+
+m m
+
+2
+y tr y y y y y
+      
+1 2 2 2
+t t t t t t t
+ 
+   
+2 1 1 2
+24
+
+*e.g. for m = 4:
+1 1,2,2,2,1
+ 
+8
+     
+y y y y y y y y
+t t t t t t t t
+     
+2 1 1 1 1 2
+
+4 4
+10
+
+2
+=== SLIDE 11 ===
+*Example 2) Smooth the time series
+“Semester mean” (from summer 2014 to
+summer 2019) from a seasonal component
+by moving averages of length 2.
+*length of seasonality s = 2, i.e. moving
+averages of m = s = 2 must be used
+11
+=== SLIDE 12 ===
+t yt 1 2.7
+2 3.1
+3 2.4
+4 3.7 5 2.8 6 3.7 12
+… … Moving averages (m = 2) Centred moving av. (m = 2)
+ 
+/2
+( 7 3.1) / 2 yy 
+1 2 2.
+) ( 9
+2.
+y tr 
+2 2(2.9 2.8) / 2 2.8 sem.
+ 
+/2
+( 1 2.4) / 2 2.
+yy 
+2 3 3.
+) ( 8
+y tr 
+3 3(2.8 3.1) / 2 2.9 sem.
+3.1
+3.2
+3.3
+3.3
+3.2
+3.3
+… …
+=== SLIDE 13 ===
+*Example 2)
+13
+=== SLIDE 14 ===
+14
+*disadvantages:
+*arithmetic means are very sensitive
+to extreme values (outliers)
+*selection of m is in the case of a time series
+without a seasonal component subjective
+*this method cannot be used for predicting
+the future development of a time series
+*we lose several values at the beginning and
+at the end of a time series
+=== SLIDE 15 ===
+15
+*aim is to quantify seasonal variations
+in a time series (st)
+*two main reasons for studying the seasonal
+component:
+*its knowledge is useful in short-term
+predicting
+*it may be calculated for the purpose of
+eliminating it from the time series (so that the
+trend component can be seen more easily)
+*often present in monthly, quarterly or daily
+time series
+=== SLIDE 16 ===
+*there are a lot of methods for calculation of
+its strength (for particular seasons)
+*strength of the seasonal component may be
+expressed by differences or indices
+*seasonal differences
+*if we assume additive decomposition
+1,2,...,
+t t t ty tr s e t n   
+16
+=== SLIDE 17 ===
+*seasonal differences
+, 1,2,...,
+jsd j s
+*when seasonal variations are stable in time
+*often calculated in such a way that they
+compensate themselves (e.g. each year or
+each week)
+
+0s
+sd
+
+j
+j
+
+1
+*measure the effects of different seasons
+on a time series in absolute terms (i.e. they are
+in the same units as the time series’ values yt)
+17
+=== SLIDE 18 ===
+*seasonal indices
+*if we assume multiplicative decomposition
+1,2,...,
+t t t ty tr s e t n   
+*when seasonal variations are not stable in
+time
+18
+=== SLIDE 19 ===
+*seasonal indices
+, 1,2,...,
+jsi j s
+*measure the effects of different seasons
+on a time series in relative terms (i.e. they are
+not in the same units as the time series’ values yt)
+*often calculated in such a way that their sum
+equals the length of seasonality
+s
+
+si s
+
+j
+j
+
+1
+19
+=== SLIDE 20 ===
+*there are a lot of methods for calculation of
+its strength (for particular seasons)
+*simple approach to the seasonal component
+*trend and seasonal components calculated in
+separate steps
+*regression approach to the seasonal
+component
+*trend and seasonal components calculated in
+one step (i.e. simultaneously)
+20
+=== SLIDE 21 ===
+*procedure consisting of several steps:
+*1) calculation of the trend component (values
+trt) using moving averages with m = s
+*2) calculation of seasonal and irregular
+components (for those values of t for which trt
+is available):
+*additive decomposition:
+t t t t t t t ty tr s e s e y tr      
+*multiplicative decomposition:
+/t t t t t t t ty tr s e s e y tr     
+21
+=== SLIDE 22 ===
+*3) calculation of seasonal and irregular
+components’ arithmetic means
+*arithmetic mean of values from the previous step
+is calculated for every season (quarter, month,
+day)
+*nj denotes the number of values available for
+season j
+*i = 1,2,3,…, nj denotes time (instead of t)
+*i = 1 for the oldest value available (for season j)
+*i = nj for the newest value available (for season j)
+22
+=== SLIDE 23 ===
+*3) calculation of seasonal and irregular
+components’ arithmetic means
+*additive decomposition: mean seasonal
+differences
+n
+j
+
+i
+
+1
+
+( )
+se
+ij ij
+sd
+j
+
+n
+j
+*multiplicative decomposition: mean seasonal
+indices
+n
+j
+
+i
+
+1
+
+( )
+se
+ij ij
+si
+j
+
+23
+n
+j
+=== SLIDE 24 ===
+*4) calculation of seasonal differences or
+seasonal indices
+*seasonal differences:
+s
+
+j
+
+1
+j
+sd
+sd sd
+ 
+j
+j
+s
+
+0s
+sd
+
+j
+j
+
+1
+*seasonal indices:
+s
+si si
+
+j
+j s
+24
+s
+
+si
+j
+
+1
+j
+j
+
+1
+si s
+
+j
+=== SLIDE 25 ===
+*Example 3) Use a simple approach to the
+seasonal component to calculate
+seasonal differences and seasonal indices
+for the time series “Semester mean” from
+example 2.
+25
+=== SLIDE 26 ===
+j t 1 1 2 2 1 3 2 4 1 5 2 6 1 7 2 8 1 9 2 10 26
+1 11 yt Centred moving av. (m = 2), trt
+yt– trt
+(st + et)
+2.7
+3.1 2.8 0.3 2.4 2.9 -0.5 3.7 3.2 0.6 2.8 3.3 -0.5 3.7 3.3 0.4 2.9 3.4 -0.5 4.1 3.5 0.6 2.8 3.3 -0.5 3.6 3.2 0.4 2.8
+yt / trt
+(st · et) i
+1.106 1
+0.823 1
+1.179 2
+0.862 2
+1.122 3
+0.863 3
+1.173 4
+0.844 4
+1.125 5
+=== SLIDE 27 ===
+*3) calculation of mean seasonal differences and
+mean seasonal indices
+*summer: j = 1, n1 = 4 and so i = 1,2,3,4
+*winter: j = 2, n2 = 5 and so i = 1,2,3,4,5
+*mean seasonal differences:
+*summer:
+4
+
+
+se
+i i
+1 1
+i
+sd
+1
+1
+ 
+( )( 0.5) ( 0.5) ( 0.5) ( 0.5) 0.49
+      
+4 4
+*winter:
+5
+
+i
+sd
+1
+2
+
+27
+
+se
+i i
+2 2
+( )0.3 0.6 0.4 0.6 0.4 0.45
+   
+5 5
+=== SLIDE 28 ===
+*3) calculation of mean seasonal differences and
+mean seasonal indices
+*mean seasonal indices:
+*summer:
+4
+
+i
+si
+1
+1
+
+
+se
+i i
+1 1
+( )0.823 0.862 0.863 0.844 0.848
+  
+4 4
+*winter:
+5
+
+i
+si
+1
+2
+
+
+se
+i i
+2 2
+( )1.106 1.179 1.122 1.173 1.125 1.141
+   
+5 5
+28
+=== SLIDE 29 ===
+*4) calculation of seasonal differences and/or
+seasonal indices
+*seasonal differences:
+*summer:
+2
+
+sd
+j
+j
+1
+sd sd  
+    
+1
+0.49 0.450.49 0.47 sem.
+1
+2 2
+*winter:
+2
+
+sd
+j
+j
+1
+sd sd  
+  
+2
+0.49 0.450.45 0.47 semester
+2
+2 2
+*In the summer 2014 - summer 2019 period, the
+semester mean in winter semesters was
+approximately 0.47 semester above the trend.
+*In winter are usually students in 3rd or 5th semesters,
+while in summer in 2nd or 4th ones.
+29
+=== SLIDE 30 ===
+*4) calculation of seasonal differences and/or
+seasonal indices
+*seasonal indices:
+*summer:
+si si
+  
+1
+2 20.848 0.853
+1 2
+0.848 1.141
+
+
+j
+
+1
+si
+j
+*winter:
+si si
+  
+2
+2 21.141 1.147
+2 2
+0.848 1.141
+
+
+si
+j
+j
+
+1
+*In the period from summer 2014 to summer
+2019, the semester mean in winter semesters
+was approximately 14.7 % above the trend.
+30
+=== SLIDE 31 ===
+31
+0.47 semester above trt
+1.147·trt
+=== SLIDE 32 ===
+*seasonally adjusted time series: a time
+series with a removed seasonal component
+*seasonal differences: respective seasonal
+difference is subtracted from each value yt
+*for time t = 1,2,…,n and season j = 1,2,…,s:
+t jy sd
+*seasonal indices: each value of the time
+series is divided by the corresponding
+seasonal index
+/t jy si
+32
+*moving averages with m = s
+=== SLIDE 33 ===
+ty tr s e b b t sd x sd x sd x sd x e         
+*in this case we calculate a trend and a seasonal
+component at the same time (together)
+*multiple regression function (linear trend,
+s = 4 … quarterly time series)
+0 1 1 1 2 2 3 3 4 4t t t t *sd1, sd2, sd3 and sd4 are seasonal differences
+*MLS (in Excel) may be used to calculate
+parameters of the following one:
+*
+0 1 1 1 2 2 3 3t t t t 33
+ty tr s e b b t a x a x a x e        
+=== SLIDE 34 ===
+*multiple regression function (linear trend,
+s = 4 … quarterly time series)
+*
+0 1 1 1 2 2 3 3t t t t ty tr s e b b t a x a x a x e        
+*dependent variable: values yt
+*explanatory variables (k = 4): t, x1, x2, x3
+*dummy variables x1, x2, x3 indicate the seasons; may get
+the values of 0 or 1 only
+*e.g. x1 = 1 if yt is the value for the 1st season (1st
+quarter) and x1 = 0 if yt is the value for another season
+(2nd, 3rd and 4th quarters)
+34
+*regression parameters (p = 5): b0*, b1, a1, a2, a3
+=== SLIDE 35 ===
+*regression function is linear in parameters,
+i.e. the parameters (b0*, b1, a1, a2, a3) may
+be calculated by MLS (in Excel)
+t quarter yt x1 x2 x3
+1 Q1 y1 1 0 0
+2 Q2 y2 0 1 0
+3 Q3 y3 0 0 1
+4 Q4 y4 0 0 0
+5 Q1 y5 1 0 0
+6 Q2 y6 0 1 0
+… … … … … …
+35
+=== SLIDE 36 ===
+*1) calculation of regression parameters
+(MLS; Excel ;-)): b0*, b1, a1, a2, a3
+*2) calculation of the a’s arithmetic mean
+(a4 being equal to 0)
+
+a a a
+1 2 3
+a
+
+4
+*3) calculation of seasonal differences sdj
+(j = 1, 2, 3, 4)
+*for the first three quarters:
+*for the 4th quarter:
+j jsd a a
+4sd a
+36
+=== SLIDE 37 ===
+*Example 4) We have data about the number of nights spent
+(by customers) in Czech spa-accomodation facilities from
+the 1st quarter of 2000 (y1 = 1,018,861) to the 4th quarter
+of 2006 (y28 = 1,465,747). Calculate the trend and seasonal
+components applying a regression approach and use the
+results to predict the time series in the year 2007.
+37
+=== SLIDE 38 ===
+*1) Excel:
+*2) calculation of the a’s arithmetic mean
+(a4 being equal to 0)
+1 2 3( ) / 4 214663.4a a a a  
+*3) calculation of seasonal differences sdj (j = 1, 2, 3, 4)
+1 1 160109 6 214663 4 374773 nightssd a a . .    
+2 3 4216144.8 n. 373291.6 n. 214663.4 n.sd sd sd a  
+38
+=== SLIDE 39 ===
+*recalculation of the constructed linear
+trend:
+*
+b b a
+  
+0 0
+1232584.3 214663.4 1447247.7
+tr b b t t
+   
+t
+0 1
+1447247.7 9727.5
+for the final constructed multiple regression
+function (for factual interpretations and
+predictions):
+0 1 1 1 2 2 3 3 4 4t t t t ty tr s e b b t sd x sd x sd x sd x e         
+39
+=== SLIDE 40 ===
+*note that: sd1+sd2+sd3+sd4 = 0
+*interpretation of the calculated seasonal differences
+*e.g. for the 3rd quarter:
+sd 
+3 373291.6 nights
+*In the period from the 1st quarter of 2000 to the 4th
+quarter of 2006, the number of nights spent (by guests) in
+Czech spa-accomodation facilities in the 3rd quarter was
+approx. by 373,291.6 nights above the linear trend.
+373291.6
+1447247.7 9727.5
+ttr t 
+40
+=== SLIDE 41 ===
+0 1 1 1 2 2 3 3 4 4t t t t *e.g. prediction for 3rd quarter 2007 (t = 31):
+ˆ 31 2122092.3 nightsy tr s b b sd     
+31 31 31 0 1 3
+ty tr s e b b t sd x sd x sd x sd x e         
+41
+=== SLIDE 42 ===
+Any questions? 
+42

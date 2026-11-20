@@ -1,0 +1,828 @@
+
+=== SLIDE 1 ===
+1
+Lecture 9
+Essentials of Sampling
+and Statistical
+Inference: Estimates
+=== SLIDE 2 ===
+2
+Mathematical vs. applied
+statistics (Lecture1)
+*Mathematical statistics: development, derivation and proofs of
+statistical theorems, formulas and rules
+*Applied statistics:
+*Descriptive statistics /singular/ – methods for organizing
+and summarizing information (with the use of tables,
+graphs and simple measures); the aim is to describe
+properties of a data set; no generalization!
+*Inferential statistics /sg./ – the aim is to
+draw general conclusions about the
+population based on information obtained
+from a random sample (data set)
+=== SLIDE 3 ===
+Random sample,
+representativeness
+(Lecture8)
+*Inferential statistics /sg./ – the aim is to
+draw general conclusions about the
+population (or a data-generating process)
+based on information obtained from
+a random sample
+3
+*Lecture9, Lecture10, Lecture11
+*4ST601: random sample obtained with
+simple random sampling
+*random sample should be representative,
+i.e. reflecting as closely as possible all
+relevant features of a population (e.g.
+structure of gender, level of education, etc.)
+=== SLIDE 4 ===
+Population vs. sample, I.
+*Population: a group of statistical elements
+*population size (N) is often very large (and thus it is
+practically impossible to study the whole population)
+*we examine population’s properties through a
+sample
+*Sample: a data set (subset of a population) that
+originated on the basis of some sampling
+statistical survey (procedure)
+*Using the knowledge gained from the sample, we
+can draw inferences concerning the population
+and its properties.
+4
+=== SLIDE 5 ===
+Population vs. sample, II.
+5
+=== SLIDE 6 ===
+Population vs. sample:
+types of statistical
+surveys
+*population survey (census)
+*is performed on all N elements of the population
+*characteristics (parameters) of the population
+can be calculated; descriptive statistics
+*sample survey
+*is performed only on n elements selected from
+the population
+*characteristics (parameters) of the population
+can only be estimated
+6
+=== SLIDE 7 ===
+Population vs. sample,
+III.
+*Why not just examine the population
+directly?
+*Some populations are too large.
+*Data from the sample survey are easier
+(and cheaper) to process.
+*The sample survey may be more detailed.
+*Some population surveys are impossible to be
+processed (e.g., automobile crash-test).
+*Sometimes it is necessary to have the results
+before the population survey (e.g., public
+opinion polls before elections).
+7
+=== SLIDE 8 ===
+Random sampling
+8
+*Mathematical and statistical methods
+assume that the sample data are
+provided by random sampling: a
+particular element is (or isn‘t) selected
+at random to be (or not to be) in the
+sample.
+*random sample– n elements from
+the population of N elements selected
+by random sampling
+*4ST601: a random sample obtained by
+simple random sampling
+=== SLIDE 9 ===
+Methods of collecting
+data
+9
+*opinion poll
+*random number generators
+*personal interview
+*postal questionnaire
+*observation (calculations and measurements)
+*
+…
+*Important note: justified statistical
+inference needs a random sample from
+a (clearly defined) population!
+*Typically not satisfied eg. with an
+internet questionnaire…
+=== SLIDE 10 ===
+Two statistical “worlds”,
+I.
+*First, an “empirical world”, i.e.
+*the world of given (known) data sets
+*the world of calculated descriptive statistics
+(value of arithmetic mean, value of sample
+standard deviation etc.)
+*all symbols in the list of formulas (pgs. 1, 2, 3)
+represent numbers (calculated values)
+*inferential statistics: uncertainty about
+theoretical assumptions
+10
+=== SLIDE 11 ===
+Two statistical “worlds”,
+II.
+*Second, a “theoretical world”, i.e.
+*the world of random variables
+*the world of probability, random events and
+random variables’ probability distributions
+*some symbols in the formulas (list of formulas:
+pgs. 7, 8; „T“ on page 6) represent random
+variables
+*inferential statistics: satisfied
+theoretical assumptions
+11
+=== SLIDE 12 ===
+Two statistical “worlds”,
+III.
+*inferential statistics
+*in “theoretical world”: formulas are derived
+under theoretical scenarios with perfectly
+satisfied theoretical assumptions
+*in “empirical world”: used in real-life
+scenarios with uncertainty, if theoretical
+assumptions are satisfied (and how much) or
+not; all conclusions based on calculations with
+a data in random sample contain uncertainty
+12
+=== SLIDE 13 ===
+Two statistical “worlds”,
+IV.
+*descriptive statistics /singular/: practical
+analysis completely carried out in the
+empirical“world”
+*inferential statistics: practical analysis
+completely carried out in the empirical
+“world” using statistical tools/methods
+derived in the theoretical“world”
+13
+=== SLIDE 14 ===
+Population vs. sample,
+IV.
+*population distribution– derived from
+the information on all elements of the
+population; the value of any population
+parameter is always constant
+*sampling distribution– sample
+parameters (i.e. statistics) are random
+variables varying from sample to sample
+14
+=== SLIDE 15 ===
+Sampling distribution, I.
+*Population (illustrative example; in
+practice, N may be very large): women
+present at selected 4ST601 seminars over
+the past few semesters (N = 87)
+*random variable X: weight (kg)
+*random sample size: ni = 5
+*position of a random sample: i
+(e.g., for 100 random samples: i = 1, 2, 3, …, 99, 100)
+15
+=== SLIDE 16 ===
+Sampling distribution, II.
+Random
+sample1 1 57.6 kgn 15, x 
+Random
+sample2
+2 25, 55.0 kgn x 
+Population, N = 87
+Random
+sample100
+100 1005, 58.4 kgn x 
+Arithmetic mean is a
+random variable!
+16 X
+=== SLIDE 17 ===
+Sampling distribution, III.
+*arithmetic mean:
+X
+*random variable distribution:
+1 2( ), ( ), ( )E X Var X P x X x
+*calculated value of arithmetic mean:
+*a descriptive statistic /sg./; calculated from
+the values in the analysed data set
+*for justified inferential statistics, the data set
+needs to be a random sample from a (clearly
+defined) population
+x
+17
+=== SLIDE 18 ===
+Sampling distribution, IV.
+Random
+experiment
+Random trial Random variable Value of a random
+variable
+3 cards randomly
+drawn from a deck
+of 32 cards
+card is randomly
+drawn from a deck
+X- number of aces
+drawn in 3 random
+trials
+x (x = 0, 1, 2, 3)
+5 female students
+randomly selected
+from a population
+of 87 female
+random sample is
+drawn from a
+population
+- arithmetic
+X x
+mean of the
+weight of female
+students
+(calculated
+from the values in
+the random
+sample)
+students
+18
+=== SLIDE 19 ===
+Statistical inference
+*the process of using limited
+information (random sample: sample
+arithmetic mean, sample variance,
+sample proportion, …) for the purpose
+of reaching generalizing conclusions
+about the population; we try to
+estimate population parameters
+*e.g., sample arithmetic mean is an estimator
+of the expected value (population mean)
+19 ()ˆ
+E X X
+=== SLIDE 20 ===
+Population parameters
+and their estimators, I.
+Population parameter
+(unknown value)
+Estimator
+(random variable)
+Expected value
+(population mean): E(X)
+Sample arithmetic mean
+X
+Expected value
+(population mean); normal
+distribution of X in
+population: m
+Sample arithmetic mean
+X
+Population variance;
+normal distribution of X in
+Sample variance
+S
+2
+population: s2
+Population proportion: p Sample proportion:
+P
+Count in population: Np 20
+Sample count:
+N·P
+Notation
+E X X
+()ˆ
+= ˆ X
+m
+s 
+2 2ˆ S
+p 
+ˆ P
+N N Pp 
+=== SLIDE 21 ===
+“Estimator” vs
+“estimate”
+*estimator of expected value (population mean)…
+( ) EX
+…is a sample arithmetic mean
+X
+E X X
+()ˆ
+Random variable
+Estimate of unknown
+number (value)
+Calculated
+number (value)
+( ) = ˆ
+E X x
+*point estimate of population mean…
+( ) EX
+…is (the calculated value of) arithmetic mean
+x
+21
+=== SLIDE 22 ===
+Types of estimates
+*point estimate– the population
+parameter is estimated by a single
+value
+*interval estimate– the population
+parameter is estimated with a range
+of values
+22
+=== SLIDE 23 ===
+Point estimates
+*we estimate an unknown value
+of a population parameter by the
+computed value of an appropriate
+sample statistic (of an estimator)
+*normal distribution in population; X ~ N(m,s2):
+= ˆ ˆ
+2 2
+x sm s
+*general distribution in population:
+23
+E X x
+()ˆ
+*population proportion, count in population:
+n
+= j
+p p ˆ p N Np
+n
+=== SLIDE 24 ===
+Sampling error
+*the specific value of a sample statistic
+(calculated from one sample) will differ
+from a parameter (characteristic) that
+is being estimated
+*don’t forget that the results are only
+estimates of some property (parameter,
+distribution, …) of the population…
+*inferential statistics: there is always
+uncertainty in results/conclusions
+24
+=== SLIDE 25 ===
+Interval estimates
+*interval estimate– the interval is
+constructed around a point estimate
+*it’s likely to cover the (unknown value of)
+population parameter
+*contains more information than the point
+estimate
+*each interval is constructed with regard
+to a given confidence level 1-a and is
+called a 100(1-a)% confidence interval
+*e.g., 1-a = 0.95: 95% confidence interval
+25
+=== SLIDE 26 ===
+Confidence intervals, I.
+26
+*two-sided, left-sided, right-sided
+*in 4ST601 only two-sided confidence intervals for
+*
+m ; population mean (expected value) in the case
+of normal distribution in the population,
+population variance s2 unknown
+*E(X); population mean (expected value) in the
+case when random sample size is assumed to be
+large enough (classical textbooks: n > 30)
+*
+p ; population proportion, random sample size
+assumed to be large enough
+*Np; count in population (knowledge of pop. size,
+ie. N, is needed), random sample size assumed
+to be large enough
+=== SLIDE 27 ===
+Confidence intervals, II.
+*theoretical 100·(1-a)% two-sided confidence intervals
+*
+m; variance s2 unknown
+ 
+S SP X t X t
+1 2 1 2 1
+a am a 
+T t n
+ 1
+/ /
+       
+n n
+*E(X); large random sample
+ 
+S SP X z E X X z
+1 2 1 2( ) 1/ /
+ 
+       
+a a a
+n n
+*
+p (population proportion); large random sample
+  
+P P P PP P z P z
+(1 ) (1 ) 1
+1 /2 1 /2
+ 
+        
+a ap a
+n n
+27
+=== SLIDE 28 ===
+Confidence intervals, III.
+*constructed (empirical) 100·(1-a)% two-sided conf. int.
+*
+m; variance s2 unknown
+ 
+s s
+x t ,x t
+a a 
+1 2 1 2/ /
+   
+T t n
+ 1
+n n
+*E(X); random sample size assumed to be large enough (classical
+textbooks: n > 30)
+ 
+s s
+x z ,x z
+a a 
+1 2 1 2/ /
+   
+n n
+*
+p (population proportion); random sample size assumed to be large
+enough
+  
+(1 ) (1 )
+p p p pp z p z
+,
+a a 
+1 /2 1 /2
+    
+n n
+*Np (count in population); random sample size assumed to be large
+enough
+28
+  
+(1 ) (1 )
+p p p pN p z p z
+,
+a a 
+1 /2 1 /2
+     
+n n
+=== SLIDE 29 ===
+Confidence level, I.
+*confidence level 1-a is the probability
+that one random variable (lower
+boundary) takes a value lower than the
+unknown population parameter and one
+random variable (upper boundary) takes
+a value higher than the unknown
+population parameter
+ 
+S SP X z E X X z
+1 2 1 2( ) 1/ /
+ 
+       
+a a a
+n n
+29
+=== SLIDE 30 ===
+Confidence level, II.
+*In practice, we usually work with one
+random sample, i.e. we may construct
+only one empirical confidence interval.
+*If more random samples could be
+drawn from a population, more
+empirical confidence intervals could be
+constructed.
+ 
+s s
+x z ,x z
+a a 
+1 2 1 2/ /
+   
+n n
+30
+=== SLIDE 31 ===
+Confidence level, III.
+*confidence level 1-a is an approximate proportion
+of constructed empirical confidence intervals
+covering the unknown population parameter
+*in practice: only one empirical confidence interval;
+it may either cover the estimated parameter, or
+not; uncertainty
+*the most common values of 1-a are either 0.9 (90 %),
+0.95 or 0.99 (i.e. a = 0.1, 0.05 or 0.01)
+31
+=== SLIDE 32 ===
+Theoretical assumptions,
+I.
+*e.g. “normal distribution in population”
+ 
+*perfectly satisfied
+S SP X t X t
+1 2 1 2 1
+a am a 
+/ /
+       
+n n
+*only assumed to be satisfied, in practice
+either unknown (uncertainty), or
+satisfied only approximately
+(disturbance of results; uncertainty
+about conclusions)
+32
+=== SLIDE 33 ===
+Theoretical assumptions,
+II.
+*e.g., “normal distribution in population”, “large
+random sample”, etc.
+*the better the assumption is satisfied, the more is
+the use of an inferential statistics tool (e.g.,
+confidence interval) justified
+*in serious analysis, a list of theoretical assumptions
+should be provided and it ought to be discussed if (or
+how much) they are satisfied!
+33
+=== SLIDE 34 ===
+Confidence level, IV.
+*Population (illustrative example): women present at selected
+4ST601 seminars over the past few semesters (N = 87)
+*random variable X: weight (kg)
+*Population mean (in practice unknown!):
+  54 828 kgE X .
+*random sample size: ni = 5 (five randomly selected female
+students)
+* position of a random sample: i (e.g., for 100 random samples: i = 1, 2, 3, …, 99, 100)
+*for each random sample, we know the size,
+arithmetic mean value and sample standard deviation
+value, and thus (assuming a normal distribution of the
+weight in the population):
+Table III.
+ 
+s s
+x t ,x t
+     
+a a 
+1 2 1 2/ /
+Tt
+4
+n n
+34
+=== SLIDE 35 ===
+Confidence level, V.
+*100 random samples were drawn from the population; 95% confidence
+intervals for weight of all female students in the population were
+constructed (one random sample => one confidence interval):
+*94 (i.e. 94 %) of them covered the population mean
+  54 828 kgE X .
+*e.g., random sample 35:
+Table III.
+35
+ 
+. .
+4 382 4 38249 2 2 776 49 2 2 776 43 759 54 641 kg5 5
+   
+. . , . . . , .
+ 
+=== SLIDE 36 ===
+Maximum acceptable
+(sampling) error of
+(interval) estimate
+*notation: D
+*value that represents the width of a
+constructed two-sided confidence
+interval:
+ 
+s s
+x z ,x z
+a a 
+1 2 1 2/ /
+   
+n n
+x ,xD D 
+ 
+36
+=== SLIDE 37 ===
+Confidence interval
+properties I.
+*assuming nothing else changes:
+*accuracy decreases (= interval width
+increases) with rising confidence level
+ 
+s s
+1
+  
+a a
+x z ,x z
+a a 
+1 2 1 2/ /
+    1 2
+n n
+  
+a
+/ za
+1 2 /
+
+*accuracy increases (= interval width
+decreases) with increasing random
+sample size n
+37
+=== SLIDE 38 ===
+Confidence interval
+properties II.
+width accuracy narrower more
+accurate
+wider less
+accurate
+38
+confidence
+level
+decreasing:
+rising:
+=== SLIDE 39 ===
+39
+Confidence interval for
+population mean (expected
+value), example I.
+*Example 1) From a large delivery
+of items, 400 items were randomly
+selected. It was found that the sample
+mean of one of its sizes was 116 mm, the
+sample standard deviation being 4.081
+mm. Determine a point estimate of the
+average size in the whole delivery and,
+assuming random sample size is large
+enough, a two-sided 92% confidence
+interval for the average size in the whole
+delivery.
+=== SLIDE 40 ===
+Confidence interval for
+population mean (expected
+value), example II.
+*Population: all items in the delivery
+*Variable of interest (X): some size (mm)
+*Population parameter of interest: average size, E(X)
+*Random sample:
+n
+
+400  
+assumed to be large enough
+x
+
+116 mm
+
+s .
+4 081 mm
+*Confidence level:
+1 0 92.
+a
+*point estimate of E(X):
+E X x
+( ) 116 mmˆ
+*Interpretation: The point estimate of the average size in
+the whole delivery is 116 mm.
+40
+=== SLIDE 41 ===
+Confidence interval for
+population mean (expected
+value), example III.
+ 
+s s
+x z ,x z
+a a 
+1 2 1 2/ /
+   
+n n
+     
+1 0 08 2 0 961 0 92 0 08 1 751. / .. . z z .a a
+
+4 081  
+. .
+4 081116 1 751 116 1 751 116 0 36 116 0 36
+. , . . , .
+ 
+         
+400 400
+ 115 64 116 36 mm. , .
+*Interpretation: The two-sided 92% confidence
+interval for the average size in the whole
+delivery is from 115.64 to 116.36 millimeters.
+41
+=== SLIDE 42 ===
+Confidence intervals for
+population proportion
+42
+P P P PP P z P z
+        
+Probability
+  
+(1 ) (1 ) 1
+1 /2 1 /2
+ 
+a ap a
+n n
+Sample proportion (random variable)
+  
+(1 ) (1 )
+p p p pp z p z
+,
+a a 
+1 /2 1 /2
+    
+n n
+*where p=nj/n is a value of sample proportion; nj is the
+number of elements with a property of interest in the sample
+*when N is known, also the count (amount) in the population
+Np may be estimated
+  
+(1 ) (1 )
+p p p pN p z p z
+,
+a a 
+1 /2 1 /2
+     n n
+=== SLIDE 43 ===
+Confidence intervals for
+population proportion,
+example I.
+*Example 2 (a bit disgusting ) During the
+control of canned meat expiration date in all
+warehouses of a food company, 320 cans were
+randomly chosen. It was found that 59 of them
+had already expired. Determine a point
+estimate of the proportion of expired cans in
+all warehouses and, assuming random sample
+size is large enough, two-sided 99.8%
+confidence interval for the proportion of
+expired cans in all warehouses.
+43
+=== SLIDE 44 ===
+Confidence intervals for
+population proportion,
+example II.
+*Population: all cans in all warehouses
+*Property of interest: a can has expired
+*Population parameter of interest: proportion of expired cans
+*Random sample (n assumed to be large enough):
+n
+ 
+320 59 0 184
+
+
+p .
+n
+j
+ 
+59 320
+*there were approximately 18.4 % of expired cans in the sample
+44
+*Confidence level:
+1 0 998.
+a
+*point estimate of p :
+p 0 184ˆ
+p .
+*Interpretation: The point estimate of the proportion of expired
+cans in all warehouses is approximately 0.184 (18.4 %).
+=== SLIDE 45 ===
+Confidence intervals for
+population proportion,
+example III.
+  
+(1 ) (1 )
+p p p pp z p z
+,
+a a 
+1 /2 1 /2
+    
+n n
+     
+1 0 002 2 0 9991 0 998 0 002 3 090. / .. . z z .a a
+
+  
+0.184(1 0.184) 0.184(1 0.184)0.184 3.09 ,0.184 3.09320 320
+     
+0.184 0.067, 0.184 0.067 0.117, 0.251
+     
+*Interpretation: The two-sided 99.8% confidence
+interval for the proportion of expired cans in all
+warehouses ranges from 11.7 % to 25.1 %.
+45
+=== SLIDE 46 ===
+46
+Usefulness of
+constructed (empirical)
+confidence intervals
+*may be used to judge a research hypothesis
+*The research hypothesis must be formulated
+before any calculations are carried out (before
+drawing the random sample)!
+*e.g.: proportion of expired cans in all
+warehouses is 15 %
+*constructed interval (0.117, 0.251) supports the
+research hypothesis as it covers 0.15
+*the higher the number of constructed intervals,
+the stronger the support of the research hyp.
+=== SLIDE 47 ===
+Lecture No. 9 is over…
+Any questions? 
+47

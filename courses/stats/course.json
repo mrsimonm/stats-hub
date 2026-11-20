@@ -1,0 +1,24 @@
+{
+  "title": "Statistics Hub",
+  "code": "4ST601",
+  "subtitle": "VŠE Prague · every lecture in one place",
+  "intro": "Every lecture of Statistics (4ST601) at VŠE Prague in one place: step-by-step lessons, flashcards, mock tests, review and one dictionary for the whole course.",
+  "footer": "Built from the 4ST601 lecture slides, seminar exercises and recordings (VŠE Prague).",
+  "testsCard": false,
+  "lectures": [],
+  "planned": [
+    { "n": 1, "title": "Data preparation & basic operations", "sub": "Module 1: Descriptive Statistics · Slides & exercises ready." },
+    { "n": 2, "title": "Frequency tables, quantiles & central tendency", "sub": "Module 1: Descriptive Statistics · Slides, exercises & transcript ready." },
+    { "n": 3, "title": "Central tendency & variation", "sub": "Module 1: Descriptive Statistics · Slides, exercises & transcripts ready." },
+    { "n": 4, "title": "Contingency tables & ANOVA", "sub": "Module 1: Descriptive Statistics · Slides, exercises & transcript ready." },
+    { "n": 5, "title": "Correlation & regression analysis", "sub": "Module 1: Descriptive Statistics · Slides & exercises ready." },
+    { "n": 6, "title": "Time series: means, dynamics, indices & trends", "sub": "Module 2: Time Series · Slides, exercises & transcripts ready." },
+    { "n": 7, "title": "Time series: moving averages & seasonal component", "sub": "Module 2: Time Series · Slides & exercises ready." },
+    { "n": 8, "title": "Probability, random variables & distributions", "sub": "Module 3: Probability · Slides & exercises ready." },
+    { "n": 9, "title": "Important probability distributions", "sub": "Module 3: Probability · Slides & exercises ready." },
+    { "n": 10, "title": "Statistical inference: point & interval estimates", "sub": "Module 4: Inference (4 Dec) · Exercises ready, slides later." },
+    { "n": 11, "title": "Hypothesis tests: mean, proportion & goodness-of-fit", "sub": "Module 4: Inference (11 Dec) · Exercises ready, slides later." },
+    { "n": 12, "title": "Hypothesis tests: contingency, ANOVA & correlation", "sub": "Module 4: Inference (18 Dec) · Exercises ready, slides later." },
+    { "n": 13, "title": "Index numbers", "sub": "Module 2: Time Series & Indices (21 Dec) · Exercises ready, slides later." }
+  ]
+}
