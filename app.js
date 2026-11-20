@@ -45,7 +45,8 @@ function getFile(url,kind){return fetch(url,{cache:"no-cache"}).then(function(r)
 GEO.loadCourse=function(url){
   var base=url.replace(/[^\/]*$/,"");
   return getFile(url,"json").then(function(C){
-    ["title","code","subtitle","intro","footer","testsCard","tests"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
+    ["title","code","subtitle","intro","footer","testsCard","tests","apply"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
+    GEO.course.base=base;
     if(Array.isArray(C.planned))GEO.planned=C.planned;
     document.title=GEO.course.title;
     return Promise.all((C.lectures||[]).map(function(p){
@@ -797,7 +798,7 @@ el("dsearch").oninput=dictTable;
 function progress(){
   var t=CUR,st=tp(t.id),d=Object.keys(st.done).filter(function(k){return st.done[k]}).length,b=S.best[t.id+"-mock7"];
   var sb=el("startbig");if(sb){var all=d>=t.steps.length;
-    sb.innerHTML='<button data-v="learn">▶ '+(d===0?"Start learning":all?"Learn it again":"Continue learning")+'<small>'+(d===0?"Step 1 of "+t.steps.length+", in short bits":all?"All "+t.steps.length+" steps done ✓":"Step "+(st.step+1)+" of "+t.steps.length)+'</small></button><button class="sec" data-quick>⚡ Quick 5 questions<small>2 minutes, no timer. Easiest way in.</small></button><button class="sec" data-v="'+(t.mastery?"mastery":"games")+'">'+(t.mastery?'🏆 Mastery '+mStarsTxt(t)+'<small>Repeat everything until you know it cold</small></button><button class="sec" data-v="games">':'')+'🎮 Games<small>Lightning round, match pairs, type it</small></button>';}
+    sb.innerHTML=(hasApply(t)?'<button data-v="apply">✏️ Apply: real seminar exercises<small>Formula sheet next to each task. Find the value, interpret it, earn XP.</small></button>':'')+'<button data-v="learn"'+(hasApply(t)?' class="sec"':'')+'>▶ '+(d===0?"Start learning":all?"Learn it again":"Continue learning")+'<small>'+(d===0?"Step 1 of "+t.steps.length+", in short bits":all?"All "+t.steps.length+" steps done ✓":"Step "+(st.step+1)+" of "+t.steps.length)+'</small></button><button class="sec" data-quick>⚡ Quick 5 questions<small>2 minutes, no timer. Easiest way in.</small></button><button class="sec" data-v="'+(t.mastery?"mastery":"games")+'">'+(t.mastery?'🏆 Mastery '+mStarsTxt(t)+'<small>Repeat everything until you know it cold</small></button><button class="sec" data-v="games">':'')+'🎮 Games<small>Lightning round, match pairs, type it</small></button>';}
   var rv=S.review.filter(function(id){return ALL[id]&&ALL[id].t===t.id}).length;
   el("progress").innerHTML='<button class="mcard" data-v="learn"><b>Learn, step by step</b><small>'+d+' of '+t.steps.length+' steps done</small></button><button class="mcard" data-v="cards"><b>'+esc(t.cards.tab)+'</b><small>Flip, then play "'+esc(t.cards.who||"Which one am I?")+'"</small></button><button class="mcard" data-v="games"><b>Games</b><small>'+(S.games[t.id+"-tf"]?'Lightning best '+S.games[t.id+"-tf"]:'Quick 5, lightning round, match, type it')+'</small></button><button class="mcard" data-v="mock"><b>Mock test</b><small>'+(b?'Best '+b.s+' / '+b.n:'Not tried yet')+'</small></button><button class="mcard" data-v="review"><b>Review</b><small>'+rv+' to clear</small></button><button class="mcard" data-v="vocab"><b>Vocabulary</b><small>'+t.VOC.length+' terms: flashcards, quiz, dictionary</small></button><button class="mcard" data-v="names"><b>'+esc(t.names.tab)+'</b><small>'+esc(t.names.small||"What you need to know")+'</small></button>';
 }
@@ -1089,10 +1090,11 @@ document.addEventListener("click",function(){var p=el("focuspanel");if(p&&!p.hid
 
 /* ---------- tabs + routing ---------- */
 var TVIEWS=["start","learn","cards","games","mock","review","sheet","names","vocab"];
-function tv(t){return t&&t.mastery?["start","learn","mastery"].concat(TVIEWS.slice(2)):TVIEWS}
+function hasApply(t){return !!(t&&window.GEOApply&&GEOApply.has(t))}
+function tv(t){var a=hasApply(t)?["apply"]:[];return t&&t.mastery?["start"].concat(a,["learn","mastery"],TVIEWS.slice(2)):["start"].concat(a,TVIEWS.slice(1))}
 function tabsFor(t){
   if(!t)return [["home","🏠 Home"],["exam","🎓 Final exam"],["review",'Review<span class="badge" id="rbadge" hidden>0</span>'],["dict","Dictionary"]];
-  return [[t.id,"📍 Overview"],[t.id+"-learn","📖 Learn"]].concat(t.mastery?[[t.id+"-mastery","🏆 Mastery"]]:[]).concat([[t.id+"-cards","🃏 "+esc(t.cards.tab)],[t.id+"-games","🎮 Games"],[t.id+"-mock","📝 Mock test"],[t.id+"-review",'🔁 Review<span class="badge" id="rbadge" hidden>0</span>'],[t.id+"-sheet","📄 Cheat sheet"],[t.id+"-names","🔤 "+esc(t.names.tab)],[t.id+"-vocab","📚 Vocabulary"]]);
+  return [[t.id,"📍 Overview"]].concat(hasApply(t)?[[t.id+"-apply","✏️ Apply"]]:[]).concat([[t.id+"-learn","📖 Learn"]]).concat(t.mastery?[[t.id+"-mastery","🏆 Mastery"]]:[]).concat([[t.id+"-cards","🃏 "+esc(t.cards.tab)],[t.id+"-games","🎮 Games"],[t.id+"-mock","📝 Mock test"],[t.id+"-review",'🔁 Review<span class="badge" id="rbadge" hidden>0</span>'],[t.id+"-sheet","📄 Cheat sheet"],[t.id+"-names","🔤 "+esc(t.names.tab)],[t.id+"-vocab","📚 Vocabulary"]]);
 }
 var tabsKey=null;
 function drawTabs(t,sel){
@@ -1108,7 +1110,7 @@ el("tabs").onclick=function(e){var b=e.target.closest(".tab");if(b)go(b.getAttri
 el("homebtn").onclick=function(){go("home")};
 function go(h){if(location.hash!=="#"+h)location.hash="#"+h;else show(h)}
 GEO.go=go;
-var ALLVIEWS=["home","test","exam","review","dict","start","learn","mastery","cards","games","mock","sheet","names","vocab"];
+var ALLVIEWS=["home","test","exam","review","dict","start","apply","learn","mastery","cards","games","mock","sheet","names","vocab"];
 function showView(v){ALLVIEWS.forEach(function(n){el("v-"+n).hidden=n!==v});el("lessonnav").hidden=v!=="learn"}
 function show(h){
   h=h||"home";var m=/^(t\d+)(?:-([a-z]+))?$/.exec(h);
@@ -1118,6 +1120,7 @@ function show(h){
     if(CUR!==t)renderTopic(t);
     drawTabs(t,v==="start"?t.id:t.id+"-"+v);showView(v);
     if(v==="learn")showStep(tp(t.id).step);else window.scrollTo(0,0);
+    if(v==="apply")GEOApply.open(t);
     if(v==="review")review();if(v==="start")progress();if(v==="games")gamesInit();if(v==="mastery")masteryInit();
     S.last=t.id+(v==="start"?"":"-"+v);save();
     contBar(t,v);
@@ -1139,7 +1142,7 @@ function show(h){
   if(h==="review"){review();el("foot").innerHTML=""}
   if(h==="dict"){dictInit();el("foot").innerHTML=""}
 }
-var TLAB={start:"Overview",learn:"Learn, step by step",mastery:"Mastery",games:"Games",mock:"Mock test",review:"Review",sheet:"Cheat sheet",vocab:"Vocabulary"};
+var TLAB={start:"Overview",apply:"Apply: seminar exercises",learn:"Learn, step by step",mastery:"Mastery",games:"Games",mock:"Mock test",review:"Review",sheet:"Cheat sheet",vocab:"Vocabulary"};
 function contBar(t,v){
   var bar=el("contbar");if(v==="learn"){bar.hidden=true;return}
   var TV=tv(t),i=TV.indexOf(v),label,target;

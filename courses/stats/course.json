@@ -5,6 +5,7 @@
   "intro": "Every lecture and practice of Statistics (4ST601) at VŠE Prague, organised by exam phase: Test 1, Test 2, and Test 3 (Final Exam).",
   "footer": "Built from the 4ST601 lecture slides and seminar exercises (VŠE Prague).",
   "testsCard": false,
+  "apply": { "t7": "apply/t7.json" },
   "lectures": [
     "lectures/t7",
     "lectures/t8",

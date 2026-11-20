@@ -1,0 +1,203 @@
+{
+  "seminar": 8,
+  "title": "Seminar 8 · Probability and random variables",
+  "source": "exercises/8_Exercises_probability_random_variables_generally_after_seminar8_v2.02.docx",
+  "formulas": "prob",
+  "exercises": [
+    {
+      "id": "p2",
+      "text": "The presence of impurities in the dairy (milk) product is being tested by two independent tests. The first test detects impurities with 0.96 probability and the second with 0.98 probability. Calculate the probability that impurities are:",
+      "parts": [
+        { "q": "a) detected by at least one test,", "ans": 0.9992, "show": "0.9992", "f": ["p-indep", "p-union"] },
+        { "q": "b) detected by just one test,", "ans": 0.0584, "show": "0.0584", "f": ["p-indep", "p-disj"] },
+        { "q": "c) not detected by any of the tests.", "ans": 0.0008, "show": "0.0008", "f": ["p-indep", "p-compl"] }
+      ]
+    },
+    {
+      "id": "p3",
+      "text": "We roll a red, blue and green die one time. What is the probability that the sum of points on both blue and green dice will be lower than the number of points on the red die?",
+      "parts": [
+        { "q": "Probability", "ans": 0.0925926, "show": "5/54", "f": ["p-classic"] }
+      ]
+    },
+    {
+      "id": "p4",
+      "text": "Out of 10,000 lottery tickets, 100 win 1,000 euros, 100 win 500 euros and 1,000 tickets win 10 euros. What is the probability that after buying one ticket you will:",
+      "parts": [
+        { "q": "a) win,", "ans": 0.12, "show": "0.12", "f": ["p-classic", "p-disj"] },
+        { "q": "b) win 500 euros,", "ans": 0.01, "show": "0.01", "f": ["p-classic"] },
+        { "q": "c) win at most 500 euros,", "ans": 0.99, "show": "0.99", "f": ["p-classic", "p-compl"] },
+        { "q": "d) win at least 500 euros.", "ans": 0.02, "show": "0.02", "f": ["p-classic", "p-disj"] }
+      ]
+    },
+    {
+      "id": "p5",
+      "text": "Rolling red and blue dice, a higher number on the red die falls. What is the probability that the number 5 falls on the red die?",
+      "parts": [
+        { "q": "Probability", "ans": 0.2666667, "show": "4/15", "f": ["p-classic"] }
+      ]
+    },
+    {
+      "id": "p6",
+      "text": "Random events A and B are independent and for their probabilities it holds P(A)=1/4 and P(B)=3/4. Determine the probability of",
+      "parts": [
+        { "q": "a) intersection of events A and B,", "ans": 0.1875, "show": "3/16", "f": ["p-indep"] },
+        { "q": "b) union of events A and B.", "ans": 0.8125, "show": "13/16", "f": ["p-union", "p-indep"] }
+      ]
+    },
+    {
+      "id": "p7",
+      "text": "We roll a fair six-sided die until the number six falls. What is the probability that we will have to roll:",
+      "parts": [
+        { "q": "a) once,", "ans": 0.1666667, "show": "1/6", "f": ["p-classic"] },
+        { "q": "b) just three times,", "ans": 0.1157407, "show": "25/216", "f": ["p-indep"] },
+        { "q": "c) at least four times,", "ans": 0.578704, "show": "0.578704", "f": ["p-indep"] },
+        { "q": "d) six times at the most?", "ans": 0.665102, "show": "0.665102", "f": ["p-indep", "p-compl"] }
+      ]
+    },
+    {
+      "id": "p8",
+      "text": "The probability that we succeed in phoning through to a broadcasting studio is 0.075. What is the probability that we succeed in the third attempt (i.e. not in the first two attempts)?",
+      "parts": [
+        { "q": "Probability", "ans": 0.064172, "show": "0.064172", "f": ["p-indep", "p-compl"] }
+      ]
+    },
+    {
+      "id": "p9",
+      "text": "A five-digit number consists of odd digits only; individual digits are not repeated (i.e. each one is used only once). What is the probability that a number randomly selected from all possible five-digit numbers with the above property is 35,197? (Hint: use a factorial.)",
+      "parts": [
+        { "q": "Probability", "ans": 0.0083333, "show": "1/120", "f": ["p-classic"] }
+      ]
+    },
+    {
+      "id": "p10",
+      "text": "There are four classes in the first year of primary school. The numbers of boys and girls in individual classes are in the following table:",
+      "table": { "head": ["", "1.A", "1.B", "1.C", "1.D"], "rows": [["Boys", "10", "13", "14", "10"], ["Girls", "15", "13", "12", "13"]] },
+      "after": "What is the probability that a randomly selected",
+      "parts": [
+        { "q": "a) girl is from 1.B,", "ans": 0.245283, "show": "13/53", "f": ["p-classic"] },
+        { "q": "b) pupil is a girl,", "ans": 0.53, "show": "53/100", "f": ["p-classic"] },
+        { "q": "c) boy is neither from 1.A nor 1.B?", "ans": 0.5106383, "show": "24/47", "f": ["p-classic"] }
+      ]
+    },
+    {
+      "id": "p11",
+      "text": "Three gentlemen (Mr. Smith, Mr. Jones and Mr. Williams) take entrance exams at three different universities. Their parents estimate their chances of success are 70 % (Mr. Smith), 40 % (Mr. Jones) and 60 % (Mr. Williams). What is the probability that:",
+      "parts": [
+        { "q": "a) all three succeed,", "ans": 0.168, "show": "0.168", "f": ["p-indep"] },
+        { "q": "b) none of them succeeds,", "ans": 0.072, "show": "0.072", "f": ["p-indep", "p-compl"] },
+        { "q": "c) only Mr. Smith succeeds,", "ans": 0.168, "show": "0.168", "f": ["p-indep", "p-compl"] },
+        { "q": "d) just one of them succeeds,", "ans": 0.324, "show": "0.324", "f": ["p-indep", "p-disj"] },
+        { "q": "e) only Mr. Jones does not succeed,", "ans": 0.252, "show": "0.252", "f": ["p-indep", "p-compl"] },
+        { "q": "f) just two of them succeed and", "ans": 0.436, "show": "0.436", "f": ["p-indep", "p-disj"] },
+        { "q": "g) at least one succeeds.", "ans": 0.928, "show": "0.928", "f": ["p-compl", "p-indep"] }
+      ]
+    },
+    {
+      "id": "p12",
+      "text": "There are 5 red balls, 6 white balls, 8 blue balls and 6 green balls in the drawing drum. We will randomly select three balls. What is the probability that we will get the following sequence of the balls: a) white, blue, red, b) green, red, green, c) white, white, white, d) red, blue, green? First, consider (A) sampling without replacement, and then (B) sampling with replacement.",
+      "parts": [
+        { "q": "(A) without replacement · a) white, blue, red", "ans": 0.017391, "show": "0.017391", "f": ["p-dep"] },
+        { "q": "(A) without replacement · b) green, red, green", "ans": 0.01087, "show": "0.01087", "f": ["p-dep"] },
+        { "q": "(A) without replacement · c) white, white, white", "ans": 0.008696, "show": "0.008696", "f": ["p-dep"] },
+        { "q": "(A) without replacement · d) red, blue, green", "ans": 0.017391, "show": "0.017391", "f": ["p-dep"] },
+        { "q": "(B) with replacement · a) white, blue, red", "ans": 0.01536, "show": "0.01536", "f": ["p-indep"] },
+        { "q": "(B) with replacement · b) green, red, green", "ans": 0.01152, "show": "0.01152", "f": ["p-indep"] },
+        { "q": "(B) with replacement · c) white, white, white", "ans": 0.013824, "show": "0.013824", "f": ["p-indep"] },
+        { "q": "(B) with replacement · d) red, blue, green", "ans": 0.01536, "show": "0.01536", "f": ["p-indep"] }
+      ]
+    },
+    {
+      "id": "rv5",
+      "text": "Random variable X expresses the lifespan of lightbulbs in hours. Interpret the value of 1% quantile (x0.01).",
+      "parts": [
+        { "q": "Interpretation", "type": "text", "f": ["rv-q"], "model": "x0.01 is the lifespan (in hours) that only 1 % of lightbulbs do not exceed: P(X ≤ x0.01) = 0.01. So 1 % of bulbs fail within x0.01 hours and 99 % last longer.", "note": "Model answer written for this app (the seminar file gives none). Check it with your tutor." }
+      ]
+    },
+    {
+      "id": "rv6",
+      "text": "Random variable X expresses the age of 4ST601 students in years. Interpret the value of 95% quantile (x0.95).",
+      "parts": [
+        { "q": "Interpretation", "type": "text", "f": ["rv-q"], "model": "x0.95 is the age (in years) that 95 % of 4ST601 students do not exceed: P(X ≤ x0.95) = 0.95. Only 5 % of students are older than x0.95.", "note": "Model answer written for this app (the seminar file gives none). Check it with your tutor." }
+      ]
+    },
+    {
+      "id": "rv8",
+      "text": "Random variable X has the following probability distribution:",
+      "table": { "head": ["x", "1", "2", "3", "4", "5", "6"], "rows": [["P(x)", "0.1", "0.15", "0.25", "0.2", "0.17", "0.13"]] },
+      "after": "Determine:",
+      "parts": [
+        { "q": "a) P(1 < X ≤ 3),", "ans": 0.4, "show": "0.4", "f": ["rv-int"] },
+        { "q": "b) P(X ≥ 3),", "ans": 0.75, "show": "0.75", "f": ["rv-pf", "p-compl"] },
+        { "q": "c) P(X < 1),", "ans": 0, "show": "0", "f": ["rv-pf"] },
+        { "q": "d) P(3),", "ans": 0.25, "show": "0.25", "f": ["rv-pf"] },
+        { "q": "e) F(3),", "ans": 0.5, "show": "0.5", "f": ["rv-cdf"] },
+        { "q": "f) P(10) and", "ans": 0, "show": "0", "f": ["rv-pf"] },
+        { "q": "g) F(10).", "ans": 1, "show": "1", "f": ["rv-cdf"] }
+      ]
+    },
+    {
+      "id": "rv9",
+      "text": "Random variable X expresses the number of different newspapers bought by a randomly chosen customer. The probability distribution of X is in the following table:",
+      "table": { "head": ["x", "0", "1", "2", "3", "4"], "rows": [["P(x)", "0.25", "0.65", "0.06", "0.03", "0.01"]] },
+      "after": "Calculate the probability that the number of different newspapers bought by a randomly chosen customer is:",
+      "parts": [
+        { "q": "a) higher than 2,", "ans": 0.04, "show": "0.04", "f": ["rv-pf"] },
+        { "q": "b) equal to 2 at most,", "ans": 0.96, "show": "0.96", "f": ["rv-cdf"] },
+        { "q": "c) at least 2,", "ans": 0.1, "show": "0.1", "f": ["rv-pf", "p-compl"] },
+        { "q": "d) higher than 1 and lower than 3.", "ans": 0.06, "show": "0.06", "f": ["rv-int"] }
+      ]
+    },
+    {
+      "id": "rv18",
+      "text": "Calculate the expected value and variance of a discrete random variable X with the knowledge of its distribution law:",
+      "table": { "head": ["x", "-100", "0", "300", "500"], "rows": [["P(x)", "0.1", "0.2", "0.3", "0.4"]] },
+      "parts": [
+        { "q": "Expected value E(X)", "ans": 280, "show": "280", "f": ["rv-ex"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "Variance Var(X)", "ans": 49600, "show": "49,600", "f": ["rv-var"], "note": "Answer calculated for this app (the seminar file prints none)." }
+      ]
+    },
+    {
+      "id": "rv19",
+      "text": "Based on the last four weeks‘ sales figures, it was calculated that the number of customers who buy a new soup produced by the firm Poleko during an hour (random variable X) has the probability distribution described in the following table.",
+      "table": { "head": ["x", "0", "1", "2", "3", "4", "5", "6"], "rows": [["P(x)", "0.15", "0.16", "0.2", "0.18", "0.15", "0.1", "0.06"]] },
+      "after": "Compute (X expresses the number of customers who buy the new soup during randomly selected hours):",
+      "parts": [
+        { "q": "a) P(X ≤ 4),", "ans": 0.84, "show": "0.84", "f": ["rv-cdf"] },
+        { "q": "b) P(2 ≤ X < 6),", "ans": 0.63, "show": "0.63", "f": ["rv-pf", "rv-int"] },
+        { "q": "c) P(X > 2),", "ans": 0.49, "show": "0.49", "f": ["rv-cdf", "p-compl"] },
+        { "q": "d) E(X),", "ans": 2.56, "show": "2.56 customers", "f": ["rv-ex"] },
+        { "q": "e) S.D.(X).", "ans": 1.75682, "show": "1.75682 customers", "f": ["rv-var", "rv-sd"] }
+      ]
+    },
+    {
+      "id": "rv20",
+      "text": "An entrepreneur selling coffee machines needs to find out how often it is necessary to fill the machines with new goods. For this purpose, he needs to calculate the expected value and the variance of the number of coffee cups sold per day. Considering the number of cups sold per day as a random variable X, he managed (on the basis of past observations) to estimate the probability distribution of the variable X as follows:",
+      "table": { "head": ["x", "10", "11", "12", "13", "14", "15"], "rows": [["P(x)", "0.1", "0.15", "0.25", "0.25", "0.2", "0.05"]] },
+      "parts": [
+        { "q": "Expected value E(X)", "ans": 12.45, "show": "12.45 cups", "f": ["rv-ex"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "Variance Var(X)", "ans": 1.8475, "show": "1.8475", "f": ["rv-var"], "note": "Answer calculated for this app (the seminar file prints none)." }
+      ]
+    },
+    {
+      "id": "rv21",
+      "text": "Every month, 100,000 tickets are sold in a lottery. The tickets are sold for 3 CZK. The list of possible wins is in the following table:",
+      "table": { "head": ["Number of wins", "1", "2", "500", "10,000", "89,497"], "rows": [["Lottery prize (in CZK)", "10,000", "5,000", "100", "3", "0"]] },
+      "after": "Calculate: the expected value, variance and standard deviation of prize.",
+      "parts": [
+        { "q": "Expected value of prize (CZK)", "ans": 1, "show": "1 CZK", "f": ["rv-ex"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "Variance of prize", "ans": 1549.9, "show": "1,549.9", "f": ["rv-var"], "note": "Answer calculated for this app (the seminar file prints none)." },
+        { "q": "Standard deviation of prize (CZK)", "ans": 39.3688, "show": "39.369 CZK", "f": ["rv-sd"], "note": "Answer calculated for this app (the seminar file prints none)." }
+      ]
+    },
+    {
+      "id": "rv22",
+      "text": "The favourite Clarion is going to participate in three horse races. In the table below, there are probabilities (based on his previous results) of winning in each race and the prize money for each race.",
+      "table": { "head": ["Race", "Golden Palm", "Champions Cup", "Green Spray"], "rows": [["Probability of winning", "0.4", "0.25", "0.3"], ["Prize money", "500", "1000", "750"]] },
+      "after": "Let´s define a random variable X as the total prize money Clarion will win in all the three races. The results of particular races are considered as independent.",
+      "parts": [
+        { "q": "b) the prize money Clarion´s owner may expect for victories in the races.", "ans": 675, "show": "675", "f": ["rv-ex"] }
+      ]
+    }
+  ]
+}
