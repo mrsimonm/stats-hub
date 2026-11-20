@@ -45,7 +45,7 @@ function getFile(url,kind){return fetch(url,{cache:"no-cache"}).then(function(r)
 GEO.loadCourse=function(url){
   var base=url.replace(/[^\/]*$/,"");
   return getFile(url,"json").then(function(C){
-    ["title","code","subtitle","intro","footer","testsCard"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
+    ["title","code","subtitle","intro","footer","testsCard","tests"].forEach(function(k){if(C[k]!==undefined)GEO.course[k]=C[k]});
     if(Array.isArray(C.planned))GEO.planned=C.planned;
     document.title=GEO.course.title;
     return Promise.all((C.lectures||[]).map(function(p){
@@ -663,6 +663,68 @@ function topicTile(t){
   var rv=S.review.filter(function(id){return ALL[id]&&ALL[id].t===t.id}).length;
   return '<button class="tile tc'+(((t.num-1)%6)+1)+'" data-go="'+t.id+'"><span class="tn">Lecture '+t.num+'</span><span class="tt">'+esc(t.title)+'</span><span class="ts">'+esc(t.blurb)+'</span><span class="st">'+(t.mastery?'🏆 '+mStarsTxt(t)+' · ':'')+t.steps.length+' steps · '+t.Q.length+' questions · '+t.VOC.length+' terms</span><span class="pb"><i style="width:'+Math.round(d/Math.max(1,t.steps.length)*100)+'%"></i></span><span class="st">'+d+' / '+t.steps.length+' steps done'+(b?' · best mock '+b.s+'/'+b.n:'')+(rv?' · '+rv+' to review':'')+'</span></button>';
 }
+function testTopics(ts){
+  if(ts.all)return GEO.topics.slice();
+  return (ts.lectures||[]).map(function(id){return GEO.byId[id]}).filter(Boolean);
+}
+function testStats(ts){
+  var list=testTopics(ts),stepsDone=0,stepsTot=0,stars=0,starsTot=0,qs=0;
+  list.forEach(function(t){
+    var st=tp(t.id);
+    stepsDone+=Object.keys(st.done).filter(function(k){return st.done[k]}).length;
+    stepsTot+=t.steps.length;
+    qs+=t.Q.length;
+    if(t.mastery){starsTot+=4;var m=mst(t);for(var k=1;k<=4;k++)if(m.stars[k]&&m.faded!==k)stars++}
+  });
+  var planN=(ts.planned||[]).length;
+  return {list:list,stepsDone:stepsDone,stepsTot:stepsTot,stars:stars,starsTot:starsTot,qs:qs,planN:planN};
+}
+function testCard(ts,idx){
+  var st=testStats(ts),pct=st.stepsTot?Math.round(st.stepsDone/st.stepsTot*100):0;
+  var meta=st.list.length
+    ?(st.list.length+" active topic"+(st.list.length>1?"s":"")+(st.planN?" + "+st.planN+" upcoming":"")+" · "+st.qs+" questions")
+    :(st.planN+" planned topic"+(st.planN>1?"s":"")+" · slides not added yet");
+  var prog=st.stepsTot
+    ?(st.stepsDone+" / "+st.stepsTot+" steps done"+(st.starsTot?" · ⭐ "+st.stars+" / "+st.starsTot+" stars":""))
+    :"No active lessons yet";
+  return '<button class="tile tc'+((idx%6)+1)+'" data-go="test-'+esc(ts.id)+'">'
+    +'<span class="tn">'+(ts.badge?esc(ts.badge):"Exam phase")+'</span>'
+    +'<span class="tt">'+esc(ts.title)+'</span>'
+    +'<span class="ts">'+esc(ts.sub)+'</span>'
+    +'<span class="st">'+meta+'</span>'
+    +'<span class="pb"><i style="width:'+pct+'%"></i></span>'
+    +'<span class="st">'+prog+'</span></button>';
+}
+function renderTestView(id){
+  var ts=(GEO.course.tests||[]).filter(function(x){return x.id===id})[0];
+  if(!ts){go("home");return}
+  var st=testStats(ts),pct=st.stepsTot?Math.round(st.stepsDone/st.stepsTot*100):0;
+  var h='<div class="row" style="margin-bottom:10px"><button class="ghost" data-go="home">◂ Back to all tests</button></div>';
+  h+='<div class="hero"><h1>'+esc(ts.title)+'</h1><p class="lede">'+esc(ts.sub)+'</p></div>';
+  h+='<div class="card"><b>Your readiness for '+esc(ts.title)+'</b>'
+    +'<p style="margin:6px 0;color:var(--mute);font-size:.95rem">'+(st.stepsTot?st.stepsDone+' / '+st.stepsTot+' steps completed ('+pct+' %)':'No active lessons yet')+(st.starsTot?' · ⭐ '+st.stars+' / '+st.starsTot+' Mastery stars':'')+'</p>'
+    +'<div class="bar"><i style="width:'+pct+'%"></i></div>';
+  if(st.qs){
+    h+='<div class="row" style="margin-top:10px"><button class="btn" id="tmock15">📝 Mock test (15 questions)</button><button class="btn sec" id="tmockall">All '+st.qs+' questions</button></div><div id="test-quiz" style="margin-top:12px"></div>';
+  }else{
+    h+='<p style="margin:8px 0 0;color:var(--mute);font-size:.92rem">Add lecture data for this test to unlock lessons, Mastery, and mock tests.</p>';
+  }
+  h+='</div>';
+  h+='<h2 style="margin-top:20px">Topics in '+esc(ts.title)+'</h2><div class="tiles">';
+  h+=st.list.map(topicTile).join("");
+  h+=(ts.planned||[]).map(function(p){return '<div class="tile planned"><span class="tn">Topic '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("");
+  h+='</div>';
+  var v=el("v-test");v.innerHTML=h;
+  v.onclick=function(e){var b=e.target.closest("[data-go]");if(b)go(b.getAttribute("data-go"))};
+  var runTestMock=function(lim){
+    var pool=shuffle([].concat.apply([],st.list.map(function(t){return t.Q.filter(function(q){return !q.x}).map(function(q){return q.id})})));
+    var ids=lim?pool.slice(0,Math.min(lim,pool.length)):pool;
+    quiz(el("test-quiz"),ids,{key:"test-"+ts.id+(lim?"-15":"-all"),exam:true,mixed:st.list.length>1,again:function(){runTestMock(lim)},reviewHash:"review"});
+  };
+  var b15=el("tmock15"),ball=el("tmockall");
+  if(b15)b15.onclick=function(){runTestMock(15)};
+  if(ball)ball.onclick=function(){runTestMock(0)};
+}
 function renderHome(){
   CUR=null;document.body.setAttribute("data-topic","home");
   var next=GEO.topics.filter(function(t){return t.next})[0];
@@ -674,7 +736,11 @@ function renderHome(){
   h+='<div class="startbig">'+(lastT?'<button data-go="'+esc(S.last)+'">▶ Pick up where you left off<small>L'+lastT.num+' '+esc(lastT.short)+(lm[2]?' · '+(VN[lm[2]]||lm[2]):' · Overview')+'</small></button>':'')+(next?'<button class="'+(lastT?'sec':'')+'" data-quickt="'+next.id+'">⚡ Quick 5 for the next test<small>L'+next.num+' '+esc(next.short)+', 2 minutes</small></button>':'')+'<button class="sec" id="homefocus">⏱ 10-minute focus sprint<small>Timer on, phone away, bonus XP</small></button></div></div>';
   GEO.mDue().forEach(function(t){h+='<div class="card" style="border-color:var(--teach)"><b>🔁 Mastery check due: L'+t.num+' '+esc(t.short)+'</b><p style="margin:4px 0 8px">10 quick items to keep your stars bright.</p><button class="btn" data-go="'+t.id+'-mastery">Do it now</button></div>'});
   if(next)h+='<div class="card nexttest"><h2>Next test: '+esc(next.next)+'</h2><p>The 5-minute test covers <b>lecture '+next.num+': '+esc(next.title)+'</b>.</p><div class="row"><button class="btn" data-go="'+next.id+'">Open lecture '+next.num+'</button><button class="btn sec" data-go="'+next.id+'-mock">Mock test</button></div></div>';
-  h+='<h2 style="margin-top:20px">Lectures</h2><div class="tiles">'+GEO.topics.map(topicTile).join("")+GEO.planned.map(function(p){return '<div class="tile planned"><span class="tn">Lecture '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("")+'</div>';
+  if(Array.isArray(GEO.course.tests)&&GEO.course.tests.length){
+    h+='<h2 style="margin-top:20px">Study by test</h2><div class="tiles">'+GEO.course.tests.map(testCard).join("")+'</div>';
+  }else{
+    h+='<h2 style="margin-top:20px">Lectures</h2><div class="tiles">'+GEO.topics.map(topicTile).join("")+GEO.planned.map(function(p){return '<div class="tile planned"><span class="tn">Lecture '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("")+'</div>';
+  }
   h+='<h2 style="margin-top:20px">Whole course</h2><div class="grid" style="margin-top:10px"><button class="mcard" data-go="exam"><b>Final exam practice</b><small>Mixed questions from the lectures you pick, with a grade estimate</small></button><button class="mcard" data-go="review"><b>Review all</b><small>'+S.review.filter(function(id){return ALL[id]}).length+' wrong answers to clear</small></button><button class="mcard" data-go="dict"><b>Dictionary</b><small>All '+tv+' terms, searchable</small></button>'+(GEO.byId.t1&&GEO.course.testsCard?'<button class="mcard" data-go="t1"><b>How the course works</b><small>Tests, grading, exam dates</small></button>':'')+'</div>';
   if(GEO.course.testsCard)h+='<div class="card"><h2>How the weekly tests work</h2><ul><li>5 minutes at the <b>start</b> of each lecture, about 7 A/B/C/D questions.</li><li>Only on the <b>previous</b> lecture, mostly facts from the lecture. Everything you need is in this hub.</li><li>Extra material (marked <i>not tested</i> here) is never in the test.</li><li>8 tests, the 2 worst are deleted, no retakes. Together they are <b>40 %</b> of your grade, the final exam <b>60 %</b>.</li></ul></div>';
   h+='<div class="card"><h2>Your data</h2><div id="syncbox" style="margin-bottom:10px"></div><p style="font-size:.95rem">Progress and wrong answers are saved in this browser'+(window.GEOSync?' (and synced to Firebase when signed in)':' only')+'.</p><button class="ghost" id="reset">Reset all my progress</button><span id="resetmsg" style="margin-left:10px;font-size:.9rem;color:var(--mute)"></span></div>';
@@ -1042,7 +1108,7 @@ el("tabs").onclick=function(e){var b=e.target.closest(".tab");if(b)go(b.getAttri
 el("homebtn").onclick=function(){go("home")};
 function go(h){if(location.hash!=="#"+h)location.hash="#"+h;else show(h)}
 GEO.go=go;
-var ALLVIEWS=["home","exam","review","dict","start","learn","mastery","cards","games","mock","sheet","names","vocab"];
+var ALLVIEWS=["home","test","exam","review","dict","start","learn","mastery","cards","games","mock","sheet","names","vocab"];
 function showView(v){ALLVIEWS.forEach(function(n){el("v-"+n).hidden=n!==v});el("lessonnav").hidden=v!=="learn"}
 function show(h){
   h=h||"home";var m=/^(t\d+)(?:-([a-z]+))?$/.exec(h);
@@ -1055,6 +1121,13 @@ function show(h){
     if(v==="review")review();if(v==="start")progress();if(v==="games")gamesInit();if(v==="mastery")masteryInit();
     S.last=t.id+(v==="start"?"":"-"+v);save();
     contBar(t,v);
+    return;
+  }
+  if(h.indexOf("test-")===0){
+    CUR=null;document.body.setAttribute("data-topic","home");
+    el("contbar").hidden=true;
+    drawTabs(null,"home");showView("test");window.scrollTo(0,0);
+    renderTestView(h.slice(5));el("foot").innerHTML="";
     return;
   }
   if(["exam","review","dict"].indexOf(h)<0)h="home";

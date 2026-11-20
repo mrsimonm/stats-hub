@@ -1,8 +1,8 @@
 {
   "title": "Statistics Hub",
-  "code": "4ST601 · Test 2",
-  "subtitle": "VŠE Prague · Seminars 8–12 (Test 2 on 18 Dec)",
-  "intro": "Focused prep for 4ST601 Test 2 (Seminar 12, 18 Dec): probability, distributions, point & interval estimates, and hypothesis testing.",
+  "code": "4ST601",
+  "subtitle": "VŠE Prague · organised by Test 1, Test 2 & Test 3",
+  "intro": "Every lecture and practice of Statistics (4ST601) at VŠE Prague, organised by exam phase: Test 1, Test 2, and Test 3 (Final Exam).",
   "footer": "Built from the 4ST601 lecture slides and seminar exercises (VŠE Prague).",
   "testsCard": false,
   "lectures": [
@@ -10,8 +10,42 @@
     "lectures/t8",
     "lectures/t9"
   ],
-  "planned": [
-    { "n": 11, "title": "Hypothesis tests: mean, proportion & goodness-of-fit", "sub": "Seminar 11 (11 Dec) · Exercises ready; lecture slides later." },
-    { "n": 12, "title": "TEST 2 · Hypothesis tests: contingency, ANOVA & correlation", "sub": "Seminar 12 (18 Dec) · Exercises ready; lecture slides later." }
+  "tests": [
+    {
+      "id": "test1",
+      "title": "Test 1 · Mid-term 1",
+      "sub": "Descriptive statistics, contingency/ANOVA, correlation, regression & time series (Seminars 1–7).",
+      "badge": "Mid-term 1 · Done (13 Nov)",
+      "lectures": [],
+      "planned": [
+        { "n": 1, "title": "Data preparation & basic operations", "sub": "Slides & exercises ready if you want to add them for Final Exam review." },
+        { "n": 2, "title": "Frequency tables, quantiles & central tendency", "sub": "Slides, exercises & transcript ready." },
+        { "n": 3, "title": "Central tendency & variation", "sub": "Slides, exercises & transcripts ready." },
+        { "n": 4, "title": "Contingency tables & ANOVA", "sub": "Slides, exercises & transcript ready." },
+        { "n": 5, "title": "Correlation & regression analysis", "sub": "Slides & exercises ready." },
+        { "n": 6, "title": "Time series: means, dynamics, indices & trends", "sub": "Slides, exercises & transcripts ready." }
+      ]
+    },
+    {
+      "id": "test2",
+      "title": "Test 2 · Mid-term 2",
+      "sub": "Probability, distributions, estimates & hypothesis testing (18 Dec · Seminar 12).",
+      "badge": "Up next · 18 Dec",
+      "lectures": ["t7", "t8", "t9"],
+      "planned": [
+        { "n": 11, "title": "Hypothesis tests: mean, proportion & goodness-of-fit", "sub": "Seminar 11 (11 Dec) · Exercises ready; slides added after lecture." },
+        { "n": 12, "title": "Hypothesis tests: contingency, ANOVA & correlation", "sub": "Seminar 12 (18 Dec) · Exercises ready; slides added after lecture." }
+      ]
+    },
+    {
+      "id": "test3",
+      "title": "Test 3 · Final Exam",
+      "sub": "All course topics (1–13) including Index numbers, with mixed mock tests.",
+      "badge": "Final Exam",
+      "all": true,
+      "planned": [
+        { "n": 13, "title": "Index numbers", "sub": "Seminar 13 (21 Dec) · Exercises ready; slides added after lecture." }
+      ]
+    }
   ]
 }
