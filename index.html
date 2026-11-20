@@ -201,7 +201,7 @@ svg.xsec,svg.shadow,svg.qapf{width:100%;height:auto;max-width:380px;display:bloc
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 
 /* ===== ADHD layer: bites, XP, focus, games ===== */
-.hud{display:flex;gap:6px;align-items:center;margin-left:auto}
+.hud{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-left:auto}
 .hudchip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:var(--soft);border-radius:99px;padding:2px 10px;font-size:.84rem;font-weight:700;color:var(--ink);white-space:nowrap}
 .hudchip .lv{display:inline-block;width:46px;height:6px;border-radius:99px;background:var(--line);overflow:hidden}.hudchip .lv i{display:block;height:100%;background:var(--ok)}
 button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
@@ -262,6 +262,29 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 .focuspanel{position:absolute;right:16px;top:44px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);z-index:30;width:250px}
 .focuspanel[hidden]{display:none}
 .focuspanel .row{gap:6px}.focuspanel .row button{flex:1}
+/* ===== Formula panel (lib/formulas.js) ===== */
+.fxpanel{margin:8px 0 2px;border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:10px 12px}
+.fxpanel[hidden]{display:none}
+.fx-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fx-head b{font-family:var(--font-d)}
+.fx-views{display:inline-flex;gap:4px;margin-left:auto}.fx-views[hidden]{display:none}
+.fx-view,.fx-chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:3px 10px;font-size:.84rem;font-weight:700}
+.fx-view[aria-pressed="true"],.fx-chip[aria-pressed="true"]{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.fx-x{border:0;background:none;color:var(--mute);font-size:1rem;padding:2px 6px}
+.fx-chips{display:flex;gap:6px;overflow-x:auto;padding:8px 0 6px}
+.fx-chip{flex:none;white-space:nowrap}
+.fx-pg{font-weight:400;opacity:.75;font-size:.75rem}
+.fx-q{width:100%;box-sizing:border-box;font:inherit;font-size:.92rem;padding:7px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);margin-bottom:6px}
+.fx-q[hidden]{display:none}
+.fx-body{max-height:min(60vh,560px);overflow-y:auto;overscroll-behavior:contain}
+.fx-g{margin:12px 0 6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+.fx-f{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 10px;margin-bottom:6px}
+.fx-n{font-size:.85rem;font-weight:700;color:var(--acc)}
+.fx-tex{overflow-x:auto;overflow-y:hidden;font-family:ui-monospace,monospace;font-size:.8rem;color:var(--mute)}
+.fx-tex.ok{font-family:inherit;font-size:1rem;color:var(--ink)}.fx-tex .katex-display{margin:.3em 0}
+.fx-img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff}
+.fx-note{font-size:.88rem;color:var(--mute);margin:4px 0 8px}
+.fx-full{display:inline-block;font-size:.85rem;font-weight:700;margin:0 0 6px}
 .top-in{position:relative}
 @media (prefers-reduced-motion: reduce){.bite,.toast,.pop,.shake,.confetti i{animation:none!important}}
 .tmbar{margin:10px 0 -4px}.tmbar .ghost{font-size:.85rem;padding:4px 10px}
@@ -438,6 +461,7 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 <script src="lib/firebase-config.js"></script>
 <script src="lib/firebase-sync.js"></script>
 <script src="lib/lecture-lib.js"></script>
+<script src="lib/formulas.js"></script>
 <script src="app.js"></script>
 <script>GEO.start();
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
