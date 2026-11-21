@@ -696,17 +696,28 @@ function testCard(ts,idx){
     +'<span class="pb"><i style="width:'+pct+'%"></i></span>'
     +'<span class="st">'+prog+'</span></button>';
 }
+/* Test page "Lectures" grid, like Geology Hub's Home: one tile per seminar in order.
+   Seminars with a lesson open its tabs (Overview, Learn, Mastery, Games, Mock test, Review…);
+   seminars that only have real exercises so far open those. */
+function testLectures(ts,st){
+  var sets=(window.GEOApply?GEOApply.sets():[]).filter(function(s){return s.test===ts.id||ts.all});
+  var semOfTopic={};sets.forEach(function(s){if(s.topic)semOfTopic[s.topic]=+String(s.id).replace(/\D/g,"")});
+  var items=[],seen={};
+  st.list.forEach(function(t){var n=semOfTopic[t.id];if(n)seen[n]=1;items.push({n:n||t.num,html:topicTile(t).replace('<span class="tn">Lecture '+t.num+'</span>','<span class="tn">'+(n?'Seminar '+n+' · ':'')+'Lecture '+t.num+'</span>')})});
+  sets.forEach(function(s,k){var n=+String(s.id).replace(/\D/g,"");if(s.topic&&GEO.byId[s.topic]&&st.list.indexOf(GEO.byId[s.topic])>=0)return;seen[n]=1;
+    items.push({n:n,html:'<button class="tile tc'+(((n-1)%6)+1)+'" data-go="ap-'+esc(s.id)+'"><span class="tn">Seminar '+n+'</span><span class="tt">'+esc(String(s.title).replace(/^Seminar \d+ · /,""))+'</span><span class="ts">Real seminar exercises with the formula sheet beside them. The lesson tabs come after the lecture slides are added.</span><span class="st">✏️ Exercises</span></button>'})});
+  (ts.planned||[]).forEach(function(p){if(seen[p.n])return;items.push({n:p.n,html:'<div class="tile planned"><span class="tn">Seminar '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'})});
+  items.sort(function(a,b){return a.n-b.n});
+  return '<h2 style="margin-top:20px">Lectures</h2><div class="tiles">'+items.map(function(x){return x.html}).join("")+'</div>';
+}
 function renderTestView(id){
   var ts=(GEO.course.tests||[]).filter(function(x){return x.id===id})[0];
   if(!ts){go("home");return}
   var st=testStats(ts),pct=st.stepsTot?Math.round(st.stepsDone/st.stepsTot*100):0;
   var h='<div class="row" style="margin-bottom:10px"><button class="ghost" data-go="home">◂ Back to all tests</button></div>';
   h+='<div class="hero"><h1>'+esc(ts.title)+'</h1><p class="lede">'+esc(ts.sub)+'</p></div>';
+  h+=testLectures(ts,st);
   if(window.GEOPath)h+=GEOPath.cta(ts.id);
-  h+='<h2 style="margin-top:20px">📖 Lessons: Learn, Review, Mastery, Games</h2><p class="lede" style="font-size:.95rem;margin-top:0">Tap a topic to open its lesson tabs.</p><div class="tiles">';
-  h+=st.list.map(topicTile).join("");
-  h+=(ts.planned||[]).map(function(p){return '<div class="tile planned"><span class="tn">Topic '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("");
-  h+='</div>';
   if(window.GEOApply)h+=GEOApply.testBlock(ts.id);
   h+='<div class="card"><b>Your readiness for '+esc(ts.title)+'</b>'
     +'<p style="margin:6px 0;color:var(--mute);font-size:.95rem">'+(st.stepsTot?st.stepsDone+' / '+st.stepsTot+' steps completed ('+pct+' %)':'No active lessons yet')+(st.starsTot?' · ⭐ '+st.stars+' / '+st.starsTot+' Mastery stars':'')+'</p>'
