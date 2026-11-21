@@ -1,0 +1,440 @@
+{
+  "num": 10,
+  "id": "t10",
+  "title": "Statistical Hypothesis Tests: Mean, Proportion & Goodness of Fit",
+  "short": "Hypothesis tests I",
+  "sub": "Lecture 10 · Seminar 11 · H0 and H1, five steps, t- and z-tests, chi-square goodness-of-fit",
+  "blurb": "Null and alternative hypotheses, significance level, the five steps of every test, rejection regions, t- and z-tests of the mean, the z-test of a proportion and the chi-square goodness-of-fit test.",
+  "h1": "Statistical Hypothesis Tests: Mean, Proportion & Goodness of Fit",
+  "lede": "A hypothesis test uses one random sample to judge a claim about a whole population. Every test in 4ST601 follows the same five steps; what changes is the test statistic and which tail of the distribution the rejection region is in.",
+  "six": [
+    "**H0** says the parameter equals a value; **H1** says &gt;, &lt; or ≠.",
+    "Five steps: H0/H1 → test statistic → its value → **rejection region** → **conclusion** in words.",
+    "Value in W: “**inconsistent with H0 in favour of H1**”; otherwise “**not inconsistent with H0**”.",
+    "**H1 decides the tail**: &gt; right, &lt; left, ≠ both tails with α/2.",
+    "Normal population, σ² unknown → **t(n − 1)**; large sample or proportion → **z**.",
+    "**Goodness of fit**: g = Σ (n − n′)²/n′, n′ = nπ0, df = k − 1, always the right tail."
+  ],
+  "must": "The five steps, choosing the tail, and the t-, z- and goodness-of-fit tests",
+  "foot": "Source: 4ST601 Seminar 11 exercise file (worked procedure and conclusions) and the official formula sheet, page 7. TODO: verify against the Lecture 10 slides when they are added.",
+  "questions": [
+    {
+      "id": "t10-h0",
+      "q": "What does the null hypothesis H0 state in a test of a population mean?",
+      "answer": "The mean equals the claimed value, e.g. E(X) = 3,500 g",
+      "wrong": [
+        "The mean is lower than the claimed value",
+        "The sample mean is wrong",
+        "The mean differs from the claimed value"
+      ],
+      "e": "H0 always contains the equality; the alternative H1 contains >, < or ≠.",
+      "fol": true
+    },
+    {
+      "id": "t10-alpha",
+      "q": "What is the significance level α?",
+      "answer": "The accepted probability of wrongly rejecting a true H0",
+      "wrong": [
+        "The probability that H0 is true",
+        "The sample proportion",
+        "The width of the confidence interval"
+      ],
+      "e": "α is the risk you accept of rejecting H0 although it is true (type 1 error)."
+    },
+    {
+      "id": "t10-steps-order",
+      "q": "Which is the correct order of the steps of a hypothesis test?",
+      "answer": "H0 and H1 → test statistic → its value → rejection region → conclusion",
+      "wrong": [
+        "Conclusion → H0 and H1 → value → rejection region → statistic",
+        "Value → H0 and H1 → conclusion → rejection region → statistic",
+        "Rejection region → value → H0 and H1 → statistic → conclusion"
+      ],
+      "e": "The seminar file always uses the same five steps in this order.",
+      "fol": true
+    },
+    {
+      "id": "t10-wording",
+      "q": "The value of the test statistic is not in the rejection region. How does the seminar file word the conclusion?",
+      "answer": "The value of the test statistic is not inconsistent with H0",
+      "wrong": [
+        "H0 has been proven true",
+        "We accept H1",
+        "The value of the test statistic is inconsistent with H0"
+      ],
+      "e": "The file never says H0 is true; it says the result is not inconsistent with H0.",
+      "fol": true
+    },
+    {
+      "id": "t10-tail-decline",
+      "q": "A company worries the mean number of passengers has dropped below 36. Which H1?",
+      "answer": "E(X) < 36",
+      "wrong": [
+        "E(X) > 36",
+        "E(X) ≠ 36",
+        "E(X) = 36"
+      ],
+      "e": "A worry about a decline means a left-tailed alternative."
+    },
+    {
+      "id": "t10-two-tail",
+      "q": "H1: E(X) ≠ 28,306 at α = 0.06. Which quantile is the critical value?",
+      "answer": "z0.97",
+      "wrong": [
+        "z0.94",
+        "z0.06",
+        "z0.03"
+      ],
+      "e": "Two-tailed: 1 − α/2 = 1 − 0.03 = 0.97.",
+      "fol": true
+    },
+    {
+      "id": "t10-which-t",
+      "q": "Normal population, σ² unknown, n = 15. Which distribution does the test statistic have if H0 is true?",
+      "answer": "t-distribution with 14 degrees of freedom",
+      "wrong": [
+        "Standard normal N(0, 1)",
+        "Chi-square with 14 degrees of freedom",
+        "t-distribution with 15 degrees of freedom"
+      ],
+      "e": "Normal population and unknown variance → T ~ t(n − 1) = t(14)."
+    },
+    {
+      "id": "t10-prop-denominator",
+      "q": "In the z-test of a proportion, what goes under the square root?",
+      "answer": "π0(1 − π0)/n, using the value from H0",
+      "wrong": [
+        "p(1 − p)/n, using the sample proportion",
+        "s²/n",
+        "n/π0"
+      ],
+      "e": "In the test we assume H0 is true, so π0 is used.",
+      "fol": true
+    },
+    {
+      "id": "t10-bigger-n",
+      "q": "The same difference between p and π0 is not significant for n = 250 but is significant for n = 1,500. Why?",
+      "answer": "A bigger sample makes the standard error smaller, so |z| grows",
+      "wrong": [
+        "The significance level changed",
+        "A bigger sample always rejects H0",
+        "π0 changed"
+      ],
+      "e": "z = (p − π0)/√(π0(1 − π0)/n): with larger n the denominator shrinks, so |z| gets bigger."
+    },
+    {
+      "id": "t10-gof-df",
+      "q": "A goodness-of-fit test has 6 categories. How many degrees of freedom does the chi-square distribution have?",
+      "answer": "5",
+      "wrong": [
+        "6",
+        "7",
+        "1"
+      ],
+      "e": "df = k − 1 = 6 − 1 = 5.",
+      "fol": true
+    },
+    {
+      "id": "t10-gof-expected",
+      "q": "n = 200 and π0 = 0.25 for a category. What is its expected frequency n′?",
+      "answer": "50",
+      "wrong": [
+        "25",
+        "0.25",
+        "200"
+      ],
+      "e": "n′ = n · π0 = 200 · 0.25 = 50."
+    },
+    {
+      "id": "t10-gof-tail",
+      "q": "Where is the rejection region of the chi-square goodness-of-fit test?",
+      "answer": "Always in the right tail: g ≥ χ²(1−α)",
+      "wrong": [
+        "Always in the left tail",
+        "In both tails",
+        "It depends on H1"
+      ],
+      "e": "Large g means a big difference between observed and expected, so only the right tail."
+    },
+    {
+      "id": "t10-z-large",
+      "q": "General distribution in the population, n = 50 (large enough). Which test of the mean?",
+      "answer": "z-test, Z approximately N(0, 1)",
+      "wrong": [
+        "t-test with 49 degrees of freedom",
+        "Chi-square test",
+        "F-test"
+      ],
+      "e": "With a large random sample and a general distribution, Z ≈ N(0, 1)."
+    },
+    {
+      "id": "t10-reject-left",
+      "q": "Left-tailed z-test, α = 0.01, z = −2.687. What is the conclusion?",
+      "answer": "Inconsistent with H0 in favour of H1 (z ≤ −2.326)",
+      "wrong": [
+        "Not inconsistent with H0",
+        "H0 is proven",
+        "The test cannot be done"
+      ],
+      "e": "W = {z ≤ −z0.99} = {z ≤ −2.326}; −2.687 lies in W.",
+      "fol": true
+    },
+    {
+      "id": "t10-significant",
+      "q": "What does “statistically significant” tell us?",
+      "answer": "Only that H0 was rejected; nothing about practical importance",
+      "wrong": [
+        "That the difference is large and important",
+        "That H0 is true",
+        "That the sample is not random"
+      ],
+      "e": "The seminar file stresses it is just a label, not practical significance."
+    },
+    {
+      "id": "t10-high-alpha",
+      "q": "Why is a test at an 80 % significance level useless in practice?",
+      "answer": "The rejection region is huge, so the type 1 error probability is huge",
+      "wrong": [
+        "It never rejects H0",
+        "It needs a sample of 80 elements",
+        "The test statistic cannot be calculated"
+      ],
+      "e": "The file’s note: critical values are very close to zero, so almost any value falls into W."
+    }
+  ],
+  "vocab": [
+    {
+      "group": "Basics",
+      "term": "Statistical hypothesis test",
+      "meaning": "A procedure that uses a random sample to judge a hypothesis about a population parameter or distribution."
+    },
+    {
+      "group": "Basics",
+      "term": "Null hypothesis",
+      "meaning": "H0: the parameter equals the claimed value (contains the equality)."
+    },
+    {
+      "group": "Basics",
+      "term": "Alternative hypothesis",
+      "meaning": "H1: what the research expects, with >, < or ≠ (or non H0)."
+    },
+    {
+      "group": "Basics",
+      "term": "Research hypothesis",
+      "meaning": "The claim the researcher wants to support, decided before any calculation; it guides the choice of H1."
+    },
+    {
+      "group": "Basics",
+      "term": "Significance level",
+      "meaning": "α: the accepted probability of rejecting H0 although it is true."
+    },
+    {
+      "group": "Basics",
+      "term": "Type 1 error",
+      "meaning": "Rejecting H0 although H0 is true; its probability is α."
+    },
+    {
+      "group": "Procedure",
+      "term": "Test statistic",
+      "meaning": "A random variable (T, Z, G) whose distribution is known if H0 is true."
+    },
+    {
+      "group": "Procedure",
+      "term": "Value of the test statistic",
+      "meaning": "The number (t, z, g) calculated from the sample."
+    },
+    {
+      "group": "Procedure",
+      "term": "Rejection region",
+      "meaning": "W(α): values of the test statistic that are inconsistent with H0; bounded by quantiles from the tables."
+    },
+    {
+      "group": "Procedure",
+      "term": "Critical value",
+      "meaning": "The quantile that forms the boundary of the rejection region, e.g. z(1−α/2)."
+    },
+    {
+      "group": "Procedure",
+      "term": "Right-tailed test",
+      "meaning": "H1 with >: rejection region in the right tail."
+    },
+    {
+      "group": "Procedure",
+      "term": "Two-tailed test",
+      "meaning": "H1 with ≠: rejection region in both tails, each with α/2."
+    },
+    {
+      "group": "Tests",
+      "term": "t-test of the mean",
+      "meaning": "Mean of a normal population with unknown variance: t = (x̄ − μ0)/s · √n, T ~ t(n − 1)."
+    },
+    {
+      "group": "Tests",
+      "term": "z-test of a proportion",
+      "meaning": "z = (p − π0)/√(π0(1 − π0)/n), approximately N(0, 1) for a large sample."
+    },
+    {
+      "group": "Tests",
+      "term": "Goodness-of-fit test",
+      "meaning": "Chi-square test of whether the distribution in the population matches assumed proportions π0,j; df = k − 1."
+    },
+    {
+      "group": "Tests",
+      "term": "Expected frequency",
+      "meaning": "n′ = n · π0,j: the count expected in category j if H0 is true."
+    }
+  ],
+  "confusable": [
+    [
+      "Null hypothesis",
+      "Alternative hypothesis"
+    ],
+    [
+      "Test statistic",
+      "Value of the test statistic",
+      "Critical value"
+    ],
+    [
+      "Right-tailed test",
+      "Two-tailed test"
+    ],
+    [
+      "t-test of the mean",
+      "z-test of a proportion",
+      "Goodness-of-fit test"
+    ]
+  ],
+  "facts": [
+    [
+      1,
+      "The null hypothesis always contains the {equality|inequality|sample mean|significance level}."
+    ],
+    [
+      1,
+      "The significance level is the probability of a type {1|2|3|0} error."
+    ],
+    [
+      2,
+      "Every hypothesis test in 4ST601 follows {5|3|4|6} steps."
+    ],
+    [
+      2,
+      "If the value is outside the rejection region, it is not {inconsistent|consistent|significant|equal} with H0."
+    ],
+    [
+      3,
+      "A worry about a decline gives a {left|right|two|both}-tailed test."
+    ],
+    [
+      3,
+      "A test of whether a value is the same gives a {two|left|right|one}-tailed test."
+    ],
+    [
+      4,
+      "A normal population with unknown variance uses the {t|z|chi-square|F} distribution."
+    ],
+    [
+      4,
+      "The denominator of the z-test of a proportion uses the value of pi from {H0|the sample|H1|the table}."
+    ],
+    [
+      5,
+      "The goodness-of-fit test with k categories has k minus {1|2|0|k} degrees of freedom."
+    ],
+    [
+      5,
+      "The rejection region of the goodness-of-fit test is always in the {right|left|middle|both} tail."
+    ]
+  ],
+  "cards": {
+    "tab": "Test cards",
+    "h1": "Which test do I use?",
+    "who": "Which test am I?",
+    "labels": {
+      "when": "When",
+      "stat": "Test statistic",
+      "dist": "If H0 is true",
+      "W": "Rejection region"
+    },
+    "keys": [
+      "when",
+      "stat",
+      "dist",
+      "W"
+    ],
+    "items": [
+      {
+        "n": "t-test of the mean",
+        "grp": "Mean",
+        "when": "Normal population, σ² unknown",
+        "stat": "t = (x̄ − μ0)/s · √n",
+        "dist": "t(n − 1)",
+        "W": "by H1: t ≥ t(1−α), t ≤ −t(1−α), |t| ≥ t(1−α/2)"
+      },
+      {
+        "n": "z-test of the mean",
+        "grp": "Mean",
+        "when": "General population, large sample",
+        "stat": "z = (x̄ − μ0)/s · √n",
+        "dist": "≈ N(0, 1)",
+        "W": "by H1, with z quantiles"
+      },
+      {
+        "n": "z-test of a proportion",
+        "grp": "Proportion",
+        "when": "Proportion, large sample",
+        "stat": "z = (p − π0)/√(π0(1 − π0)/n)",
+        "dist": "≈ N(0, 1)",
+        "W": "by H1, with z quantiles"
+      },
+      {
+        "n": "Chi-square goodness of fit",
+        "grp": "Distribution",
+        "when": "Do the category shares match π0,j?",
+        "stat": "g = Σ (n − n′)²/n′",
+        "dist": "≈ χ²(k − 1)",
+        "W": "g ≥ χ²(1−α), right tail only"
+      }
+    ]
+  },
+  "sheet": [
+    [
+      "Choosing the tail",
+      [
+        "H1",
+        "Rejection region"
+      ],
+      [
+        [
+          "parameter > value",
+          "right tail, quantile 1 − α"
+        ],
+        [
+          "parameter < value",
+          "left tail, minus quantile 1 − α"
+        ],
+        [
+          "parameter ≠ value",
+          "both tails, quantile 1 − α/2"
+        ]
+      ]
+    ],
+    [
+      "Conclusion wording",
+      [
+        "Value of the test statistic",
+        "Write"
+      ],
+      [
+        [
+          "in W",
+          "inconsistent with H0 in favour of H1 that …"
+        ],
+        [
+          "not in W",
+          "not inconsistent with H0 that …"
+        ]
+      ]
+    ]
+  ]
+}

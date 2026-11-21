@@ -10,7 +10,8 @@
       "id": "s7",
       "title": "Seminar 7 · Time series: moving averages and the seasonal component",
       "file": "apply/s7.json",
-      "test": "test2"
+      "test": "test2",
+      "topic": "t6"
     },
     {
       "id": "s8",
@@ -37,19 +38,24 @@
       "id": "s11",
       "title": "Seminar 11 · Hypothesis tests: mean, proportion, goodness of fit",
       "file": "apply/s11.json",
-      "test": "test2"
+      "test": "test2",
+      "topic": "t10"
     },
     {
       "id": "s12",
       "title": "Seminar 12 · Tests of dependence: contingency, ANOVA, correlation, regression, trend",
       "file": "apply/s12.json",
-      "test": "test3"
+      "test": "test3",
+      "topic": "t11"
     }
   ],
   "lectures": [
+    "lectures/t6",
     "lectures/t7",
     "lectures/t8",
-    "lectures/t9"
+    "lectures/t9",
+    "lectures/t10",
+    "lectures/t11"
   ],
   "tests": [
     {
@@ -97,17 +103,13 @@
       "sub": "Time series smoothing & seasonality, probability, distributions, estimates and hypothesis tests of mean, proportion & goodness of fit (Seminars 7–11 · test 18 Dec).",
       "badge": "Up next · 18 Dec",
       "lectures": [
+        "t6",
         "t7",
         "t8",
-        "t9"
+        "t9",
+        "t10"
       ],
-      "planned": [
-        {
-          "n": 11,
-          "title": "Hypothesis tests: mean, proportion & goodness-of-fit",
-          "sub": "Seminar 11 (11 Dec) · Real exercises ready above in ✏️ Practise. Lesson comes after the lecture."
-        }
-      ]
+      "planned": []
     },
     {
       "id": "test3",
@@ -116,11 +118,6 @@
       "badge": "Final Exam",
       "all": true,
       "planned": [
-        {
-          "n": 12,
-          "title": "Hypothesis tests: contingency, ANOVA & correlation",
-          "sub": "Seminar 12 · Real exercises ready in ✏️ Practise and in the Test 3 study path. Lesson comes after the lecture."
-        },
         {
           "n": 13,
           "title": "Index numbers",

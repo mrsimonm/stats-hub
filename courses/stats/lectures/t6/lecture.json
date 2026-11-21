@@ -1,0 +1,459 @@
+{
+  "num": 6,
+  "id": "t6",
+  "title": "Time Series: Moving Averages & Seasonal Component",
+  "short": "Moving averages & seasonality",
+  "sub": "Lecture 6 · Seminar 7 · moving averages, seasonal differences & indices, regression approach",
+  "blurb": "Smoothing a time series with simple and centred moving averages, choosing m, seasonal differences and indices by the simple approach, and the regression approach with dummy variables.",
+  "h1": "Time Series: Moving Averages & the Seasonal Component",
+  "lede": "Moving averages smooth a time series and give its trend. With the trend in hand, you can measure how strongly each season pushes the values up or down: by seasonal differences (additive) or seasonal indices (multiplicative), either in separate steps or with one regression.",
+  "six": [
+    "A **moving average** smooths a series; the smoothed values are the **trend component** tr<sub>t</sub>.",
+    "With a seasonal component choose **m = length of seasonality** (4 quarters, 7 days, 12 months).",
+    "Even m → **centred moving average**; odd m = 2p + 1 loses p values at each end.",
+    "**Additive** decomposition → **seasonal differences** sd (same units, add up to 0).",
+    "**Multiplicative** decomposition → **seasonal indices** si (relative, add up to s).",
+    "**Regression approach**: ā = (a1 + a2 + a3)/4, b0 = b0* + ā, sd<sub>j</sub> = a<sub>j</sub> − ā, sd4 = −ā."
+  ],
+  "must": "Moving averages with m = s and seasonal differences / indices",
+  "foot": "Source: 4ST601 Lecture 6 slides (file slides/text/6-time-series-trends.txt) and Seminar 7 exercises.",
+  "questions": [
+    {
+      "id": "t6-ma-what",
+      "q": "What does a series of moving averages represent?",
+      "answer": "The trend component tr(t)",
+      "wrong": [
+        "The seasonal component",
+        "The random component",
+        "The prediction for next year"
+      ],
+      "e": "Moving averages smooth out short-term variation; the smoothed values estimate the trend component.",
+      "fol": true
+    },
+    {
+      "id": "t6-ma-lost",
+      "q": "A simple moving average of length m = 7 is used. How many time points at each end have no moving average?",
+      "answer": "3",
+      "wrong": [
+        "7",
+        "1",
+        "None"
+      ],
+      "e": "m = 2p + 1 = 7 gives p = 3, so the first 3 and the last 3 points are lost."
+    },
+    {
+      "id": "t6-m-monthly",
+      "q": "Monthly data with a seasonal pattern. Which length m of moving average should you choose?",
+      "answer": "12",
+      "wrong": [
+        "3",
+        "4",
+        "7"
+      ],
+      "e": "With a seasonal component, m equals the length of seasonality: 12 months.",
+      "fol": true
+    },
+    {
+      "id": "t6-centred",
+      "q": "When do you need a centred moving average?",
+      "answer": "When m is even (for example 4 or 12)",
+      "wrong": [
+        "When m is odd",
+        "When the data have no trend",
+        "Only for daily data"
+      ],
+      "e": "With even m the window has no middle point, so two neighbouring averages are averaged to centre the result on t."
+    },
+    {
+      "id": "t6-predict",
+      "q": "Can moving averages be used to predict future values of the time series?",
+      "answer": "No, the values at the ends of the series are missing",
+      "wrong": [
+        "Yes, always",
+        "Yes, but only for quarterly data",
+        "Only when m = 3"
+      ],
+      "e": "The lecture lists this as a disadvantage: moving averages cannot predict the future development of a series."
+    },
+    {
+      "id": "t6-sd-units",
+      "q": "In what units are seasonal differences expressed?",
+      "answer": "In the same units as the time series",
+      "wrong": [
+        "In per cent",
+        "They have no units",
+        "In years"
+      ],
+      "e": "Seasonal differences come from additive decomposition (y − tr), so they keep the units of the series.",
+      "fol": true
+    },
+    {
+      "id": "t6-si-meaning",
+      "q": "A seasonal index for Q1 is 0.693. What does it mean?",
+      "answer": "Q1 values are on average about 30.7 % below the trend",
+      "wrong": [
+        "Q1 values are 0.693 units below the trend",
+        "Q1 values are 69.3 % above the trend",
+        "Q1 has 0.693 more observations"
+      ],
+      "e": "Seasonal indices are relative: 0.693 means 69.3 % of the trend value, i.e. about 30.7 % below it.",
+      "fol": true
+    },
+    {
+      "id": "t6-additive-when",
+      "q": "When is additive decomposition (seasonal differences) appropriate?",
+      "answer": "When seasonal variations are stable in time",
+      "wrong": [
+        "When seasonal variations grow with the level of the series",
+        "Only when there is no trend",
+        "Only for monthly data"
+      ],
+      "e": "Stable seasonal variations → additive; variations that change in time → multiplicative."
+    },
+    {
+      "id": "t6-sum-sd",
+      "q": "What do the seasonal differences of all seasons add up to?",
+      "answer": "0",
+      "wrong": [
+        "s, the length of seasonality",
+        "1",
+        "100"
+      ],
+      "e": "Seasonal differences compensate each other over a whole period, so they add up to 0."
+    },
+    {
+      "id": "t6-sum-si",
+      "q": "What do the seasonal indices of all seasons add up to?",
+      "answer": "s, the length of seasonality",
+      "wrong": [
+        "0",
+        "1",
+        "100"
+      ],
+      "e": "Seasonal indices are adjusted so that their sum equals s (e.g. 4 for quarters)."
+    },
+    {
+      "id": "t6-simple-step1",
+      "q": "What is the first step of the simple approach to the seasonal component?",
+      "answer": "Calculate the trend with moving averages of length m = s",
+      "wrong": [
+        "Calculate the seasonal indices",
+        "Run a regression with dummy variables",
+        "Remove the outliers"
+      ],
+      "e": "The simple approach first gets tr(t) by moving averages, then works out y − tr or y / tr."
+    },
+    {
+      "id": "t6-adjusted",
+      "q": "How do you get a seasonally adjusted series with seasonal differences?",
+      "answer": "Subtract the seasonal difference of the season from each value",
+      "wrong": [
+        "Divide each value by the seasonal difference",
+        "Add the trend to each value",
+        "Multiply by the seasonal index"
+      ],
+      "e": "A seasonally adjusted series has the seasonal component removed: y(t) − sd(j)."
+    },
+    {
+      "id": "t6-reg-together",
+      "q": "What is special about the regression approach to the seasonal component?",
+      "answer": "Trend and seasonal component are calculated at the same time",
+      "wrong": [
+        "It does not need any data",
+        "It only gives the trend",
+        "It uses moving averages"
+      ],
+      "e": "In the regression approach trend and seasonality are estimated together in one multiple regression with dummy variables."
+    },
+    {
+      "id": "t6-sd4",
+      "q": "In the regression approach (quarterly data), how is sd4 calculated?",
+      "answer": "sd4 = −ā",
+      "wrong": [
+        "sd4 = a4",
+        "sd4 = ā",
+        "sd4 = 0"
+      ],
+      "e": "The 4th quarter has no dummy (a4 = 0), so sd4 = 0 − ā = −ā.",
+      "fol": true
+    },
+    {
+      "id": "t6-b0",
+      "q": "In the regression approach, what is the intercept of the linear trend?",
+      "answer": "b0 = b0* + ā",
+      "wrong": [
+        "b0 = b0*",
+        "b0 = b0* − ā",
+        "b0 = ā"
+      ],
+      "e": "The constant from Excel, b0*, must be corrected by the mean of the dummy coefficients: b0 = b0* + ā."
+    },
+    {
+      "id": "t6-first-ma",
+      "q": "Weekly cycle of daily data: 6, 7, 8, 9, 8, 2, 1 (Mon–Sun). What is the first moving average and where does it belong?",
+      "answer": "5.857, on Thursday (t = 4)",
+      "wrong": [
+        "5.857, on Monday (t = 1)",
+        "8, on Sunday (t = 7)",
+        "6, on Wednesday (t = 3)"
+      ],
+      "e": "m = 7, p = 3: (6+7+8+9+8+2+1)/7 = 41/7 = 5.857, centred on t = 4."
+    }
+  ],
+  "vocab": [
+    {
+      "group": "Smoothing",
+      "term": "Moving average",
+      "meaning": "Mean of a window of m values around time t, moved along the series; the smoothed values estimate the trend."
+    },
+    {
+      "group": "Smoothing",
+      "term": "Simple moving average",
+      "meaning": "Moving average of odd length m = 2p + 1: arithmetic mean of p values before t, y(t) and p values after t."
+    },
+    {
+      "group": "Smoothing",
+      "term": "Centred moving average",
+      "meaning": "Moving average of even length m = 2p: the mean of two neighbouring windows, so the result belongs to time point t."
+    },
+    {
+      "group": "Smoothing",
+      "term": "Length of moving average",
+      "meaning": "The number of values m in each window; with seasonality m equals the length of seasonality s."
+    },
+    {
+      "group": "Smoothing",
+      "term": "Length of seasonality",
+      "meaning": "The number of seasons in one cycle, s: 4 for quarters, 12 for months, 7 for days of a week."
+    },
+    {
+      "group": "Decomposition",
+      "term": "Trend component",
+      "meaning": "tr(t): the long-term direction of a time series."
+    },
+    {
+      "group": "Decomposition",
+      "term": "Seasonal component",
+      "meaning": "s(t): regular variation within one period (year, week) repeating every season."
+    },
+    {
+      "group": "Decomposition",
+      "term": "Additive decomposition",
+      "meaning": "y(t) = tr(t) + s(t) + c(t) + e(t); used when seasonal variations are stable in time."
+    },
+    {
+      "group": "Decomposition",
+      "term": "Multiplicative decomposition",
+      "meaning": "y(t) = tr(t) · s(t) · c(t) · e(t); used when seasonal variations are not stable in time."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Seasonal difference",
+      "meaning": "sd(j): effect of season j in the units of the series (additive); all seasonal differences add up to 0."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Seasonal index",
+      "meaning": "si(j): relative effect of season j (multiplicative), without units; all seasonal indices add up to s."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Simple approach",
+      "meaning": "Seasonal component calculated in separate steps: trend by moving averages, then y − tr or y / tr, then means per season, then adjustment."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Regression approach",
+      "meaning": "Trend and seasonal component calculated together by multiple regression with dummy variables for the seasons."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Dummy variable",
+      "meaning": "x(j) = 1 in season j and 0 otherwise; used in the regression approach (the last season has no dummy)."
+    },
+    {
+      "group": "Seasonality",
+      "term": "Seasonally adjusted series",
+      "meaning": "A time series with the seasonal component removed: y(t) − sd(j) or y(t) / si(j)."
+    }
+  ],
+  "confusable": [
+    [
+      "Simple moving average",
+      "Centred moving average"
+    ],
+    [
+      "Additive decomposition",
+      "Multiplicative decomposition"
+    ],
+    [
+      "Seasonal difference",
+      "Seasonal index"
+    ],
+    [
+      "Simple approach",
+      "Regression approach"
+    ]
+  ],
+  "facts": [
+    [
+      1,
+      "The smoothed values of a moving average estimate the {trend|seasonal|random|cyclical} component."
+    ],
+    [
+      1,
+      "A simple moving average of length 7 loses {3|7|1|6} values at each end of the series."
+    ],
+    [
+      2,
+      "For monthly data with seasonality, the length of the moving average is {12|4|7|3}."
+    ],
+    [
+      2,
+      "For quarterly data with seasonality, the length of the moving average is {4|12|7|3}."
+    ],
+    [
+      2,
+      "An even length of the moving average needs a {centred|weighted|simple|exponential} moving average."
+    ],
+    [
+      3,
+      "Seasonal differences belong to the {additive|multiplicative|linear|quadratic} decomposition."
+    ],
+    [
+      3,
+      "Seasonal indices belong to the {multiplicative|additive|linear|constant} decomposition."
+    ],
+    [
+      3,
+      "Seasonal differences of all seasons add up to {0|1|s|100}."
+    ],
+    [
+      4,
+      "The simple approach first calculates the trend by {moving averages|regression|indices|differences}."
+    ],
+    [
+      5,
+      "In the regression approach with quarterly data, sd4 equals minus the {mean|sum|maximum|median} of the dummy coefficients."
+    ]
+  ],
+  "cards": {
+    "tab": "Seasonality cards",
+    "h1": "Smoothing and seasonality at a glance",
+    "who": "Which one am I?",
+    "labels": {
+      "what": "What it is",
+      "formula": "How",
+      "when": "When"
+    },
+    "keys": [
+      "what",
+      "formula",
+      "when"
+    ],
+    "items": [
+      {
+        "n": "Simple moving average",
+        "grp": "Smoothing",
+        "what": "Mean of a window of odd length",
+        "formula": "m = 2p + 1, mean of y(t−p)…y(t+p)",
+        "when": "Odd m (3, 5, 7)"
+      },
+      {
+        "n": "Centred moving average",
+        "grp": "Smoothing",
+        "what": "Mean of two neighbouring windows",
+        "formula": "m = 2p, average of two averages",
+        "when": "Even m (4, 12)"
+      },
+      {
+        "n": "Seasonal difference sd",
+        "grp": "Additive",
+        "what": "Season effect in units of the series",
+        "formula": "mean of y − tr per season, adjusted to sum 0",
+        "when": "Stable seasonal variations"
+      },
+      {
+        "n": "Seasonal index si",
+        "grp": "Multiplicative",
+        "what": "Relative season effect, no units",
+        "formula": "mean of y / tr per season, adjusted to sum s",
+        "when": "Seasonal variations change in time"
+      },
+      {
+        "n": "Regression approach",
+        "grp": "Together",
+        "what": "Trend + seasonality in one regression",
+        "formula": "ā = (a1+a2+a3)/4, b0 = b0* + ā, sd(j) = a(j) − ā, sd4 = −ā",
+        "when": "Quarterly data, linear trend"
+      }
+    ]
+  },
+  "sheet": [
+    [
+      "Moving averages",
+      [
+        "Case",
+        "Length",
+        "Note"
+      ],
+      [
+        [
+          "No seasonality",
+          "m chosen subjectively",
+          "Higher m = smoother"
+        ],
+        [
+          "Quarterly",
+          "m = 4 (centred)",
+          "Lose 2 values at each end"
+        ],
+        [
+          "Daily, weekly cycle",
+          "m = 7 (simple)",
+          "Lose 3 values at each end"
+        ],
+        [
+          "Monthly",
+          "m = 12 (centred)",
+          "Lose 6 values at each end"
+        ]
+      ]
+    ],
+    [
+      "Seasonal component",
+      [
+        "",
+        "Additive",
+        "Multiplicative"
+      ],
+      [
+        [
+          "Model",
+          "y = tr + s + e",
+          "y = tr · s · e"
+        ],
+        [
+          "Step 2",
+          "y − tr",
+          "y / tr"
+        ],
+        [
+          "Result",
+          "seasonal differences sd",
+          "seasonal indices si"
+        ],
+        [
+          "Sum",
+          "0",
+          "s"
+        ],
+        [
+          "Units",
+          "as the series",
+          "none (relative)"
+        ]
+      ]
+    ]
+  ]
+}

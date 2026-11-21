@@ -1,0 +1,430 @@
+{
+  "num": 11,
+  "id": "t11",
+  "title": "Tests of Dependence: Contingency, ANOVA, Correlation & Regression",
+  "short": "Hypothesis tests II",
+  "sub": "Lecture 11 · Seminar 12 · independence test, ANOVA, correlation test, t-test of the slope, linear trend",
+  "blurb": "Chi-square independence test in contingency tables, one-way ANOVA F-test, correlation test, t-test of the regression slope with causal interpretation, and the linear trend test.",
+  "h1": "Tests of Dependence",
+  "lede": "The same five steps as in Seminar 11, applied to relationships: are two categorical variables independent, do group means differ, are two numeric variables correlated, and does the regression line or trend really have a slope?",
+  "six": [
+    "Contingency table: n′ = row total × column total / n, g ≈ χ²((r − 1)(c − 1)), right tail.",
+    "The independence test needs **all expected frequencies large enough**; combine categories if not.",
+    "ANOVA: H0 μ1 = … = μk, f = [ss<sub>TR</sub>/(k − 1)] / [ss<sub>E</sub>/(n − k)], **F(k − 1, n − k)**.",
+    "Correlation test: t = r√(n − 2)/√(1 − r²), **t(n − 2)**, two-tailed.",
+    "Slope test: t = b1 / s(b1), **t(n − 2)**; H0 β1 = 0 means no linear relationship.",
+    "Inferential slope interpretation is **causal**: +1 unit of x → +b1 units of y **on average**."
+  ],
+  "must": "Independence test, ANOVA and the t-test of the slope",
+  "foot": "Source: 4ST601 Seminar 12 exercise file and data, and the official formula sheet, page 8. TODO: verify against the Lecture 11 slides when they are added.",
+  "questions": [
+    {
+      "id": "t11-ctt-h0",
+      "q": "What is H0 in the chi-square test of a contingency table?",
+      "answer": "The two variables are independent",
+      "wrong": [
+        "The two variables are dependent",
+        "All cell counts are equal",
+        "The means are equal"
+      ],
+      "e": "H0: independence; H1: non H0 (dependence).",
+      "fol": true
+    },
+    {
+      "id": "t11-ctt-df",
+      "q": "A contingency table has 5 rows and 4 columns. Degrees of freedom of the test?",
+      "answer": "12",
+      "wrong": [
+        "20",
+        "9",
+        "8"
+      ],
+      "e": "(r − 1)(c − 1) = 4 · 3 = 12.",
+      "fol": true
+    },
+    {
+      "id": "t11-ctt-expected",
+      "q": "Row total 200, column total 150, n = 400. Expected frequency of that cell?",
+      "answer": "75",
+      "wrong": [
+        "50",
+        "350",
+        "0.75"
+      ],
+      "e": "n′ = 200 · 150 / 400 = 75."
+    },
+    {
+      "id": "t11-ctt-small",
+      "q": "Some expected frequencies are very small. What does the seminar file recommend?",
+      "answer": "The test is not justified; combine categories",
+      "wrong": [
+        "Ignore it, the test still works",
+        "Use the ANOVA instead",
+        "Double the sample in the table"
+      ],
+      "e": "Low expected frequencies break the assumption; combining categories helps (ctt5, ctt6)."
+    },
+    {
+      "id": "t11-anova-h0",
+      "q": "What is H0 in one-way ANOVA with three groups?",
+      "answer": "μ1 = μ2 = μ3",
+      "wrong": [
+        "μ1 ≠ μ2 ≠ μ3",
+        "At least one mean differs",
+        "The variances differ"
+      ],
+      "e": "H0 says all population means are equal; H1 is non H0.",
+      "fol": true
+    },
+    {
+      "id": "t11-anova-f",
+      "q": "Excel ANOVA: MS between = 57.87, MS within = 7.77. Value of the test statistic?",
+      "answer": "f = 7.45",
+      "wrong": [
+        "f = 0.13",
+        "f = 65.6",
+        "f = 50.1"
+      ],
+      "e": "f = MS between / MS within = 57.87 / 7.77 ≈ 7.45."
+    },
+    {
+      "id": "t11-anova-df",
+      "q": "ANOVA with k = 4 groups and n = 16 observations. Which F distribution?",
+      "answer": "F(3, 12)",
+      "wrong": [
+        "F(4, 16)",
+        "F(12, 3)",
+        "F(3, 15)"
+      ],
+      "e": "F(k − 1, n − k) = F(3, 12)."
+    },
+    {
+      "id": "t11-corr-df",
+      "q": "Correlation test with n = 8 pairs. Which distribution does T have if H0 is true?",
+      "answer": "t(6)",
+      "wrong": [
+        "t(8)",
+        "t(7)",
+        "N(0, 1)"
+      ],
+      "e": "T ~ t(n − 2) = t(6).",
+      "fol": true
+    },
+    {
+      "id": "t11-corr-h0",
+      "q": "What does H0: ρXY = 0 mean?",
+      "answer": "The two variables are linearly independent",
+      "wrong": [
+        "The two variables are identical",
+        "The regression line is increasing",
+        "The correlation is perfect"
+      ],
+      "e": "ρ = 0 means no linear dependence in the population."
+    },
+    {
+      "id": "t11-slope-h0",
+      "q": "What does H0: β1 = 0 mean in the t-test of the slope?",
+      "answer": "There is no linear relationship between x and y",
+      "wrong": [
+        "The intercept is zero",
+        "The line goes through the origin",
+        "The correlation is 1"
+      ],
+      "e": "A zero slope means y does not change linearly with x.",
+      "fol": true
+    },
+    {
+      "id": "t11-slope-t",
+      "q": "b1 = 13.802 and s(b1) = 4.354. Value of the test statistic?",
+      "answer": "t = 3.170",
+      "wrong": [
+        "t = 60.09",
+        "t = 0.315",
+        "t = 9.448"
+      ],
+      "e": "t = b1 / s(b1) = 13.802 / 4.354 = 3.170."
+    },
+    {
+      "id": "t11-causal",
+      "q": "b1 = 0.526 for weight (kg) on height (cm). Inferential interpretation?",
+      "answer": "If height increases by 1 cm, weight increases by 0.526 kg on average",
+      "wrong": [
+        "52.6 % of weight is explained by height",
+        "The correlation is 0.526",
+        "Every student weighs 0.526 kg per cm"
+      ],
+      "e": "The slope is the average change in y for a 1-unit increase in x (causal interpretation).",
+      "fol": true
+    },
+    {
+      "id": "t11-r2",
+      "q": "r² = 0.949. What does it say?",
+      "answer": "About 94.9 % of the variability of y is explained by the regression line",
+      "wrong": [
+        "The slope is 0.949",
+        "94.9 % of observations lie on the line",
+        "The test rejects H0"
+      ],
+      "e": "The coefficient of determination is the share of explained variability."
+    },
+    {
+      "id": "t11-trend-h0",
+      "q": "In the linear trend test, what does H0: β1 = 0 mean?",
+      "answer": "The data-generating process is the constant trend",
+      "wrong": [
+        "The trend is quadratic",
+        "The series is seasonal",
+        "The series is increasing"
+      ],
+      "e": "Zero slope over time = constant trend."
+    },
+    {
+      "id": "t11-which-test",
+      "q": "Is the choice of magazine related to education (counts in a table)? Which test?",
+      "answer": "Chi-square independence test",
+      "wrong": [
+        "One-way ANOVA",
+        "Correlation test",
+        "t-test of the slope"
+      ],
+      "e": "Two categorical variables in a contingency table → chi-square independence test."
+    },
+    {
+      "id": "t11-which-test2",
+      "q": "Do mean expenditures differ between three types of household? Which test?",
+      "answer": "One-way ANOVA",
+      "wrong": [
+        "Chi-square independence test",
+        "Correlation test",
+        "Goodness-of-fit test"
+      ],
+      "e": "Comparing means of several groups → ANOVA."
+    }
+  ],
+  "vocab": [
+    {
+      "group": "Contingency",
+      "term": "Contingency table",
+      "meaning": "A table of counts n(ij) for two categorical variables with r rows and c columns."
+    },
+    {
+      "group": "Contingency",
+      "term": "Independence test",
+      "meaning": "Chi-square test of H0 that two categorical variables are independent; df = (r − 1)(c − 1)."
+    },
+    {
+      "group": "Contingency",
+      "term": "Expected frequency",
+      "meaning": "n′(ij) = row total × column total / n: the count expected if the variables were independent."
+    },
+    {
+      "group": "ANOVA",
+      "term": "One-way ANOVA",
+      "meaning": "F-test of H0 that k population means are equal."
+    },
+    {
+      "group": "ANOVA",
+      "term": "Between-groups sum of squares",
+      "meaning": "ss(TR): variability of the group means around the overall mean; df = k − 1."
+    },
+    {
+      "group": "ANOVA",
+      "term": "Within-groups sum of squares",
+      "meaning": "ss(E): variability inside the groups; df = n − k."
+    },
+    {
+      "group": "ANOVA",
+      "term": "F-distribution",
+      "meaning": "Distribution of the ANOVA test statistic, F(k − 1, n − k); quantiles in Table V."
+    },
+    {
+      "group": "Correlation",
+      "term": "Correlation test",
+      "meaning": "Test of H0: ρ = 0 with t = r√(n − 2)/√(1 − r²), T ~ t(n − 2)."
+    },
+    {
+      "group": "Correlation",
+      "term": "Population correlation coefficient",
+      "meaning": "ρ(XY): linear dependence of X and Y in the population; estimated by r."
+    },
+    {
+      "group": "Regression",
+      "term": "Data-generating process",
+      "meaning": "The assumed model Y = β0 + β1·x + ε that produced the data."
+    },
+    {
+      "group": "Regression",
+      "term": "t-test of the slope",
+      "meaning": "Test of H0: β1 = 0 with t = b1 / s(b1), T ~ t(n − p); s(b1) only from Excel."
+    },
+    {
+      "group": "Regression",
+      "term": "Standard error of the slope",
+      "meaning": "s(b1): how precisely the slope is estimated; taken from Excel."
+    },
+    {
+      "group": "Regression",
+      "term": "Coefficient of determination",
+      "meaning": "r²: share of the variability of y explained by the regression line."
+    },
+    {
+      "group": "Regression",
+      "term": "Causal interpretation",
+      "meaning": "Inferential reading of b1: if x increases by 1 unit, y changes by b1 units on average."
+    },
+    {
+      "group": "Trend",
+      "term": "Linear trend test",
+      "meaning": "t-test of the slope of Y(t) = β0 + β1·t + ε; H0 means the constant trend."
+    }
+  ],
+  "confusable": [
+    [
+      "Independence test",
+      "One-way ANOVA",
+      "Correlation test"
+    ],
+    [
+      "Between-groups sum of squares",
+      "Within-groups sum of squares"
+    ],
+    [
+      "t-test of the slope",
+      "Correlation test"
+    ],
+    [
+      "Coefficient of determination",
+      "Population correlation coefficient"
+    ]
+  ],
+  "facts": [
+    [
+      1,
+      "The H0 of the chi-square test of a contingency table says the variables are {independent|dependent|equal|normal}."
+    ],
+    [
+      1,
+      "A 3 by 4 contingency table gives {6|12|7|11} degrees of freedom."
+    ],
+    [
+      1,
+      "The test is not justified when expected frequencies are too {small|large|equal|negative}."
+    ],
+    [
+      2,
+      "One-way ANOVA compares the {means|variances|medians|proportions} of several groups."
+    ],
+    [
+      2,
+      "The ANOVA test statistic has the {F|t|chi-square|normal} distribution."
+    ],
+    [
+      3,
+      "The correlation test uses n minus {2|1|0|3} degrees of freedom."
+    ],
+    [
+      4,
+      "The value of the test statistic of the slope is b1 divided by its {standard error|variance|mean|intercept}."
+    ],
+    [
+      4,
+      "The inferential interpretation of the slope is {causal|descriptive|seasonal|random}."
+    ],
+    [
+      4,
+      "The share of variability explained by the line is the coefficient of {determination|correlation|variation|contingency}."
+    ],
+    [
+      5,
+      "In the linear trend test, H0 means the {constant|quadratic|seasonal|exponential} trend."
+    ]
+  ],
+  "cards": {
+    "tab": "Test cards",
+    "h1": "Tests of dependence",
+    "who": "Which test am I?",
+    "labels": {
+      "when": "When",
+      "h0": "H0",
+      "stat": "Test statistic",
+      "dist": "If H0 is true"
+    },
+    "keys": [
+      "when",
+      "h0",
+      "stat",
+      "dist"
+    ],
+    "items": [
+      {
+        "n": "Chi-square independence test",
+        "grp": "Contingency",
+        "when": "Two categorical variables",
+        "h0": "independent",
+        "stat": "g = ΣΣ (n − n′)²/n′",
+        "dist": "χ²((r−1)(c−1)), right tail"
+      },
+      {
+        "n": "One-way ANOVA",
+        "grp": "Means",
+        "when": "Means of k groups",
+        "h0": "μ1 = … = μk",
+        "stat": "f = [ssTR/(k−1)] / [ssE/(n−k)]",
+        "dist": "F(k−1, n−k), right tail"
+      },
+      {
+        "n": "Correlation test",
+        "grp": "Correlation",
+        "when": "Two numeric variables",
+        "h0": "ρ = 0",
+        "stat": "t = r√(n−2)/√(1−r²)",
+        "dist": "t(n−2), two-tailed"
+      },
+      {
+        "n": "t-test of the slope",
+        "grp": "Regression",
+        "when": "Regression line or linear trend",
+        "h0": "β1 = 0",
+        "stat": "t = b1 / s(b1)",
+        "dist": "t(n−2), two-tailed"
+      }
+    ]
+  },
+  "sheet": [
+    [
+      "Which test?",
+      [
+        "Question",
+        "Test",
+        "Distribution"
+      ],
+      [
+        [
+          "Two categorical variables related?",
+          "Chi-square independence",
+          "χ²((r−1)(c−1))"
+        ],
+        [
+          "Do k group means differ?",
+          "One-way ANOVA",
+          "F(k−1, n−k)"
+        ],
+        [
+          "Two numeric variables correlated?",
+          "Correlation test",
+          "t(n−2)"
+        ],
+        [
+          "Does y depend linearly on x?",
+          "t-test of the slope",
+          "t(n−2)"
+        ],
+        [
+          "Does the series have a linear trend?",
+          "t-test of the slope (x = t)",
+          "t(n−2)"
+        ]
+      ]
+    ]
+  ]
+}
