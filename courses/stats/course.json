@@ -43,7 +43,7 @@
       "id": "s12",
       "title": "Seminar 12 · Tests of dependence: contingency, ANOVA, correlation, regression, trend",
       "file": "apply/s12.json",
-      "test": "test2"
+      "test": "test3"
     }
   ],
   "lectures": [
@@ -94,7 +94,7 @@
     {
       "id": "test2",
       "title": "Test 2 · Mid-term 2",
-      "sub": "Time series smoothing & seasonality, probability, distributions, estimates & hypothesis testing (Seminars 7–12 · test 18 Dec).",
+      "sub": "Time series smoothing & seasonality, probability, distributions, estimates and hypothesis tests of mean, proportion & goodness of fit (Seminars 7–11 · test 18 Dec).",
       "badge": "Up next · 18 Dec",
       "lectures": [
         "t7",
@@ -106,21 +106,21 @@
           "n": 11,
           "title": "Hypothesis tests: mean, proportion & goodness-of-fit",
           "sub": "Seminar 11 (11 Dec) · Real exercises ready above in ✏️ Practise. Lesson comes after the lecture."
-        },
-        {
-          "n": 12,
-          "title": "Hypothesis tests: contingency, ANOVA & correlation",
-          "sub": "Seminar 12 (18 Dec) · Real exercises ready above in ✏️ Practise. Lesson comes after the lecture."
         }
       ]
     },
     {
       "id": "test3",
       "title": "Test 3 · Final Exam",
-      "sub": "All course topics (1–13) including Index numbers, with mixed mock tests.",
+      "sub": "Everything from Test 1 and Test 2, plus Seminar 12: tests of dependence (contingency, ANOVA, correlation, regression, trend).",
       "badge": "Final Exam",
       "all": true,
       "planned": [
+        {
+          "n": 12,
+          "title": "Hypothesis tests: contingency, ANOVA & correlation",
+          "sub": "Seminar 12 · Real exercises ready in ✏️ Practise and in the Test 3 study path. Lesson comes after the lecture."
+        },
         {
           "n": 13,
           "title": "Index numbers",
@@ -130,6 +130,7 @@
     }
   ],
   "paths": [
-    "test2"
+    "test2",
+    "test3"
   ]
 }
