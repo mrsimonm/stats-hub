@@ -7,6 +7,12 @@
   "testsCard": false,
   "apply": [
     {
+      "id": "s7",
+      "title": "Seminar 7 · Time series: moving averages and the seasonal component",
+      "file": "apply/s7.json",
+      "test": "test2"
+    },
+    {
       "id": "s8",
       "title": "Seminar 8 · Probability and random variables",
       "file": "apply/s8.json",
@@ -49,7 +55,7 @@
     {
       "id": "test1",
       "title": "Test 1 · Mid-term 1",
-      "sub": "Descriptive statistics, contingency/ANOVA, correlation, regression & time series (Seminars 1–7).",
+      "sub": "Descriptive statistics, contingency/ANOVA, correlation, regression & time series dynamics and trends (Seminars 1–6).",
       "badge": "Mid-term 1 · Done (13 Nov)",
       "lectures": [],
       "planned": [
@@ -88,7 +94,7 @@
     {
       "id": "test2",
       "title": "Test 2 · Mid-term 2",
-      "sub": "Probability, distributions, estimates & hypothesis testing (18 Dec · Seminar 12).",
+      "sub": "Time series smoothing & seasonality, probability, distributions, estimates & hypothesis testing (Seminars 7–12 · test 18 Dec).",
       "badge": "Up next · 18 Dec",
       "lectures": [
         "t7",
