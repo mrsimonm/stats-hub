@@ -703,6 +703,11 @@ function renderTestView(id){
   var h='<div class="row" style="margin-bottom:10px"><button class="ghost" data-go="home">◂ Back to all tests</button></div>';
   h+='<div class="hero"><h1>'+esc(ts.title)+'</h1><p class="lede">'+esc(ts.sub)+'</p></div>';
   if(window.GEOPath)h+=GEOPath.cta(ts.id);
+  h+='<h2 style="margin-top:20px">📖 Lessons: Learn, Review, Mastery, Games</h2><p class="lede" style="font-size:.95rem;margin-top:0">Tap a topic to open its lesson tabs.</p><div class="tiles">';
+  h+=st.list.map(topicTile).join("");
+  h+=(ts.planned||[]).map(function(p){return '<div class="tile planned"><span class="tn">Topic '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("");
+  h+='</div>';
+  if(window.GEOApply)h+=GEOApply.testBlock(ts.id);
   h+='<div class="card"><b>Your readiness for '+esc(ts.title)+'</b>'
     +'<p style="margin:6px 0;color:var(--mute);font-size:.95rem">'+(st.stepsTot?st.stepsDone+' / '+st.stepsTot+' steps completed ('+pct+' %)':'No active lessons yet')+(st.starsTot?' · ⭐ '+st.stars+' / '+st.starsTot+' Mastery stars':'')+'</p>'
     +'<div class="bar"><i style="width:'+pct+'%"></i></div>';
@@ -711,11 +716,6 @@ function renderTestView(id){
   }else{
     h+='<p style="margin:8px 0 0;color:var(--mute);font-size:.92rem">Add lecture data for this test to unlock lessons, Mastery, and mock tests.</p>';
   }
-  h+='</div>';
-  if(window.GEOApply)h+=GEOApply.testBlock(ts.id);
-  h+='<h2 style="margin-top:20px">Topics in '+esc(ts.title)+'</h2><div class="tiles">';
-  h+=st.list.map(topicTile).join("");
-  h+=(ts.planned||[]).map(function(p){return '<div class="tile planned"><span class="tn">Topic '+p.n+'</span><span class="tt">'+esc(p.title)+'</span><span class="ts">'+esc(p.sub)+'</span></div>'}).join("");
   h+='</div>';
   var v=el("v-test");v.innerHTML=h;
   v.onclick=function(e){var b=e.target.closest("[data-go]");if(b)go(b.getAttribute("data-go"))};
