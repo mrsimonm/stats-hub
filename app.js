@@ -21,7 +21,7 @@ GEO._getState=function(){return S};
 GEO._setState=function(next){
   if(!isObj(next))return;
   S=Object.assign(fresh(),next);
-  save(true);hud();badge();
+  save(true);hud();badge();if(window.CAT)CAT.refresh();
   if(!el("v-home").hidden)renderHome();
   else if(CUR&&!el("v-start").hidden)progress();
 };
@@ -112,8 +112,9 @@ function xp(n,why){
   var after=lvOf(S.xp).n;
   if(after>before){confetti();setTimeout(function(){toast("Level up! You are now a "+lvName(after)+" (level "+(after+1)+") 🎉",true)},300)}
   else if(dayBefore<GOAL&&S.day.xp>=GOAL){confetti();setTimeout(function(){toast("Daily goal done! 🎯 Anything more is a bonus.",true)},300)}
+  if(window.CAT)CAT.onXP(n,why);
 }
-GEO.xp=xp;GEO.toast=toast;GEO.confetti=confetti;
+GEO.xp=xp;GEO.toast=toast;GEO.confetti=confetti;GEO.lvOf=lvOf;GEO.lvName=lvName;GEO.GOAL=GOAL;GEO.streakNow=streakNow;GEO.today=today;GEO.dstr=dstr;
 function fx(node,cls){if(!node)return;node.classList.remove("pop","shake");void node.offsetWidth;node.classList.add(cls)}
 GEO.fx=fx;
 function modal(em,title,text,btns){
@@ -762,7 +763,7 @@ function renderHome(){
   el("v-home").innerHTML=h;
   if(window.GEOSync)window.GEOSync.render();
   var armed=false;
-  el("reset").onclick=function(){if(!armed){armed=true;this.textContent="Tap again to really reset";el("resetmsg").textContent="This deletes progress and the review list.";return}S=fresh();save(true);if(window.GEOSync)window.GEOSync.onReset(S);hud();renderHome();el("resetmsg").textContent="Done. Progress reset."};
+  el("reset").onclick=function(){if(!armed){armed=true;this.textContent="Tap again to really reset";el("resetmsg").textContent="This deletes progress and the review list.";return}S=fresh();save(true);if(window.CAT)CAT.reset();if(window.GEOSync)window.GEOSync.onReset(S);hud();renderHome();el("resetmsg").textContent="Done. Progress reset."};
   el("foot").innerHTML=GEO.course.footer;
 }
 el("v-home").addEventListener("click",function(e){

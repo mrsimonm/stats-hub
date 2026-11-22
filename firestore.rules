@@ -103,10 +103,26 @@ service cloud.firestore {
         && (!('cur' in pt) || (pt.cur is map && pt.cur.size() <= 20));
     }
 
+    // Study Cat (lib/cat.js): name, coat, worn items, XP spent in the shop, owned items. All size-bounded.
+    function isValidCat(cat) {
+      return cat is map
+        && cat.keys().hasOnly(['name', 'coat', 'worn', 'spent', 'items', 'off', 'lv', 'stg', 'goalD'])
+        && (!('name' in cat) || (cat.name is string && cat.name.size() <= 24))
+        && (!('coat' in cat) || (cat.coat is string && cat.coat.size() <= 16))
+        && (!('worn' in cat) || (cat.worn is map && cat.worn.size() <= 8))
+        && (!('spent' in cat) || (cat.spent is number && cat.spent >= 0 && cat.spent <= 10000000))
+        && (!('items' in cat) || (cat.items is map && cat.items.size() <= 100))
+        && (!('off' in cat) || (cat.off is map && cat.off.size() <= 100))
+        && (!('lv' in cat) || (cat.lv is number && cat.lv >= -1 && cat.lv <= 1000))
+        && (!('stg' in cat) || (cat.stg is number && cat.stg >= -1 && cat.stg <= 10))
+        && (!('goalD' in cat) || (cat.goalD is string && cat.goalD.size() <= 20));
+    }
+
     // Validate the entire user document on both create and update
     function isValidUserDoc(data) {
       return hasRequiredFields(['state', 'updatedAt'])
-        && hasOnlyAllowedFields(['state', 'updatedAt', 'ap', 'pt'])
+        && hasOnlyAllowedFields(['state', 'updatedAt', 'ap', 'pt', 'cat'])
+        && (!('cat' in data) || isValidCat(data.cat))
         && isValidStudyState(data.state)
         && data.updatedAt is timestamp
         && (!('ap' in data) || isValidApply(data.ap))

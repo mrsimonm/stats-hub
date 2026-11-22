@@ -14,7 +14,7 @@
 <meta name="description" content="All 4ST601 statistics lectures (VŠE Prague) in one place: lessons, flashcards, mock tests, review and a dictionary.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=JetBrains+Mono:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 /* Geology Hub. Colour meaning everywhere: accent = idea, amber = teacher said, red = exam trap, green = correct, cyan = analogy, grey = don't memorise. Each topic has its own accent colour. */
 :root{
@@ -388,11 +388,86 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 .defbtn{border:1px solid var(--line);background:var(--card);color:var(--acc);border-radius:99px;width:24px;height:24px;padding:0;font-size:.8rem;font-weight:700;vertical-align:middle;margin-left:4px;cursor:help}
 .defbtn:disabled{opacity:.45}
 .fk{display:block}
+/* Study Cat (lib/cat.js). Art colours are variables so the cat and its room work in light and dark mode. */
+:root{--k-wall1:#FBEBD6;--k-wall2:#F2D9BC;--k-floor:#D9A876;--k-floor2:#C6935F;--k-base:#B57E4F;--k-sky1:#9ED8F5;--k-sky2:#DDF3FF;--k-sun:#FFCF5C;--k-cloud:#FFFFFF;--k-frame:#FFF8EE;
+  --k-wall3:#E9C9A4;--k-curtain:#58B4A4;--k-curtain2:#3F9585;--k-hill:#86C77A;--k-hill2:#6AAE66;--k-star:transparent;--k-dust:rgba(255,255,255,.95);--k-screen:#1E2A44;
+  --k-eye:#2A211E;--k-pink:#F59FB4;--k-wood:#C58F5B;--k-wood2:#94643A;--k-water:#8FD3EC;--k-fish:#FF9A4D;--k-yarn:#E8679A;--k-rug:#EFAFC0;--k-rug2:#FBD3DD;--k-bed:#6F9FDB;--k-bed2:#A6C6EF;
+  --k-leaf:#5DB377;--k-leaf2:#3E9159;--k-pot:#E08A5E;--k-potd:#C46F45;--k-gold:#F7C744;--k-goldd:#C9962A;--k-cap:#2E3A4B;--k-capd:#1C2531;--k-bow:#E8618A;--k-bowd:#B83E64;
+  --k-or:#F5A95F;--k-orl:#FFE4C2;--k-ord:#C8763A;--k-gr:#A9B4BE;--k-grl:#E8EDF1;--k-grd:#6C7987;--k-bk:#474C56;--k-bkl:#80878F;--k-bkd:#25292F;--k-wh:#FCF9F3;--k-whl:#FFFFFF;--k-whd:#BDB3A2}
+@media (prefers-color-scheme: dark){:root{--k-wall1:#2F3350;--k-wall2:#262941;--k-floor:#5E4838;--k-floor2:#4E3B2E;--k-base:#3F3026;--k-sky1:#1B2650;--k-sky2:#3A4C86;--k-sun:#F6EBB8;--k-cloud:#7D8BB5;--k-frame:#B9B5C9;
+  --k-wall3:#1F2236;--k-curtain:#3B7C73;--k-curtain2:#2C6159;--k-hill:#2E5443;--k-hill2:#223F33;--k-star:#FFF4C2;--k-dust:transparent;
+  --k-rug:#7A4C5C;--k-rug2:#9A6B7B;--k-bed:#41659A;--k-bed2:#5B80B5;--k-wood:#9C6E45;--k-wood2:#6E4B2D;--k-cap:#C9D6E8;--k-capd:#8FA0B8;--k-bk:#545A64;--k-bkl:#8A919B;--k-bkd:#1E2126}}
+.hudchip[hidden]{display:none}
+/* pixel animation: two frames that swap, no smooth tweening */
+.pxcat .f2{visibility:hidden}
+.pxm-hello .f1,.pxm-purr .f1,.pxm-grumpy .f1{animation:pxa 1.2s steps(1) infinite}
+.pxm-hello .f2,.pxm-purr .f2,.pxm-grumpy .f2{animation:pxb 1.2s steps(1) infinite}
+.pxm-purr .f1,.pxm-purr .f2{animation-duration:.7s}
+.pxm-grumpy .f1,.pxm-grumpy .f2{animation-duration:.45s}
+@keyframes pxa{0%{visibility:visible}50%{visibility:hidden}}
+@keyframes pxb{0%{visibility:hidden}50%{visibility:visible}}
+.pxz{animation:pxz 1.6s steps(2) infinite}.pxz.z2{animation-delay:.8s}
+@keyframes pxz{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-4px);opacity:.3}}
+.k-bulb{animation:kglow 1.6s steps(2) infinite}.k-bulb:nth-of-type(2n){animation-delay:.8s}
+.k-fish{animation:kswim 3s steps(6) infinite alternate}
+@keyframes kglow{0%{opacity:.45}100%{opacity:1}}
+.k-tw{animation:ktw 2.2s steps(2) infinite}
+@keyframes ktw{0%{opacity:1}100%{opacity:.15}}
+.k-tick .f2{visibility:hidden}.k-tick .f1{animation:pxa 2s steps(1) infinite}.k-tick .f2{animation:pxb 2s steps(1) infinite}
+@keyframes kswim{0%{transform:translateX(0)}100%{transform:translateX(-9px)}}
+/* pixel UI inside the cat app */
+.catapp .cat-top b,.catapp .cat-name,.kbal b,.cat-h3,.pxtag,.cat-nav button,.shopc b{font-family:"Press Start 2P",var(--font-m),monospace;letter-spacing:0}
+.catapp .cat-top b{font-size:.78rem}.catapp .cat-name{font-size:.95rem;line-height:1.5}
+.cat-h3{font-size:.68rem!important;line-height:1.6}
+.shopc b{font-size:.58rem!important;line-height:1.6}
+.cat-nav button{font-size:.58rem!important}
+.pxtag{font-size:.52rem;padding:5px 7px;background:var(--k-base);color:#fff;box-shadow:2px 2px 0 var(--k-eye)}
+.catapp .btn{border-radius:0;border:2px solid var(--k-eye);box-shadow:inset -3px -3px 0 rgba(0,0,0,.22),inset 3px 3px 0 rgba(255,255,255,.2)}
+.catapp .btn:active{box-shadow:inset 3px 3px 0 rgba(0,0,0,.22)}
+.catapp .card{border-radius:0;border:3px solid var(--line);box-shadow:4px 4px 0 rgba(0,0,0,.14)}
+.catapp .shopc.own{border-color:var(--ok)}
+.catapp .cat-top .x{border-radius:0;border:2px solid var(--k-eye)}
+.pxbar{height:14px;border:2px solid var(--k-eye);background:var(--soft);margin:10px 0 4px;padding:2px}
+.pxbar i{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--ok) 0 8px,transparent 8px 10px)}
+.catapp{position:fixed;inset:0;z-index:42;background:var(--bg);display:flex;flex-direction:column}
+.catapp[hidden]{display:none}
+.cat-in{max-width:520px;margin:0 auto;width:100%;height:100%;display:flex;flex-direction:column}
+.cat-top{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--card)}
+.cat-top b{font-family:var(--font-d);font-size:1.15rem;flex:1}
+.cat-top .x{border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:10px;width:40px;height:40px;font-size:1.1rem}
+#catbody{flex:1;overflow-y:auto;padding:12px 16px 24px;-webkit-overflow-scrolling:touch}
+.cat-nav{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);background:var(--card);padding-bottom:env(safe-area-inset-bottom)}
+.cat-nav button{border:0;background:none;color:var(--mute);padding:8px 2px;font-size:.78rem;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px}
+.cat-nav button span{font-size:1.3rem;line-height:1}
+.cat-nav button[aria-current=page]{color:var(--acc);background:var(--acc-soft)}
+body.catopen{overflow:hidden}
+.cat-scene{position:relative;overflow:hidden;border:4px solid var(--k-eye);cursor:pointer;margin:0 6px 16px 0;box-shadow:6px 6px 0 rgba(0,0,0,.2);-webkit-tap-highlight-color:transparent}
+.cat-room{display:block;width:100%;height:auto}
+.cat-heart{position:absolute;bottom:34%;color:var(--k-yarn);font-size:1.4rem;font-style:normal;pointer-events:none;animation:heartup 1.3s ease-out forwards}
+@keyframes heartup{0%{opacity:0;transform:translateY(0) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translateY(-70px) scale(1.2)}}
+.cat-namerow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cat-name{border:0;background:none;font:700 1.35rem var(--font-d);color:var(--ink);padding:4px 0;cursor:pointer}
+.cat-mood{margin:4px 0 8px}
+.cat-sub{color:var(--mute);font-size:.92rem;margin:6px 0 10px}
+.cat-h3{font:700 1rem var(--font-b);margin:16px 0 6px;color:var(--mute)}
+.kbal{padding:14px 16px;margin:0 0 6px}.kbal b{display:block;font-size:1.1rem}.kbal small{color:var(--mute)}
+.shopgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:480px){.shopgrid{grid-template-columns:repeat(3,1fr)}}
+.shopc{display:flex;flex-direction:column;align-items:stretch;gap:8px;text-align:center;padding:10px;margin:0}
+.shopc.own{border-color:var(--ok)}
+.shopc b{font-size:.92rem;line-height:1.25}
+.kthumb{aspect-ratio:1/1;background:var(--k-wall1);border:2px solid var(--line);display:grid;place-items:center;overflow:hidden}
+.kthumb svg{width:84%;height:84%}
+.shopc .btn{padding:8px 6px;font-size:.85rem;width:100%;margin-top:auto}
+.catpop{position:fixed;left:12px;bottom:128px;z-index:44;display:flex;align-items:center;gap:8px;max-width:min(86vw,340px);background:var(--card);color:var(--ink);border:1.5px solid var(--acc);border-radius:16px;padding:6px 14px 6px 6px;box-shadow:0 10px 30px rgba(0,0,0,.22);font:700 .95rem/1.3 var(--font-b);text-align:left}
+.catpop[hidden]{display:none}.catpop svg{width:56px;height:50px;flex:none}.catpop.in{animation:toastIn .3s ease both}
+.catpop{border-radius:0;border:3px solid var(--k-eye);box-shadow:4px 4px 0 rgba(0,0,0,.2)}.catpop svg{width:46px;height:54px}
+@media (prefers-reduced-motion: reduce){.pxcat .f1,.pxcat .f2,.k-tick .f1,.k-tick .f2,.k-tw,.pxz,.k-bulb,.k-fish,.catpop.in,.cat-heart{animation:none!important}}
 </style>
 </head>
 <body data-topic="home">
 <header class="top"><div class="top-in">
-  <div class="brand"><button class="homebtn" id="homebtn" hidden>◂ All topics</button><b id="brandT">Statistics Hub</b><span id="brandS">4ST601 · every lecture in one place</span><span class="hud"><span class="hudchip" id="hudStreak" title="Days in a row you studied">🔥 0</span><span class="hudchip" id="hudXP" title="Your XP and level">⚡ 0 <span class="lv"><i></i></span></span><button class="hudchip" id="focusbtn" title="Focus sprint timer">⏱ Focus</button></span></div>
+  <div class="brand"><button class="homebtn" id="homebtn" hidden>◂ All topics</button><b id="brandT">Statistics Hub</b><span id="brandS">4ST601 · every lecture in one place</span><span class="hud"><button class="hudchip" id="catbtn" title="Your Study Cat" hidden>🐱 0</button><span class="hudchip" id="hudStreak" title="Days in a row you studied">🔥 0</span><span class="hudchip" id="hudXP" title="Your XP and level">⚡ 0 <span class="lv"><i></i></span></span><button class="hudchip" id="focusbtn" title="Focus sprint timer">⏱ Focus</button></span></div>
   <div class="focuspanel" id="focuspanel" hidden><b>Focus sprint</b><p style="font-size:.88rem;color:var(--mute);margin:4px 0 8px">Pick a short sprint. Phone away, one tab only. You get a break and bonus XP at the end.</p><div class="row"><button class="btn sec" data-min="5">5</button><button class="btn" data-min="10">10</button><button class="btn sec" data-min="15">15</button><button class="btn sec" data-min="25">25</button></div><p style="font-size:.8rem;color:var(--mute);margin:6px 0 0">minutes</p><button class="ghost" id="focusstop" hidden style="margin-top:8px;width:100%">Stop the sprint</button></div>
   <nav class="tabs" id="tabs" role="tablist" aria-label="Sections"></nav>
 </div></header>
@@ -524,6 +599,11 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 
 <div class="toasts" id="toasts" aria-live="polite"></div>
 <div class="modal" id="modal" hidden><div class="mbox" id="modalbox"></div></div>
+<div class="catapp" id="catapp" data-key="statsHub.cat" hidden role="dialog" aria-modal="true" aria-label="Study Cat"><div class="cat-in">
+  <div class="cat-top"><b>🐱 Study Cat</b><span class="hudchip" id="catbal" title="XP you can spend">⚡ 0</span><button class="x" id="catclose" aria-label="Close Study Cat">✕</button></div>
+  <div id="catbody"></div>
+  <nav class="cat-nav" id="catnav" aria-label="Study Cat sections"><button data-tab="room"><span>🏠</span>Room</button><button data-tab="shop"><span>🛍️</span>Shop</button></nav>
+</div></div>
 <div class="nav" id="lessonnav" hidden><div class="nav-in">
   <button class="btn sec" id="prev">← Back</button>
   <span class="mid" id="navmid"></span>
@@ -540,6 +620,7 @@ button.hudchip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--
 <script src="lib/apply.js"></script>
 <script src="lib/path.js"></script>
 <script src="app.js"></script>
+<script src="lib/cat.js"></script>
 <script>GEO.start();
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
 </body>
