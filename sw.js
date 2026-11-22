@@ -1,7 +1,7 @@
 // Statistics Hub offline support: the app and every lecture file keep working without a connection.
 // Bump V when you change this file. Content files (json, md, js, html) are fetched fresh when online,
 // so new lectures show up without touching the service worker; the saved copy is used offline.
-const V = "stats-hub-v7";
+const V = "stats-hub-v8";
 const SHELL = [
   "./", "./index.html", "./app.js", "./lib/lecture-lib.js", "./lib/formulas.js", "./lib/apply.js", "./lib/path.js", "./lib/cat.js",
   "./lib/firebase-config.js", "./lib/firebase-sync.js",
